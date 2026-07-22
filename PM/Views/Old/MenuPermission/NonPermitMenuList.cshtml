@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Dictionary<string, string>>
+@{
+    ViewBag.Title = "NonPermitMenuList";
+    Layout = null;
+}
+<table id="table" class="table table-responsive table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                MenuId
+            </th>
+            <th>
+                Menu Name
+            </th>
+            <th>
+                #
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item["MENUC_ID"]
+                </td>
+                <td>
+                    @item["MENUC_NAME"]
+                </td>
+                <td>
+                    <a href="@Url.Action("AddToUser", new { MenuId=@item["MENUC_ID"],UserId= ViewBag.UserString})">Add</a>
+                <td>
+            </tr>
+        }
+    </tbody>
+</table>

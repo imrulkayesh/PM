@@ -1,0 +1,211 @@
+﻿@model PM.Models.P_OWNR
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>P_OWNR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_IMAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_IMAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_TAKE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_TAKE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_RELASE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_RELASE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_AST_IMAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_AST_IMAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_DED_IMAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_DED_IMAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_RESIGN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_RESIGN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_RES_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_RES_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_NOTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_NOTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OWNR_ACTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OWNR_ACTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_AREA.AREA_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_AREA.AREA_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_ASSET.ASET_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_ASSET.ASET_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_DEPT.DEPT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_DEPT.DEPT_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OWNR_OID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

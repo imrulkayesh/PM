@@ -1,0 +1,549 @@
+﻿
+@{
+    ViewBag.Title = "AUDIT DASHBOARD TWO";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+
+    h5 {
+        color: white !important;
+        line-height: 1;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #2f75b5;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 6px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background: #2f75b5;
+        color: white;
+    }
+
+    .highlight {
+        background: #ffeb3b;
+        font-weight: bold;
+    }
+</style>
+
+<div class="panel panel-success">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Company Group & Segment  Wise Total Report Data</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <table id="scrollNbuttonDT" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Company Group Name
+                                    </th>
+                                    <th>
+                                        Task Segment Name
+                                    </th>
+                                    <th>
+                                        Total Report
+                                    </th>
+
+                                    <th>
+                                        Work Scope
+                                    </th>
+                                    <th>
+                                        Direct Saving
+                                    </th>
+                                    <th>
+                                        Indirect Saving
+                                    </th>
+                                    <th>
+                                        Demotion
+                                    </th>
+                                    <th>
+                                        Development
+                                    </th>
+                                    <th>
+                                        Job Sack Out
+                                    </th>
+                                    <th>
+                                        Transfer
+                                    </th>
+                                    <th>
+                                        Warning Letter
+                                    </th>
+                                    <th>
+                                        Penalty
+                                    </th>
+                                    <th>
+                                        Hold Payment
+                                    </th>
+                                    <th>
+                                        Inefficiency Identified
+                                    </th>
+                                    <th>
+                                        Corruption Identified
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.SegmentConpamyGroupWiseAuditReportCount)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.COMPANY_GROUP_NAME
+                                        </td>
+                                        <td>
+                                            @item.TASK_CATEGORY_NAME
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_REPORT
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_WORK_SCOPE
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DIRECT_SAVING_AMOUNT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_INDIRECT_SAVING_AMOUNT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEMOTION
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEVELOPMENT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_JOB_SACK_OUT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_TRANSFER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WARNING_LETTER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_PENALTY
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_HOLD_PAYMENT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_INEFFICIENCY_IDENTIFIED
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_CORRUPTION_IDENTIFIED
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Company Group & Company Wise Total Report Data</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <table id="Example" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Company Group Name
+                                    </th>
+                                    <th>
+                                        Company Name
+                                    </th>
+                                    <th>
+                                        Total Report
+                                    </th>
+
+                                    <th>
+                                        Work Scope
+                                    </th>
+                                    <th>
+                                        Direct Saving
+                                    </th>
+                                    <th>
+                                        Indirect Saving
+                                    </th>
+                                    <th>
+                                        Demotion
+                                    </th>
+                                    <th>
+                                        Development
+                                    </th>
+                                    <th>
+                                        Job Sack Out
+                                    </th>
+                                    <th>
+                                        Transfer
+                                    </th>
+                                    <th>
+                                        Warning Letter
+                                    </th>
+                                    <th>
+                                        Penalty
+                                    </th>
+                                    <th>
+                                        Hold Payment
+                                    </th>
+                                    <th>
+                                        Inefficiency Identified
+                                    </th>
+                                    <th>
+                                        Corruption Identified
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CompanyNameCompanyGroupWiseAuditReportCount)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.COMPANY_GROUP_NAME
+                                        </td>
+                                        <td>
+                                            @item.COMPANY_NAME
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_REPORT
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_WORK_SCOPE
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DIRECT_SAVING_AMOUNT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_INDIRECT_SAVING_AMOUNT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEMOTION
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEVELOPMENT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_JOB_SACK_OUT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_TRANSFER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WARNING_LETTER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_PENALTY
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_HOLD_PAYMENT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_INEFFICIENCY_IDENTIFIED
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_CORRUPTION_IDENTIFIED
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Auditor Wise Audit Follow Up Status</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <table id="dataTable1" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Auditor Name
+                                    </th>
+                                    <th>
+                                        No of Reports
+                                    </th>
+                                    <th>
+                                        Total No Follow Up
+                                    </th>
+
+                                    <th>
+                                        1st Follow Up
+                                    </th>
+                                    <th>
+                                        2nd Follow Up
+                                    </th>
+                                    <th>
+                                        3rd Follow Up
+                                    </th>
+                                    <th>
+                                        No of Findings
+                                    </th>
+                                    <th>
+                                        Action done
+                                    </th>
+                                    <th>
+                                        No Action
+                                    </th>
+                                    <th>
+                                        Action in progress
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.AuditorWiseAuditFollowUpReportCount)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.AUDITOR_NAME
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_REPORT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_FOLLOWUP
+                                        </td>
+
+                                        <td>
+                                            @item.FIRST_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.SECOND_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.THIRD_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_FINDINGS
+                                        </td>
+                                        <td>
+                                            @item.ACTION_DONE
+                                        </td>
+                                        <td>
+                                            @item.NO_ACTION
+                                        </td>
+                                        <td>
+                                            @*@item.ACTION_PROGRESS*@
+                                        </td>
+
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Business Unit Wise Audit Follow Up Status</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <table id="dataTable2" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Business Unit Name
+                                    </th>
+                                    <th>
+                                        No of Reports
+                                    </th>
+                                    <th>
+                                        Total No Follow Up
+                                    </th>
+
+                                    <th>
+                                        1st Follow Up
+                                    </th>
+                                    <th>
+                                        2nd Follow Up
+                                    </th>
+                                    <th>
+                                        3rd Follow Up
+                                    </th>
+                                    <th>
+                                        No of Findings
+                                    </th>
+                                    <th>
+                                        Action done
+                                    </th>
+                                    <th>
+                                        No Action
+                                    </th>
+                                    <th>
+                                        Action in progress
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.BUWiseAuditFollowUpReportStatusCount)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.COMPANY_NAME
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_REPORT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_FOLLOWUP
+                                        </td>
+
+                                        <td>
+                                            @item.FIRST_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.SECOND_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.THIRD_FOLLOWUP
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_FINDINGS
+                                        </td>
+                                        <td>
+                                            @item.ACTION_DONE
+                                        </td>
+                                        <td>
+                                            @item.NO_ACTION
+                                        </td>
+                                        <td>
+                                            @*@item.ACTION_PROGRESS*@
+                                        </td>
+
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/DashPlugin/loader.js"></script>
+    <script type="text/javascript" src="~/Scripts/DashPlugin/ModalBox.js"></script>
+    <script src="~/Scripts/DashPlugin/MyPie.js"></script>
+    <script type="text/javascript">
+        MakeMy3DPieChart('AUDIT_TASK_STATUS_DATA', 'Audit Task Status', Task_Status_Data)
+        MakeMySlicePieChart('AUDIT_REPORT_STATUS', 'Audit Report Status', Report_Status_Data)
+        MakeMyHolePieChart('AUDIT_REPORT_SENT_SUM', 'Report Sent Status', Audit_Data)
+        MakeMyMaterialBarChart('CURRENT_LAST_MONTH_REPORT_SUM', 'Total Reports – Current Month vs. Last Month', '', 'Current_Last')
+        MakeMyMaterialBarChart('COMPAY_GROUP_WISE_REPORT_SUM', 'Company Group Wise Total Report', '', 'Company_Group_Wise')
+    </script>
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+﻿@model PM.ModelsV.newInspection
+
+@{
+    ViewBag.Title = "New Bundle Inspection";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("NewInspection", "Inspection", FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Item Name</span>
+                        @Html.DropDownList("INSPD_ITEM", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessage("INSPD_ITEM", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Asset</span>
+                        @Html.DropDownListFor(model => model.INSPH_ASET, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", autofocus = true, onchange = "getIItem();" })
+                        @Html.ValidationMessageFor(model => model.INSPH_ASET, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Mileage</span>
+                        @Html.EditorFor(model => model.MILEAGE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Mileage", type = "number" } })
+                        @Html.ValidationMessageFor(model => model.MILEAGE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Rate</span>
+                        @Html.Editor("INSPD_IRATE", new { htmlAttributes = new { @class = "form-control", placeholder = "Rate", type = "number" } })
+                        @Html.ValidationMessage("INSPD_RATE", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Inspector</span>
+                        @Html.EditorFor(model => model.INSPH_IUSER, new { htmlAttributes = new { @class = "form-control", placeholder = "Inspection by" } })
+                        @Html.ValidationMessageFor(model => model.INSPH_IUSER, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Spec.</span>
+                        @Html.EditorFor(model => model.INSPH_NOTE, new { htmlAttributes = new { @class = "form-control", placeholder = "Recomendation" } })
+                        @Html.ValidationMessageFor(model => model.INSPH_NOTE, "", new { @class = "text-danger" })
+                        <span class="input-group-btn">
+                            <button id="addItem" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" disabled="disabled" id="AsetLoc" class="form-control" placeholder="Base Information" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="text" disabled="disabled" id="WorkLoc" class="form-control" placeholder="Working Information" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" disabled="disabled" id="OldRec" class="form-control" placeholder="Problem History" />
+                </div>
+            </div>
+                <div class="box box-primary">
+                    <table id="InspectionDetail" class="table">
+                        <thead>
+                            <tr>
+                                <th style="width:10%">Code</th>
+                                <th style="width:25%">Name</th>
+                                <th style="width:10%">Mileage</th>
+                                <th style="width:10%">Rate</th>
+                                <th style="width:30%">Spec.</th>
+                                <th style="width:5%">#</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="btn-group col-md-12">
+                        <a href="@Url.Action("Inspections","Inspection")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewBundleInspection","Inspection")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                        <button type="submit" id="CreateJob" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Create Inspection</button>
+                    </div>
+                </div>
+        }
+    </div>
+    <div class="panel-footer">
+        <p class="text-red fa fa-warning"> Bundle inspections are submitted automatically with current date. You can't edit or update after creating bundle inspections.</p>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Inspection/NewBundleInspection.js"></script>
+}

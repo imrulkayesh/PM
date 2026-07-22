@@ -1,0 +1,129 @@
+﻿@model IEnumerable<PM.ModelsV.AssetUserManagerVM>
+    @*@model IEnumerable<PM.Model.VW_ASSETUSERMANAGERVM>
+        *@
+
+        @{
+        ViewBag.Title = "Transfer List";
+        Layout = "~/Views/Shared/_LayoutLG.cshtml";
+        }
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group margin">
+                    <a href="@Url.Action("FridgeOutletExcel","AssetUserManager")" class="btn btn-primary"> New Transfer</a>
+                    <a href="@Url.Action("FridgeOutletList","AssetUserManager")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover" id="scrollNbuttonDT">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_ASET)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_USER)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_DEPT)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_AREA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_SRDATE)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_SRUSER)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_SADATE)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_SAUSER)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_SNOTE)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_ERDATE)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_ERUSER)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_EADATE)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_EAUSER)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AU_ENOTE)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @if (item.AU_TRNSTYPE == "S")
+                            {
+                            <span class="label label-danger">Short Period</span>
+                            }
+                            else
+                            {
+                            <span class="label label-success">General</span>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ASET)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_USER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_DEPT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_AREA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SRDATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SRUSER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SADATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SAUSER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SNOTE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ERDATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ERUSER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_EADATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_EAUSER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ENOTE)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>

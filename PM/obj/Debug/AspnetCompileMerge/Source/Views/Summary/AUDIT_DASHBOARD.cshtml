@@ -1,0 +1,1654 @@
+﻿
+@{
+    ViewBag.Title = "AUDIT DASHBOARD";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 0.1;
+    }
+
+    h5 {
+        color: white !important;
+        line-height: 0.3;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    h4 {
+        color: black !important;
+        line-height: 0.3;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 40px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #2f75b5;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 6px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background: #2f75b5;
+        color: white;
+    }
+
+    .highlight {
+        background: #ffeb3b;
+        font-weight: bold;
+    }
+
+    .overview-row {
+        margin-top: 15px;
+    }
+    /*=================== CSS of ALL Counting =====================*/
+    .overview-card {
+        height: 60px;
+        border-radius: 10px;
+        padding: 15px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease;
+        margin-bottom: 5px;
+    }
+
+        .overview-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+    .overview-title {
+        font-size: 12px;
+        opacity: 0.9;
+    }
+
+    .overview-value {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* Color Variants */
+    .primary {
+        background: linear-gradient(135deg,#007bff,#0056b3);
+    }
+
+    .success {
+        background: linear-gradient(135deg,#28a745,#1e7e34);
+    }
+
+    .danger {
+        background: linear-gradient(135deg,#dc3545,#a71d2a);
+    }
+
+    .warning {
+        background: linear-gradient(135deg,#f0ad4e,#d39e00);
+    }
+
+    .info {
+        background: linear-gradient(135deg,#17a2b8,#117a8b);
+    }
+
+    .dark {
+        background: linear-gradient(135deg,#343a40,#1d2124);
+    }
+
+    .purple {
+        background: linear-gradient(135deg,#6f42c1,#4e2a8e);
+    }
+
+    .savings {
+        background: linear-gradient(135deg,#20c997,#138f75);
+    }
+
+    .expenses {
+        background: linear-gradient(135deg,#e74c3c,#c0392b);
+    }
+
+    .net {
+        background: linear-gradient(135deg,#3498db,#2c3e50);
+    }
+
+    .cost {
+        background: linear-gradient(135deg,#f39c12,#d35400);
+    }
+
+    .income {
+        background: linear-gradient(135deg,#8e44ad,#5e3370);
+    }
+
+    .corruption {
+        background: linear-gradient(135deg,#34495e,#2c3e50);
+    }
+
+    .overview-row {
+        margin-top: 10px;
+    }
+
+    /*================= CSS of Category/Segment Wise Total Report (Top Five) ======================*/
+    .card {
+        border-radius: 15px;
+        transition: 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+    .card-header {
+        font-weight: 600;
+        font-size: 16px;
+        background: linear-gradient(135deg,#2f75b5,#1b4f72);
+        color: white !important;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f9ff !important;
+    }
+    /*================= Mini Process Bar  ======================*/
+    .mini-progress {
+        background: #e9ecef;
+        border-radius: 20px;
+        height: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mini-progress-bar {
+        height: 100%;
+        border-radius: 20px;
+        transition: width 0.8s ease-in-out;
+    }
+
+    .progress-blue {
+        background: linear-gradient(90deg,#007bff,#0056b3);
+    }
+
+    .progress-green {
+        background: linear-gradient(90deg,#28a745,#1e7e34);
+    }
+
+    .progress-orange {
+        background: linear-gradient(90deg,#f39c12,#d35400);
+    }
+
+    .progress-red {
+        background: linear-gradient(90deg,#dc3545,#a71d2a);
+    }
+
+    .progress-purple {
+        background: linear-gradient(90deg,#6f42c1,#4e2a8e);
+    }
+
+    .progress-number {
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .top-bu-row {
+        background: linear-gradient(90deg,#fff8e1,#ffffff);
+        font-weight: 600;
+        border-left: 5px solid #f39c12;
+        transition: 0.3s ease;
+    }
+
+        .top-bu-row:hover {
+            background: linear-gradient(90deg,#ffe082,#ffffff);
+        }
+
+    .top-badge {
+        background: #f39c12;
+        color: white;
+        font-size: 11px;
+        padding: 2px 6px;
+        border-radius: 10px;
+        margin-left: 6px;
+    }
+
+    /*======================Total Work Scope Value Category wise (Top Five) css ===========================*/
+
+    .mini-progress {
+        background-color: #e9ecef;
+        border-radius: 20px;
+        height: 6px;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .mini-progress-bar {
+        height: 100%;
+        border-radius: 20px;
+        transition: width 0.6s ease-in-out;
+    }
+
+    .mp-green {
+        background: #28a745;
+    }
+
+    .mp-orange {
+        background: #f39c12;
+    }
+
+    .mp-purple {
+        background: #6f42c1;
+    }
+
+    .mp-blue {
+        background: #007bff;
+    }
+
+    .mp-red {
+        background: #dc3545;
+    }
+
+    .value-text {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    /*================== Total, This month Last Month ======================*/
+    .summary-card {
+        border-radius: 14px;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+        .summary-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+    .company-header {
+        background: linear-gradient(135deg,#2f75b5,#1b4f72);
+        color: white;
+        font-weight: 600;
+    }
+
+    .dual-circle {
+        position: relative;
+        display: inline-block;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+        .dual-circle circle {
+            fill: none;
+            stroke-width: 8;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+            .dual-circle circle.bg {
+                stroke: #e6e6e6;
+            }
+
+            .dual-circle circle.this-progress {
+                stroke-width: 10;
+                stroke-dasharray: 314; /* 2*π*50 */
+                stroke-dashoffset: 314;
+                transition: stroke-dashoffset 1s ease, stroke 0.5s ease;
+            }
+
+            .dual-circle circle.last-progress {
+                stroke: #3498db;
+                stroke-width: 8;
+                stroke-dasharray: 251; /* 2*π*40 */
+                stroke-dashoffset: 251;
+                transition: stroke-dashoffset 1s ease;
+            }
+
+    .circle-center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .main-percent {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .sub-percent {
+        font-size: 11px;
+        color: #7f8c8d;
+    }
+
+    .thead-custom {
+        background-color: #f4f6f9;
+    }
+    /*======================== Auditor wise total report ==========================*/
+    .top-auditor-row {
+        background-color: #fff3cd !important;
+        font-weight: bold;
+    }
+
+    .badge {
+        padding: 4px 8px;
+        border-radius: 10px;
+        margin-left: 6px;
+        font-size: 12px;
+    }
+
+    .gold-badge {
+        background: gold;
+        color: black;
+    }
+
+    .silver-badge {
+        background: silver;
+        color: black;
+    }
+
+    .bronze-badge {
+        background: #cd7f32;
+        color: white;
+    }
+
+    .top-card {
+        padding: 20px !important;
+        border-radius: 10px !important;
+        text-align: center !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.20) !important;
+        margin-bottom: 15px !important;
+        font-weight: 600 !important;
+    }
+
+    .gold-card {
+        background: #FFD700 !important;
+        color: #000000 !important;
+    }
+
+    .silver-card {
+        background: #C0C0C0 !important;
+        color: #000000 !important;
+    }
+
+    .bronze-card {
+        background: #CD7F32 !important;
+        color: #ffffff !important;
+    }
+
+    .top-card .rank {
+        font-size: 20px !important;
+        font-weight: bold !important;
+        margin-bottom: 10px !important;
+    }
+
+    .top-card .name {
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .top-card .report {
+        font-size: 16px !important;
+        margin-bottom: 5px !important;
+    }
+
+    /*===================== Task Status Pie Chart =========================*/
+
+</style>
+
+<div class="panel panel-success">
+    @*<div class="panel-heading">
+            *if the value is different from reports, you will take reports data are right.
+        </div>*@
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                Select Year :
+            </div>
+            <div class="col-md-4">
+                <form method="get">
+                    <select name="year" onchange="this.form.submit()" class="form-control">
+                        @for (int y = DateTime.Now.Year; y >= DateTime.Now.Year - 2; y--)
+                        {
+                            <option value="@y" @(ViewBag.SelectedYear == y ? "selected" : "")>
+                                @y
+                            </option>
+                        }
+                    </select>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <br />
+        <div class="row overview-row">
+
+            <!-- Row 1 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card savings">
+                    <div class="overview-title">Total Task</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_TASK">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card primary">
+                    <div class="overview-title">Audit Report</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDIT_REPORT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card info">
+                    <div class="overview-title">Report Sent</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_REPORT_SENT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card success">
+                    <div class="overview-title">Dir. Impact (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_DIRECT_SAVING_AMOUNT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card warning">
+                    <div class="overview-title">Indir. Impact (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_INDIRECT_SAVING_AMOUNT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card dark">
+                    <div class="overview-title">Total Impact (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_SAVING_AMOUNT">0</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row overview-row">
+
+            <!-- Row 2 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card danger">
+                    <div class="overview-title">Demotion</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_DEMOTION">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card purple">
+                    <div class="overview-title">Development (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_DEVELOPMENT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card dark">
+                    <div class="overview-title">Sack Out</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_JOB_SACK_OUT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card info">
+                    <div class="overview-title">Transfer</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_TRANSFER">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card purple">
+                    <div class="overview-title">Warning Letter</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_WARNING_LETTER">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card danger">
+                    <div class="overview-title">Penalty</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_PENALTY">0</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row overview-row">
+
+            <!-- Row 3 -->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card primary">
+                    <div class="overview-title">Hold Payment (Lac)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_HOLD_PAYMENT">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card primary">
+                    <div class="overview-title">With / Without Report</div>
+                    <div class="overview-value">
+                        @Model.updateDate.TOTAL_AUDIT_WITH_REPORT /
+                        @Model.updateDate.TOTAL_AUDIT_WITHOUT_REPORT
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card success">
+                    <div class="overview-title">Inefficiency (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_INEFFICIENCY_IDENTIFIED">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card danger">
+                    <div class="overview-title">Corruption (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_CORRUPTION_IDENTIFIED">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card warning">
+                    <div class="overview-title">Work Scope (Cr)</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_WORK_SCOPE">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card primary">
+                    <div class="overview-title">Total Auditor</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @DateTime.Now.ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "FOUR" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Task_Status_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @DateTime.Now.ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "FIVE" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Report_Status_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @DateTime.Now.ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "SIX" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <div id="Audit_Data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @using System
+
+        <div class="row">
+
+            @foreach (var item in Model.ReportSummary)
+            {
+                int total = 0;
+                int thisMonth = 0;
+                int lastMonth = 0;
+
+                int.TryParse(item.TOTAL_NO_OF_REPORT?.ToString(), out total);
+                int.TryParse(item.THIS_MONTH_TOTAL_REPORT?.ToString(), out thisMonth);
+                int.TryParse(item.LAST_MONTH_TOTAL_REPORT?.ToString(), out lastMonth);
+
+                var thisPercent = total == 0 ? 0 : (int)((thisMonth * 100.0) / total);
+                var lastPercent = total == 0 ? 0 : (int)((lastMonth * 100.0) / total);
+
+                var growth = lastMonth == 0 ? 0 :
+                    (int)(((thisMonth - lastMonth) * 100.0) / lastMonth);
+
+                var isGrowth = growth >= 0;
+
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm summary-card">
+
+                        <div class="card-header text-center company-header">
+                            @item.COMPANY_GROUP_NAME
+                        </div>
+
+                        <div class="card-body text-center">
+                            <!-- Dual Circle -->
+                            <div class="dual-circle"
+                                 data-this="@thisPercent"
+                                 data-last="@lastPercent"
+                                 data-growth="@growth"
+                                 title="This Month: @thisMonth | Last Month: @lastMonth">
+
+                                <svg width="120" height="120">
+
+                                    <!-- Background Circle -->
+                                    <circle class="bg"
+                                            cx="60" cy="60" r="50" />
+
+                                    <!-- Last Month -->
+                                    <circle class="last-progress"
+                                            cx="60" cy="60" r="40" />
+
+                                    <!-- This Month -->
+                                    <circle class="this-progress"
+                                            cx="60" cy="60" r="50" />
+
+                                </svg>
+
+                                <div class="circle-center-text">
+                                    <div class="main-percent">
+                                        @(isGrowth ? "↑" : "↓") @Math.Abs(growth)%
+                                    </div>
+                                    <div class="sub-percent">
+                                        This: @thisPercent% | Last: @lastPercent%
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Table -->
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-sm mb-0">
+                                    <thead class="thead-custom">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Total</th>
+                                            <th>Last</th>
+                                            <th>This</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Total Report</td>
+                                            <td>@item.TOTAL_NO_OF_REPORT</td>
+                                            <td>@item.LAST_MONTH_TOTAL_REPORT</td>
+                                            <td>@item.THIS_MONTH_TOTAL_REPORT</td>
+                                        </tr>
+                                        <tr>
+                                            <td>With Report</td>
+                                            <td>@item.TOTAL_WITH_REPORT</td>
+                                            <td>@item.LAST_MONTH_WITH_REPORT</td>
+                                            <td>@item.THIS_MONTH_WITH_REPORT</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Without Report</td>
+                                            <td>@item.TOTAL_WITHOUT_REPORT</td>
+                                            <td>@item.LAST_MONTH_WITHOUT_REPORT</td>
+                                            <td>@item.THIS_MONTH_WITHOUT_REPORT</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <h2 class="text-center mb-4">Yearly Financial Effect</h2>
+        <div class="row overview-row">
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card savings">
+                    <div class="overview-title">Total Savings</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card expenses">
+                    <div class="overview-title">Total Expenses</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card net">
+                    <div class="overview-title">Net Savings</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card cost">
+                    <div class="overview-title">Per Report Cost</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card income">
+                    <div class="overview-title">Per Report Income</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <div class="overview-card corruption">
+                    <div class="overview-title">Corruption Identified</div>
+                    <div class="overview-value counter"
+                         data-value="@Model.updateDate.TOTAL_AUDITOR">0</div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr />
+        @if (Model.UserRole == "10")
+        {
+            <h2 class="text-center mb-4">Risk Analysis</h2>
+            <div class="row">
+                <!-- Total -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">Total</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRAN -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">PRAN</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RFL -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">RFL</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTL -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">CTL</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">Category/Segment Wise Total Report (Top Five)</div>
+                    <div class="table-responsive">
+                        <table id="categoryTable" class="table table-hover table-striped">
+                            <thead>
+                                <tr class="highlight">
+                                    <th>Category</th>
+                                    <th>Total</th>
+                                    <th>PRAN</th>
+                                    <th>RFL</th>
+                                    <th>CTL</th>
+                                    <th>GROUP CS</th>
+                                    <th>PDL</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CategoryCGWiseTotalReport)
+                                {
+                                    <tr>
+                                        <td>@item.TASK_CATEGORY_NAME</td>
+                                        <td><span class="badge badge-primary">@item.TOTAL_REPORT_CATEGORY</span></td>
+                                        <td>@item.PRAN</td>
+                                        <td>@item.RFL</td>
+                                        <td>@item.CTL</td>
+                                        <td>@item.GROUP_CS</td>
+                                        <td>@item.PDL</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary btn4"
+                                                    data-url="@Url.Action("ViewCategoryWisetDetails", "Summary", new { id = item.TASK_CATEGORY_NAME})">
+                                                <i class="fa fa-eye"></i> View
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">
+                        Total Work Scope Value Category wise (Top Five)
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr class="highlight">
+                                    <th>Category</th>
+                                    <th>Total (Cr)</th>
+                                    <th>PRAN (Cr)</th>
+                                    <th>RFL (Cr)</th>
+                                    <th>CTL (Cr)</th>
+                                    <th>GROUP CS (Cr)</th>
+                                    <th>PDL (Cr)</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model.CategoryWiseWorkScopeTotalReport)
+                                {
+                                    decimal total = Convert.ToDecimal(item.TOTAL_WORK_SCOPE);
+                                    if (total == 0) { total = 1; }
+
+                                    decimal pran = Convert.ToDecimal(item.PRAN);
+                                    decimal rfl = Convert.ToDecimal(item.RFL);
+                                    decimal ctl = Convert.ToDecimal(item.CTL);
+                                    decimal gcs = Convert.ToDecimal(item.GROUP_CS);
+                                    decimal pdl = Convert.ToDecimal(item.PDL);
+
+                                    decimal pranPercent = (pran * 100) / total;
+                                    decimal rflPercent = (rfl * 100) / total;
+                                    decimal ctlPercent = (ctl * 100) / total;
+                                    decimal gcsPercent = (gcs * 100) / total;
+                                    decimal pdlPercent = (pdl * 100) / total;
+
+                                    <tr>
+                                        <td class="font-weight-bold">
+                                            @item.TASK_CATEGORY_NAME
+                                        </td>
+
+                                        <td class="text-success font-weight-bold">
+                                            @total.ToString("N2")
+                                        </td>
+
+                                        <td>
+                                            <div class="value-text">@pran.ToString("N2")</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar mp-green"
+                                                     style="width:@pranPercent.ToString("0.00")%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="value-text">@rfl.ToString("N2")</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar mp-orange"
+                                                     style="width:@rflPercent.ToString("0.00")%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="value-text">@ctl.ToString("N2")</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar mp-purple"
+                                                     style="width:@ctlPercent.ToString("0.00")%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="value-text">@gcs.ToString("N2")</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar mp-blue"
+                                                     style="width:@gcsPercent.ToString("0.00")%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="value-text">@pdl.ToString("N2")</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar mp-red"
+                                                     style="width:@pdlPercent.ToString("0.00")%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow modern-card">
+                    <div class="card-header text-center modern-header">
+                        BU Wise Total Report (Top Five)
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="buReportTable"
+                               class="table table-hover table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <th>Total</th>
+                                    <th>PRAN</th>
+                                    <th>RFL</th>
+                                    <th>CTL</th>
+                                    <th>GROUP CS</th>
+                                    <th>PDL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int maxTotal = 0;
+
+                                    foreach (var bu in Model.BUCGWiseTotalReport)
+                                    {
+                                        if (bu.TOTAL_REPORT_BU > maxTotal)
+                                        {
+                                            maxTotal = bu.TOTAL_REPORT_BU;
+                                        }
+                                    }
+                                }
+
+                                @foreach (var item in Model.BUCGWiseTotalReport)
+                                {
+                                    var total = item.TOTAL_REPORT_BU == 0 ? 1 : item.TOTAL_REPORT_BU;
+                                    var isTop = item.TOTAL_REPORT_BU == maxTotal;
+
+                                    <tr class="@(isTop ? "top-bu-row" : "")">
+                                        <td>
+                                            @item.COMPANY_NAME
+                                            @if (isTop)
+                                            {
+                                                <span class="top-badge">🥇 Top</span>
+                                            }
+                                        </td>
+
+                                        <td>
+                                            <div class="progress-number">@item.TOTAL_REPORT_BU</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-blue"
+                                                     style="width:100%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var pranPercent = (item.PRAN * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.PRAN</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-green"
+                                                     style="width:@pranPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var rflPercent = (item.RFL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.RFL</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-orange"
+                                                     style="width:@rflPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var ctlPercent = (item.CTL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.CTL</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-purple"
+                                                     style="width:@ctlPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var gcsPercent = (item.GROUP_CS * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.GROUP_CS</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-blue"
+                                                     style="width:@gcsPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var pdlPercent = (item.PDL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.PDL</div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-red"
+                                                     style="width:@pdlPercent%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow modern-card">
+                    <div class="card-header text-center modern-header">
+                        Total Work Scope Value BU Wise (Top Five)
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="buWorkScopeTable"
+                               class="table table-hover table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <th>Total (Cr)</th>
+                                    <th>PRAN (Cr)</th>
+                                    <th>RFL (Cr)</th>
+                                    <th>CTL (Cr)</th>
+                                    <th>GROUP CS (Cr)</th>
+                                    <th>PDL (Cr)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.BUCGWiseTotalWorkScopeReport)
+                                {
+                                    var total = item.TOTAL_WORK_SCOPE == 0 ? 1 : item.TOTAL_WORK_SCOPE;
+
+                                    <tr>
+                                        <td class="font-weight-bold">@item.COMPANY_NAME</td>
+
+                                        <td>
+                                            <div class="progress-number">@item.TOTAL_WORK_SCOPE </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-blue"
+                                                     style="width:100%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var pranPercent = (item.PRAN * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.PRAN </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-green"
+                                                     style="width:@pranPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var rflPercent = (item.RFL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.RFL </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-orange"
+                                                     style="width:@rflPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var ctlPercent = (item.CTL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.CTL </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-purple"
+                                                     style="width:@ctlPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var gcsPercent = (item.GROUP_CS * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.GROUP_CS </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-blue"
+                                                     style="width:@gcsPercent%"></div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            @{
+                                                var pdlPercent = (item.PDL * 100) / total;
+                                            }
+                                            <div class="progress-number">@item.PDL </div>
+                                            <div class="mini-progress">
+                                                <div class="mini-progress-bar progress-red"
+                                                     style="width:@pdlPercent%"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <hr />
+        @{
+            var auditors = Model.AuditorWiseAuditReportCount
+                           ?? new List<PM.ModelsV.AuditorWiseAuditReportCount>();
+
+            // Create copy list
+            var rankedAuditors = new List<PM.ModelsV.AuditorWiseAuditReportCount>(auditors);
+
+            // Manual Descending Sort by TOTAL_REPORT
+            for (int i = 0; i < rankedAuditors.Count - 1; i++)
+            {
+                for (int j = i + 1; j < rankedAuditors.Count; j++)
+                {
+                    if (rankedAuditors[i].TOTAL_REPORT < rankedAuditors[j].TOTAL_REPORT)
+                    {
+                        var temp = rankedAuditors[i];
+                        rankedAuditors[i] = rankedAuditors[j];
+                        rankedAuditors[j] = temp;
+                    }
+                }
+            }
+
+            var top1 = rankedAuditors.Count > 0 ? rankedAuditors[0] : null;
+            var top2 = rankedAuditors.Count > 1 ? rankedAuditors[1] : null;
+            var top3 = rankedAuditors.Count > 2 ? rankedAuditors[2] : null;
+        }
+
+        <!-- ================= TOP 3 DASHBOARD CARDS ================= -->
+
+        <div class="row" style="margin-bottom:25px;">
+
+            @if (top1 != null)
+            {
+                <div class="col-md-4">
+                    <div class="box gold-card">
+                        <div class="box-body top-card">
+                            <div class="rank">🥇 TOP 1</div>
+                            <div class="name">@top1.AUDITOR_NAME</div>
+                            <div class="report">Total Reports: @top1.TOTAL_REPORT</div>
+                            <div>Direct Saving: @top1.TOTAL_DIRECT_SAVING_AMOUNT Cr</div>
+                            <div>Indirect Saving: @top1.TOTAL_INDIRECT_SAVING_AMOUNT Cr</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top2 != null)
+            {
+                <div class="col-md-4">
+                    <div class="box silver-card">
+                        <div class="box-body top-card">
+                            <div class="rank">🥈 TOP 2</div>
+                            <div class="name">@top2.AUDITOR_NAME</div>
+                            <div class="report">Total Reports: @top2.TOTAL_REPORT</div>
+                            <div>Direct Saving: @top2.TOTAL_DIRECT_SAVING_AMOUNT Cr</div>
+                            <div>Indirect Saving: @top2.TOTAL_INDIRECT_SAVING_AMOUNT Cr</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (top3 != null)
+            {
+                <div class="col-md-4">
+                    <div class="box bronze-card">
+                        <div class="box-body top-card">
+                            <div class="rank">🥉 TOP 3</div>
+                            <div class="name">@top3.AUDITOR_NAME</div>
+                            <div class="report">Total Reports: @top3.TOTAL_REPORT</div>
+                            <div>Direct Saving: @top3.TOTAL_DIRECT_SAVING_AMOUNT Cr</div>
+                            <div>Indirect Saving: @top3.TOTAL_INDIRECT_SAVING_AMOUNT Cr</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Auditor Wise Audit Report Data</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body no-padding">
+
+                        <table id="scrollNbuttonDT" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>Auditor Staff ID</th>
+                                    <th>Auditor Name</th>
+                                    <th>Total Report</th>
+                                    <th>
+                                        Total With Report
+                                    </th>
+                                    <th>
+                                        Total Without Report
+                                    </th>
+                                    <th>Work Scope</th>
+                                    <th>Direct Saving</th>
+                                    <th>Indirect Saving</th>
+                                    <th>Demotion</th>
+                                    <th>Development</th>
+                                    <th>Job Sack Out</th>
+                                    <th>Transfer</th>
+                                    <th>Warning Letter</th>
+                                    <th>Penalty</th>
+                                    <th>Hold Payment</th>
+                                    <th>Inefficiency Identified</th>
+                                    <th>Corruption Identified</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in rankedAuditors)
+                                {
+                                    <tr>
+                                        <td>@item.AUDITOR_STAFF_ID</td>
+
+                                        <td>
+                                            @item.AUDITOR_NAME
+                                        </td>
+
+                                        <td>@item.TOTAL_REPORT</td>
+                                        <td>
+                                            @item.TOTAL_WITH_REPORT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WITHOUT_REPORT
+                                        </td>
+                                        <td>@item.TOTAL_WORK_SCOPE Cr</td>
+                                        <td>@item.TOTAL_DIRECT_SAVING_AMOUNT Cr</td>
+                                        <td>@item.TOTAL_INDIRECT_SAVING_AMOUNT Cr</td>
+                                        <td>@item.TOTAL_DEMOTION</td>
+                                        <td>@item.TOTAL_DEVELOPMENT</td>
+                                        <td>@item.TOTAL_JOB_SACK_OUT</td>
+                                        <td>@item.TOTAL_TRANSFER</td>
+                                        <td>@item.TOTAL_WARNING_LETTER</td>
+                                        <td>@item.TOTAL_PENALTY</td>
+                                        <td>@item.TOTAL_HOLD_PAYMENT</td>
+                                        <td>@item.TOTAL_INEFFICIENCY_IDENTIFIED</td>
+                                        <td>@item.TOTAL_CORRUPTION_IDENTIFIED</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @if (Model.UserRole == "10")
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.CURRENT_LAST_MONTH_DATE).ToString("dd/MM/yyyy")</h3>
+                            <div class="box-tools pull-right">
+                                <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "SEVEN" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div id="Current_Last" style="height:350px; width:auto;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!--/.box -->
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.COMPANY_GROUP_DATE).ToString("dd/MM/yyyy")</h3>
+                            <div class="box-tools pull-right">
+                                <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "EIGHT" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div id="Company_Group_Wise" style="height:350px; width:auto;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!--/.box -->
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog" style="max-width: 1300px; width: 1300px;">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/DashPlugin/loader.js"></script>
+    <script type="text/javascript" src="~/Scripts/DashPlugin/ModalBox.js"></script>
+    <script src="~/Scripts/DashPlugin/MyPie.js"></script>
+    <script type="text/javascript">
+        MakeMy3DPieChart('AUDIT_TASK_STATUS_DATA', 'Audit Task Status', Task_Status_Data)
+        MakeMySlicePieChart('AUDIT_REPORT_STATUS', 'Audit Report Status', Report_Status_Data)
+        MakeMyHolePieChart('AUDIT_REPORT_SENT_SUM', 'Report Sent Status', Audit_Data)
+        MakeMyMaterialBarChart('CURRENT_LAST_MONTH_REPORT_SUM', 'Total Reports – Current Month vs. Last Month', '', 'Current_Last')
+        MakeMyMaterialBarChart('COMPAY_GROUP_WISE_REPORT_SUM', 'Company Group Wise Total Report', '', 'Company_Group_Wise')
+    </script>
+
+    <script>
+        document.querySelectorAll('.counter').forEach(counter => {
+
+            let target = parseFloat(counter.dataset.value) || 0;
+            let count = 0;
+            let speed = target / 50;
+
+            function update() {
+                count += speed;
+
+                if (count >= target) {
+                    counter.innerText = formatNumber(target);
+                } else {
+                    counter.innerText = formatNumber(Math.floor(count));
+                    requestAnimationFrame(update);
+                }
+            }
+
+            update();
+        });
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat().format(num);
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelectorAll('.dual-circle').forEach(function (el) {
+
+                var thisPercent = parseFloat(el.getAttribute('data-this')) || 0;
+                var lastPercent = parseFloat(el.getAttribute('data-last')) || 0;
+                var growth = parseFloat(el.getAttribute('data-growth')) || 0;
+
+                var thisCircle = el.querySelector('.this-progress');
+                var lastCircle = el.querySelector('.last-progress');
+                var mainText = el.querySelector('.main-percent');
+
+                var outerRadius = 50;
+                var innerRadius = 40;
+
+                var outerCircumference = 2 * Math.PI * outerRadius;
+                var innerCircumference = 2 * Math.PI * innerRadius;
+
+                thisCircle.style.strokeDasharray = outerCircumference;
+                thisCircle.style.strokeDashoffset = outerCircumference;
+
+                lastCircle.style.strokeDasharray = innerCircumference;
+                lastCircle.style.strokeDashoffset = innerCircumference;
+
+                // Auto color logic
+                if (growth >= 0) {
+                    thisCircle.style.stroke = "#27ae60"; // green
+                    mainText.style.color = "#27ae60";
+                } else {
+                    thisCircle.style.stroke = "#e74c3c"; // red
+                    mainText.style.color = "#e74c3c";
+                }
+
+                setTimeout(function () {
+
+                    thisCircle.style.strokeDashoffset =
+                        outerCircumference - (thisPercent / 100) * outerCircumference;
+
+                    lastCircle.style.strokeDashoffset =
+                        innerCircumference - (lastPercent / 100) * innerCircumference;
+
+                }, 200);
+
+            });
+
+        });
+    </script>
+
+
+}
+
+
+
+
+
+
+
+
+

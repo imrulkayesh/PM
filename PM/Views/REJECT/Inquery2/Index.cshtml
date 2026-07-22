@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PM.Models.P_DEPT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Company > BU > Dept</h3>
+
+<table class="table" id="generalDT">
+    <thead>
+        <tr>
+            <th>
+                Company
+            </th>
+            <th>
+                BU
+            </th>
+            <th>
+                Dept
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_BEUN.P_COMP.COMP_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.P_BEUN.BEUN_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPT_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPT_ADDR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DEPT_ACTV)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

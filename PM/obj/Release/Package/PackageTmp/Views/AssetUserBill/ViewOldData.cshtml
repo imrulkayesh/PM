@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PM.Controllers.cls_ViewOldData>
+
+@{
+    ViewBag.Title = "Old record";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="btn-group col-md-12">
+    <a href="@Url.Action("Index","AssetUserBill")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Staff Id
+        </th>
+        <th>
+            Payment Date
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Staff Name
+        </th>
+        <th>
+            Note
+        </th>
+        <th>
+            Aset Id
+        </th>
+        <th>
+            Aset Name
+        </th>
+        <th>
+            Reg Date
+        </th>
+        <th>
+            Rcv Date
+        </th>
+        <th>
+            Return Date
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.ownr_id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.pmnt_date)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.pmnt_amnt)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ownr_name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.pmnt_note)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.vhcl_id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.vhcl_name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.vhcl_rgdt)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ownr_rdat)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ownr_tdat)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,99 @@
+﻿
+@model IEnumerable<PM.ModelsV.LicenseExpireInfo>
+@{
+    ViewBag.Title = "Mail Notification of License";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+@if (TempData["Message"] != null)
+{
+    <div>@TempData["Message"]</div>
+}
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LICENSE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LICENSE_NUMBER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ISSUE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EXPIRE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LICENSE_HOLDER_EMAIL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.REMAINING)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LICENSE_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LICENSE_NUMBER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ISSUE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EXPIRE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LICENSE_HOLDER_EMAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.REMAINING)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form method="post" action="@Url.Action("SendEmail")">
+        <button type="submit" class="btn btn-primary">Send Email</button>
+    </form>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+

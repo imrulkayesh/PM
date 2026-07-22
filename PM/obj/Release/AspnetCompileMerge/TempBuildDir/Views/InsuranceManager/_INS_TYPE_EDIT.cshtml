@@ -1,0 +1,32 @@
+﻿@model PM.ModelsV.InsuranceManagerVM
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.INSURANCE_TYPE_ID)
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Insurance Type Name</span>
+                @Html.EditorFor(model => model.INSURANCE_TYPE_NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Insurance Type Name", autofocus = true, required = "required", @Readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.INSURANCE_TYPE_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Remark</span>
+                @Html.EditorFor(model => model.REMARKS, new { htmlAttributes = new { @class = "form-control", placeholder = "Remark", autofocus = true } })
+                @Html.ValidationMessageFor(model => model.REMARKS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-danger pull-left"><i class="fa fa-save"></i> Save</button>
+        </div>
+    </div>
+
+}

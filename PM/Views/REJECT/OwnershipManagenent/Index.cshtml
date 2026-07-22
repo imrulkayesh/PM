@@ -1,0 +1,205 @@
+﻿@model IEnumerable<PM.Models.P_ASSET_DAMAGE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <strong>Asset List</strong>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="generalDT" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Asset Name
+                            </th>
+                            <th>
+                                Asset User
+                            </th>
+                            <th>
+                                Reason
+                            </th>
+                            <th>
+                                Request by
+                            </th>
+                            <th>
+                                Issue Date
+                            </th>
+                            <th>
+                               Comment
+                            </th>
+                            <th>
+                                Approve by
+                            </th>
+                            <th>
+                                Service Duration(Day)
+                            </th>
+                            <th>
+                                Issue Price
+                            </th>
+                            <th>
+                                Diff Amount
+                            </th>
+                            <th>
+                                Issue Type
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (item.DMG_ACTV == false)
+                                    {
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ASET_OID }) 
+                                        <a href="#" class="ViewApprove btn btn-xs fa fa-check-circle" data-assigned-id=@item.ASET_OID data-toggle="modal" data-target="#modal-view"> Approve</a>
+                                    }
+                                    else
+                                    {
+                                        <p>Approved</p>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_OWNR.OWNR_USER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_APP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_APP_USER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_DATE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_AUTH)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_AUTH_USER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_SRV_DURA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_PRICE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DMG_PRIC_DIFF)
+                                </td>
+                                <td>
+                                    @if (item.DMG_TYPE == "O")
+                                    {
+                                        <p>Ownership</p>
+                                    }
+                                    else if (item.DMG_TYPE == "S")
+                                    {
+                                        <p>Sale</p>
+                                    }
+                                    else if (item.DMG_TYPE == "D")
+                                    {
+                                        <p>Damage</p>
+                                    }
+                                    else if (item.DMG_TYPE == "L")
+                                    {
+                                        <p>Lost</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Unknown</p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Asset Name
+                            </th>
+                            <th>
+                                Asset User
+                            </th>
+                            <th>
+                                Reason
+                            </th>
+                            <th>
+                                Request by
+                            </th>
+                            <th>
+                                Issue Date
+                            </th>
+                            <th>
+                                Comment
+                            </th>
+                            <th>
+                                Approve by
+                            </th>
+                            <th>
+                                Service Duration(Day)
+                            </th>
+                            <th>
+                                Issue Price
+                            </th>
+                            <th>
+                                Diff Amount
+                            </th>
+                            <th>
+                                Issue Type
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(function () {
+            $('.ViewApprove').click(function () {
+                var id = $(this).data('assigned-id');
+                var route = '@Url.Action("Approval", "OwnershipManagenent")?id=' + id;
+                $('#ApprovePartialView').load(route);
+            });
+        });
+    </script>
+}
+<div class="modal fade" id="modal-view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Approve</h4>
+            </div>
+            <div class="modal-body">
+                <div id="ApprovePartialView"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

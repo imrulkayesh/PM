@@ -1,0 +1,103 @@
+﻿@model IEnumerable<PM.Models.RptAssetHistoryKSA>
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>History</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Transfer_Id
+                </th>
+                <th>
+                    From_User
+                </th>
+                <th>
+                    To_User
+                </th>
+                <th>
+                    Request_User
+                </th>
+                <th>
+                    Approve_By
+                </th>
+                <th>
+                    Asset_Id
+                </th>
+                <th>
+                    Asset_Name
+                </th>
+                <th>
+                    From_Dept
+                </th>
+                <th>
+                    Dept_Name
+                </th>
+                <th>
+                    To_Dept
+                </th>
+                <th>
+                    Dept_Name
+                </th>
+                <th>
+                    From_Depo
+                </th>
+                <th>
+                    Depo_Name
+                </th>
+                <th>
+                    To_Depo
+                </th>
+                <th>
+                    Depo_Name
+                </th>
+                <th>
+                    Transfer_Date
+                </th>
+                <th>
+                    Note
+                </th>
+                <th>
+                    Approve
+                </th>
+                <th>
+                    Submit
+                </th>
+                <th>
+                    Use_Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_TEXT) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_FUSER) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_TUSER) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_CUSER) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_AUSER) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_ASET) </td>
+                    <td> @Html.DisplayFor(modelItem => item.ASSET_NAME) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_FDEPT) </td>
+                    <td> @Html.DisplayFor(modelItem => item.DEPT_NAME) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_TDEPT) </td>
+                    <td> @Html.DisplayFor(modelItem => item.DEPT_NAME1) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_FDEPO) </td>
+                    <td> @Html.DisplayFor(modelItem => item.AREA_NAME) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_TDEPO) </td>
+                    <td> @Html.DisplayFor(modelItem => item.AREA_NAME1) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_DATE) </td>
+                    <td> @Html.DisplayFor(modelItem => item.TRNS_NOTE) </td>
+                    <td> @Html.DisplayFor(modelItem => item.APPROVE) </td>
+                    <td> @Html.DisplayFor(modelItem => item.SUBMITTED) </td>
+                    <td> @Html.DisplayFor(modelItem => item.LASTUSER) </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

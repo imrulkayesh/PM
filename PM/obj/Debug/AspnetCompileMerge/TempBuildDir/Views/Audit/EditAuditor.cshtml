@@ -1,0 +1,172 @@
+﻿@model PM.ModelsV.AuditorVM
+
+@{
+    ViewBag.Title = "Edit Auditor";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        Edit Auditor
+    </div>
+
+    <div class="panel-body">
+
+        @using (Html.BeginForm("EditAuditor", "Audit", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.HiddenFor(m => m.AUDITOR_ID)
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                            Auditor Name
+                        </span>
+
+                        @Html.EditorFor(m => m.AUDITOR_NAME,
+                             new
+                             {
+                                 htmlAttributes = new
+                                 {
+                                     @class = "form-control",
+                                     required = "required"
+                                 }
+                             })
+
+                        @Html.ValidationMessageFor(m => m.AUDITOR_NAME)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                            Staff ID
+                        </span>
+
+                        @Html.EditorFor(m => m.AUDITOR_STAFF_ID,
+                             new
+                             {
+                                 htmlAttributes = new
+                                 {
+                                     @class = "form-control",
+                                     required = "required"
+                                 }
+                             })
+
+                        @Html.ValidationMessageFor(m => m.AUDITOR_STAFF_ID)
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                            Email
+                        </span>
+
+                        @Html.EditorFor(m => m.AUDITOR_EMAIL,
+                             new
+                             {
+                                 htmlAttributes = new
+                                 {
+                                     @class = "form-control"
+                                 }
+                             })
+
+                        @Html.ValidationMessageFor(m => m.AUDITOR_EMAIL)
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                            Mobile
+                        </span>
+
+                        @Html.EditorFor(m => m.AUDITOR_MOBILE,
+                             new
+                             {
+                                 htmlAttributes = new
+                                 {
+                                     @class = "form-control"
+                                 }
+                             })
+
+                        @Html.ValidationMessageFor(m => m.AUDITOR_MOBILE)
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+
+                        <span class="input-group-addon">
+                            Status
+                        </span>
+
+                        @Html.DropDownListFor(
+                                 m => m.ACT,
+                                 new List<SelectListItem>
+                                 {
+                                new SelectListItem
+                                {
+                                    Text = "Active",
+                                    Value = "true"
+                                },
+                                new SelectListItem
+                                {
+                                    Text = "Inactive",
+                                    Value = "false"
+                                }
+                         },
+                                 new { @class = "form-control" }
+                             )
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <button type="submit"
+                            class="btn btn-success pull-right">
+                        <i class="fa fa-save"></i>
+                        Update
+                    </button>
+
+                    <div class="btn-group">
+
+                        <a href="@Url.Action("Index","Audit")"
+                           class="btn btn-primary">
+                            <i class="fa fa-arrow-left"></i>
+                            Back
+                        </a>
+
+                        <a href="@Url.Action("Index","Audit")"
+                           class="btn btn-warning">
+                            Cancel
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+    <div class="panel-footer">
+        Auditor Update Screen
+    </div>
+
+</div>

@@ -1,0 +1,215 @@
+﻿@model IEnumerable<PM.Models.VW_RPT_VENDINGMACHINE>
+
+@{
+    ViewBag.Title = "RPT_VENDINGMACHINE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="box">
+    <div class="box-header">
+        <a href="@Url.Action("Index","CompWiseAssetReport")" class="btn btn-sm btn-info">Back</a>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="scrollNbuttonDT" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Dept.
+                    </th>
+                    <th>
+                       Dep Code
+                    </th>
+                    <th>
+                       Dep Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Asset
+                    </th>
+                    <th>
+                       Asset Name
+                    </th>
+                    <th>
+                      Model
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VHCL_CLSE)
+                    </th>
+                    <th>
+                     Owner
+                    </th>
+                    <th>
+                      Owner Name
+                    </th>
+                    <th>
+                     Mobile
+                    </th>
+                    <th>
+                      Zone
+                    </th>
+                    <th>
+                      Group
+                    </th>
+                    <th>
+                       HLM
+                    </th>
+                    <th>
+                      RC
+                    </th>
+                    <th>
+                       ULC
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OWNR_RDAT)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OWNR_TDAT)
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        RGDT
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TEXT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DEPOT_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DEPOT_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CMP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VHCL_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VHCL_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VHCL_MODL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VHCL_CLSE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNER_MOB)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_ZONE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_GROUP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_HLMD)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_RCOT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_ULCK)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_RDAT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_TDAT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_RSGN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_RGDT)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        Dept
+                    </th>
+                    <th>
+                        Dep Code
+                    </th>
+                    <th>
+                        Dep Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Asset
+                    </th>
+                    <th>
+                        Asset Name
+                    </th>
+                    <th>
+                        Model
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VHCL_CLSE)
+                    </th>
+                    <th>
+                        Owner
+                    </th>
+                    <th>
+                        Owner Name
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                    <th>
+                        Zone
+                    </th>
+                    <th>
+                        Group
+                    </th>
+                    <th>
+                        HLM
+                    </th>
+                    <th>
+                        RC
+                    </th>
+                    <th>
+                        ULC
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OWNR_RDAT)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OWNR_TDAT)
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        RGDT
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->

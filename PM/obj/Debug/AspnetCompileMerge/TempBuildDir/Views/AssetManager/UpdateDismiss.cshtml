@@ -1,0 +1,36 @@
+﻿@model PM.ModelsV.UpdateDismiss
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal margin">
+            @Html.Hidden("ASET_ID")
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Value</span>
+                    @Html.EditorFor(model => model.ASET_VALUE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Asset Value" } })
+                    @Html.ValidationMessageFor(model => model.ASET_VALUE, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Pay Type</span>
+                    @Html.DropDownList("RECEIVE_TYPE", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                    @Html.ValidationMessageFor(model => model.RECEIVE_TYPE, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Receive Detail</span>
+                    @Html.EditorFor(model => model.RECEIVE_DETAIL, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Receiving Detail" } })
+                    @Html.ValidationMessageFor(model => model.RECEIVE_DETAIL, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Receive Date</span>
+                    @Html.EditorFor(model => model.RECEIVE_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Receiving Date" , type="date"} })
+                    @Html.ValidationMessageFor(model => model.RECEIVE_DATE, "", new { @class = "text-danger" })
+                </div>
+            <input type="submit" value="Update" class="btn btn-primary pull-left" />
+        </div>
+ 
+        }
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

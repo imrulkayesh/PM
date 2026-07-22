@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PM.Models.P_ASSET_ACCE>
+
+@{
+    Layout = null;
+}
+
+<table class="table table-bordered table-condensed table-hover table-responsive">
+    <tr>
+        <th>
+            Acce name
+        </th>
+        <th>
+           Asset
+        </th>
+        <th>
+          From
+        </th>
+        <th>
+           Transfer
+        </th>
+        <th>
+           To
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+           Price
+        </th>
+        <th>
+           Issue Date
+        </th>
+        <th>
+           Note
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ASAC.ASAC_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_OWNR.OWNR_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ASSET_TRNS.TRNS_FUSER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_OWNR1.OWNR_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCE_QTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCE_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCE_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCE_NOTE)
+        </td>
+    </tr>
+}
+
+</table>

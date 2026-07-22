@@ -1,0 +1,65 @@
+﻿@model PM.ModelsV.IssuingAuthorityVM
+@{
+    ViewBag.Title = "New Issuing Authority";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewIssuingAuthority", "License", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Issuing Authority Name</span>
+                        @Html.EditorFor(model => model.AUTHORITY_NAME, new { htmlAttributes = new { @class = "form-control", required = "required", autofocus = true, placeholder = "Issuing Authority Name" } })
+                        @Html.ValidationMessageFor(model => model.AUTHORITY_NAME, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Mobile</span>
+                        @Html.EditorFor(model => model.MOBILE, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile Number", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.MOBILE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Email</span>
+                        @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", autofocus = true} })
+                        @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Address</span>
+                        @Html.EditorFor(model => model.ADDRESS, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+                        @Html.ValidationMessageFor(model => model.ADDRESS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("IssuingAuthority","License")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewIssuingAuthority","License")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        License Issuing Authority Name Entry
+    </div>
+</div>
+

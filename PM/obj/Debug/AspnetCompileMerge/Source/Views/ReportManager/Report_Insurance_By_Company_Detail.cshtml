@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PM.ModelsV.Report_Insurance_By_Company_Detail>
+@{
+    Layout = null;
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+            table tr th {
+                border: 1px solid black;
+            }
+             table tr td {
+                  font-size: 10px;
+            }
+    </style>
+}
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th colspan="9">
+                Report_Insurance_By_Company_Detail
+            </th>
+        </tr>
+        <tr>
+            <th>BU Name</th>
+            <th>Department</th>
+            <th>Asset No.</th>
+            <th>Capacity</th>
+            <th>Policy No.</th>
+            <th>Premium</th>
+            <th>Insurance Company</th>
+            <th>Insurance Start</th>
+            <th>Insurance Expire</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.BUSINESS_NAME</td>
+                <td>@item.DEPARTMENT_NAME</td>
+                <td>@item.ASET_CODE_NAME</td>
+                <td>@item.ASET_CAPACITY</td>
+                <td>@item.INSU_POLICY</td>
+                <td>@item.INSU_PREMIUM</td>
+                <td>@item.INSU_COMP</td>
+                <td>@item.INSU_REG_START.ToString("d")</td>
+                <td>@item.INSU_REG_END.ToString("d")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<small>@DateTime.Now Printed by @Session["UserId"].ToString()</small>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        window.print();
+        setTimeout('window.close()', 100);
+    });
+</script>

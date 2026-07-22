@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PM</RootNamespace>
+    <AssemblyName>PM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.9.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.9.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLL\GE.cs" />
+    <Compile Include="BLL\InstantEmailSender.cs" />
+    <Compile Include="BLL\PMExcelDataLoader.cs" />
+    <Compile Include="BLL\ReturnPermission.cs" />
+    <Compile Include="Controllers\ApplicationUsersController.cs" />
+    <Compile Include="Controllers\AssetManagerController.cs" />
+    <Compile Include="Controllers\AssetUserBillController.cs" />
+    <Compile Include="Controllers\AssetUserController.cs" />
+    <Compile Include="Controllers\AssetUserManagerController.cs" />
+    <Compile Include="Controllers\AuditController.cs" />
+    <Compile Include="Controllers\BillPaymentController.cs" />
+    <Compile Include="Controllers\CaseAndPenaltyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="BLL\DH.cs" />
+    <Compile Include="BLL\EncryptDecrypt.cs" />
+    <Compile Include="Controllers\InspectionController.cs" />
+    <Compile Include="Controllers\InsuranceController.cs" />
+    <Compile Include="Controllers\InsuranceManagerController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\JsonReaderPMController.cs" />
+    <Compile Include="Controllers\LicenseController.cs" />
+    <Compile Include="Controllers\LicenseNameController.cs" />
+    <Compile Include="Controllers\MailSettingController.cs" />
+    <Compile Include="Controllers\ReminderController.cs" />
+    <Compile Include="Controllers\ReportManagerController.cs" />
+    <Compile Include="Controllers\SummaryController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ModelsV\ApplicationUsers.cs" />
+    <Compile Include="ModelsV\AssetAcceVM.cs" />
+    <Compile Include="ModelsV\AssetManagerVM.cs" />
+    <Compile Include="ModelsV\AssetUserManagerVM.cs" />
+    <Compile Include="ModelsV\AuditVM.cs" />
+    <Compile Include="ModelsV\A_OWNR_BILL_VM.cs" />
+    <Compile Include="ModelsV\BillPayment.cs" />
+    <Compile Include="ModelsV\CaseAndPenalty.cs" />
+    <Compile Include="ModelsV\ExcelInputVM.cs" />
+    <Compile Include="ModelsV\Inspection.cs" />
+    <Compile Include="ModelsV\InsuranceManagerVM.cs" />
+    <Compile Include="ModelsV\InsuranceVM.cs" />
+    <Compile Include="ModelsV\Inventory.cs" />
+    <Compile Include="ModelsV\ItemVM.cs" />
+    <Compile Include="ModelsV\JobCard.cs" />
+    <Compile Include="ModelsV\LicenseVM.cs" />
+    <Compile Include="ModelsV\ReminderVM.cs" />
+    <Compile Include="ModelsV\ReportManagerVM.cs" />
+    <Compile Include="ModelsV\rptAssetManagerVM.cs" />
+    <Compile Include="ModelsV\StaffVM.cs" />
+    <Compile Include="ModelsV\OutletVM.cs" />
+    <Compile Include="ModelsV\SummaryView.cs" />
+    <Compile Include="ModelsV\TarminationVM.cs" />
+    <Compile Include="ModelsV\UserMenuVM.cs" />
+    <Compile Include="Model\AUDIT_AUDITOR.cs" />
+    <Compile Include="Model\AUDIT_FOLLOWUP_REQUIREMENT.cs" />
+    <Compile Include="Model\AUDIT_FOLLOWUP_TYPE.cs" />
+    <Compile Include="Model\AUDIT_LOG.cs" />
+    <Compile Include="Model\AUDIT_MANAGEMENT_ACTION.cs" />
+    <Compile Include="Model\AUDIT_MANAGEMENT_SOURCE.cs" />
+    <Compile Include="Model\AUDIT_REPORT.cs" />
+    <Compile Include="Model\AUDIT_REPORT_ACTION.cs" />
+    <Compile Include="Model\AUDIT_REPORT_DETAIL.cs" />
+    <Compile Include="Model\AUDIT_REPORT_FOLLOWUP.cs" />
+    <Compile Include="Model\AUDIT_REPORT_IMG.cs" />
+    <Compile Include="Model\AUDIT_REPORT_STATUS.cs" />
+    <Compile Include="Model\AUDIT_RISK_MITIGATION.cs" />
+    <Compile Include="Model\AUDIT_RISK_TYPE.cs" />
+    <Compile Include="Model\AUDIT_RPT_FINAL_STATUS.cs" />
+    <Compile Include="Model\AUDIT_RPT_SAVING_NAME.cs" />
+    <Compile Include="Model\AUDIT_SAVING_TYPE.cs" />
+    <Compile Include="Model\AUDIT_TASK.cs" />
+    <Compile Include="Model\AUDIT_TASK_ASSIGN_BY.cs" />
+    <Compile Include="Model\AUDIT_TASK_CATEGORY.cs" />
+    <Compile Include="Model\AUDIT_TASK_CATEGORY_TYPE.cs" />
+    <Compile Include="Model\AUDIT_TASK_COMMUNICATION_BY.cs" />
+    <Compile Include="Model\AUDIT_TASK_IMG.cs" />
+    <Compile Include="Model\AUDIT_TASK_PRIORITY.cs" />
+    <Compile Include="Model\AUDIT_TASK_STATUS.cs" />
+    <Compile Include="Model\AUDIT_TASK_TYPE.cs" />
+    <Compile Include="Model\A_ITEM_MASTER.cs" />
+    <Compile Include="Model\A_STAFF_TYPE.cs" />
+    <Compile Include="Model\C_COMPANY.cs" />
+    <Compile Include="Model\C_COMPANY_GROUP.cs" />
+    <Compile Include="Model\C_DEPARTMENT.cs" />
+    <Compile Include="Model\C_LOCATION.cs" />
+    <Compile Include="Model\INS_CLAIM.cs" />
+    <Compile Include="Model\INS_CLAIM_RECEIVE.cs" />
+    <Compile Include="Model\INS_CLAIM_STATUS.cs" />
+    <Compile Include="Model\INS_CLAIM_TYPE.cs" />
+    <Compile Include="Model\INS_COMPANY.cs" />
+    <Compile Include="Model\INS_INSURANCE_COMPANY.cs" />
+    <Compile Include="Model\INS_INSURANCE_IMG.cs" />
+    <Compile Include="Model\INS_INSURANCE_MST.cs" />
+    <Compile Include="Model\INS_INSURANCE_TYPE.cs" />
+    <Compile Include="Model\INS_KICK_BACK_STATUS.cs" />
+    <Compile Include="Model\LIC_COMPANY.cs" />
+    <Compile Include="Model\LIC_ISSUING_AUTHORITY.cs" />
+    <Compile Include="Model\LIC_LICENSE.cs" />
+    <Compile Include="Model\LIC_LICENSE_DOCUMENT.cs" />
+    <Compile Include="Model\LIC_LICENSE_IMG.cs" />
+    <Compile Include="Model\LIC_LICENSE_NAME.cs" />
+    <Compile Include="Model\LIC_LICENSE_TYPE.cs" />
+    <Compile Include="Model\LIC_LOCATION.cs" />
+    <Compile Include="Model\LIC_STATUS.cs" />
+    <Compile Include="Model\VehicleVM.cs" />
+    <Compile Include="Model\A_ACCE_ITEMS.cs" />
+    <Compile Include="Model\A_AREA.cs" />
+    <Compile Include="Model\A_ASET_ACCE.cs" />
+    <Compile Include="Model\A_ASET_APP.cs" />
+    <Compile Include="Model\A_ASET_DATA.cs" />
+    <Compile Include="Model\A_ASET_USER.cs" />
+    <Compile Include="Model\A_ASET_USER_IMG.cs" />
+    <Compile Include="Model\A_ASET_USR_ACE.cs" />
+    <Compile Include="Model\A_BILL.cs" />
+    <Compile Include="Model\A_BODY.cs" />
+    <Compile Include="Model\A_BRAND.cs" />
+    <Compile Include="Model\A_BUSINESS.cs" />
+    <Compile Include="Model\A_COLOR.cs" />
+    <Compile Include="Model\A_COMPANY.cs" />
+    <Compile Include="Model\A_COUNTRY.cs" />
+    <Compile Include="Model\A_DEPARTMENT.cs" />
+    <Compile Include="Model\A_DISTRICT.cs" />
+    <Compile Include="Model\A_EMAIL.cs" />
+    <Compile Include="Model\A_EMAIL_LOG.cs" />
+    <Compile Include="Model\A_FUEL.cs" />
+    <Compile Include="Model\A_GROUP.cs" />
+    <Compile Include="Model\A_INSPD.cs" />
+    <Compile Include="Model\A_INSPH.cs" />
+    <Compile Include="Model\A_INSP_JOB_IMG.cs" />
+    <Compile Include="Model\A_INSP_TYPE.cs" />
+    <Compile Include="Model\A_INSUD.cs" />
+    <Compile Include="Model\A_INSUH.cs" />
+    <Compile Include="Model\A_ITEM_LIST.cs" />
+    <Compile Include="Model\A_JOBD.cs" />
+    <Compile Include="Model\A_JOBH.cs" />
+    <Compile Include="Model\A_MENUC.cs" />
+    <Compile Include="Model\A_MENUP.cs" />
+    <Compile Include="Model\A_NOTIF_SET.cs" />
+    <Compile Include="Model\A_OWNR.cs" />
+    <Compile Include="Model\A_OWNR_BILL.cs" />
+    <Compile Include="Model\A_PLEA.cs" />
+    <Compile Include="Model\A_PLEA_REASON.cs" />
+    <Compile Include="Model\A_REMINDER.cs" />
+    <Compile Include="Model\A_REMINDER_IMG.cs" />
+    <Compile Include="Model\A_ROLES.cs" />
+    <Compile Include="Model\A_SUMMARY_VIEW.cs" />
+    <Compile Include="Model\A_TBL_SEQ.cs" />
+    <Compile Include="Model\A_THANA.cs" />
+    <Compile Include="Model\A_USERS.cs" />
+    <Compile Include="Model\A_USERS_AREA.cs" />
+    <Compile Include="Model\A_USERS_BUS.cs" />
+    <Compile Include="Model\A_USERS_COUNTRY.cs" />
+    <Compile Include="Model\A_USERS_GROUP.cs" />
+    <Compile Include="Model\A_USERS_LOGIN.cs" />
+    <Compile Include="Model\A_USERS_MENUC.cs" />
+    <Compile Include="Model\A_USERS_ROLES.cs" />
+    <Compile Include="Model\A_Vehicle.cs" />
+    <Compile Include="Model\PMEntities.cs" />
+    <Compile Include="Model\VW_ASET_BY_USERS.cs" />
+    <Compile Include="Model\VW_ASSETUSERMANAGERVM.cs" />
+    <Compile Include="Model\VW_BNDL_INSP.cs" />
+    <Compile Include="Model\VW_BNDL_JOBC.cs" />
+    <Compile Include="Model\VW_DATE_NOTIF.cs" />
+    <Compile Include="Model\VW_INSURANCE_S1.cs" />
+    <Compile Include="Model\VW_INSURANCE_S2.cs" />
+    <Compile Include="Model\VW_IQAMA_NOTIF_V1.cs" />
+    <Compile Include="Model\VW_IQAMA_NOTIF_V2.cs" />
+    <Compile Include="Model\VW_KSA_IQUMA_S1.cs" />
+    <Compile Include="Model\VW_KSA_IQUMA_S2.cs" />
+    <Compile Include="Model\VW_NOTIF_MAIL.cs" />
+    <Compile Include="Model\VW_NOTIF_MAIL_METER.cs" />
+    <Compile Include="Model\VW_OWNR_BY_USERS.cs" />
+    <Compile Include="Model\VW_PMENU_CMENU.cs" />
+    <Compile Include="Model\VW_RPT_ASET_EXP.cs" />
+    <Compile Include="Model\VW_RPT_ASET_USER.cs" />
+    <Compile Include="Model\VW_RPT_BILL.cs" />
+    <Compile Include="Model\VW_RPT_BILL_SUM.cs" />
+    <Compile Include="Model\VW_RPT_INSP_SUM.cs" />
+    <Compile Include="Model\VW_RPT_INSURANCE.cs" />
+    <Compile Include="Model\VW_RPT_JOBD_S1.cs" />
+    <Compile Include="Model\VW_RPT_JOB_SUM.cs" />
+    <Compile Include="Model\VW_RPT_POLICE_CASE.cs" />
+    <Compile Include="Model\VW_USER_ASSET_ID_STRING.cs" />
+    <Compile Include="Model\VW_USER_ASSET_LIST.cs" />
+    <Compile Include="MyAuth\KAuth.cs" />
+    <Compile Include="MyAuth\PMRoleProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\ApplicationUsers\UserAction.js" />
+    <Content Include="Scripts\AssetManager\AssetAcceList.js" />
+    <Content Include="Scripts\AssetManager\EditCar.js" />
+    <Content Include="Scripts\AssetManager\FridgeExcel.js" />
+    <Content Include="Scripts\AssetManager\NewCar.js" />
+    <Content Include="Scripts\AssetManager\NewDepot.js" />
+    <Content Include="Scripts\AssetManager\NewFridge.js" />
+    <Content Include="Scripts\AssetManager\NewMobilePhone.js" />
+    <Content Include="Scripts\AssetTransfer\NewTransfer.js" />
+    <Content Include="Scripts\AssetUserBill\olddatafile.js" />
+    <Content Include="Scripts\AssetUserBill\OwnrBillExcel.js" />
+    <Content Include="Scripts\AssetUserManager\FridgeOutletExcel.js" />
+    <Content Include="Scripts\AssetUserManager\NewAssetUser.js" />
+    <Content Include="Scripts\AssetUserManager\UploadFile.js" />
+    <Content Include="Scripts\AssetUser\EditStaff.js" />
+    <Content Include="Scripts\AssetUser\NewOutlet.js" />
+    <Content Include="Scripts\AssetUser\OutletExcel.js" />
+    <Content Include="Scripts\Audit\AuditFollowUp.js" />
+    <Content Include="Scripts\Audit\AuditFollowUpSecond.js" />
+    <Content Include="Scripts\Audit\AuditFollowUpThird.js" />
+    <Content Include="Scripts\Audit\AuditReport.js" />
+    <Content Include="Scripts\Audit\NewTask.js" />
+    <Content Include="Scripts\Audit\_Update.js" />
+    <Content Include="Scripts\BillPayment\NewPayment.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\Common\ConfirmationBoxxxx.js" />
+    <Content Include="Scripts\Common\ConfirmBox.js" />
+    <Content Include="Scripts\DashPlugin\ModalBox.js" />
+    <Content Include="Scripts\DashPlugin\loader.js" />
+    <Content Include="Scripts\DashPlugin\MyPie.js" />
+    <Content Include="Scripts\Inspection\CreateCompleteWithoutReport.js" />
+    <Content Include="Scripts\Inspection\CreateNewReport.js" />
+    <Content Include="Scripts\Inspection\EditAuditReport.js" />
+    <Content Include="Scripts\Inspection\EditInspection.js" />
+    <Content Include="Scripts\Inspection\EditJobCard.js" />
+    <Content Include="Scripts\Inspection\EditWithoutAuditReport.js" />
+    <Content Include="Scripts\Inspection\NewBundleInspection.js" />
+    <Content Include="Scripts\Inspection\NewInspection.js" />
+    <Content Include="Scripts\Inspection\NewJobCard.js" />
+    <Content Include="Scripts\Insurance\NewInsurance.js" />
+    <Content Include="Scripts\Insurance\NewInsuranceBD.js" />
+    <Content Include="Scripts\Insurance\UpdatePolicy.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\KSAAssets\inde.a.js" />
+    <Content Include="Scripts\KSAAssets\inde.js" />
+    <Content Include="Scripts\KSAAssets\NewAsset.a.js" />
+    <Content Include="Scripts\KSAAssets\NewAsset.js" />
+    <Content Include="Scripts\License\NewLicense.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\Reminder\Index.js" />
+    <Content Include="Scripts\Reminder\NewReminder.js" />
+    <Content Include="Scripts\ReportManager\PranBike.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\tether.js" />
+    <Content Include="Scripts\tether.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\Shared\_LayoutLG.cshtml" />
+    <Content Include="Views\AssetManager\NewFridge.cshtml" />
+    <Content Include="Views\AssetManager\Edit.cshtml" />
+    <Content Include="Views\AssetManager\Index.cshtml" />
+    <Content Include="Views\AssetManager\AssetAcceList.cshtml" />
+    <Content Include="Views\AssetUserManager\Edit.cshtml" />
+    <Content Include="Views\AssetUserManager\NewAssetUser.cshtml" />
+    <Content Include="Views\AssetUserManager\_ShowAccessoreis.cshtml" />
+    <Content Include="Views\AssetManager\_ShowAccessoreis.cshtml" />
+    <Content Include="Views\AssetUser\NewOutlet.cshtml" />
+    <Content Include="Views\AssetUser\Edit.cshtml" />
+    <Content Include="Views\AssetUser\Outlet.cshtml" />
+    <Content Include="Views\AssetUser\Staff.cshtml" />
+    <Content Include="Views\AssetUser\NewStaff.cshtml" />
+    <Content Include="Views\AssetUserManager\Index.cshtml" />
+    <Content Include="Views\AssetManager\AccesoriesAdj.cshtml" />
+    <Content Include="Views\Reminder\NewReminder.cshtml" />
+    <Content Include="Views\Reminder\Index.cshtml" />
+    <Content Include="Views\AssetUserManager\UploadFile.cshtml" />
+    <Content Include="Views\AssetUserManager\_ViewFiles.cshtml" />
+    <Content Include="Views\AssetManager\NewCar.cshtml" />
+    <Content Include="Views\AssetUserManager\TransferWaitingList.cshtml" />
+    <Content Include="Views\ApplicationUsers\Index.cshtml" />
+    <Content Include="Views\ApplicationUsers\NewCreate.cshtml" />
+    <Content Include="Views\Home\Forbidden_403.cshtml" />
+    <Content Include="Views\AssetUserManager\ReturnAsset.cshtml" />
+    <Content Include="Views\AssetManager\_EditCar.cshtml" />
+    <Content Include="Views\AssetManager\_ViewAccesories.cshtml" />
+    <Content Include="Views\AssetUser\_StaffEdit.cshtml" />
+    <Content Include="Views\Inspection\NewInspection.cshtml" />
+    <Content Include="Views\Inspection\Inspections.cshtml" />
+    <Content Include="Views\ReportManager\PranBike.cshtml" />
+    <Content Include="Views\Inspection\ViewInspection.cshtml" />
+    <Content Include="Views\Inspection\EditInspection.cshtml" />
+    <Content Include="Views\AssetUserManager\TransferFormA.cshtml" />
+    <Content Include="Views\Inspection\JobCard.cshtml" />
+    <Content Include="Views\Inspection\NewJobCard.cshtml" />
+    <Content Include="Views\Inspection\InspectionItems.cshtml" />
+    <Content Include="Views\Inspection\InsApproval.cshtml" />
+    <Content Include="Views\Inspection\ViewJobCard.cshtml" />
+    <Content Include="Views\Inspection\JobApproval.cshtml" />
+    <Content Include="Views\Inspection\EditJobCard.cshtml" />
+    <Content Include="Views\BillPayment\NewPayment.cshtml" />
+    <Content Include="Views\BillPayment\Index.cshtml" />
+    <Content Include="Views\CaseAndPenalty\NewCase.cshtml" />
+    <Content Include="Views\CaseAndPenalty\Index.cshtml" />
+    <Content Include="Views\Home\TestPrint.cshtml" />
+    <Content Include="Views\Inspection\AttachFile.cshtml" />
+    <Content Include="Views\Insurance\NewInsurance.cshtml" />
+    <Content Include="Views\Insurance\Index.cshtml" />
+    <Content Include="Views\Insurance\UpdatePolicy.cshtml" />
+    <Content Include="Views\Insurance\ViewPolicyDetail.cshtml" />
+    <Content Include="Views\Insurance\TestExcel.cshtml" />
+    <Content Include="Views\BillPayment\BillPrintNow.cshtml" />
+    <Content Include="Views\AssetManager\NewDismiss.cshtml" />
+    <Content Include="Views\AssetManager\AssetDismiss.cshtml" />
+    <Content Include="Views\CaseAndPenalty\UpdatePlea.cshtml" />
+    <Content Include="Views\AssetManager\UpdateDismiss.cshtml" />
+    <Content Include="Views\ApplicationUsers\UserRole.cshtml" />
+    <Content Include="Views\ApplicationUsers\UserGroup.cshtml" />
+    <Content Include="Views\ApplicationUsers\UserBusiness.cshtml" />
+    <Content Include="Views\ApplicationUsers\UserMenu.cshtml" />
+    <Content Include="Views\ApplicationUsers\UserArea.cshtml" />
+    <Content Include="Views\ReportManager\Report_Pending_JobCard_ForBill.cshtml" />
+    <Content Include="Views\ReportManager\Report_Pending_Inspection_ForJobCard.cshtml" />
+    <Content Include="Views\AssetManager\AssetDismissApproval.cshtml" />
+    <Content Include="Views\AssetUser\_StaffIquma.cshtml" />
+    <Content Include="Views\CaseAndPenalty\PleaApproval.cshtml" />
+    <Content Include="Views\ApplicationUsers\SetUserMenu.cshtml" />
+    <Content Include="Views\CaseAndPenalty\PleaUpdate.cshtml" />
+    <Content Include="Views\ReportManager\Report_Paid_Bills.cshtml" />
+    <Content Include="Views\ReportManager\Report_Asset_JobCard_Expense.cshtml" />
+    <Content Include="Views\ReportManager\Report_inspXjobcXbill.cshtml" />
+    <Content Include="Views\ReportManager\Report_Insurance_Data.cshtml" />
+    <Content Include="Views\Summary\Index.cshtml" />
+    <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Inspection\NewBundleInspection.cshtml" />
+    <Content Include="Views\Inspection\BundleInspectionApp.cshtml" />
+    <Content Include="Views\Inspection\BundleInspectionAppView.cshtml" />
+    <Content Include="Views\Inspection\BundleJobcard.cshtml" />
+    <Content Include="Views\Inspection\BundleJobCardApp.cshtml" />
+    <Content Include="Views\Inspection\BundleJobCardAppView.cshtml" />
+    <Content Include="Views\BillPayment\BundlePayment.cshtml" />
+    <Content Include="Views\Home\RecPas.cshtml" />
+    <Content Include="Views\AssetManager\FridgeExcel.cshtml" />
+    <Content Include="Views\AssetUser\OutletExcel.cshtml" />
+    <Content Include="Views\AssetUserManager\FridgeOutletExcel.cshtml" />
+    <Content Include="Views\AssetUserManager\FridgeOutletList.cshtml" />
+    <Content Include="Views\Summary\KSA_ADMIN_DASHBOARD.cshtml" />
+    <Content Include="Views\ReportManager\Report_Police_Case.cshtml" />
+    <Content Include="Views\Inventory\NewConsumption.cshtml" />
+    <Content Include="Views\ReportManager\Report_AssetList_KSA.cshtml" />
+    <Content Include="Views\ReportManager\Report_StaffList_KSA.cshtml" />
+    <Content Include="Views\Inspection\InspectionAppDetail.cshtml" />
+    <Content Include="Views\Inspection\JobCardAppDetail.cshtml" />
+    <Content Include="Views\AssetUser\StaffIqumaList.cshtml" />
+    <Content Include="Views\AssetManager\NewMobilePhone.cshtml" />
+    <Content Include="Views\AssetManager\BikeList.cshtml" />
+    <Content Include="Views\Insurance\NewInsuranceBD.cshtml" />
+    <Content Include="Views\Insurance\InsuranceBD.cshtml" />
+    <Content Include="Views\Insurance\ViewPolicyDetailBD.cshtml" />
+    <Content Include="Views\Insurance\ViewPolicyDetailByVehicleBD.cshtml" />
+    <Content Include="Views\AssetUserBill\Index.cshtml" />
+    <Content Include="Views\AssetUserBill\ViewOldData.cshtml" />
+    <Content Include="Views\ReportManager\Report_InsuranceBD_By_Date.cshtml" />
+    <Content Include="Views\ReportManager\Report_Insurance_By_Company_Detail.cshtml" />
+    <Content Include="Views\ReportManager\Report_Insurance_By_Company_Summary.cshtml" />
+    <Content Include="Views\AssetUserManager\AssetUserAssignQuick.cshtml" />
+    <Content Include="Views\AssetManager\BlikeClosing.cshtml" />
+    <Content Include="Views\AssetManager\NewBike.cshtml" />
+    <Content Include="Views\AssetManager\_EditBike.cshtml" />
+    <Content Include="Views\AssetUserBill\UserBillExcel.cshtml" />
+    <Content Include="Views\ReportManager\Report_inspXjobcXbill_Area_Wise.cshtml" />
+    <Content Include="Views\LicenseName\Index.cshtml" />
+    <Content Include="Views\LicenseName\NewLicense.cshtml" />
+    <Content Include="Views\License\Index.cshtml" />
+    <Content Include="Views\License\NewLicenseDocument.cshtml" />
+    <Content Include="Views\License\IssuingAuthority.cshtml" />
+    <Content Include="Views\License\NewIssuingAuthority.cshtml" />
+    <Content Include="Views\License\LicenseStatus.cshtml" />
+    <Content Include="Views\License\NewLicenseStatus.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Item\NewItemMaster.cshtml" />
+    <Content Include="Views\License\LicenseMaster.cshtml" />
+    <Content Include="Views\License\NewLicense.cshtml" />
+    <Content Include="Views\InsuranceManager\Index.cshtml" />
+    <Content Include="Views\InsuranceManager\NewInsuranceType.cshtml" />
+    <Content Include="Views\InsuranceManager\InsuranceCompany.cshtml" />
+    <Content Include="Views\InsuranceManager\NewInsuranceCompany.cshtml" />
+    <Content Include="Views\InsuranceManager\ClaimType.cshtml" />
+    <Content Include="Views\InsuranceManager\NewClaimType.cshtml" />
+    <Content Include="Views\InsuranceManager\ClaimStatus.cshtml" />
+    <Content Include="Views\InsuranceManager\NewClaimStatus.cshtml" />
+    <Content Include="Views\InsuranceManager\InsuranceMaster.cshtml" />
+    <Content Include="Views\InsuranceManager\NewInsuranceMaster.cshtml" />
+    <Content Include="Views\InsuranceManager\InsuranceDetail.cshtml" />
+    <Content Include="Views\InsuranceManager\_Claim.cshtml" />
+    <Content Include="Views\InsuranceManager\_ClaimReceive.cshtml" />
+    <Content Include="Views\InsuranceManager\_KickBack.cshtml" />
+    <Content Include="Views\InsuranceManager\ClaimList.cshtml" />
+    <Content Include="Views\InsuranceManager\NewClaim.cshtml" />
+    <Content Include="Views\InsuranceManager\AllClaimList.cshtml" />
+    <Content Include="Views\ReportManager\Report_Insurance_List.cshtml" />
+    <Content Include="Views\InsuranceManager\_INS_TYPE_EDIT.cshtml" />
+    <Content Include="Views\License\_StatusUpdate.cshtml" />
+    <Content Include="Views\InsuranceManager\_Update.cshtml" />
+    <Content Include="Views\Audit\Index.cshtml" />
+    <Content Include="Views\Audit\NewAuditor.cshtml" />
+    <Content Include="Views\Audit\TaskList.cshtml" />
+    <Content Include="Views\Audit\NewTask.cshtml" />
+    <Content Include="Views\Audit\_Update.cshtml" />
+    <Content Include="Views\Audit\ReportList.cshtml" />
+    <Content Include="Views\Audit\CreateNewReport.cshtml" />
+    <Content Include="Views\Audit\ViewAuditReportDetails.cshtml" />
+    <Content Include="Views\Audit\EditAuditReport.cshtml" />
+    <Content Include="Views\Audit\AttachFileAudit.cshtml" />
+    <Content Include="Views\License\UserLocation.cshtml" />
+    <Content Include="Views\License\UserLocationList.cshtml" />
+    <Content Include="Views\Summary\AUDIT_DASHBOARD.cshtml" />
+    <Content Include="Views\Summary\LicenseDashboard.cshtml" />
+    <Content Include="Views\Summary\ViewLocationWisetDetails.cshtml" />
+    <Content Include="Views\InsuranceManager\InsuranceList.cshtml" />
+    <Content Include="Views\License\LicenseCompany.cshtml" />
+    <Content Include="Views\License\NewLicenseCompany.cshtml" />
+    <Content Include="Views\License\LicenseLocation.cshtml" />
+    <Content Include="Views\License\NewLicenseLocation.cshtml" />
+    <Content Include="Views\MailSetting\Index.cshtml" />
+    <Content Include="Views\InsuranceManager\Delete.cshtml" />
+    <Content Include="Views\Summary\ViewAuditorWisetDetails.cshtml" />
+    <Content Include="Views\Audit\ReportDetailsList.cshtml" />
+    <Content Include="Views\Audit\CreateRptForCompletedWithoutRpt.cshtml" />
+    <Content Include="Views\Audit\AuditWithoutReportList.cshtml" />
+    <Content Include="Views\Audit\EditWithoutAuditReport.cshtml" />
+    <Content Include="Views\Audit\CreateFirstFollowUpReport.cshtml" />
+    <Content Include="Views\Audit\FirstFollowUpReportList.cshtml" />
+    <Content Include="Views\Audit\SecondFollowUpReportList.cshtml" />
+    <Content Include="Views\Audit\ThirdFollowUpReportList.cshtml" />
+    <Content Include="Views\Summary\AUDIT_DASHBOARD_TWO.cshtml" />
+    <Content Include="Views\Summary\ViewCategoryWisetDetails.cshtml" />
+    <Content Include="Views\Audit\TaskDetailList.cshtml" />
+    <Content Include="Views\Summary\AUDIT_DASHBOARD_NEW.cshtml" />
+    <Content Include="Views\Audit\ViewAuditAttachFile.cshtml" />
+    <Content Include="Views\Audit\WithoutReportDetailsList.cshtml" />
+    <Content Include="Views\Summary\ViewLicenseWisetDetails.cshtml" />
+    <Content Include="Views\Audit\AuditorWiseReportDetailList.cshtml" />
+    <Content Include="Views\Audit\EditAuditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bower_components\" />
+    <Folder Include="Images\Factory\Documents\" />
+    <Folder Include="Images\KSA\Transfer\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\VehicleVM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\ApplicationUsers\UserEmail.cshtml" />
+    <None Include="Properties\PublishProfiles\PMPub.pubxml" />
+    <Content Include="Views\AssetManager\Vehicle.cshtml" />
+    <Content Include="Views\AssetUser\StaffPassportList.cshtml" />
+    <Content Include="Views\AssetUser\_StaffPassport.cshtml" />
+    <Content Include="Views\AssetUser\StaffHealthCardList.cshtml" />
+    <Content Include="Views\AssetUser\_StaffHealthCard.cshtml" />
+    <Content Include="Views\AssetManager\NewDepot.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>32431</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:32431/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

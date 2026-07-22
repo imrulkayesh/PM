@@ -1,0 +1,140 @@
+﻿@model IEnumerable<PM.Models.P_USERS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="snackbar">@TempData["MSG"]</div>
+@if (TempData["MSG"] != null)
+{
+    <script>
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    </script>
+}
+<div class="box">
+    <div class="box-header">
+        <a href="@Url.Action("New","UserPermission")" class="btn btn-sm btn-primary">New</a>
+        <a href="@Url.Action("Index","UserPermission")" class="btn btn-sm btn-default">Back</a>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="generalDT" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Pass
+                    </th>
+                    <th>
+                        Contact
+                    </th>
+                    <th>
+                        Access Level
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Dept.
+                    </th>
+                    <th>
+                        Comp.
+                    </th>
+                    <th>
+                        Admin
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Picture
+                    </th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_PASS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_CONT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_LEVL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_TYPE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_DEPT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_COMP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_ADMN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_ACTV)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_IMAG)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.USER_TEXT }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.USER_TEXT }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.USER_TEXT })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Pass
+                    </th>
+                    <th>
+                        Contact
+                    </th>
+                    <th>
+                        Access Level
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Dept.
+                    </th>
+                    <th>
+                        Comp.
+                    </th>
+                    <th>
+                        Admin
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Picture
+                    </th>
+                    <th>#</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->

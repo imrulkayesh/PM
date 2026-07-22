@@ -1,0 +1,148 @@
+﻿@model PM.Models.ShowCompanyBEUNdept
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- Custom Tabs -->
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab">Company</a></li>
+                <li><a href="#tab_2" data-toggle="tab">Business Unit</a></li>
+                <li><a href="#tab_3" data-toggle="tab">Departments</a></li>
+                <li><a href="#tab_4" data-toggle="tab">Brands</a></li>
+                <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active table-responsive" id="tab_1">
+                    <table class="table table-bordered table-condensed table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Company Id
+                                </th>
+                                <th>
+                                    Company Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model.Companiess)
+            {
+                            <tr>
+                                <td>
+                                    @item.COMP_TEXT
+                                </td>
+                                <td>
+                                    @item.COMP_NAME
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane table-responsive" id="tab_2">
+                    <table class="table table-bordered table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    BU Id
+                                </th>
+                                <th>
+                                    BU Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.BusinessUnits)
+            {
+                            <tr>
+                                <td>
+                                    @item.BEUN_TEXT
+                                </td>
+                                <td>
+                                    @item.BEUN_NAME
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane table-responsive" id="tab_3">
+                    <table class="table table-bordered table-bordered" id="generalDT">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Department Id
+                                </th>
+                                <th>
+                                    Department Name
+                                </th>
+                                <th>
+                                    Addreess
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Departments)
+            {
+                            <tr>
+                                <td>
+                                    @item.DEPT_TEXT
+                                </td>
+                                <td>
+                                    @item.DEPT_NAME
+                                </td>
+                                <td>
+                                    @item.DEPT_ADDR
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane table-responsive" id="tab_4">
+                    <table class="table table-bordered table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Brand Id
+                                </th>
+                                <th>
+                                    Brand Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Brands)
+            {
+                                <tr>
+                                    <td>
+                                        @item.BRND_TEXT
+                                    </td>
+                                    <td>
+                                        @item.BRND_NAME
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+        </div>
+        <!-- nav-tabs-custom -->
+    </div>
+    <!-- /.col -->
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PM.Models.P_EXPD>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Amount
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Note
+        </th>
+        <th>
+            Aset
+        </th>
+        <th>
+            User
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXPD_AMNT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXPD_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXPD_NOTE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P_OWNR.OWNR_TEXT)
+            </td>
+        </tr>
+    }
+
+</table>

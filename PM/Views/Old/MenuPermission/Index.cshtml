@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="snackbar">@TempData["MSG"]</div>
+@if (TempData["MSG"] != null)
+{
+    <script>
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    </script>
+}
+@if (TempData["UserString"] != null)
+{
+    <div class="col-md-3 col-md-offset-3">
+        <input type="text" id="userId" class="form-control" onchange="btnLoadPermission();" placeholder="Enter Id" ,required="required", value="@TempData["UserString"]" />
+    </div>
+}
+else
+{
+    <div class="col-md-3 col-md-offset-3">
+        <input type="text" id="userId" class="form-control" onchange="btnLoadPermission();" placeholder="Enter Id" ,required="required" ,value="34"/>
+    </div>
+}
+
+
+<div id="partialPageCurrentInfo" class="col-md-10">
+</div>
+<div id="partialPageAllInfo" class="col-md-10">
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function btnLoadPermission() {
+            var id = document.getElementById('userId').value;
+            var route = '@Url.Action("LoadPermission", "MenuPermission")?UserId=' + id;
+            var route2 = '@Url.Action("NonPermitMenuList", "MenuPermission")?UserId=' + id;
+            $('#partialPageCurrentInfo').load(route);
+            $('#partialPageAllInfo').load(route2);
+    }
+    </script>
+}

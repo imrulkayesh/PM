@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PM.ModelsV.AssetAcceVM>
+
+@if (Model.Count() != 0)
+{
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACCE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_QUANTITY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_RATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_DESC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACT)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACCE_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_QUANTITY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_RATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_DESC)
+                    </td>
+                    <td>
+                        @if (item.ACT == false)
+                        {
+                            <input type="submit" value="Pending" class="btn btn-danger" />
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>
+        <h5 style="color:red">No Accesoreis Available</h5>
+    </div>
+}
+

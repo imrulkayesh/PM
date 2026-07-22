@@ -1,0 +1,100 @@
+﻿@model IEnumerable<PM.ModelsV.JobCardDetails>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_LINE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_ITEM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_ITEM_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_IQTY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_IRATE)
+            </th>
+            <th>
+                IAmount
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_JQTY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_JRATE)
+            </th>
+            <th>
+                JAmount
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JOBD_NOTE)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_LINE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_ITEM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_ITEM_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_IQTY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_IRATE)
+                    </td>
+                    <td>
+                        @{
+                         decimal  IAmount = item.JOBD_IQTY * item.JOBD_IRATE ?? 0;
+                        }
+                        @IAmount
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_JQTY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_JRATE)
+                    </td>
+                    <td>
+                        @{
+                           decimal JAmount = item.JOBD_JQTY * item.JOBD_JRATE ?? 0;
+                        }
+                        @JAmount
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JOBD_NOTE)
+                    </td>
+                </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            @{
+            <th colspan="4"></th>
+            <th style="text-decoration:underline">IAmount: </th>
+            <th style="text-decoration:underline">@ViewBag.IAmount </th>
+            <th></th>
+            <th style="text-decoration:underline">JAmount: </th>
+            <th style="text-decoration:underline">@ViewBag.JAmount </th>
+            <th></th>
+            }
+        </tr>
+        <tr>
+            <th colspan="4">@ViewBag.JOBH</th>
+            <th>Difference Amount = </th>
+            <th>@ViewBag.IJDifferent</th>
+        </tr>
+    </tfoot>
+
+</table>

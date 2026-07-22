@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div id="Asset_Data"></div>
+    </div>
+    <div class="col-md-4">
+        <div id="User_Data"></div>
+    </div>
+    <div class="col-md-4">
+        <div id="IJB_Data"></div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/DashPlugin/loader.js"></script>
+    <script src="~/Scripts/DashPlugin/MyPie.js"></script>
+    <script type="text/javascript">
+        MakeMy3DPieChart('Asset_Data', 'Asset Data', Asset_Data)
+        MakeMy3DPieChart('User_Data', 'User Data', User_Data)
+        MakeMyHolePieChart('Insp_Job_Bill', 'IJB Data', IJB_Data)
+    </script>
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PM.Models.VN_EXPD_XL_APP>
+
+<table class="table">
+    <tr>
+        <th>
+           Asset Name
+        </th>
+        <th>
+         Expenses
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            User
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Note
+        </th>
+        <th>#</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASET_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPH_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPD_AMNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPD_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPD_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXPD_NOTE)
+        </td>
+        <td>
+            @Html.ActionLink("Approve", "ApprovePOST", new {  id=item.ASET_OID, Exp = item.EXPD_EXPH })
+        </td>
+    </tr>
+}
+
+</table>

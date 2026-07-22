@@ -1,0 +1,160 @@
+﻿@model PM.Models.P_OWNR
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row margin">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                New User
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("NewAssetUser", "AssetUserList", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Staff Id</span>
+                                @Html.EditorFor(model => model.OWNR_TEXT, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Staff Id [Don't use suggested id]", maxlength = "50" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_TEXT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Staff Name</span>
+                                @Html.EditorFor(model => model.OWNR_USER, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Staff Name", maxlength = "120" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_USER, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Designation</span>
+                                @Html.EditorFor(model => model.OWNR_NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Designation" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_NAME, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Contact</span>
+                                @Html.EditorFor(model => model.OWNR_CONTACT, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile No" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_CONTACT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Email</span>
+                                @Html.EditorFor(model => model.OWNR_EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", type = "email", maxlength = "50" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_EMAIL, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Address</span>
+                                @Html.EditorFor(model => model.OWNR_ADDRESS, new { htmlAttributes = new { @class = "form-control", placeholder = "Address", maxlength = "120" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_ADDRESS, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Iqama No</span>
+                                @Html.EditorFor(model => model.OWNR_AST_IMAG, new { htmlAttributes = new { @class = "form-control", placeholder = "Iqama No" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_AST_IMAG, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-horizontal col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">User Picture</span>
+                                <input type="file" name="file" id="OWNR_IMAG" class="form-control">
+                                <p class="help-block">*.jpg,*.jpeg,*.png files only</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Iqama Exipre</span>
+                                @Html.EditorFor(model => model.OWNR_TAKE, new { htmlAttributes = new { @class = "form-control", type = "date", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_TAKE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Note</span>
+                                @Html.EditorFor(model => model.OWNR_NOTE, new { htmlAttributes = new { @class = "form-control", placeholder = "Note", maxlength = "250" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_NOTE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Company</span>
+                                @Html.DropDownList("AllComp", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "FindDepts();" })
+                                @Html.ValidationMessage("AllComp", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Department</span>
+                                @Html.DropDownList("OWNR_DEPT", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "OWNR_DEPT", id = "OWNR_DEPT" })
+                                @Html.ValidationMessageFor(model => model.OWNR_DEPT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Depot</span>
+                                @Html.DropDownListFor(model => model.OWNR_AREA, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                                @Html.ValidationMessageFor(model => model.OWNR_AREA, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+   
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                                <a href="@Url.Action("Index","AssetUserList")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+            <div class="panel-footer">
+                New User Entry
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#OWNR_TEXT').autocomplete({
+                source: '@Url.Action("Autocomplete")'
+            });
+        });
+        function FindDepts() {
+            var url = '@Url.Action("getDept", "AssetUserList")';
+            var OWNR_DEPT = $('#OWNR_DEPT');
+            var id = $('#AllComp').val();
+            $.getJSON(url, { CompId: id }, function (response) {
+                OWNR_DEPT.empty();
+                OWNR_DEPT.append($("<option></option>").attr("value", '').text('--Select Unit--'));
+                $.each(response, function (index, item) {
+                    OWNR_DEPT.append($("<option></option>").attr("value", item.DEPT_TEXT).text(item.DEPT_NAME));
+                });
+            });
+        };
+    </script>
+}

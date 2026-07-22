@@ -1,0 +1,29 @@
+﻿<script src="~/Scripts/sweetalert.min.js"></script>
+<style>
+    .red {
+        color: red;
+    }
+</style>
+<form id="uploader">
+    <div class="row">
+        <div class="col-md-10">
+            <p>Hand Over + Return = Total 3 Files</p>
+            <p>Uploaded <strong style="color:red">@ViewBag.CountFiles Files</strong> out of 3, Each File maximum size: 2MB</p>
+            <p style="color:red">Once you upload, you can't delete/edit files.</p>
+            <input type="hidden" id="txtTRNS_TEXT" value="@ViewBag.TrnsId" disabled />
+            <input id="fileInput" type="file" class="form-control" multiple accept="image/jpeg, image/png,application/pdf">
+            <table class="table table-hover table-striped" id="FilesList" style="visibility:hidden">
+                <tr>
+                    <th>
+                        Attachment(s)
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </table>
+            <input type="button" id="btnupload" value="Upload" style="float:left" class="btn btn-danger" />
+        </div>
+        </div>
+</form>
+<script src="~/Scripts/AssetUserManager/UploadFile.js"></script>

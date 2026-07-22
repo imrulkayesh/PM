@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6fccb741db7747f49f84204eb6f75e11" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="Model.P_AREA" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASAC" Width="1.5" PointX="3" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASGR" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASSET" Width="1.5" PointX="3" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASSET_ACCE" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASSET_DAMAGE" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_BEUN" Width="1.5" PointX="1.5" PointY="1.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_BRAND" Width="1.5" PointX="0.75" PointY="3" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_COMP" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_COUNTRY" Width="1.5" PointX="1.5" PointY="13.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_DEPT" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_DIST" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_EXPD" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_EXPD_XL" Width="1.5" PointX="8.75" PointY="9.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_EXPH" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_INSC" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_INSC_XL" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_MENUC" Width="1.5" PointX="1.75" PointY="20.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_MENUP" Width="1.5" PointX="1.75" PointY="22.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_OWNR" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_OWNR_XL" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ROLES" Width="1.5" PointX="1.5" PointY="18.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_SEQ" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_THNA" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_USERS" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_USERS_ASGR" Width="1.5" PointX="3" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_USERS_BEUN" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_USERS_LOG" Width="1.5" PointX="10.75" PointY="5.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_USERS_MENUC" Width="1.5" PointX="4" PointY="11.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_EXPD_XL_DEL" Width="1.5" PointX="6.75" PointY="11.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VN_EXPD_ALL" Width="1.5" PointX="10.75" PointY="9.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VN_EXPD_XL" Width="1.5" PointX="8.75" PointY="11.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VN_EXPD_XL_APP" Width="1.5" PointX="10.75" PointY="11.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VN_RPT_PRAN_ASSET" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VW_RPT_VENDINGMACHINE" Width="1.5" PointX="11.75" PointY="7.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.VWUSERMENUPERMISSION" Width="1.5" PointX="12.75" PointY="3.625" IsExpanded="false" />
+        <AssociationConnector Association="Model.FK_AREA_BEUN" />
+        <AssociationConnector Association="Model.FK_P_AREA_ASET" />
+        <AssociationConnector Association="Model.FK_P_AREA_OWNR" />
+        <AssociationConnector Association="Model.FK_P_AREA_OWNR_XL" />
+        <AssociationConnector Association="Model.FK_P_THNA" />
+        <AssociationConnector Association="Model.FK_P_ASGR" />
+        <AssociationConnector Association="Model.FK_P_ASSET_ACCE_ASAC" />
+        <AssociationConnector Association="Model.FK_P_ASGR_ASET" />
+        <AssociationConnector Association="Model.FK_P_ASGR_ASGR" />
+        <AssociationConnector Association="Model.FK_EXPD_ASET" />
+        <AssociationConnector Association="Model.FK_INSC_ASET" />
+        <AssociationConnector Association="Model.FK_P_ASSET_ACCE_ASSET" />
+        <AssociationConnector Association="Model.FK_P_ASSET_DAMAGE" />
+        <AssociationConnector Association="Model.FK_P_ASSET_OWNR" />
+        <AssociationConnector Association="Model.FK_P_ASSET_OWNR_XL" />
+        <AssociationConnector Association="Model.FK_P_BRND_ASET" />
+        <AssociationConnector Association="Model.FK_P_DEPT_ASET" />
+        <AssociationConnector Association="Model.FK_P_ASSET_ACCE_FUSER" />
+        <AssociationConnector Association="Model.FK_P_ASSET_ACCE_TUSER" />
+        <AssociationConnector Association="Model.FK_ASET_USER" />
+        <AssociationConnector Association="Model.FK_P_BEUN" />
+        <AssociationConnector Association="Model.FK_P_BEUN_BEUNP" />
+        <AssociationConnector Association="Model.FK_P_COMP" />
+        <AssociationConnector Association="Model.FK_THNA_BEUN" />
+        <AssociationConnector Association="Model.FK_P_COMP_CUNT" />
+        <AssociationConnector Association="Model.FK_DIST_CUNT" />
+        <AssociationConnector Association="Model.FK_P_DEPT_OWNR" />
+        <AssociationConnector Association="Model.FK_P_DEPT_OWNR_XL" />
+        <AssociationConnector Association="Model.FK_P_DIST" />
+        <AssociationConnector Association="Model.FK_EXPD_EXPH" />
+        <AssociationConnector Association="Model.FK_EXPD_OWNR" />
+        <AssociationConnector Association="Model.FK_INSC_EXPH" />
+        <AssociationConnector Association="Model.FK_INSC_USER" />
+        <AssociationConnector Association="Model.FK_P_MENUC" />
+        <AssociationConnector Association="Model.FK_P_MENUP" />
+        <AssociationConnector Association="Model.FK_P_ROLES" />
+        <AssociationConnector Association="Model.FK_P_USERS" />
+        <AssociationConnector Association="Model.FK_P_USERS_ASGR" />
+        <AssociationConnector Association="Model.FK_P_USERS_BEUNP" />
+        <EntityTypeShape EntityType="Model.P_ASSET_TRNS_IMG" Width="1.75" PointX="3.75" PointY="13.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_ASSET_TRNS" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="false" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_FDEPOT" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_TDEPOT" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_ASET" />
+        <AssociationConnector Association="Model.FK_P_ASSET_ACCE_TRNS" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_FDEPT" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_FUSER" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_TDEPT" />
+        <AssociationConnector Association="Model.FK_P_ASSET_TRNS_TUSER" />
+        <EntityTypeShape EntityType="Model.P_DOC_TYPE" Width="1.5" PointX="6" PointY="9.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_NTIF_DATA" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="Model.P_NTIF_SET" Width="1.5" PointX="3" PointY="9.625" IsExpanded="false" />
+        <AssociationConnector Association="Model.FK_NTIF_ASGR" />
+        <AssociationConnector Association="Model.FK_NTIF_DATA_ASET" />
+        <AssociationConnector Association="Model.FK_NTIF_DATA_DOC" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PM.Models.P_DOC_TYPE>
+
+@{
+    ViewBag.Title = "DocumentsType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Documents Type</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DOC_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOC_ASGR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOC_ACTV)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOC_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOC_ASGR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOC_ACTV)
+        </td>
+    </tr>
+}
+
+</table>

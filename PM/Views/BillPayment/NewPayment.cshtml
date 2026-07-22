@@ -1,0 +1,162 @@
+﻿@model PM.ModelsV.NewBillPayment
+
+@{
+    ViewBag.Title = "New Payment";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Asset</span>
+                        @Html.DropDownListFor(model => model.BILH_ASET, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", autofocus = true, onchange = "getJobCard();" })
+                        @Html.ValidationMessageFor(model => model.BILH_ASET, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Job Card</span>
+                        @Html.DropDownList("JOBH_ID", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "getJD();" })
+                        @Html.ValidationMessageFor(model => model.JOBH_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Date</span>
+                        @Html.EditorFor(model => model.BILH_DATE, new { htmlAttributes = new { @class = "form-control", type = "date", placeholder = "dd/MM/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.BILH_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Note</span>
+                        @Html.EditorFor(model => model.BILH_NOTE, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Bill Note" } })
+                        @Html.ValidationMessageFor(model => model.BILH_NOTE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Reference</span>
+                        @Html.EditorFor(model => model.BILH_REF, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Bill References Number" } })
+                        @Html.ValidationMessageFor(model => model.BILH_REF, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Receiver</span>
+                        @Html.EditorFor(model => model.BILH_RECEIVER, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Receiver Name" } })
+                        @Html.ValidationMessageFor(model => model.BILH_RECEIVER, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" id="jobdetail" disabled="disabled" class="form-control" placeholder="Job Card Details" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">User</span>
+                        <input type="text" id="UserPay" disabled="disabled" class="form-control" placeholder="User Pay" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Insurance</span>
+                        <input type="text" id="InsurancePay" disabled="disabled" class="form-control" placeholder="Insurance Pay" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Company</span>
+                        <input type="text" id="CompanyPay" disabled="disabled" class="form-control" placeholder="Company Pay" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Payable</span>
+                        <input type="text" id="LG" disabled="disabled" class="form-control" placeholder="Payable Amount" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group col-md-12">
+                    <a href="@Url.Action("Index","BillPayment")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                    <a href="@Url.Action("NewPayment","BillPayment")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    <button type="submit" id="CreateBill" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Pay</button>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        New Bill Entry
+    </div>
+</div>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Old 10 Bill Record
+    </div>
+    <div class="panel-body table-responsive">
+        <table id="Old_Data" class="table table-borderd">
+            <thead>
+                <tr>
+                    <th>
+                        Bill Number
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Note
+                    </th>
+                    <th>
+                        Reference
+                    </th>
+                    <th>
+                        Job Number
+                    </th>
+                    <th>
+                        Receiver
+                    </th>
+                    <th>
+                        Payment
+                    </th>
+                    <th>
+                        Insurance
+                    </th>
+                    <th>
+                        User
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="panel-footer">
+        Old 10 Bill Record
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/BillPayment/NewPayment.js"></script>
+}

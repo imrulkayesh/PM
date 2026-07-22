@@ -1,0 +1,16 @@
+﻿@model PM.ModelsV.ExcelInputVM
+@{
+    ViewBag.Title = "TestExcel";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-md-3">
+        <input type="file" name="MyExcelFile" id="MyExcelFile" required="required" />
+        <p class="help-block">.xlsx file format only and maximum 50 rows</p>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">Load Excel File</button>
+        <a href="@Url.Action("Index", "Insurance")" class="btn btn-primary">Back</a>
+    </div>
+}

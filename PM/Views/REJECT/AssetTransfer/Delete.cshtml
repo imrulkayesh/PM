@@ -1,0 +1,177 @@
+﻿@model PM.Models.P_ASSET_TRNS
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>P_ASSET_TRNS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_CUSER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_CUSER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_AUSER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_AUSER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_NOTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_NOTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_POST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_POST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRNS_ACTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRNS_ACTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_AREA.AREA_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_AREA.AREA_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_AREA1.AREA_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_AREA1.AREA_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_ASSET.ASET_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_ASSET.ASET_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_DEPT.DEPT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_DEPT.DEPT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_OWNR.OWNR_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_OWNR.OWNR_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_DEPT1.DEPT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_DEPT1.DEPT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_OWNR1.OWNR_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_OWNR1.OWNR_TEXT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

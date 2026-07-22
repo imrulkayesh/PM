@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3 col-md-offset-3">
+        <input type="text" id="AssetId" class="form-control" onchange="btnLoadAsset();" placeholder="Enter Asset Id" ,required="required" />
+    </div>
+</div>
+<br/>
+<div class="form-horizontal col-md-19 col-md-offset-1">
+    <div class="form-group">
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Asset No.</span>
+                <input type="text" name="AssetNo" value="" class="form-control input-sm" placeholder="Enter Asset No." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">PO No.</span>
+                <input type="text" name="PONo" value="" class="form-control input-sm" placeholder="PO Number." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">GRN No.</span>
+                <input type="text" name="GRNNo" value="" class="form-control input-sm" placeholder="GRN Number." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Model No.</span>
+                <input type="text" name="ModelNo" value="" class="form-control input-sm" placeholder="Enter Model No." />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Price.</span>
+                <input type="text" name="Price" value="" class="form-control input-sm" placeholder="Enter Price." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Type.</span>
+                <input type="text" name="Type" value="" class="form-control input-sm" placeholder="Enter Type." />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Reg Date.</span>
+                <input type="text" name="Regdate" value="" class="form-control input-sm" placeholder="Enter Date." id="datepicker" />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Mfg Yr.</span>
+                <input type="text" name="MfgYr" value="" class="form-control input-sm" placeholder="Enter MFG Year." />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-3">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Comp Name.</span>
+                <input type="text" name="CompName" value="" class="form-control input-sm" placeholder="Enter Comp." />
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Address.</span>
+                <input type="text" name="Address" value="" class="form-control input-sm" placeholder="Enter Address." />
+            </div>
+        </div>
+    </div>
+</div>
+<div id="partialPageCurrentInfo" class="col-md-10">
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        function btnLoadAsset() {
+            var id = document.getElementById('AssetId').value;
+            var route = '@Url.Action("LoadAsset", "NewAssetUser")?AssetId=' + id;
+            $('#partialPageCurrentInfo').load(route);
+    }
+    </script>
+}

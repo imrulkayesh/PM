@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+
+
+<div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+         aria-valuemin="0" aria-valuemax="100" style="width:40%">
+        40% Complete (success)
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+         aria-valuemin="0" aria-valuemax="100" style="width:50%">
+        50% Complete (info)
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+         aria-valuemin="0" aria-valuemax="100" style="width:60%">
+        60% Complete (warning)
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
+         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+        70% Complete (danger)
+    </div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar bg-success" style="width:40%">
+        Free Space
+    </div>
+    <div class="progress-bar bg-warning" style="width:10%">
+        Warning
+    </div>
+    <div class="progress-bar bg-danger" style="width:20%">
+        Danger
+    </div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<div class="container">
+    <h2>Stacked Progress Bars</h2>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">
+            Free Space
+        </div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
+            Warning
+        </div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+            Danger
+        </div>
+    </div>
+</div>
+
+<div class="progress vertical">
+    <div class="bar bar-success" style="height: 70%;width:100%"></div>
+    <div class="bar bar-warning" style="height: 20%;width:100%"></div>
+    <div class="bar bar-danger" style="height: 10%;width:100%"></div>
+</div>
+
+<style>
+.progress-bar-vertical{
+    width: 35px;
+    min-height: 286px;
+    margin-right: 20px;
+    border-radius: 10px !important;
+    display: flex;
+    flex-direction: column-reverse;
+ }
+
+
+.progress-bar-vertical .progress-bar{
+    width: 100%;
+    height: 0;
+    -webkit-transition: height 0.6s ease;
+    -o-transition: height 0.6s ease;
+    transition: height 0.6s ease;
+    display:block;
+ }
+</style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<div class="progress progress-bar-vertical">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 60%;">
+        <span class="sr-only">60% Complete</span>
+    </div>
+    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="height: 10%;">
+        <span class="sr-only">10% Complete</span>
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="height: 20%;">
+        <span class="sr-only">20% Complete</span>
+    </div>
+</div>

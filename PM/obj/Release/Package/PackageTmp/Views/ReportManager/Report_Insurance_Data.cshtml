@@ -1,0 +1,37 @@
+﻿@model PM.ModelsV.Business_Wise_Report
+
+@{
+    ViewBag.Title = "Report_Insurance_Data";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    @using (Html.BeginForm("Report_Insurance_Data", "ReportManager"))
+    { <div class="col-md-3">
+        <div class="form-group input-group">
+            <span class="input-group-addon">From Date</span>
+            @Html.EditorFor(model => model.F_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "From Date" } })
+            @Html.ValidationMessageFor(model => model.F_BILH_DATE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group input-group">
+            <span class="input-group-addon">To Date</span>
+            @Html.EditorFor(model => model.T_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "To Date" } })
+            @Html.ValidationMessageFor(model => model.T_BILH_DATE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group input-group">
+            <span class="input-group-addon">Business</span>
+            @Html.DropDownList("BUSINESS_ID", null, "--Select Business--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+            @Html.ValidationMessage("BUSINESS_ID", "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+        </div>
+    </div>
+    }
+</div>

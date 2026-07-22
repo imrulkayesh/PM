@@ -1,0 +1,155 @@
+﻿@model IEnumerable<PM.ModelsV.CasePenlatyView>
+
+@{
+    ViewBag.Title = "Traffic Penalty Update";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_DFND)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_PAID_BY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_REF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_REASON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_DESC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_AMNT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_LOCATION)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_OWNR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_MILEAGE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_ASET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_DEPT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_STATUS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_APP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PLEA_APP_DATE)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Update" data-url="@Url.Action("UpdatePlea","CaseAndPenalty", new { id= item.PLEA_ID })" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_DFND)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_PAID_BY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_REF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_REASON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_DESC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_AMNT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_LOCATION)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_OWNR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_MILEAGE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_ASET)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_DEPT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_STATUS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_APP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PLEA_APP_DATE)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section scripts{
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}

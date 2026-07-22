@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "CommonReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- START CUSTOM TABS -->
+<div class="row margin">
+    <!-- Custom Tabs -->
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab_1" data-toggle="tab">Asset</a></li>
+            <li><a href="#tab_2" data-toggle="tab">User</a></li>
+            <li><a href="#tab_3" data-toggle="tab">Transfer</a></li>
+            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_1">
+
+                <div class="row margin">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Asset Data
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <form action="getByCompany" method="post">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <div class="col-md-10 input-group">
+                                                        <span class="input-group-addon">Owner</span>
+                                                        @Html.DropDownList("CompanyA", null, "--select owner--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-file-text"></i> View</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <form action="getByDepot" method="post">
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <div class="col-md-10 input-group">
+                                                        <span class="input-group-addon">Depo</span>
+                                                        @Html.DropDownList("DepoA",null, "--select Depo--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-file-text"></i> View</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                Asset Data
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_2">
+
+                <div class="row margin">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                User Data
+                            </div>
+                            <div class="panel-body">
+
+                            </div>
+                            <div class="panel-footer">
+                                User Data
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_3">
+                <div class="row margin">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Transfer Data
+                            </div>
+                            <div class="panel-body">
+                                <a href="@Url.Action("Index","TransferData")" class="btn btn-primary">Transfer Data Report</a>
+                            </div>
+                            <div class="panel-footer">
+                                Transfer Data
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </div>
+    <!-- nav-tabs-custom -->
+</div>

@@ -1,0 +1,225 @@
+﻿@model IEnumerable<PM.ModelsV.NewTaskVM>
+@{
+    ViewBag.Title = "Task List";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewTask", "Audit")" class="btn btn-primary"> New Task</a>
+            <a href="@Url.Action("TaskList","Audit")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LOCATION_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_GROUP_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DEPARTMENT_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_ASSIGN_BY_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MANAGEMENT_SOURCE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MANAGEMENT_SOURCE_DATE)
+                </th>
+                <th style="width: 250px;">
+                    @Html.DisplayNameFor(model => model.TASK_DETAILS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_ASSIGN_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_START_PLANED_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_START_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_DEADLINE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_COMMUNICATION_BY_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_PRIORITY_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_STATUS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TASK_TYPE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.REPORT_STATUS_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CDU)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.REMARKS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FINANCIAL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NON_FINANCIAL)
+                </th>
+                <th>
+                    #
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Action
+                                <span class="fa fa-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Update" data-url="@Url.Action("Update","Audit", new { id= item.TASK_ID})" />
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LOCATION_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_GROUP_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPARTMENT_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_ASSIGN_BY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MANAGEMENT_SOURCE_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MANAGEMENT_SOURCE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_DETAILS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_ASSIGN_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_START_PLANED_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_START_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_DEADLINE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_COMMUNICATION_BY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_PRIORITY_NAME)
+                    </td>
+                    <td>
+                        @if (item.TASK_STATUS == "5")
+                        {
+                            <span class="label label-success">Completed</span>
+                        }
+                        else if (item.TASK_STATUS == "2")
+                        {
+                            <span class="label label-primary">Started</span>
+                        }
+                        else if (item.TASK_STATUS == "3")
+                        {
+                            <span class="label label-warning">Middle stage</span>
+                        }
+                        else if (item.TASK_STATUS == "4")
+                        {
+                            <span class="label label-warning">End stage</span>
+                        }
+                        else
+                        {
+                            <span class="label label-default">Not Started</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TASK_TYPE_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.REPORT_STATUS_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.REMARKS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FINANCIAL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NON_FINANCIAL)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("DownloadAttachFile", "Audit", new { id = item.TASK_ID })" , class="btn btn-flat btn-primary">Download File</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Audit/_Update.js"></script>
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}

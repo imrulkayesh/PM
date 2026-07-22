@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PM.Model.A_USERS>
+
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <p>
+        @Html.ActionLink("New", "NewCreate")
+    </p>
+    <p>
+        <a href="@Url.Action("RecPas","Home")" class="btn btn-danger">Knock</a>
+    </p>
+    <p>Role KSA:9, BD:0, ADMIN:10</p>
+    <p>User Multiple Role or USERS_ROLE not required</p>
+    <p>Area permission is not required if the Country permitted</p>
+    <p>Business Unit permission is required</p>
+    <p>Asset Group permission is required</p>
+    <p>Menu Permission is required</p>
+    <div class="table-responsive">
+        <table class="table table-hover" id="scrollNbuttonDT">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.USER_TEXT)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.USER_NAME)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.USER_MAIL)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.USER_MOBL)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.USER_IMAG)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ACT)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_TEXT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_MAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_MOBL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USER_IMAG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACT)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

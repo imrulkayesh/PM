@@ -1,0 +1,11 @@
+﻿.First_Reminder {
+    background-color: #ffff66;
+}
+
+.Expired {
+    background-color: #ff8080;
+}
+
+.Expired_Soon {
+    background-color: #ffb3b3;
+}

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PM.Models.MENUP>
+
+@{
+    ViewBag.Title = "ParentMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="snackbar">@TempData["MSG"]</div>
+@if (TempData["MSG"] != null)
+{
+    <script>
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    </script>
+}
+<p>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-10">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <a href="@Url.Action("NewParentMenu","Menu")" class="btn btn-sm btn-primary">New</a>
+                <a href="@Url.Action("Index","Menu")" class="btn btn-sm btn-default">Back</a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-responsive table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Menu Id
+                            </th>
+                            <th>
+                                Menu Code
+                            </th>
+                            <th>
+                                Menu Name
+                            </th>
+                            <th>
+                                Icon
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.MENUP_ID)</td>
+                            <td>@Html.DisplayFor(m => item.MENUP_TEXT)</td>
+                            <td>@Html.DisplayFor(m => item.MENUP_NAME)</td>
+                            <td class="@Html.DisplayFor(m => item.MENUP_ICON)"></td>
+                            <td>@Html.DisplayFor(m => item.MENUP_ACTV)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="panel-footer">
+                Parent Menu List
+            </div>
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->

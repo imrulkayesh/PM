@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PM.Models.P_INSC>
+
+<table class="table">
+    <tr>
+        <th>
+          Policy
+        </th>
+        <th>
+           Renew Date
+        </th>
+        <th>
+            Premium
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+           Entry Date
+        </th>
+        <th>
+          Note
+        </th>
+        <th>
+           Asset
+        </th>
+        <th>
+          User
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_PLCY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_RDAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_PREM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_AMNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_EDAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSC_NOTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_OWNR.OWNR_TEXT)
+        </td>
+    </tr>
+}
+
+</table>

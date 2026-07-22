@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PM.Models.RptAssetDataKSA>
+@{
+    ViewBag.Title = "getReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Asset Report</p>
+
+<div class="table-responsive">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Dept
+                </th>
+                <th>
+                    Owner Id
+                </th>
+                <th>
+                    Owner
+                </th>
+                <th>
+                    Depo Id
+                </th>
+                <th>
+                    Depo Name
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Status Type
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.aset_id) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_name) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_price) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_date) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_year) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_dept) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_owner_id) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_owner_name) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_depo_id) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_depo_name) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_status) </td>
+                    <td> @Html.DisplayFor(modelItem => item.aset_status_type) </td>
+                </tr>
+            </tbody>
+
+        }
+    </table>
+</div>

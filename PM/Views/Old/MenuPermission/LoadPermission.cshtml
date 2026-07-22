@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Dictionary<string, string>>
+@{
+    ViewBag.Title = "LoadPermission";
+    Layout = null;
+}
+
+<table class="table table-responsive table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                MenuId
+            </th>
+            <th>
+                Menu Name
+            </th>
+            <th>
+                User Id
+            </th>
+            <th>
+                User Name
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                #
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item["MENUU_ID"]
+            </td>
+            <td>
+                @item["MENUU_MENUC_ID"]
+            </td>
+            <td>
+                @item["MENU"]
+            </td>
+            <td>
+                @item["MENUU_USER"]
+            </td>
+            <td>
+                @item["USERID"]
+            </td>
+            <td>
+                @item["MENUU_ACTV"]
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

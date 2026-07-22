@@ -1,0 +1,104 @@
+﻿@model PM.ModelsV.AssetUserAssignQuick
+
+@{
+    ViewBag.Title = "Asset User Assign Quick";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+
+<div class="col-md-12">
+    <div class="box box-warning box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Asset User Assign Quick (G) <span style="color:blue"> WORKING area, department and USER area, department will be same</span></h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+            <div class="row">
+                @using (Html.BeginForm("AssetUserAssignQuick", "AssetUserManager"))
+                { <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Asset Name</span>
+                        @Html.EditorFor(model => model.AU_ASET, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Enter full name" } })
+                        @Html.ValidationMessageFor(model => model.AU_ASET, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">User Id</span>
+                        @Html.EditorFor(model => model.AU_USER, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Enter staff ID" } })
+                        @Html.ValidationMessageFor(model => model.AU_USER, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Date</span>
+                        @Html.EditorFor(model => model.AU_SRDATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.AU_SRDATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Note</span>
+                        @Html.EditorFor(model => model.AU_ENOTE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Note" } })
+                        @Html.ValidationMessageFor(model => model.AU_ENOTE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="input-group">
+                        <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input id="assetinf" name="assetinf" class="form-control" disabled/>
+                </div>
+                <div class="col-md-6">
+                    <input id="staffinf" name="staffinf" class="form-control" disabled />
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#AU_ASET').blur(function () {
+                var url = 'getAssetOrUserInfo';
+                var AssetUser = $(this).val();
+                if (AssetUser == '') {
+                    return;
+                }
+                $.getJSON(url, { id: AssetUser, selct: "vasset" }, function (response) {
+                    //swal('Asset info..', response.InfoData, 'info');
+                    $('#assetinf').val(response.InfoData);
+                });
+                //$('#ViewData').hide();
+            });
+            $('#AU_USER').blur(function () {
+                var url = 'getAssetOrUserInfo';
+                var AssetUser = $(this).val();
+                if (AssetUser == '') {
+                    return;
+                }
+                $.getJSON(url, { id: AssetUser, selct: "vstaff" }, function (response) {
+                    $('#staffinf').val(response.InfoData);
+                });
+            });
+        })
+    </script>
+    
+    }

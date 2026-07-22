@@ -1,0 +1,131 @@
+﻿@model PM.Models.P_ASSET_DAMAGE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>P_ASSET_DAMAGE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_APP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_APP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_APP_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_APP_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_APP_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_APP_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_AUTH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_AUTH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_AUTH_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_AUTH_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_AUTH_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_AUTH_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_SRV_DURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_SRV_DURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_PRIC_DIFF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_PRIC_DIFF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_ACTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_ACTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMG_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMG_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_ASSET.ASET_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_ASSET.ASET_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_OWNR.OWNR_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_OWNR.OWNR_TEXT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ASET_OID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

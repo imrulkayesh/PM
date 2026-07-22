@@ -1,0 +1,208 @@
+﻿@model IEnumerable<PM.ModelsV.DismissList>
+
+@{
+    ViewBag.Title = "Asset Dismiss";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("AssetDismiss", "AssetManager", new { Operation = "Search" }))
+        {
+            <div class="input-group margin">
+                <span class="input-group-addon">Search</span>
+                @Html.Editor("Asset", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Tag / Name", autofocus = true, maxlength = "50" } })
+                <div class="input-group-btn">
+                    <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                </div>
+                <!-- /btn-group -->
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewDismiss", "AssetManager")" class="btn btn-primary"> New Dismiss</a>
+            <a href="@Url.Action("AssetDismiss","AssetManager")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_CODE_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SERVICE_MONTH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_VALUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_TYPE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_REASON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_TYPE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_DETAIL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_LINE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_ASET_VALUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_POLICY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_COMP)
+                </th>
+               <th>
+                    @Html.DisplayNameFor(model => model.APPLY_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPROVE_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPROVE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DISMISS_STATUS)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Action
+                                <span class="fa fa-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Update" data-url="@Url.Action("UpdateDismiss","AssetManager", new { id= item.ASET_ID})" />
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_CODE_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SERVICE_MONTH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_VALUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_REASON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_DETAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_LINE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_ASET_VALUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_POLICY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_COMP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPROVE_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPROVE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DISMISS_STATUS)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section scripts{
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}

@@ -1,0 +1,1508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="PMEntities">
+    <EntitySetMapping Name="A_ACCE_ITEMS">
+      <EntityTypeMapping TypeName="Model.A_ACCE_ITEMS">
+        <MappingFragment StoreEntitySet="A_ACCE_ITEMS">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ACCE_RATE" ColumnName="ACCE_RATE" />
+          <ScalarProperty Name="ACCE_DESC" ColumnName="ACCE_DESC" />
+          <ScalarProperty Name="ACCE_NAME" ColumnName="ACCE_NAME" />
+          <ScalarProperty Name="ACCE_GROUP" ColumnName="ACCE_GROUP" />
+          <ScalarProperty Name="ACCE_ID" ColumnName="ACCE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_AREA">
+      <EntityTypeMapping TypeName="Model.A_AREA">
+        <MappingFragment StoreEntitySet="A_AREA">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="AREA_DESC" ColumnName="AREA_DESC" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="AREA_BUSINESS" ColumnName="AREA_BUSINESS" />
+          <ScalarProperty Name="AREA_THANA" ColumnName="AREA_THANA" />
+          <ScalarProperty Name="AREA_ID" ColumnName="AREA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_ACCE">
+      <EntityTypeMapping TypeName="Model.A_ASET_ACCE">
+        <MappingFragment StoreEntitySet="A_ASET_ACCE">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="AAI_RATE" ColumnName="AAI_RATE" />
+          <ScalarProperty Name="AAI_QUANTITY" ColumnName="AAI_QUANTITY" />
+          <ScalarProperty Name="AAI_DESC" ColumnName="AAI_DESC" />
+          <ScalarProperty Name="ACCE_ID" ColumnName="ACCE_ID" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_APP">
+      <EntityTypeMapping TypeName="Model.A_ASET_APP">
+        <MappingFragment StoreEntitySet="A_ASET_APP">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="APPR_DATE" ColumnName="APPR_DATE" />
+          <ScalarProperty Name="APPR_USER" ColumnName="APPR_USER" />
+          <ScalarProperty Name="REQU_USER" ColumnName="REQU_USER" />
+          <ScalarProperty Name="INSURACE_LINE" ColumnName="INSURACE_LINE" />
+          <ScalarProperty Name="INSURACE_ID" ColumnName="INSURACE_ID" />
+          <ScalarProperty Name="INSURACE_COMP" ColumnName="INSURACE_COMP" />
+          <ScalarProperty Name="RECEIVE_AREA" ColumnName="RECEIVE_AREA" />
+          <ScalarProperty Name="RECEIVE_DATE" ColumnName="RECEIVE_DATE" />
+          <ScalarProperty Name="RECEIVE_DETAIL" ColumnName="RECEIVE_DETAIL" />
+          <ScalarProperty Name="RECEIVE_TYPE" ColumnName="RECEIVE_TYPE" />
+          <ScalarProperty Name="SERVICE_MONTH" ColumnName="SERVICE_MONTH" />
+          <ScalarProperty Name="APPLY_TYPE" ColumnName="APPLY_TYPE" />
+          <ScalarProperty Name="APPLY_REASON" ColumnName="APPLY_REASON" />
+          <ScalarProperty Name="APPLY_DATE" ColumnName="APPLY_DATE" />
+          <ScalarProperty Name="ASET_VALUE" ColumnName="ASET_VALUE" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_DATA">
+      <EntityTypeMapping TypeName="Model.A_ASET_DATA">
+        <MappingFragment StoreEntitySet="A_ASET_DATA">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ASET_USED" ColumnName="ASET_USED" />
+          <ScalarProperty Name="ASET_NOTE" ColumnName="ASET_NOTE" />
+          <ScalarProperty Name="ASET_IMAGE" ColumnName="ASET_IMAGE" />
+          <ScalarProperty Name="ASET_MFG_YEAR" ColumnName="ASET_MFG_YEAR" />
+          <ScalarProperty Name="ASET_WEIGHT" ColumnName="ASET_WEIGHT" />
+          <ScalarProperty Name="ASET_HEIGHT" ColumnName="ASET_HEIGHT" />
+          <ScalarProperty Name="ASET_REG_DATE" ColumnName="ASET_REG_DATE" />
+          <ScalarProperty Name="ASET_PRICE" ColumnName="ASET_PRICE" />
+          <ScalarProperty Name="ASET_CAPACITY" ColumnName="ASET_CAPACITY" />
+          <ScalarProperty Name="ASET_GRN_CHASIS" ColumnName="ASET_GRN_CHASIS" />
+          <ScalarProperty Name="ASET_PO_ENGINE" ColumnName="ASET_PO_ENGINE" />
+          <ScalarProperty Name="ASET_MODEL" ColumnName="ASET_MODEL" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="ASET_COLOR" ColumnName="ASET_COLOR" />
+          <ScalarProperty Name="ASET_FUEL" ColumnName="ASET_FUEL" />
+          <ScalarProperty Name="ASET_BRAND" ColumnName="ASET_BRAND" />
+          <ScalarProperty Name="ASET_BODY" ColumnName="ASET_BODY" />
+          <ScalarProperty Name="ASET_AREA" ColumnName="ASET_AREA" />
+          <ScalarProperty Name="ASET_DEPARTMENT" ColumnName="ASET_DEPARTMENT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_USER">
+      <EntityTypeMapping TypeName="Model.A_ASET_USER">
+        <MappingFragment StoreEntitySet="A_ASET_USER">
+          <ScalarProperty Name="AU_TRNSTYPE" ColumnName="AU_TRNSTYPE" />
+          <ScalarProperty Name="AU_SMAILAGE" ColumnName="AU_SMAILAGE" />
+          <ScalarProperty Name="AU_EMAILAGE" ColumnName="AU_EMAILAGE" />
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="AU_ENOTE" ColumnName="AU_ENOTE" />
+          <ScalarProperty Name="AU_EAUSER" ColumnName="AU_EAUSER" />
+          <ScalarProperty Name="AU_EADATE" ColumnName="AU_EADATE" />
+          <ScalarProperty Name="AU_ERUSER" ColumnName="AU_ERUSER" />
+          <ScalarProperty Name="AU_ERDATE" ColumnName="AU_ERDATE" />
+          <ScalarProperty Name="AU_SNOTE" ColumnName="AU_SNOTE" />
+          <ScalarProperty Name="AU_SAUSER" ColumnName="AU_SAUSER" />
+          <ScalarProperty Name="AU_SADATE" ColumnName="AU_SADATE" />
+          <ScalarProperty Name="AU_SRUSER" ColumnName="AU_SRUSER" />
+          <ScalarProperty Name="AU_SRDATE" ColumnName="AU_SRDATE" />
+          <ScalarProperty Name="AU_AREA" ColumnName="AU_AREA" />
+          <ScalarProperty Name="AU_DEPT" ColumnName="AU_DEPT" />
+          <ScalarProperty Name="AU_USER" ColumnName="AU_USER" />
+          <ScalarProperty Name="AU_ASET" ColumnName="AU_ASET" />
+          <ScalarProperty Name="AU_ID" ColumnName="AU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_USER_IMG">
+      <EntityTypeMapping TypeName="Model.A_ASET_USER_IMG">
+        <MappingFragment StoreEntitySet="A_ASET_USER_IMG">
+          <ScalarProperty Name="IMG_AU" ColumnName="IMG_AU" />
+          <ScalarProperty Name="IMG_PATH" ColumnName="IMG_PATH" />
+          <ScalarProperty Name="IMG_NAME" ColumnName="IMG_NAME" />
+          <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ASET_USR_ACE">
+      <EntityTypeMapping TypeName="Model.A_ASET_USR_ACE">
+        <MappingFragment StoreEntitySet="A_ASET_USR_ACE">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="AUA_TYPE" ColumnName="AUA_TYPE" />
+          <ScalarProperty Name="AUA_RATE" ColumnName="AUA_RATE" />
+          <ScalarProperty Name="AUA_QTY" ColumnName="AUA_QTY" />
+          <ScalarProperty Name="AUA_DESC" ColumnName="AUA_DESC" />
+          <ScalarProperty Name="AUA_ACCE_ID" ColumnName="AUA_ACCE_ID" />
+          <ScalarProperty Name="AUA_LINE" ColumnName="AUA_LINE" />
+          <ScalarProperty Name="AUA_AU" ColumnName="AUA_AU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_BILL">
+      <EntityTypeMapping TypeName="Model.A_BILL">
+        <MappingFragment StoreEntitySet="A_BILL">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="BILH_DISC" ColumnName="BILH_DISC" />
+          <ScalarProperty Name="BILH_CPAY" ColumnName="BILH_CPAY" />
+          <ScalarProperty Name="BILH_UPAY" ColumnName="BILH_UPAY" />
+          <ScalarProperty Name="BILH_IPAY" ColumnName="BILH_IPAY" />
+          <ScalarProperty Name="BILH_PAID" ColumnName="BILH_PAID" />
+          <ScalarProperty Name="BILH_RECEIVER" ColumnName="BILH_RECEIVER" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+          <ScalarProperty Name="BILH_REF" ColumnName="BILH_REF" />
+          <ScalarProperty Name="BILH_NOTE" ColumnName="BILH_NOTE" />
+          <ScalarProperty Name="BILH_DATE" ColumnName="BILH_DATE" />
+          <ScalarProperty Name="BILH_ID" ColumnName="BILH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_BODY">
+      <EntityTypeMapping TypeName="Model.A_BODY">
+        <MappingFragment StoreEntitySet="A_BODY">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="BODY_DESC" ColumnName="BODY_DESC" />
+          <ScalarProperty Name="BODY_NAME" ColumnName="BODY_NAME" />
+          <ScalarProperty Name="BODY_ID" ColumnName="BODY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_BRAND">
+      <EntityTypeMapping TypeName="Model.A_BRAND">
+        <MappingFragment StoreEntitySet="A_BRAND">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="BRAND_ORIGIN" ColumnName="BRAND_ORIGIN" />
+          <ScalarProperty Name="BRAND_NAME" ColumnName="BRAND_NAME" />
+          <ScalarProperty Name="BRAND_ID" ColumnName="BRAND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_BUSINESS">
+      <EntityTypeMapping TypeName="Model.A_BUSINESS">
+        <MappingFragment StoreEntitySet="A_BUSINESS">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="BUSINESS_DESC" ColumnName="BUSINESS_DESC" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="BUSINESS_COMPANY" ColumnName="BUSINESS_COMPANY" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_COLOR">
+      <EntityTypeMapping TypeName="Model.A_COLOR">
+        <MappingFragment StoreEntitySet="A_COLOR">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="COLOR_NAME" ColumnName="COLOR_NAME" />
+          <ScalarProperty Name="COLOR_ID" ColumnName="COLOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_COMPANY">
+      <EntityTypeMapping TypeName="Model.A_COMPANY">
+        <MappingFragment StoreEntitySet="A_COMPANY">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="COMPANY_DESC" ColumnName="COMPANY_DESC" />
+          <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="COMPANY_COUNTRY" ColumnName="COMPANY_COUNTRY" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_COUNTRY">
+      <EntityTypeMapping TypeName="Model.A_COUNTRY">
+        <MappingFragment StoreEntitySet="A_COUNTRY">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_DEPARTMENT">
+      <EntityTypeMapping TypeName="Model.A_DEPARTMENT">
+        <MappingFragment StoreEntitySet="A_DEPARTMENT">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="DEPARTMENT_DESC" ColumnName="DEPARTMENT_DESC" />
+          <ScalarProperty Name="DEPARTMENT_ADDR" ColumnName="DEPARTMENT_ADDR" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_DISTRICT">
+      <EntityTypeMapping TypeName="Model.A_DISTRICT">
+        <MappingFragment StoreEntitySet="A_DISTRICT">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+          <ScalarProperty Name="DISTRICT_COUNTRY" ColumnName="DISTRICT_COUNTRY" />
+          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_EMAIL_LOG">
+      <EntityTypeMapping TypeName="Model.A_EMAIL_LOG">
+        <MappingFragment StoreEntitySet="A_EMAIL_LOG">
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="CC_EMAIL" ColumnName="CC_EMAIL" />
+          <ScalarProperty Name="TO_EMAIL" ColumnName="TO_EMAIL" />
+          <ScalarProperty Name="REMIND_ID" ColumnName="REMIND_ID" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+          <ScalarProperty Name="LOG_ID" ColumnName="LOG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_FUEL">
+      <EntityTypeMapping TypeName="Model.A_FUEL">
+        <MappingFragment StoreEntitySet="A_FUEL">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="FUEL_NAME" ColumnName="FUEL_NAME" />
+          <ScalarProperty Name="FUEL_ID" ColumnName="FUEL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_GROUP">
+      <EntityTypeMapping TypeName="Model.A_GROUP">
+        <MappingFragment StoreEntitySet="A_GROUP">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="GROUP_DESC" ColumnName="GROUP_DESC" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSP_JOB_IMG">
+      <EntityTypeMapping TypeName="Model.A_INSP_JOB_IMG">
+        <MappingFragment StoreEntitySet="A_INSP_JOB_IMG">
+          <ScalarProperty Name="IMG_CDT" ColumnName="IMG_CDT" />
+          <ScalarProperty Name="IMG_REF" ColumnName="IMG_REF" />
+          <ScalarProperty Name="IMG_PATH" ColumnName="IMG_PATH" />
+          <ScalarProperty Name="IMG_NAME" ColumnName="IMG_NAME" />
+          <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSP_TYPE">
+      <EntityTypeMapping TypeName="Model.A_INSP_TYPE">
+        <MappingFragment StoreEntitySet="A_INSP_TYPE">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ITYPE_NAME" ColumnName="ITYPE_NAME" />
+          <ScalarProperty Name="ITYPE_ID" ColumnName="ITYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSPD">
+      <EntityTypeMapping TypeName="Model.A_INSPD">
+        <MappingFragment StoreEntitySet="A_INSPD">
+          <ScalarProperty Name="INSPD_STATE" ColumnName="INSPD_STATE" />
+          <ScalarProperty Name="INSPD_NOTE" ColumnName="INSPD_NOTE" />
+          <ScalarProperty Name="INSPD_IRATE" ColumnName="INSPD_IRATE" />
+          <ScalarProperty Name="INSPD_IQTY" ColumnName="INSPD_IQTY" />
+          <ScalarProperty Name="INSPD_ITEM" ColumnName="INSPD_ITEM" />
+          <ScalarProperty Name="INSPD_LINE" ColumnName="INSPD_LINE" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSPH">
+      <EntityTypeMapping TypeName="Model.A_INSPH">
+        <MappingFragment StoreEntitySet="A_INSPH">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="INSPH_APBY" ColumnName="INSPH_APBY" />
+          <ScalarProperty Name="INSPH_APDATE" ColumnName="INSPH_APDATE" />
+          <ScalarProperty Name="INSPH_APP" ColumnName="INSPH_APP" />
+          <ScalarProperty Name="INSPH_JOB" ColumnName="INSPH_JOB" />
+          <ScalarProperty Name="INSPH_NOTE" ColumnName="INSPH_NOTE" />
+          <ScalarProperty Name="INSPH_TYPE" ColumnName="INSPH_TYPE" />
+          <ScalarProperty Name="MILEAGE" ColumnName="MILEAGE" />
+          <ScalarProperty Name="INSPH_DATE" ColumnName="INSPH_DATE" />
+          <ScalarProperty Name="INSPH_IUSER" ColumnName="INSPH_IUSER" />
+          <ScalarProperty Name="INSPH_AREA" ColumnName="INSPH_AREA" />
+          <ScalarProperty Name="INSPH_DEPARTMENT" ColumnName="INSPH_DEPARTMENT" />
+          <ScalarProperty Name="INSPH_OWNR" ColumnName="INSPH_OWNR" />
+          <ScalarProperty Name="INSPH_ASET" ColumnName="INSPH_ASET" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSUD">
+      <EntityTypeMapping TypeName="Model.A_INSUD">
+        <MappingFragment StoreEntitySet="A_INSUD">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="INSU_PAID" ColumnName="INSU_PAID" />
+          <ScalarProperty Name="INSU_DATE" ColumnName="INSU_DATE" />
+          <ScalarProperty Name="INSU_VAT_AMOUNT" ColumnName="INSU_VAT_AMOUNT" />
+          <ScalarProperty Name="INSU_AMOUNT" ColumnName="INSU_AMOUNT" />
+          <ScalarProperty Name="INSU_PREMIUM" ColumnName="INSU_PREMIUM" />
+          <ScalarProperty Name="INSU_ASET_VALUE" ColumnName="INSU_ASET_VALUE" />
+          <ScalarProperty Name="INSU_LINE" ColumnName="INSU_LINE" />
+          <ScalarProperty Name="INSU_ID" ColumnName="INSU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_INSUH">
+      <EntityTypeMapping TypeName="Model.A_INSUH">
+        <MappingFragment StoreEntitySet="A_INSUH">
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="INSU_REG_END" ColumnName="INSU_REG_END" />
+          <ScalarProperty Name="INSU_REG_START" ColumnName="INSU_REG_START" />
+          <ScalarProperty Name="INSU_NOTE" ColumnName="INSU_NOTE" />
+          <ScalarProperty Name="INSU_COMP_ADDRESS" ColumnName="INSU_COMP_ADDRESS" />
+          <ScalarProperty Name="INSU_COMP" ColumnName="INSU_COMP" />
+          <ScalarProperty Name="INSU_PREMIUM" ColumnName="INSU_PREMIUM" />
+          <ScalarProperty Name="INSU_ASET_VALUE" ColumnName="INSU_ASET_VALUE" />
+          <ScalarProperty Name="INSU_POLICY" ColumnName="INSU_POLICY" />
+          <ScalarProperty Name="INSU_ASET" ColumnName="INSU_ASET" />
+          <ScalarProperty Name="INSU_ID" ColumnName="INSU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ITEM_LIST">
+      <EntityTypeMapping TypeName="Model.A_ITEM_LIST">
+        <MappingFragment StoreEntitySet="A_ITEM_LIST">
+          <ScalarProperty Name="ITEM_GROUP" ColumnName="ITEM_GROUP" />
+          <ScalarProperty Name="JOB_ENTRY" ColumnName="JOB_ENTRY" />
+          <ScalarProperty Name="REMINDER_ENTRY" ColumnName="REMINDER_ENTRY" />
+          <ScalarProperty Name="ITEM_BILL" ColumnName="ITEM_BILL" />
+          <ScalarProperty Name="ITEM_BASE" ColumnName="ITEM_BASE" />
+          <ScalarProperty Name="ITEM_NOTIF_SET" ColumnName="ITEM_NOTIF_SET" />
+          <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_JOBD">
+      <EntityTypeMapping TypeName="Model.A_JOBD">
+        <MappingFragment StoreEntitySet="A_JOBD">
+          <ScalarProperty Name="JOBD_STATE" ColumnName="JOBD_STATE" />
+          <ScalarProperty Name="JOBD_NOTE" ColumnName="JOBD_NOTE" />
+          <ScalarProperty Name="JOBD_JRATE" ColumnName="JOBD_JRATE" />
+          <ScalarProperty Name="JOBD_IRATE" ColumnName="JOBD_IRATE" />
+          <ScalarProperty Name="JOBD_JQTY" ColumnName="JOBD_JQTY" />
+          <ScalarProperty Name="JOBD_IQTY" ColumnName="JOBD_IQTY" />
+          <ScalarProperty Name="JOBD_ITEM" ColumnName="JOBD_ITEM" />
+          <ScalarProperty Name="JOBD_LINE" ColumnName="JOBD_LINE" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_JOBH">
+      <EntityTypeMapping TypeName="Model.A_JOBH">
+        <MappingFragment StoreEntitySet="A_JOBH">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="JOBH_APBY" ColumnName="JOBH_APBY" />
+          <ScalarProperty Name="JOBH_APDATE" ColumnName="JOBH_APDATE" />
+          <ScalarProperty Name="JOBH_APP" ColumnName="JOBH_APP" />
+          <ScalarProperty Name="JOBH_BILL" ColumnName="JOBH_BILL" />
+          <ScalarProperty Name="JOBH_CNAME" ColumnName="JOBH_CNAME" />
+          <ScalarProperty Name="JOBH_DISC" ColumnName="JOBH_DISC" />
+          <ScalarProperty Name="JOBH_CPAY" ColumnName="JOBH_CPAY" />
+          <ScalarProperty Name="JOBH_UPAY" ColumnName="JOBH_UPAY" />
+          <ScalarProperty Name="JOBH_IPAY" ColumnName="JOBH_IPAY" />
+          <ScalarProperty Name="JOBH_TYPE" ColumnName="JOBH_TYPE" />
+          <ScalarProperty Name="JOBH_NOTE" ColumnName="JOBH_NOTE" />
+          <ScalarProperty Name="JOBH_VENDOR" ColumnName="JOBH_VENDOR" />
+          <ScalarProperty Name="JOBH_MILEAGE" ColumnName="JOBH_MILEAGE" />
+          <ScalarProperty Name="JOBH_DATE" ColumnName="JOBH_DATE" />
+          <ScalarProperty Name="JOBH_AREA" ColumnName="JOBH_AREA" />
+          <ScalarProperty Name="JOBH_DEPARTMENT" ColumnName="JOBH_DEPARTMENT" />
+          <ScalarProperty Name="JOBH_OWNR" ColumnName="JOBH_OWNR" />
+          <ScalarProperty Name="JOBH_ASET" ColumnName="JOBH_ASET" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_MENUC">
+      <EntityTypeMapping TypeName="Model.A_MENUC">
+        <MappingFragment StoreEntitySet="A_MENUC">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="CMNU_NOTE" ColumnName="CMNU_NOTE" />
+          <ScalarProperty Name="CMNU_PMNU" ColumnName="CMNU_PMNU" />
+          <ScalarProperty Name="CMNU_ROLE" ColumnName="CMNU_ROLE" />
+          <ScalarProperty Name="CMNU_ACTN" ColumnName="CMNU_ACTN" />
+          <ScalarProperty Name="CMNU_CONT" ColumnName="CMNU_CONT" />
+          <ScalarProperty Name="CMNU_ICON" ColumnName="CMNU_ICON" />
+          <ScalarProperty Name="CMNU_NAME" ColumnName="CMNU_NAME" />
+          <ScalarProperty Name="CMNU_TEXT" ColumnName="CMNU_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_MENUP">
+      <EntityTypeMapping TypeName="Model.A_MENUP">
+        <MappingFragment StoreEntitySet="A_MENUP">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="PMNU_ICON" ColumnName="PMNU_ICON" />
+          <ScalarProperty Name="PMNU_NAME" ColumnName="PMNU_NAME" />
+          <ScalarProperty Name="PMNU_TEXT" ColumnName="PMNU_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_NOTIF_SET">
+      <EntityTypeMapping TypeName="Model.A_NOTIF_SET">
+        <MappingFragment StoreEntitySet="A_NOTIF_SET">
+          <ScalarProperty Name="NOTIF_FINAL" ColumnName="NOTIF_FINAL" />
+          <ScalarProperty Name="NOTIF_FIRST" ColumnName="NOTIF_FIRST" />
+          <ScalarProperty Name="NOTIF_REMIND" ColumnName="NOTIF_REMIND" />
+          <ScalarProperty Name="NOTIF_FOR" ColumnName="NOTIF_FOR" />
+          <ScalarProperty Name="NOTIF_TYPE" ColumnName="NOTIF_TYPE" />
+          <ScalarProperty Name="NOTIF_ID" ColumnName="NOTIF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_OWNR">
+      <EntityTypeMapping TypeName="Model.A_OWNR">
+        <MappingFragment StoreEntitySet="A_OWNR">
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="OWNR_POST" ColumnName="OWNR_POST" />
+          <ScalarProperty Name="OWNR_RDATE" ColumnName="OWNR_RDATE" />
+          <ScalarProperty Name="OWNR_NDATE" ColumnName="OWNR_NDATE" />
+          <ScalarProperty Name="OWNR_RESIGN" ColumnName="OWNR_RESIGN" />
+          <ScalarProperty Name="OWNR_TYPE" ColumnName="OWNR_TYPE" />
+          <ScalarProperty Name="OWNR_NOTE" ColumnName="OWNR_NOTE" />
+          <ScalarProperty Name="OWNR_PIC" ColumnName="OWNR_PIC" />
+          <ScalarProperty Name="OWNR_ADDR" ColumnName="OWNR_ADDR" />
+          <ScalarProperty Name="OWNR_EMAIL" ColumnName="OWNR_EMAIL" />
+          <ScalarProperty Name="OWNR_CONT" ColumnName="OWNR_CONT" />
+          <ScalarProperty Name="OWNR_DESG" ColumnName="OWNR_DESG" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_AREA" ColumnName="OWNR_AREA" />
+          <ScalarProperty Name="OWNR_DEPT" ColumnName="OWNR_DEPT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_OWNR_BILL">
+      <EntityTypeMapping TypeName="Model.A_OWNR_BILL">
+        <MappingFragment StoreEntitySet="A_OWNR_BILL">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="BILL_NOTE" ColumnName="BILL_NOTE" />
+          <ScalarProperty Name="BILL_OWNR_NAME" ColumnName="BILL_OWNR_NAME" />
+          <ScalarProperty Name="BILL_AMNT" ColumnName="BILL_AMNT" />
+          <ScalarProperty Name="BILL_DATE" ColumnName="BILL_DATE" />
+          <ScalarProperty Name="BILL_ASET" ColumnName="BILL_ASET" />
+          <ScalarProperty Name="BILL_OWNR" ColumnName="BILL_OWNR" />
+          <ScalarProperty Name="BILL_ID" ColumnName="BILL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_PLEA">
+      <EntityTypeMapping TypeName="Model.A_PLEA">
+        <MappingFragment StoreEntitySet="A_PLEA">
+          <ScalarProperty Name="PLEA_APP_DATE" ColumnName="PLEA_APP_DATE" />
+          <ScalarProperty Name="PLEA_APP" ColumnName="PLEA_APP" />
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="PLEA_STATUS" ColumnName="PLEA_STATUS" />
+          <ScalarProperty Name="PLEA_AREA" ColumnName="PLEA_AREA" />
+          <ScalarProperty Name="PLEA_DEPT" ColumnName="PLEA_DEPT" />
+          <ScalarProperty Name="PLEA_ASET" ColumnName="PLEA_ASET" />
+          <ScalarProperty Name="PLEA_MILEAGE" ColumnName="PLEA_MILEAGE" />
+          <ScalarProperty Name="PLEA_OWNR" ColumnName="PLEA_OWNR" />
+          <ScalarProperty Name="PLEA_LOCATION" ColumnName="PLEA_LOCATION" />
+          <ScalarProperty Name="PLEA_AMNT" ColumnName="PLEA_AMNT" />
+          <ScalarProperty Name="PLEA_DESCRIPTION" ColumnName="PLEA_DESCRIPTION" />
+          <ScalarProperty Name="PLEA_REASON_ID" ColumnName="PLEA_REASON_ID" />
+          <ScalarProperty Name="PLEA_REF" ColumnName="PLEA_REF" />
+          <ScalarProperty Name="PLEA_DATE" ColumnName="PLEA_DATE" />
+          <ScalarProperty Name="PLEA_PAID_BY" ColumnName="PLEA_PAID_BY" />
+          <ScalarProperty Name="PLEA_DFND" ColumnName="PLEA_DFND" />
+          <ScalarProperty Name="PLEA_ID" ColumnName="PLEA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_PLEA_REASON">
+      <EntityTypeMapping TypeName="Model.A_PLEA_REASON">
+        <MappingFragment StoreEntitySet="A_PLEA_REASON">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="REASON_DESC" ColumnName="REASON_DESC" />
+          <ScalarProperty Name="REASON_NAME" ColumnName="REASON_NAME" />
+          <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_REMINDER">
+      <EntityTypeMapping TypeName="Model.A_REMINDER">
+        <MappingFragment StoreEntitySet="A_REMINDER">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="COMPLETED" ColumnName="COMPLETED" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="N_DATE" ColumnName="N_DATE" />
+          <ScalarProperty Name="C_DATE" ColumnName="C_DATE" />
+          <ScalarProperty Name="N_STATE" ColumnName="N_STATE" />
+          <ScalarProperty Name="C_STATE" ColumnName="C_STATE" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+          <ScalarProperty Name="REMIND_ID" ColumnName="REMIND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_REMINDER_IMG">
+      <EntityTypeMapping TypeName="Model.A_REMINDER_IMG">
+        <MappingFragment StoreEntitySet="A_REMINDER_IMG">
+          <ScalarProperty Name="IMG_REMINDER" ColumnName="IMG_REMINDER" />
+          <ScalarProperty Name="IMG_PATH" ColumnName="IMG_PATH" />
+          <ScalarProperty Name="IMG_NAME" ColumnName="IMG_NAME" />
+          <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_ROLES">
+      <EntityTypeMapping TypeName="Model.A_ROLES">
+        <MappingFragment StoreEntitySet="A_ROLES">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ROLE_DESC" ColumnName="ROLE_DESC" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="ROLE_TEXT" ColumnName="ROLE_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_SUMMARY_VIEW">
+      <EntityTypeMapping TypeName="Model.A_SUMMARY_VIEW">
+        <MappingFragment StoreEntitySet="A_SUMMARY_VIEW">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="DATA_JN" ColumnName="DATA_JN" />
+          <ScalarProperty Name="DATA_J" ColumnName="DATA_J" />
+          <ScalarProperty Name="DATA_IN" ColumnName="DATA_IN" />
+          <ScalarProperty Name="DATA_I" ColumnName="DATA_I" />
+          <ScalarProperty Name="DATA_HN" ColumnName="DATA_HN" />
+          <ScalarProperty Name="DATA_H" ColumnName="DATA_H" />
+          <ScalarProperty Name="DATA_GN" ColumnName="DATA_GN" />
+          <ScalarProperty Name="DATA_G" ColumnName="DATA_G" />
+          <ScalarProperty Name="DATA_FN" ColumnName="DATA_FN" />
+          <ScalarProperty Name="DATA_F" ColumnName="DATA_F" />
+          <ScalarProperty Name="DATA_EN" ColumnName="DATA_EN" />
+          <ScalarProperty Name="DATA_E" ColumnName="DATA_E" />
+          <ScalarProperty Name="DATA_DN" ColumnName="DATA_DN" />
+          <ScalarProperty Name="DATA_D" ColumnName="DATA_D" />
+          <ScalarProperty Name="DATA_CN" ColumnName="DATA_CN" />
+          <ScalarProperty Name="DATA_C" ColumnName="DATA_C" />
+          <ScalarProperty Name="DATA_BN" ColumnName="DATA_BN" />
+          <ScalarProperty Name="DATA_B" ColumnName="DATA_B" />
+          <ScalarProperty Name="DATA_AN" ColumnName="DATA_AN" />
+          <ScalarProperty Name="DATA_A" ColumnName="DATA_A" />
+          <ScalarProperty Name="SV_USER" ColumnName="SV_USER" />
+          <ScalarProperty Name="SV_NOTE" ColumnName="SV_NOTE" />
+          <ScalarProperty Name="SV_TABLE" ColumnName="SV_TABLE" />
+          <ScalarProperty Name="SV_ID" ColumnName="SV_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_TBL_SEQ">
+      <EntityTypeMapping TypeName="Model.A_TBL_SEQ">
+        <MappingFragment StoreEntitySet="A_TBL_SEQ">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="TABLE_SEQ" ColumnName="TABLE_SEQ" />
+          <ScalarProperty Name="TABLE_ID" ColumnName="TABLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_THANA">
+      <EntityTypeMapping TypeName="Model.A_THANA">
+        <MappingFragment StoreEntitySet="A_THANA">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="THANA_NAME" ColumnName="THANA_NAME" />
+          <ScalarProperty Name="THANA_BUSINESS" ColumnName="THANA_BUSINESS" />
+          <ScalarProperty Name="THANA_DISTRICT" ColumnName="THANA_DISTRICT" />
+          <ScalarProperty Name="THANA_ID" ColumnName="THANA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS">
+      <EntityTypeMapping TypeName="Model.A_USERS">
+        <MappingFragment StoreEntitySet="A_USERS">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="USER_IMAG" ColumnName="USER_IMAG" />
+          <ScalarProperty Name="USER_MOBL" ColumnName="USER_MOBL" />
+          <ScalarProperty Name="USER_MAIL" ColumnName="USER_MAIL" />
+          <ScalarProperty Name="USER_PASS" ColumnName="USER_PASS" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_TEXT" ColumnName="USER_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_AREA">
+      <EntityTypeMapping TypeName="Model.A_USERS_AREA">
+        <MappingFragment StoreEntitySet="A_USERS_AREA">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="UA_USER" ColumnName="UA_USER" />
+          <ScalarProperty Name="UA_AREA" ColumnName="UA_AREA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_BUS">
+      <EntityTypeMapping TypeName="Model.A_USERS_BUS">
+        <MappingFragment StoreEntitySet="A_USERS_BUS">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="UB_USER" ColumnName="UB_USER" />
+          <ScalarProperty Name="UB_BUSINESS" ColumnName="UB_BUSINESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_COUNTRY">
+      <EntityTypeMapping TypeName="Model.A_USERS_COUNTRY">
+        <MappingFragment StoreEntitySet="A_USERS_COUNTRY">
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="USER_TEXT" ColumnName="USER_TEXT" />
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="UC_ID" ColumnName="UC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_GROUP">
+      <EntityTypeMapping TypeName="Model.A_USERS_GROUP">
+        <MappingFragment StoreEntitySet="A_USERS_GROUP">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="UG_GROUP" ColumnName="UG_GROUP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_LOGIN">
+      <EntityTypeMapping TypeName="Model.A_USERS_LOGIN">
+        <MappingFragment StoreEntitySet="A_USERS_LOGIN">
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="SESSION_ACT" ColumnName="SESSION_ACT" />
+          <ScalarProperty Name="SESSION_ID" ColumnName="SESSION_ID" />
+          <ScalarProperty Name="BROWSER_VERSION" ColumnName="BROWSER_VERSION" />
+          <ScalarProperty Name="BROWSER_NAME" ColumnName="BROWSER_NAME" />
+          <ScalarProperty Name="PC_TYPE" ColumnName="PC_TYPE" />
+          <ScalarProperty Name="PC_USER" ColumnName="PC_USER" />
+          <ScalarProperty Name="USER_PC" ColumnName="USER_PC" />
+          <ScalarProperty Name="USER_IP" ColumnName="USER_IP" />
+          <ScalarProperty Name="USER_TEXT" ColumnName="USER_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_MENUC">
+      <EntityTypeMapping TypeName="Model.A_USERS_MENUC">
+        <MappingFragment StoreEntitySet="A_USERS_MENUC">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="USER_TEXT" ColumnName="USER_TEXT" />
+          <ScalarProperty Name="CMNU_TEXT" ColumnName="CMNU_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_USERS_ROLES">
+      <EntityTypeMapping TypeName="Model.A_USERS_ROLES">
+        <MappingFragment StoreEntitySet="A_USERS_ROLES">
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="USER_TEXT" ColumnName="USER_TEXT" />
+          <ScalarProperty Name="ROLE_TEXT" ColumnName="ROLE_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="A_EMAIL">
+      <EntityTypeMapping TypeName="Model.A_EMAIL">
+        <MappingFragment StoreEntitySet="A_EMAIL">
+          <ScalarProperty Name="AREA_ID" ColumnName="AREA_ID" />
+          <ScalarProperty Name="MAIL_TYPE" ColumnName="MAIL_TYPE" />
+          <ScalarProperty Name="VAR" ColumnName="VAR" />
+          <ScalarProperty Name="UDU" ColumnName="UDU" />
+          <ScalarProperty Name="CDU" ColumnName="CDU" />
+          <ScalarProperty Name="UDT" ColumnName="UDT" />
+          <ScalarProperty Name="CDT" ColumnName="CDT" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="MAIL_BUSINESS" ColumnName="MAIL_BUSINESS" />
+          <ScalarProperty Name="MAIL_GROUP" ColumnName="MAIL_GROUP" />
+          <ScalarProperty Name="KEEP_IN" ColumnName="KEEP_IN" />
+          <ScalarProperty Name="EMAIL_DISPLAY" ColumnName="EMAIL_DISPLAY" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ASET_BY_USERS">
+      <EntityTypeMapping TypeName="Model.VW_ASET_BY_USERS">
+        <MappingFragment StoreEntitySet="VW_ASET_BY_USERS">
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ASET_USED" ColumnName="ASET_USED" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="ASET_AREA" ColumnName="ASET_AREA" />
+          <ScalarProperty Name="ASET_DEPARTMENT" ColumnName="ASET_DEPARTMENT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_ASSETUSERMANAGERVM">
+      <EntityTypeMapping TypeName="Model.VW_ASSETUSERMANAGERVM">
+        <MappingFragment StoreEntitySet="VW_ASSETUSERMANAGERVM">
+          <ScalarProperty Name="AU_TRNSTYPE" ColumnName="AU_TRNSTYPE" />
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="AU_ENOTE" ColumnName="AU_ENOTE" />
+          <ScalarProperty Name="R_APPROVER" ColumnName="R_APPROVER" />
+          <ScalarProperty Name="AU_EADATE" ColumnName="AU_EADATE" />
+          <ScalarProperty Name="R_USER" ColumnName="R_USER" />
+          <ScalarProperty Name="AU_ERDATE" ColumnName="AU_ERDATE" />
+          <ScalarProperty Name="AU_SNOTE" ColumnName="AU_SNOTE" />
+          <ScalarProperty Name="T_APPROVER" ColumnName="T_APPROVER" />
+          <ScalarProperty Name="AU_SADATE" ColumnName="AU_SADATE" />
+          <ScalarProperty Name="T_USER" ColumnName="T_USER" />
+          <ScalarProperty Name="AU_SRDATE" ColumnName="AU_SRDATE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="AU_ID" ColumnName="AU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_BNDL_INSP">
+      <EntityTypeMapping TypeName="Model.VW_BNDL_INSP">
+        <MappingFragment StoreEntitySet="VW_BNDL_INSP">
+          <ScalarProperty Name="INSPH_JOB" ColumnName="INSPH_JOB" />
+          <ScalarProperty Name="INSPH_APP" ColumnName="INSPH_APP" />
+          <ScalarProperty Name="INSPD_NOTE" ColumnName="INSPD_NOTE" />
+          <ScalarProperty Name="INSPD_IRATE" ColumnName="INSPD_IRATE" />
+          <ScalarProperty Name="INSPD_IQTY" ColumnName="INSPD_IQTY" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="INSPD_ITEM" ColumnName="INSPD_ITEM" />
+          <ScalarProperty Name="INSPD_LINE" ColumnName="INSPD_LINE" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+          <ScalarProperty Name="INSPH_NOTE" ColumnName="INSPH_NOTE" />
+          <ScalarProperty Name="INSPH_TYPE" ColumnName="INSPH_TYPE" />
+          <ScalarProperty Name="MILEAGE" ColumnName="MILEAGE" />
+          <ScalarProperty Name="INSPH_DATE" ColumnName="INSPH_DATE" />
+          <ScalarProperty Name="INSPH_IUSER" ColumnName="INSPH_IUSER" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="INSPH_AREA" ColumnName="INSPH_AREA" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="INSPH_DEPARTMENT" ColumnName="INSPH_DEPARTMENT" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="INSPH_OWNR" ColumnName="INSPH_OWNR" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="INSPH_ASET" ColumnName="INSPH_ASET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_BNDL_JOBC">
+      <EntityTypeMapping TypeName="Model.VW_BNDL_JOBC">
+        <MappingFragment StoreEntitySet="VW_BNDL_JOBC">
+          <ScalarProperty Name="JOBH_BILL" ColumnName="JOBH_BILL" />
+          <ScalarProperty Name="JOBH_APP" ColumnName="JOBH_APP" />
+          <ScalarProperty Name="JOBD_NOTE" ColumnName="JOBD_NOTE" />
+          <ScalarProperty Name="JOBD_IRATE" ColumnName="JOBD_IRATE" />
+          <ScalarProperty Name="JOBD_IQTY" ColumnName="JOBD_IQTY" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="JOBD_ITEM" ColumnName="JOBD_ITEM" />
+          <ScalarProperty Name="JOBD_LINE" ColumnName="JOBD_LINE" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+          <ScalarProperty Name="JOBH_NOTE" ColumnName="JOBH_NOTE" />
+          <ScalarProperty Name="JOBH_TYPE" ColumnName="JOBH_TYPE" />
+          <ScalarProperty Name="JOBH_MILEAGE" ColumnName="JOBH_MILEAGE" />
+          <ScalarProperty Name="JOBH_DATE" ColumnName="JOBH_DATE" />
+          <ScalarProperty Name="JOBH_VENDOR" ColumnName="JOBH_VENDOR" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="JOBH_AREA" ColumnName="JOBH_AREA" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="JOBH_DEPARTMENT" ColumnName="JOBH_DEPARTMENT" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="JOBH_OWNR" ColumnName="JOBH_OWNR" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="JOBH_ASET" ColumnName="JOBH_ASET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_DATE_NOTIF">
+      <EntityTypeMapping TypeName="Model.VW_DATE_NOTIF">
+        <MappingFragment StoreEntitySet="VW_DATE_NOTIF">
+          <ScalarProperty Name="COMPLETED" ColumnName="COMPLETED" />
+          <ScalarProperty Name="NOTIF_TYPE" ColumnName="NOTIF_TYPE" />
+          <ScalarProperty Name="REMINDER_NOTE" ColumnName="REMINDER_NOTE" />
+          <ScalarProperty Name="NOTIF_FINAL" ColumnName="NOTIF_FINAL" />
+          <ScalarProperty Name="NOTIF_FIRST" ColumnName="NOTIF_FIRST" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ELAPSED" ColumnName="ELAPSED" />
+          <ScalarProperty Name="N_DATE" ColumnName="N_DATE" />
+          <ScalarProperty Name="C_DATE" ColumnName="C_DATE" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+          <ScalarProperty Name="REMIND_ID" ColumnName="REMIND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_INSURANCE_S1">
+      <EntityTypeMapping TypeName="Model.VW_INSURANCE_S1">
+        <MappingFragment StoreEntitySet="VW_INSURANCE_S1">
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="INSU_REG_END" ColumnName="INSU_REG_END" />
+          <ScalarProperty Name="INSU_REG_START" ColumnName="INSU_REG_START" />
+          <ScalarProperty Name="INSU_NOTE" ColumnName="INSU_NOTE" />
+          <ScalarProperty Name="INSU_COMP_ADDRESS" ColumnName="INSU_COMP_ADDRESS" />
+          <ScalarProperty Name="INSU_COMP" ColumnName="INSU_COMP" />
+          <ScalarProperty Name="INSU_PREMIUM" ColumnName="INSU_PREMIUM" />
+          <ScalarProperty Name="INSU_POLICY" ColumnName="INSU_POLICY" />
+          <ScalarProperty Name="ASET_AREA" ColumnName="ASET_AREA" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="ASET_NAME_CODE" ColumnName="ASET_NAME_CODE" />
+          <ScalarProperty Name="INSU_ID" ColumnName="INSU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_INSURANCE_S2">
+      <EntityTypeMapping TypeName="Model.VW_INSURANCE_S2">
+        <MappingFragment StoreEntitySet="VW_INSURANCE_S2">
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_BODY" ColumnName="MAIL_BODY" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="INSU_REG_END" ColumnName="INSU_REG_END" />
+          <ScalarProperty Name="INSU_REG_START" ColumnName="INSU_REG_START" />
+          <ScalarProperty Name="NEED_MAIL" ColumnName="NEED_MAIL" />
+          <ScalarProperty Name="MESSAGES" ColumnName="MESSAGES" />
+          <ScalarProperty Name="INSU_NOTE" ColumnName="INSU_NOTE" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="INSURANCE" ColumnName="INSURANCE" />
+          <ScalarProperty Name="ASET_NAME_CODE" ColumnName="ASET_NAME_CODE" />
+          <ScalarProperty Name="INSU_ID" ColumnName="INSU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_IQAMA_NOTIF_V1">
+      <EntityTypeMapping TypeName="Model.VW_IQAMA_NOTIF_V1">
+        <MappingFragment StoreEntitySet="VW_IQAMA_NOTIF_V1">
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_SEND" ColumnName="MAIL_SEND" />
+          <ScalarProperty Name="NOTIF_MESSAGES" ColumnName="NOTIF_MESSAGES" />
+          <ScalarProperty Name="REMINDER_NOTE" ColumnName="REMINDER_NOTE" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="OWNR_AREA" ColumnName="OWNR_AREA" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="ELAPSED" ColumnName="ELAPSED" />
+          <ScalarProperty Name="OWNR_NDATE" ColumnName="OWNR_NDATE" />
+          <ScalarProperty Name="AAJKEY" ColumnName="AAJKEY" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_IQAMA_NOTIF_V2">
+      <EntityTypeMapping TypeName="Model.VW_IQAMA_NOTIF_V2">
+        <MappingFragment StoreEntitySet="VW_IQAMA_NOTIF_V2">
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_BODY" ColumnName="MAIL_BODY" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="MAIL_SEND" ColumnName="MAIL_SEND" />
+          <ScalarProperty Name="MESSAGE_NOTE" ColumnName="MESSAGE_NOTE" />
+          <ScalarProperty Name="MESSAGES" ColumnName="MESSAGES" />
+          <ScalarProperty Name="ELAPSED" ColumnName="ELAPSED" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="EXP_DATE" ColumnName="EXP_DATE" />
+          <ScalarProperty Name="AAJ_DATE" ColumnName="AAJ_DATE" />
+          <ScalarProperty Name="OWNR_NOTE" ColumnName="OWNR_NOTE" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_KSA_IQUMA_S1">
+      <EntityTypeMapping TypeName="Model.VW_KSA_IQUMA_S1">
+        <MappingFragment StoreEntitySet="VW_KSA_IQUMA_S1">
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="OWNR_NDATE" ColumnName="OWNR_NDATE" />
+          <ScalarProperty Name="AAJ_DATE" ColumnName="AAJ_DATE" />
+          <ScalarProperty Name="OWNR_NOTE" ColumnName="OWNR_NOTE" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_KSA_IQUMA_S2">
+      <EntityTypeMapping TypeName="Model.VW_KSA_IQUMA_S2">
+        <MappingFragment StoreEntitySet="VW_KSA_IQUMA_S2">
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_BODY" ColumnName="MAIL_BODY" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="NEED_MAIL" ColumnName="NEED_MAIL" />
+          <ScalarProperty Name="MESSAGES" ColumnName="MESSAGES" />
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="OWNR_NDATE" ColumnName="OWNR_NDATE" />
+          <ScalarProperty Name="AAJ_DATE" ColumnName="AAJ_DATE" />
+          <ScalarProperty Name="OWNR_NOTE" ColumnName="OWNR_NOTE" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_NOTIF_MAIL">
+      <EntityTypeMapping TypeName="Model.VW_NOTIF_MAIL">
+        <MappingFragment StoreEntitySet="VW_NOTIF_MAIL">
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_BODY" ColumnName="MAIL_BODY" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="MAIL_SEND" ColumnName="MAIL_SEND" />
+          <ScalarProperty Name="NOTIF_MESSAGES" ColumnName="NOTIF_MESSAGES" />
+          <ScalarProperty Name="REMINDER_NOTE" ColumnName="REMINDER_NOTE" />
+          <ScalarProperty Name="ELAPSED" ColumnName="ELAPSED" />
+          <ScalarProperty Name="COMPLETED" ColumnName="COMPLETED" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="N_DATE" ColumnName="N_DATE" />
+          <ScalarProperty Name="C_DATE" ColumnName="C_DATE" />
+          <ScalarProperty Name="NOTIF_FINAL" ColumnName="NOTIF_FINAL" />
+          <ScalarProperty Name="NOTIF_FIRST" ColumnName="NOTIF_FIRST" />
+          <ScalarProperty Name="NOTIF_REMIND" ColumnName="NOTIF_REMIND" />
+          <ScalarProperty Name="NOTIF_TYPE" ColumnName="NOTIF_TYPE" />
+          <ScalarProperty Name="ITEM_NOTIF_SET" ColumnName="ITEM_NOTIF_SET" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="ASET_DEPARTMENT" ColumnName="ASET_DEPARTMENT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+          <ScalarProperty Name="REMIND_ID" ColumnName="REMIND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_NOTIF_MAIL_METER">
+      <EntityTypeMapping TypeName="Model.VW_NOTIF_MAIL_METER">
+        <MappingFragment StoreEntitySet="VW_NOTIF_MAIL_METER">
+          <ScalarProperty Name="UPDT" ColumnName="UPDT" />
+          <ScalarProperty Name="MAIL_BODY" ColumnName="MAIL_BODY" />
+          <ScalarProperty Name="MAIL_SUBJECT" ColumnName="MAIL_SUBJECT" />
+          <ScalarProperty Name="MAIL_SEND" ColumnName="MAIL_SEND" />
+          <ScalarProperty Name="NOTIF_MESSAGES" ColumnName="NOTIF_MESSAGES" />
+          <ScalarProperty Name="REMINDER_NOTE" ColumnName="REMINDER_NOTE" />
+          <ScalarProperty Name="ELAPSED" ColumnName="ELAPSED" />
+          <ScalarProperty Name="COMPLETED" ColumnName="COMPLETED" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="REMIND" ColumnName="REMIND" />
+          <ScalarProperty Name="N_DATE" ColumnName="N_DATE" />
+          <ScalarProperty Name="C_DATE" ColumnName="C_DATE" />
+          <ScalarProperty Name="NOTIF_FINAL" ColumnName="NOTIF_FINAL" />
+          <ScalarProperty Name="NOTIF_FIRST" ColumnName="NOTIF_FIRST" />
+          <ScalarProperty Name="NOTIF_REMIND" ColumnName="NOTIF_REMIND" />
+          <ScalarProperty Name="NOTIF_TYPE" ColumnName="NOTIF_TYPE" />
+          <ScalarProperty Name="ITEM_NOTIF_SET" ColumnName="ITEM_NOTIF_SET" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="ASET_DEPARTMENT" ColumnName="ASET_DEPARTMENT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+          <ScalarProperty Name="REMIND_ID" ColumnName="REMIND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_OWNR_BY_USERS">
+      <EntityTypeMapping TypeName="Model.VW_OWNR_BY_USERS">
+        <MappingFragment StoreEntitySet="VW_OWNR_BY_USERS">
+          <ScalarProperty Name="UB_USER" ColumnName="UB_USER" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="OWNR_POST" ColumnName="OWNR_POST" />
+          <ScalarProperty Name="OWNR_RESIGN" ColumnName="OWNR_RESIGN" />
+          <ScalarProperty Name="OWNR_TYPE" ColumnName="OWNR_TYPE" />
+          <ScalarProperty Name="OWNR_DESG" ColumnName="OWNR_DESG" />
+          <ScalarProperty Name="OWNR_NAME" ColumnName="OWNR_NAME" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="OWNR_AREA" ColumnName="OWNR_AREA" />
+          <ScalarProperty Name="OWNR_DEPT" ColumnName="OWNR_DEPT" />
+          <ScalarProperty Name="OWNR_ID" ColumnName="OWNR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_PMENU_CMENU">
+      <EntityTypeMapping TypeName="Model.VW_PMENU_CMENU">
+        <MappingFragment StoreEntitySet="VW_PMENU_CMENU">
+          <ScalarProperty Name="CMNU_NOTE" ColumnName="CMNU_NOTE" />
+          <ScalarProperty Name="CMNU_ROLE" ColumnName="CMNU_ROLE" />
+          <ScalarProperty Name="CMNU_NAME" ColumnName="CMNU_NAME" />
+          <ScalarProperty Name="CMNU_TEXT" ColumnName="CMNU_TEXT" />
+          <ScalarProperty Name="PMNU_NAME" ColumnName="PMNU_NAME" />
+          <ScalarProperty Name="PMNU_TEXT" ColumnName="PMNU_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_ASET_EXP">
+      <EntityTypeMapping TypeName="Model.VW_RPT_ASET_EXP">
+        <MappingFragment StoreEntitySet="VW_RPT_ASET_EXP">
+          <ScalarProperty Name="ITYPE_NAME" ColumnName="ITYPE_NAME" />
+          <ScalarProperty Name="JOBH_TYPE" ColumnName="JOBH_TYPE" />
+          <ScalarProperty Name="JOBH_NOTE" ColumnName="JOBH_NOTE" />
+          <ScalarProperty Name="JOBH_VENDOR" ColumnName="JOBH_VENDOR" />
+          <ScalarProperty Name="JOBH_MILEAGE" ColumnName="JOBH_MILEAGE" />
+          <ScalarProperty Name="JOBH_DATE" ColumnName="JOBH_DATE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="JOBH_AREA" ColumnName="JOBH_AREA" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="JOBH_DEPARTMENT" ColumnName="JOBH_DEPARTMENT" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="JOBH_OWNR" ColumnName="JOBH_OWNR" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="JOBH_ASET" ColumnName="JOBH_ASET" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+          <ScalarProperty Name="JOBD_NOTE" ColumnName="JOBD_NOTE" />
+          <ScalarProperty Name="JOBD_JAMNT" ColumnName="JOBD_JAMNT" />
+          <ScalarProperty Name="JOBD_JRATE" ColumnName="JOBD_JRATE" />
+          <ScalarProperty Name="JOBD_JQTY" ColumnName="JOBD_JQTY" />
+          <ScalarProperty Name="JOBD_IAMNT" ColumnName="JOBD_IAMNT" />
+          <ScalarProperty Name="JOBD_IRATE" ColumnName="JOBD_IRATE" />
+          <ScalarProperty Name="JOBD_IQTY" ColumnName="JOBD_IQTY" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="JOBD_ITEM" ColumnName="JOBD_ITEM" />
+          <ScalarProperty Name="JOBD_LINE" ColumnName="JOBD_LINE" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_ASET_USER">
+      <EntityTypeMapping TypeName="Model.VW_RPT_ASET_USER">
+        <MappingFragment StoreEntitySet="VW_RPT_ASET_USER">
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="ASET_GROUP" ColumnName="ASET_GROUP" />
+          <ScalarProperty Name="STAUTS" ColumnName="STAUTS" />
+          <ScalarProperty Name="END_NOTE" ColumnName="END_NOTE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="START_NOTE" ColumnName="START_NOTE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="WORKING_AREA" ColumnName="WORKING_AREA" />
+          <ScalarProperty Name="WORKING_DEPT" ColumnName="WORKING_DEPT" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ASET_AREA" ColumnName="ASET_AREA" />
+          <ScalarProperty Name="ASET_DEPT" ColumnName="ASET_DEPT" />
+          <ScalarProperty Name="CODE_NAME" ColumnName="CODE_NAME" />
+          <ScalarProperty Name="TAG" ColumnName="TAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_BILL">
+      <EntityTypeMapping TypeName="Model.VW_RPT_BILL">
+        <MappingFragment StoreEntitySet="VW_RPT_BILL">
+          <ScalarProperty Name="ITYPE_NAME" ColumnName="ITYPE_NAME" />
+          <ScalarProperty Name="JOBH_TYPE" ColumnName="JOBH_TYPE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="JOBH_AREA" ColumnName="JOBH_AREA" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="DEPARTMENT_BUSINESS" ColumnName="DEPARTMENT_BUSINESS" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="JOBH_DEPARTMENT" ColumnName="JOBH_DEPARTMENT" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="JOBH_OWNR" ColumnName="JOBH_OWNR" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="JOBH_ASET" ColumnName="JOBH_ASET" />
+          <ScalarProperty Name="BILH_DISC" ColumnName="BILH_DISC" />
+          <ScalarProperty Name="BILH_CPAY" ColumnName="BILH_CPAY" />
+          <ScalarProperty Name="BILH_UPAY" ColumnName="BILH_UPAY" />
+          <ScalarProperty Name="BILH_IPAY" ColumnName="BILH_IPAY" />
+          <ScalarProperty Name="BILH_RECEIVER" ColumnName="BILH_RECEIVER" />
+          <ScalarProperty Name="BILH_REF" ColumnName="BILH_REF" />
+          <ScalarProperty Name="BILH_NOTE" ColumnName="BILH_NOTE" />
+          <ScalarProperty Name="BILH_DATE" ColumnName="BILH_DATE" />
+          <ScalarProperty Name="BILH_ID" ColumnName="BILH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_BILL_SUM">
+      <EntityTypeMapping TypeName="Model.VW_RPT_BILL_SUM">
+        <MappingFragment StoreEntitySet="VW_RPT_BILL_SUM">
+          <ScalarProperty Name="BILL_AMT" ColumnName="BILL_AMT" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+          <ScalarProperty Name="BILH_DATE" ColumnName="BILH_DATE" />
+          <ScalarProperty Name="BILH_ID" ColumnName="BILH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_INSP_SUM">
+      <EntityTypeMapping TypeName="Model.VW_RPT_INSP_SUM">
+        <MappingFragment StoreEntitySet="VW_RPT_INSP_SUM">
+          <ScalarProperty Name="INSP_AMT" ColumnName="INSP_AMT" />
+          <ScalarProperty Name="INSPH_DEPARTMENT" ColumnName="INSPH_DEPARTMENT" />
+          <ScalarProperty Name="INSPH_AREA" ColumnName="INSPH_AREA" />
+          <ScalarProperty Name="INSPH_OWNR" ColumnName="INSPH_OWNR" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+          <ScalarProperty Name="INSPH_DATE" ColumnName="INSPH_DATE" />
+          <ScalarProperty Name="INSPH_ASET" ColumnName="INSPH_ASET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_INSURANCE">
+      <EntityTypeMapping TypeName="Model.VW_RPT_INSURANCE">
+        <MappingFragment StoreEntitySet="VW_RPT_INSURANCE">
+          <ScalarProperty Name="HACT" ColumnName="HACT" />
+          <ScalarProperty Name="INSU_REG_END" ColumnName="INSU_REG_END" />
+          <ScalarProperty Name="INSU_NOTE" ColumnName="INSU_NOTE" />
+          <ScalarProperty Name="INSU_COMP_ADDRESS" ColumnName="INSU_COMP_ADDRESS" />
+          <ScalarProperty Name="INSU_COMP" ColumnName="INSU_COMP" />
+          <ScalarProperty Name="INSU_POLICY" ColumnName="INSU_POLICY" />
+          <ScalarProperty Name="DACT" ColumnName="DACT" />
+          <ScalarProperty Name="INSU_PAID" ColumnName="INSU_PAID" />
+          <ScalarProperty Name="INSU_DATE" ColumnName="INSU_DATE" />
+          <ScalarProperty Name="INSU_VAT_AMOUNT" ColumnName="INSU_VAT_AMOUNT" />
+          <ScalarProperty Name="INSU_PREMIUM" ColumnName="INSU_PREMIUM" />
+          <ScalarProperty Name="INSU_ASET_VALUE" ColumnName="INSU_ASET_VALUE" />
+          <ScalarProperty Name="INSU_LINE" ColumnName="INSU_LINE" />
+          <ScalarProperty Name="INSU_ID" ColumnName="INSU_ID" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="ASET_AREA" ColumnName="ASET_AREA" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="INSU_ASET" ColumnName="INSU_ASET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_JOB_SUM">
+      <EntityTypeMapping TypeName="Model.VW_RPT_JOB_SUM">
+        <MappingFragment StoreEntitySet="VW_RPT_JOB_SUM">
+          <ScalarProperty Name="JOBH_AMT" ColumnName="JOBH_AMT" />
+          <ScalarProperty Name="JOBH_DATE" ColumnName="JOBH_DATE" />
+          <ScalarProperty Name="JOBH_ASET" ColumnName="JOBH_ASET" />
+          <ScalarProperty Name="INSPH_ID" ColumnName="INSPH_ID" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_JOBD_S1">
+      <EntityTypeMapping TypeName="Model.VW_RPT_JOBD_S1">
+        <MappingFragment StoreEntitySet="VW_RPT_JOBD_S1">
+          <ScalarProperty Name="JOBD_NOTE" ColumnName="JOBD_NOTE" />
+          <ScalarProperty Name="JOBD_JAMNT" ColumnName="JOBD_JAMNT" />
+          <ScalarProperty Name="JOBD_JRATE" ColumnName="JOBD_JRATE" />
+          <ScalarProperty Name="JOBD_JQTY" ColumnName="JOBD_JQTY" />
+          <ScalarProperty Name="JOBD_IAMNT" ColumnName="JOBD_IAMNT" />
+          <ScalarProperty Name="JOBD_IRATE" ColumnName="JOBD_IRATE" />
+          <ScalarProperty Name="JOBD_IQTY" ColumnName="JOBD_IQTY" />
+          <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+          <ScalarProperty Name="JOBD_ITEM" ColumnName="JOBD_ITEM" />
+          <ScalarProperty Name="JOBD_LINE" ColumnName="JOBD_LINE" />
+          <ScalarProperty Name="JOBH_ID" ColumnName="JOBH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RPT_POLICE_CASE">
+      <EntityTypeMapping TypeName="Model.VW_RPT_POLICE_CASE">
+        <MappingFragment StoreEntitySet="VW_RPT_POLICE_CASE">
+          <ScalarProperty Name="PLEA_AMNT" ColumnName="PLEA_AMNT" />
+          <ScalarProperty Name="Approval" ColumnName="Approval" />
+          <ScalarProperty Name="PLEA_APP_DATE" ColumnName="PLEA_APP_DATE" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PLEA_STATUS" ColumnName="PLEA_STATUS" />
+          <ScalarProperty Name="PLEA_DATE" ColumnName="PLEA_DATE" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="PLEA_AREA" ColumnName="PLEA_AREA" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="PLEA_DEPT" ColumnName="PLEA_DEPT" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="PLEA_ASET" ColumnName="PLEA_ASET" />
+          <ScalarProperty Name="OWNR_USER" ColumnName="OWNR_USER" />
+          <ScalarProperty Name="OWNR_TEXT" ColumnName="OWNR_TEXT" />
+          <ScalarProperty Name="PLEA_OWNR" ColumnName="PLEA_OWNR" />
+          <ScalarProperty Name="REASON_NAME" ColumnName="REASON_NAME" />
+          <ScalarProperty Name="PLEA_REASON_ID" ColumnName="PLEA_REASON_ID" />
+          <ScalarProperty Name="Paid_By" ColumnName="Paid By" />
+          <ScalarProperty Name="Case_On" ColumnName="Case On" />
+          <ScalarProperty Name="PLEA_LOCATION" ColumnName="PLEA_LOCATION" />
+          <ScalarProperty Name="PLEA_DESCRIPTION" ColumnName="PLEA_DESCRIPTION" />
+          <ScalarProperty Name="PLEA_REF" ColumnName="PLEA_REF" />
+          <ScalarProperty Name="PLEA_ID" ColumnName="PLEA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_USER_ASSET_ID_STRING">
+      <EntityTypeMapping TypeName="Model.VW_USER_ASSET_ID_STRING">
+        <MappingFragment StoreEntitySet="VW_USER_ASSET_ID_STRING">
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_USER_ASSET_LIST">
+      <EntityTypeMapping TypeName="Model.VW_USER_ASSET_LIST">
+        <MappingFragment StoreEntitySet="VW_USER_ASSET_LIST">
+          <ScalarProperty Name="UG_USER" ColumnName="UG_USER" />
+          <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="ASET_USED" ColumnName="ASET_USED" />
+          <ScalarProperty Name="ASET_NOTE" ColumnName="ASET_NOTE" />
+          <ScalarProperty Name="ASET_IMAGE" ColumnName="ASET_IMAGE" />
+          <ScalarProperty Name="ASET_MFG_YEAR" ColumnName="ASET_MFG_YEAR" />
+          <ScalarProperty Name="ASET_WEIGHT" ColumnName="ASET_WEIGHT" />
+          <ScalarProperty Name="ASET_HEIGHT" ColumnName="ASET_HEIGHT" />
+          <ScalarProperty Name="ASET_REG_DATE" ColumnName="ASET_REG_DATE" />
+          <ScalarProperty Name="ASET_PRICE" ColumnName="ASET_PRICE" />
+          <ScalarProperty Name="ASET_CAPACITY" ColumnName="ASET_CAPACITY" />
+          <ScalarProperty Name="ASET_GRN_CHASIS" ColumnName="ASET_GRN_CHASIS" />
+          <ScalarProperty Name="ASET_PO_ENGINE" ColumnName="ASET_PO_ENGINE" />
+          <ScalarProperty Name="ASET_MODEL" ColumnName="ASET_MODEL" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="COLOR_NAME" ColumnName="COLOR_NAME" />
+          <ScalarProperty Name="FUEL_NAME" ColumnName="FUEL_NAME" />
+          <ScalarProperty Name="BRAND_NAME" ColumnName="BRAND_NAME" />
+          <ScalarProperty Name="BODY_NAME" ColumnName="BODY_NAME" />
+          <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+          <ScalarProperty Name="ASET_CODE_NAME" ColumnName="ASET_CODE_NAME" />
+          <ScalarProperty Name="ASET_TAG" ColumnName="ASET_TAG" />
+          <ScalarProperty Name="ASET_ID" ColumnName="ASET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PRO_DAMAGE_LOST_OWNERSHIP" FunctionName="Model.Store.PRO_DAMAGE_LOST_OWNERSHIP" />
+    <FunctionImportMapping FunctionImportName="PRO_DAMAGE_LOST_OWNERSHIP_APP" FunctionName="Model.Store.PRO_DAMAGE_LOST_OWNERSHIP_APP" />
+    <FunctionImportMapping FunctionImportName="PRO_EXPD_XL" FunctionName="Model.Store.PRO_EXPD_XL" />
+    <FunctionImportMapping FunctionImportName="PRO_EXPD_XL_JUNK_CLEAR" FunctionName="Model.Store.PRO_EXPD_XL_JUNK_CLEAR" />
+    <FunctionImportMapping FunctionImportName="PRO_INSC_XL" FunctionName="Model.Store.PRO_INSC_XL" />
+    <FunctionImportMapping FunctionImportName="PRO_INSC_XL_JUNK_CLEAR" FunctionName="Model.Store.PRO_INSC_XL_JUNK_CLEAR" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_EIGHT" FunctionName="Model.Store.PRO_SUM_EIGHT" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_FIVE" FunctionName="Model.Store.PRO_SUM_FIVE" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_FOUR" FunctionName="Model.Store.PRO_SUM_FOUR" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_ONE" FunctionName="Model.Store.PRO_SUM_ONE" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_SEVEN" FunctionName="Model.Store.PRO_SUM_SEVEN" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_SIX" FunctionName="Model.Store.PRO_SUM_SIX" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_THREE" FunctionName="Model.Store.PRO_SUM_THREE" />
+    <FunctionImportMapping FunctionImportName="PRO_SUM_TWO" FunctionName="Model.Store.PRO_SUM_TWO" />
+    <FunctionImportMapping FunctionImportName="P_ASET_ACTV" FunctionName="Model.Store.P_ASET_ACTV" />
+    <FunctionImportMapping FunctionImportName="P_ASET_CHANGE" FunctionName="Model.Store.P_ASET_CHANGE" />
+    <FunctionImportMapping FunctionImportName="P_ISBOOKED_BOOKING" FunctionName="Model.Store.P_ISBOOKED_BOOKING" />
+    <FunctionImportMapping FunctionImportName="USER_MENU_PERMISSION" FunctionName="Model.Store.USER_MENU_PERMISSION" />
+  </EntityContainerMapping>
+</Mapping>

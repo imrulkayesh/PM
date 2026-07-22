@@ -1,0 +1,143 @@
+﻿@model PM.ModelsV.newInspection
+
+@{
+    ViewBag.Title = "New Inspection";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("NewInspection", "Inspection", FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.HiddenFor(model => model.A_DEPTF)
+                    @Html.HiddenFor(model => model.A_AREAF)
+                    @Html.HiddenFor(model => model.A_USERF)
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Asset</span>
+                        @Html.DropDownListFor(model => model.INSPH_ASET, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", autofocus = true, onchange = "getIItem();" })
+                        @Html.ValidationMessageFor(model => model.INSPH_ASET, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Type</span>
+                        @Html.DropDownListFor(model => model.INSPH_TYPE, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.INSPH_TYPE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Milage</span>
+                        @Html.EditorFor(model => model.MILEAGE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Mileage", type = "number" } })
+                        @Html.ValidationMessageFor(model => model.MILEAGE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Date</span>
+                        @Html.EditorFor(model => model.INSPH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "dd/MM/yyyy", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.INSPH_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" disabled="disabled" id="AsetLoc" class="form-control" placeholder="Base Information" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="text" disabled="disabled" id="WorkLoc" class="form-control" placeholder="Working Information" />
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Inspector</span>
+                            @Html.EditorFor(model => model.INSPH_IUSER, new { htmlAttributes = new { @class = "form-control", placeholder = "Inspection by (Max 30 Char)" } })
+                            @Html.ValidationMessageFor(model => model.INSPH_IUSER, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Spec.</span>
+                            @Html.EditorFor(model => model.INSPH_NOTE, new { htmlAttributes = new { @class = "form-control", placeholder = "Recomendation (Max 80 Char)" } })
+                            @Html.ValidationMessageFor(model => model.INSPH_NOTE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Item Name</span>
+                            @Html.DropDownList("INSPD_ITEM", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "LastRate();" })
+                            @Html.ValidationMessage("INSPD_ITEM", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Qty</span>
+                            @Html.Editor("INSPD_IQTY", new { htmlAttributes = new { @class = "form-control", placeholder = "Qty", type = "number" } })
+                            @Html.ValidationMessage("INSPD_QTY", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Rate</span>
+                            @Html.Editor("INSPD_IRATE", new { htmlAttributes = new { @class = "form-control", placeholder = "Rate", type = "number" } })
+                            @Html.ValidationMessage("INSPD_RATE", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Description</span>
+                            @Html.Editor("INSPD_NOTE", new { htmlAttributes = new { @class = "form-control", placeholder = "Problem Description (Max 50 Char)" } })
+                            @Html.ValidationMessage("INSPD_NOTE", "", new { @class = "text-danger" })
+                            <span class="input-group-btn">
+                                <button id="addItem" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="text" disabled="disabled" id="OldRec" class="form-control" placeholder="Problem History" />
+                    </div>
+                </div>
+                <div class="box box-primary">
+                    <table id="InspectionDetail" class="table">
+                        <thead>
+                            <tr>
+                                <th style="width:10%">Code</th>
+                                <th style="width:15%">Name</th>
+                                <th style="width:5%">Qty</th>
+                                <th style="width:5%">Rate</th>
+                                <th style="width:10%">Amount</th>
+                                <th style="width:30%">Description</th>
+                                <th style="width:5%">#</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="btn-group col-md-12">
+                        <a href="@Url.Action("Inspections","Inspection")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewInspection","Inspection")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                        <button type="submit" id="CreateJob" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Create Inspection</button>
+                    </div>
+                </div>
+        }
+    </div>
+    <div class="panel-footer">
+        New Inspection Entry
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Inspection/NewInspection.js"></script>
+}

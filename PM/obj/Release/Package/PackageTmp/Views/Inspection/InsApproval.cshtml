@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PM.ModelsV.InspectionView>
+
+@{
+    ViewBag.Title = "Inspection Approval";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_ASET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_OWNR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_DEPARTMENT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_IUSER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MILEAGE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_TYPE)
+                </th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_ASET)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_OWNR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_DEPARTMENT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_IUSER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MILEAGE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_TYPE)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("InspectionAppDetail", "Inspection", new { id=item.INSPH_ID, AsetId =item.INSPH_ASET_ID, aset=item.INSPH_ASET})" class="btn btn-sm btn-danger">Find</a>
+                        <input type="submit" class="FileDn btn btn-flat btn-primary" value="View" data-url="@Url.Action("ViewInspection", "Inspection", new { id = item.INSPH_ID })" />
+                        <a href="@Url.Action("DownloadAttachFile", "Inspection", new { id = item.INSPH_ID })" , class="btn btn-flat btn-primary">Download File</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    <div class="modal fade" id="pvModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header btn-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Action</h5>
+                </div>
+                <div class="modal-body" id="modalContainer">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    @section scripts{
+        <script src="~/Scripts/Common/ConfirmBox.js"></script>
+    }

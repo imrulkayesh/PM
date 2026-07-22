@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Accesories Adjustment";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row margin">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @ViewBag.Title
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Business Unit</span>
+                            @Html.DropDownList("ASET_BUSINESS", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "FindDepts();" })
+                            @Html.ValidationMessage("ASET_BUSINESS", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Department</span>
+                            @Html.DropDownList("ASET_DEPARTMENT", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "ASET_DEPARTMENT", id = "ASET_DEPARTMENT", onchange = "FindVehicleByDept();" })
+                            @Html.ValidationMessage("ASET_DEPARTMENT", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <br />
+                @using (Html.BeginForm("AdjustmentPost", "AssetManager", FormMethod.Post, new { id = "frmMain" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="col-md-6">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Vehicle</span>
+                            @Html.DropDownList("ASET_ID", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "ASET_ID", id = "ASET_ID", onchange = "FindAcceByAsset();" })
+                            @Html.ValidationMessage("ASET_ID", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Accessories</span>
+                            @Html.DropDownList("ACCE_ID", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "ACCE_ID", id = "ACCE_ID" })
+                            @Html.ValidationMessage("ACCE_ID", "", new { @class = "text-danger error" })
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Adjustment Type</span>
+                            @Html.DropDownList("AUA_TYPE", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                            @Html.ValidationMessage("AUA_TYPE", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Qty</span>
+                            @Html.Editor("AAI_QUANTITY", new { htmlAttributes = new { @class = "form-control", required = "required", name = "AAI_QUANTITY", id = "AAI_QUANTITY", placeholder = "Qty" } })
+                            @Html.ValidationMessage("AAI_QUANTITY", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Rate</span>
+                            @Html.Editor("AAI_RATE", new { htmlAttributes = new { @class = "form-control", required = "required", name = "AAI_RATE", id = "AAI_RATE", placeholder = "Unit Price" } })
+                            @Html.ValidationMessage("AAI_RATE", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">Note</span>
+                            @Html.Editor("AUA_DESC", new { htmlAttributes = new { @class = "form-control", name = "AUA_DESC", id = "AUA_DESC", placeholder = "Note" } })
+                            @Html.ValidationMessage("AUA_DESC", "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <button type="button" name="btn" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-danger pull-right"><span class="fa fa-save"></span> Save</button>
+                            <a href="@Url.Action("AccesoriesAdj","AssetManager")" class="btn btn-primary"><span class="fa fa-refresh"></span> Cancel</a>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="ShowPartial" class="table-responsive"></div>
+            <div class="panel-footer">
+                Accesoreis Adjustment
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                Confirm Submit
+            </div>
+            <div class="modal-body">
+                Are you sure you want to submit?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a href="#" id="submit" class="btn btn-success success">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/AssetManager/AssetAcceList.js"></script>
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}
+

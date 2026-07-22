@@ -1,0 +1,145 @@
+﻿@model PM.ModelsV.BillPrint
+@{
+    Layout = null;
+    <style>
+        table {
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+            table tr th {
+                border: 1px solid black;
+            }
+    </style>
+}
+
+<table border='1' width="100%">
+    <tbody>
+        <tr>
+            <td colspan='3'>Bill NO:</td>
+            <td colspan='3'>@Html.DisplayFor(model => model.BILH_ID)</td>
+        </tr>
+        <tr>
+            <td>Asset Name:</td>
+            <td>@Html.DisplayFor(model => model.ASET_CODE_NAME)</td>
+            <td>Mileage</td>
+            <td>@Html.DisplayFor(model => model.BILH_MILEAGE)</td>
+            <td>User Name:</td>
+            <td>@Html.DisplayFor(model => model.ASET_USER)</td>
+        </tr>
+        <tr>
+            <td>Date of Inspection:</td>
+            <td>@Html.DisplayFor(model => model.INSP_DATE)</td>
+            <td>Date of Job:</td>
+            <td>@Html.DisplayFor(model => model.JOB_DATE)</td>
+            <td>Inspection By:</td>
+            <td>@Html.DisplayFor(model => model.INSP_BY)</td>
+        </tr>
+        <tr>
+            <td>Reason:</td>
+            <td colspan='5'>@Html.DisplayFor(model => model.INSP_NOTE)</td>
+        </tr>
+        <tr>
+            <td>Name of Vendor:</td>
+            <td colspan='5'>@Html.DisplayFor(model => model.JOB_VENDOR)</td>
+        </tr>
+        <tr>
+            <td>Recommendation:</td>
+            <td colspan='5'>@Html.DisplayFor(model => model.JOB_NOTE)</td>
+        </tr>
+        <tr>
+            <td>Bill Note:</td>
+            <td colspan='5'>@Html.DisplayFor(model => model.BILLH_NOTE)</td>
+        </tr>
+        <tr>
+            <td>Ref No:</td>
+            <td colspan='2'>@Html.DisplayFor(model => model.REF_NO)</td>
+            <td>Date of Bill:</td>
+            <td colspan='2'>@Html.DisplayFor(model => model.BILL_DATE)</td>
+        </tr>
+        <tr>
+            <td>Inspection</td>
+            <td colspan='2'>@Html.DisplayFor(model => model.INSPH_ID)</td>
+            <td>Job Card</td>
+            <td colspan='2'>@Html.DisplayFor(model => model.JOBH_ID)</td>
+        </tr>
+        <tr>
+            <td colspan='3'>
+                <table width=100%>
+                    <tr>
+                        <td>Particuler</td>
+                        <td>Qty</td>
+                        <td>Rate</td>
+                        <td>Amount</td>
+                    </tr>
+                    @foreach (var item in Model.INSP_ITEM)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.iITEM_NAME)</td>
+                            <td>@Html.DisplayFor(model => item.iQty)</td>
+                            <td>@Html.DisplayFor(model => item.iRate)</td>
+                            <td>@Html.DisplayFor(model => item.iAmount)</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan='3'>Inspection Amount:</td>
+                        <td>@Html.DisplayFor(model => model.iTotal)</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan='3'>
+                <table width=100%>
+                    <tr>
+                        <td>Particuler</td>
+                        <td>Qty</td>
+                        <td>Rate</td>
+                        <td>Amount</td>
+                    </tr>
+
+                    @foreach (var item in Model.JOBH_ITEM)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.jITEM_NAME)</td>
+                            <td>@Html.DisplayFor(model => item.jQty)</td>
+                            <td>@Html.DisplayFor(model => item.jRate)</td>
+                            <td>@Html.DisplayFor(model => item.jAmount)</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan='3'>Job Card Amount:</td>
+                        <td>@Html.DisplayFor(model => model.jTotal)</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+    <tr>
+        <td>Inspection Approval:</td>
+        <td colspan='2'>@Html.DisplayFor(model => model.INSP_APP)</td>
+        <td>Job Card Approval:</td>
+        <td colspan='2'>@Html.DisplayFor(model => model.JOBH_APP)</td>
+    </tr>
+    <tr>
+        <td>User Pay:</td>
+        <td>@Html.DisplayFor(model => model.USER_PAY)</td>
+        <td>Insurance Pay:</td>
+        <td>@Html.DisplayFor(model => model.INSU_PAY)</td>
+        <td>Company Pay:</td>
+        <td>@Html.DisplayFor(model => model.BILH_CPAY)</td>
+    </tr>
+    <tr>
+        <td colspan='3'>----------</td>
+        <td colspan='3'>----------</td>
+    </tr>
+    <tr>
+        <td colspan='3'>Sign of @Html.DisplayFor(model => model.PAID_BY) with date</td>
+        <td colspan='3'>Sign of @Html.DisplayFor(model => model.BILL_USER) with date</td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        window.print();
+        setTimeout('window.close()', 100);
+    });
+</script>

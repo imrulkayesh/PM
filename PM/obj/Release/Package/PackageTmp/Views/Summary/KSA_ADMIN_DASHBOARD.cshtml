@@ -1,0 +1,406 @@
+﻿@model PM.ModelsV.SummaryViewKSA
+
+@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        *if the value is different from reports, you will take reports data are right.
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.CAR_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_KSA_ADMIN_DASHBOARD", "Summary", new { id = "FOUR" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Asset_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.STAFF_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_KSA_ADMIN_DASHBOARD", "Summary", new { id = "FIVE" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="User_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.POLICE_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_KSA_ADMIN_DASHBOARD", "Summary", new { id = "SIX" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Case_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.CL_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_KSA_ADMIN_DASHBOARD", "Summary", new { id = "SEVEN" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Current_Last" style="height:350px; width:auto;"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.CM_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_KSA_ADMIN_DASHBOARD", "Summary", new { id = "EIGHT" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Last_Six" style="height:350px; width:auto;"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Top Ten Item</h4>
+                <table class="table">
+                    <thead>
+                        <tr style="background-color:seagreen">
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Count
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.topTenItem)
+                        {
+                        <tr>
+                            <td>
+                                @item.ITEM_ID
+                            </td>
+                            <td>
+                                @item.ITEM_NAME
+                            </td>
+                            <td>
+                                @item.CNT
+                            </td>
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h4>Top Ten Asset</h4>
+                <table class="table">
+                    <thead>
+                        <tr style="background-color:coral">
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Count
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.topAsset)
+                        {
+                        <tr>
+                            <td>
+                                @item.ASET_TAG
+                            </td>
+                            <td>
+                                @item.ASET_CODE_NAME
+                            </td>
+                            <td>
+                                @item.CNT
+                            </td>
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h4>Top Ten Staff</h4>
+                <table class="table">
+                    <thead>
+                        <tr style="background-color:cornflowerblue">
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Count
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.topStaff)
+                        {
+                        <tr>
+                            <td>
+                                @item.OWNR_USER
+                            </td>
+                            <td>
+                                @item.CNT
+                            </td>
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+       <div class="row">
+            <div class="col-md-4">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.AWA_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("Pro_UpSert_AreaWAsset", "Summary")" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color:chocolate">
+                                    <th>Area</th>
+                                    <th>Car</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ var GT = 0; }
+                                @foreach (var item in Model.bodyArea)
+                                {
+
+                                    <tr>
+                                        <td>@item.AREA_NAME</td>
+                                        <td>@item.CNT</td>
+                                    </tr>
+                                    GT = GT + item.CNT ?? 0;
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Total:</th>
+                                    <th>@GT</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div> 
+           <div class="col-md-8">
+               <div class="box box-primary">
+                   <div class="box-header with-border">
+                       <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.AWC_DATE).ToString("dd/MM/yyyy")</h3>
+                       <div class="box-tools pull-right">
+                           <a href="@Url.Action("Pro_Update_Cost", "Summary")" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                           <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                               <i class="fa fa-minus"></i>
+                           </button>
+                           <button type="button" class="btn btn-box-tool" data-widget="remove">
+                               <i class="fa fa-times"></i>
+                           </button>
+                       </div>
+                   </div>
+                   <!-- /.box-header -->
+                   <div class="box-body no-padding">
+                       <table class="table">
+                           <thead>
+                               <tr style="background-color:limegreen">
+                                   <th>Area</th>
+                                   <th>Inspection R</th>
+                                   <th>Job Card R</th>
+                                   <th>Inspection P</th>
+                                   <th>Job Card P</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               @foreach (var item in Model.costArea)
+                               {
+                                   var Clss = "background-color:#f2dedf";
+                                   if(item.INSD > item.INSD_1)
+                                   {
+                                       Clss = "background-color:#def0d8";
+                                   }
+                                   else
+                                   {
+                                       Clss = "background-color:#f2dedf";
+                                   }
+                                   <tr style=@Clss>
+                                       <td>@item.AREA_NAME</td>
+                                       <td>@item.INSD</td>
+                                       <td>@item.JOBD</td>
+                                       <td>@item.INSD_1</td>
+                                       <td>@item.JOBD_1</td>
+                                   </tr>
+                               }
+                           </tbody>
+                       </table>
+
+                   </div>
+                   <!-- /.box-body -->
+               </div>
+               <!--/.box -->
+           </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.IQUMA_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("Pro_Iquma_Expire_List", "Summary")" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <h4>Iquma Expired</h4>
+                        <table id="generalDT" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Id
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Exp
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.expireList)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.Iquma_No
+                                        </td>
+                                        <td>
+                                            @item.User_Name
+                                        </td>
+                                        <td>
+                                            @item.Expire_Date
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/DashPlugin/loader.js"></script>
+    <script src="~/Scripts/DashPlugin/MyPie.js"></script>
+    <script type="text/javascript">
+        MakeMySlicePieChart('PRO_SUM_FOUR', 'Car Data', Asset_Data)
+        MakeMy3DPieChart('PRO_SUM_FIVE', 'Staff Data', User_Data)
+        MakeMyHolePieChart('PRO_SUM_SIX', 'Police Case', Case_Data)
+        MakeMyMaterialBarChart('PRO_SUM_SEVEN', 'Asset Expense', 'Current and Last Month', 'Current_Last')
+        MakeMyMaterialBarChart('PRO_SUM_EIGHT', 'Asset Expense', 'Last Six Month', 'Last_Six')
+    </script>
+}

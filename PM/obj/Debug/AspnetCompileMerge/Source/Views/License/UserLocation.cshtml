@@ -1,0 +1,51 @@
+﻿@model PM.ModelsV.LicenseUserLocationVM
+@{
+    ViewBag.Title = "User Location";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<h2>User Location</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("UserLocation", "License", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">User</span>
+                        @Html.DropDownListFor(model => model.USER_TEXT, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.USER_TEXT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Location Name</span>
+                        @Html.DropDownListFor(model => model.LIC_LOCATION_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.LIC_LOCATION_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("Index","License")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("UserLocation","License")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        License Document Name Entry
+    </div>
+</div>
+

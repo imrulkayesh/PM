@@ -1,0 +1,157 @@
+﻿@model PM.ModelsV.Report_Paid_Bills
+@{
+    ViewBag.Title = "Report_InsuranceBD_By_Date";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="box box-warning box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Insurance Detail By Date</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm("Report_InsuranceBD_By_Date", "ReportManager"))
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">From Bill Date</span>
+                            @Html.EditorFor(model => model.F_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "From Date" } })
+                            @Html.ValidationMessageFor(model => model.F_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">To Bill Date</span>
+                            @Html.EditorFor(model => model.T_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "To Date" } })
+                            @Html.ValidationMessageFor(model => model.T_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group-btn">
+                            <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+
+
+
+<div class="col-md-12">
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Insurance Detail By Date and Company</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm("Report_Insurance_By_Company_Detail", "ReportManager",new { target = "_blank" }))
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">From Bill Date</span>
+                            @Html.EditorFor(model => model.F_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "From Date" } })
+                            @Html.ValidationMessageFor(model => model.F_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">To Bill Date</span>
+                            @Html.EditorFor(model => model.T_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "To Date" } })
+                            @Html.ValidationMessageFor(model => model.T_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group-btn">
+                            <button type="submit" class="viewAsset btn btn-primary" formtarget="_blank">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+
+
+
+
+<div class="col-md-12">
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Insurance Summary By Date and Company</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm("Report_Insurance_By_Company_Summary", "ReportManager", new { target = "_blank" }))
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">From Bill Date</span>
+                            @Html.EditorFor(model => model.F_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "From Date" } })
+                            @Html.ValidationMessageFor(model => model.F_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">To Bill Date</span>
+                            @Html.EditorFor(model => model.T_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "To Date" } })
+                            @Html.ValidationMessageFor(model => model.T_BILH_DATE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group-btn">
+                            <button type="submit" class="viewAsset btn btn-primary" formtarget="_blank">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            $("#submit").on("click", function() 
+            {
+                var tab = window.open(url, '_blank');
+                tab.focus();
+            })});
+    </script>
+    
+    }

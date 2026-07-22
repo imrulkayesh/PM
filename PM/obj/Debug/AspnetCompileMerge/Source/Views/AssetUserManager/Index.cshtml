@@ -1,0 +1,234 @@
+﻿@*@model IEnumerable<PM.ModelsV.AssetUserManagerVM>
+    *@
+    @model IEnumerable<PM.Model.VW_ASSETUSERMANAGERVM>
+
+        @{
+        ViewBag.Title = "Transfer List";
+        Layout = "~/Views/Shared/_LayoutLG.cshtml";
+        }
+        <div class="row">
+            <div class="col-md-5">
+                @using (Html.BeginForm("Index", "AssetUserManager", new { Operation = "Search" }))
+                {
+                <div class="input-group margin">
+                    <span class="input-group-addon">Current Search</span>
+                    @Html.Editor("AssetUser", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Asset Name Or User Id", autofocus = true, maxlength = "50" } })
+                    <div class="input-group-btn">
+                        <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+                }
+            </div>
+            <div class="col-md-3">
+                <div class="btn-group margin">
+                    <a href="@Url.Action("NewAssetUser","AssetUserManager" )" class="btn btn-primary"> New Transfer</a>
+                    <a href="@Url.Action("Index","AssetUserManager")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                @using (Html.BeginForm("SearchOldData", "AssetUserManager", new { Operation = "Search" }))
+                {
+                <div class="input-group margin">
+                    <span class="input-group-addon">Asset History Search</span>
+                    @Html.Editor("AssetUser", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Asset Code Name Only", autofocus = true, maxlength = "50" } })
+                    <div class="input-group-btn">
+                        <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover" id="scrollNbuttonDT">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>#</th>
+                        <th>
+                            Aset Name
+                            @*@Html.DisplayNameFor(model => model.AU_ASET)*@
+                        </th>
+                        <th>
+                            User
+                            @*@Html.DisplayNameFor(model => model.AU_USER_U)*@
+                        </th>
+                        <th>
+                            User Name
+                            @*@Html.DisplayNameFor(model => model.AU_USER)*@
+                        </th>
+                        <th>
+                            Department
+                            @*@Html.DisplayNameFor(model => model.AU_DEPT)*@
+                        </th>
+                        <th>
+                            Area
+                            @*@Html.DisplayNameFor(model => model.AU_AREA)*@
+                        </th>
+                        <th>
+                            Start Date
+                            @*@Html.DisplayNameFor(model => model.AU_SRDATE)*@
+                        </th>
+                        <th>
+                            Request By
+                            @*@Html.DisplayNameFor(model => model.AU_SRUSER)*@
+                        </th>
+                        <th>
+                            App Date
+                            @*@Html.DisplayNameFor(model => model.AU_SADATE)*@
+                        </th>
+                        <th>
+                            App By
+                            @*@Html.DisplayNameFor(model => model.AU_SAUSER)*@
+                        </th>
+                        <th>
+                            Handover Note
+                            @*@Html.DisplayNameFor(model => model.AU_SNOTE)*@
+                        </th>
+                        <th>
+                            End Date
+                            @*@Html.DisplayNameFor(model => model.AU_ERDATE)*@
+                        </th>
+                        <th>
+                            End By
+                            @*@Html.DisplayNameFor(model => model.AU_ERUSER)*@
+                        </th>
+                        <th>
+                            E.App Date
+                            @*@Html.DisplayNameFor(model => model.AU_EADATE)*@
+                        </th>
+                        <th>
+                            E.App By
+                            @*@Html.DisplayNameFor(model => model.AU_EAUSER)*@
+                        </th>
+                        <th>
+                            Takeover Note
+                            @*@Html.DisplayNameFor(model => model.AU_ENOTE)*@
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    Action
+                                    <span class="fa fa-caret-down"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="submit" class="FileDn form-control btn btn-flat btn-primary" value="View Documents" data-url="@Url.Action("ViewFiles","AssetUserManager", new { id=item.AU_ID})" />
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="@Url.Action("TransferFormA","AssetUserManager", new { id=item.AU_ID})">View Form A</a>
+                                    </li>
+
+                                    @if (item.T_USER == null)
+                                    {
+                                    <li>
+                                        <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Upload Documents" data-url="@Url.Action("UploadFile","AssetUserManager", new { id=item.AU_ID})" />
+                                    </li>
+                                    <li>
+                                        <input type="submit" class="TrnDel form-control btn btn-flat btn-danger" value="Delete" data-url="@Url.Action("Delete","AssetUserManager", new { id=item.AU_ID})" />
+                                    </li>
+                                    }
+
+                                    @if (item.T_USER != null && item.R_USER == null && item.R_APPROVER == null)
+                                    {
+                                    <li>
+                                        <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Upload Documents" data-url="@Url.Action("UploadFile","AssetUserManager", new { id=item.AU_ID})" />
+                                    </li>
+                                    <li><input type="submit" class="btn4 form-control btn btn-flat btn-danger" value="Return" data-url="@Url.Action("ReturnAsset","AssetUserManager", new { id=item.AU_ID})" /></li>
+                                    }
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            @if (item.AU_TRNSTYPE == "S")
+                            {
+                            <span class="label label-danger">Short Period</span>
+                            }
+                            else
+                            {
+                            <span class="label label-success">General</span>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ASET_CODE_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_TEXT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OWNR_USER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DEPARTMENT_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AREA_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SRDATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.T_USER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SADATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.T_APPROVER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_SNOTE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ERDATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.R_USER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_EADATE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.R_APPROVER)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AU_ENOTE)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="modal fade" id="pvModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header btn-primary">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title">Action</h5>
+                    </div>
+                    <div class="modal-body" id="modalContainer">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        @section scripts{
+        <script src="~/Scripts/Common/ConfirmBox.js"></script>
+        }

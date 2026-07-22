@@ -1,0 +1,112 @@
+﻿@model PM.Models.P_EXPD
+
+@{
+    ViewBag.Title = "NewExpenses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row margin">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                New Expenses
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal col-md-6">
+                        <h4>New Expenses</h4>
+                        @Html.ActionLink("Back to List", "Index")
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.Label("Group", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("EXPD_GU", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%", required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("BU", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("EXPD_BU", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%", required = "required", onchange = "GetAssets();" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EXPD_ASET, "Asset", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("EXPD_ASET", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "EXPD_ASET", id = "EXPD_ASET", onchange = "GetHist();"
+                           })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EXPD_AMNT, "Amount", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EXPD_AMNT, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EXPD_DATE, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EXPD_DATE, new { htmlAttributes = new { @class = "form-control", type = "date", required = "required" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EXPD_NOTE, "Note", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EXPD_NOTE, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="form-horizontal col-md-6 table-responsive">
+                    <div id="ViewEditPartialView"></div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                New Expenses Entry
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script type="text/javascript" language="javascript">
+        function GetAssets() {
+            var url = '@Url.Action("GetAssets", "Expenses")';
+            var EXPD_ASET = $('#EXPD_ASET');
+            var Group = $('#EXPD_GU').val();
+            var Business = $('#EXPD_BU').val();
+            $.getJSON(url, { Group: Group, Business: Business }, function (response) {
+                EXPD_ASET.empty();
+                EXPD_ASET.append($("<option></option>").attr("value", '').text('--Select Asset--'));
+                $.each(response, function (index, item) {
+                    EXPD_ASET.append($("<option></option>").attr("value", item.ASET_OID).text(item.ASET_NAME));
+                });
+            });
+        };
+        function GetHist() {
+            var id = $('#EXPD_ASET').val();
+            var route = '@Url.Action("ExpensesHistory", "Expenses")?AsetId=' + id;
+            $('#ViewEditPartialView').load(route);
+        };
+    </script>
+
+}

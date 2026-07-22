@@ -1,0 +1,147 @@
+﻿@model IEnumerable<PM.Models.P_USERS_MENUC>
+
+@{
+    ViewBag.Title = "MenuPermission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Menu Permission</h4>
+
+<p>
+    <button type="button" class="btn btn-primary fa fa-plus-square" data-toggle="modal" data-target="#myModal"> Add Menu</button>
+</p>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">User</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="generalDT" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Mother Menu
+                    </th>
+                    <th>
+                        Child Menu
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.P_USERS.USER_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.P_MENUC.P_MENUP.PMNU_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.P_MENUC.CMNU_NAME)
+                        </td>
+                        <td>
+                            @if (item.UMP_ACTV == true)
+                            {
+                                <p class="fa fa-check-square" />
+                            }
+                            else
+                            {
+                                <p class="fa fa-close" />
+                            }
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.USER_MENUC })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Mother Menu
+                    </th>
+                    <th>
+                        Child Menu
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>#</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Menu</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    @Html.Hidden("staffId", value: HttpContext.Current.Request.RequestContext.RouteData.Values["id"])
+                    @Html.Hidden("returnUrl", value: Request.Url.AbsoluteUri)
+                    @Html.DropDownList("ParentMenuList", null, "-Select a Menu-", htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", required = "required", onchange = "LoadSubMenu();" })
+                    <br />
+                    @Html.DropDownList("ChildMenuList", Enumerable.Empty<SelectListItem>(), "-Select Child Menu-", htmlAttributes: new { @class = "form-control select2", style = "width: 100%;", required = "required" })
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                <a href="@Url.Action("AddToUser", "Users")" id="myLink" class="btn btn-primary"><i class="fa fa-plus"></i> Add</a>
+                @*@Html.ActionLink("AddToUser","Users", null, new { id = "myLink"})*@
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        function LoadSubMenu() {
+            var url = '@Url.Action("getCMList", "Users")';
+            var CMList = $('#ChildMenuList');
+            var id = $('#ParentMenuList').val();
+            $.getJSON(url, { pMNUid: id }, function (response) {
+                CMList.empty();
+                $.each(response, function (index, item) {
+                    CMList.append($("<option></option>").attr("value", item.CMNU_TEXT).text(item.CMNU_NAME));
+                });
+            });
+        };
+
+        $("#myLink").click(function (e) {
+            e.preventDefault();
+            var menuId = $('#ChildMenuList').val();
+            var staffId = $('#staffId').val();
+            $.ajax({
+                url: $(this).attr("href"), data: { menuId: menuId, staffId: staffId }, // comma here instead of semicolon
+                success: function () {
+                    alert("Menu add success");  // or any other indication if you want to show
+                }
+            });
+        });
+
+    </script>
+}

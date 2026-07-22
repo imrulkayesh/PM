@@ -1,0 +1,119 @@
+﻿@model PM.ModelsV.ReminderVM
+@{
+    ViewBag.Title = "New Document";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                @ViewBag.Title
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("NewReminder", "Reminder", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Business</span>
+                                @Html.DropDownList("ASET_BUSINESS", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "FromDept();" })
+                                @Html.ValidationMessage("ASET_BUSINESS", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Department</span>
+                                @Html.DropDownList("ASET_DEPARTMENT", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "clearfrom();" })
+                                @Html.ValidationMessage("ASET_DEPARTMENT", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Group</span>
+                                @Html.DropDownList("ASET_GROUP", null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "FromAsset();" })
+                                @Html.ValidationMessage("ASET_GROUP", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Asset</span>
+                                @Html.DropDownListFor(model => model.ASET_ID, Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "getReminderItem();" })
+                                @Html.ValidationMessage("ASET_ID", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Document For</span>
+                                @Html.DropDownList("ITEM_ID", Enumerable.Empty<SelectListItem>(), "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", onchange = "getBase();" })
+                                @Html.ValidationMessage("ITEM_ID", "", new { @class = "text-danger" })
+                            </div>
+                            <h5 id="msg" style="color:red"></h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Note</span>
+                                @Html.Editor("NOTE", new { htmlAttributes = new { @class = "form-control", placeholder = "Note", maxlength = "50" } })
+                                @Html.ValidationMessage("NOTE", "", new { @class = "text-danger" })
+                            </div>
+                        </div>                       
+                    </div>
+
+                    <div id="mbase" style="display:none" class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Current State</span>
+                                @Html.Editor("C_STATE", new { htmlAttributes = new { @class = "form-control", placeholder = "Current State", maxlength = "30", id = "C_STATE" } })
+                                @Html.ValidationMessage("C_STATE", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Next State</span>
+                                @Html.Editor("N_STATE", new { htmlAttributes = new { @class = "form-control", placeholder = "Next State", maxlength = "30", id = "N_STATE" } })
+                                @Html.ValidationMessage("N_STATE", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="dbase" style="display:none" class="row">
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Start Date</span>
+                                @Html.Editor("C_DATE", new { htmlAttributes = new { @class = "form-control", type = "date", id = "C_DATE", placeholder = "dd/mm/yyyy" } })
+                                @Html.ValidationMessage("C_DATE", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">End Date</span>
+                                @Html.Editor("N_DATE", new { htmlAttributes = new { @class = "form-control", type = "date", id = "N_DATE", placeholder = "dd/mm/yyyy" } })
+                                @Html.ValidationMessage("N_DATE", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-group input-group">
+                            <span class="input-group-addon">File</span>
+                            <input type="file" name="FileX" id="FileX" class="form-control" required="required" accept=".pdf,.docx,.jpg,.png" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                            <a href="@Url.Action("Index","Reminder")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        </div>
+                }
+
+            </div>
+
+            <div class="panel-footer">
+                New Reminder
+            </div>
+        </div>
+
+@section scripts{
+    <script src="~/Scripts/Reminder/NewReminder.js"></script>
+}

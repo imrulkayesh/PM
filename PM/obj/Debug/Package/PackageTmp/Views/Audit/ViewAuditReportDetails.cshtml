@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PM.ModelsV.AuditReportDetails>
+
+<table class="table table-bordered table-striped table-condensed" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LINE)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.TASK_CATEGORY_TYPE_ID)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.TASK_CATEGORY_ID)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.AUDIT_SAVING_TYPE_ID)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.AUDIT_SAVING_NAME_ID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.RPT_ACTION_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SAVING_AMOUNT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALUE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REMARK)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LINE)
+                </td>
+                @*<th>
+                    @Html.DisplayFor(model => item.TASK_CATEGORY_TYPE_NAME)
+                </th>*@
+                <th>
+                    @Html.DisplayFor(model => item.TASK_CATEGORY_NAME)
+                </th>
+                @*<th>
+                    @Html.DisplayFor(model => item.AUDIT_SAVING_TYPE_NAME)
+                </th>*@
+                <th>
+                    @Html.DisplayFor(model => item.AUDIT_SAVING_NAME)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RPT_ACTION_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SAVING_AMOUNT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VALUE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.REMARK)
+                </td>
+            </tr>
+                        }
+    </tbody>
+</table>
+

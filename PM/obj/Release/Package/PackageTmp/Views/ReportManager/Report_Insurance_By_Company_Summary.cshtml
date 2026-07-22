@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PM.ModelsV.Report_Insurance_By_Company_Summary>
+@{
+    Layout = null;
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+           table tr th {
+                border: 1px solid black;
+            }
+             table tr td {
+                  font-size: 10px;
+            }
+    </style>
+}
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th colspan="2">
+                Report_Insurance_By_Company_Summary
+            </th>
+        </tr>
+        <tr>
+            <th>BU Name</th>
+            <th>Premium</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.BUSINESS_NAME</td>
+                <td>@item.INSU_PREMIUM</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<small>@DateTime.Now Printed by @Session["UserId"].ToString()</small>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        window.print();
+        setTimeout('window.close()', 100);
+    });
+</script>

@@ -1,0 +1,165 @@
+﻿@model IEnumerable<PM.ModelsV.DismissList>
+
+@{
+    ViewBag.Title = "Asset Dismiss";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_CODE_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SERVICE_MONTH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_VALUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_TYPE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_REASON)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_TYPE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_DETAIL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RECEIVE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_LINE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_ASET_VALUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_POLICY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSURANCE_COMP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPLY_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPROVE_USER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.APPROVE_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DISMISS_STATUS)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Action
+                                <span class="fa fa-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @using (Html.BeginForm("ADApp", "AssetManager", new { id = item.ASET_ID }))
+                                    {
+                                        <input type="submit" class="btn btn-danger btn-flat" value="Approve" />
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_CODE_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SERVICE_MONTH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_VALUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_REASON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_TYPE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_DETAIL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RECEIVE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_LINE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_ASET_VALUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_POLICY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSURANCE_COMP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPLY_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPROVE_USER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APPROVE_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DISMISS_STATUS)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

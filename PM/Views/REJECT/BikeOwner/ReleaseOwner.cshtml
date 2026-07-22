@@ -1,0 +1,137 @@
+﻿@model PM.Models.P_OWNR
+
+@{
+    ViewBag.Title = "ReleaseOwner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row margin">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Edit/Release Owner
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal col-md-6">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.OWNR_OID)
+                        @Html.HiddenFor(model => model.OWNR_TEXT)
+                        @Html.HiddenFor(model => model.OWNR_USER)
+                        @Html.HiddenFor(model => model.OWNR_NAME)
+                        @Html.HiddenFor(model => model.OWNR_ADDRESS)
+                        @Html.HiddenFor(model => model.OWNR_TAKE)
+                        @Html.HiddenFor(model => model.OWNR_ASET)
+                        @Html.HiddenFor(model => model.OWNR_DEPT)
+                        @Html.HiddenFor(model => model.OWNR_AREA)
+                        @Html.HiddenFor(model => model.OWNR_TYPE)
+                        @Html.HiddenFor(model => model.CUSR)
+                        @Html.HiddenFor(model => model.EUSR)
+                        @Html.HiddenFor(model => model.CDT)
+                        @Html.HiddenFor(model => model.EDT)
+                        @Html.HiddenFor(model => model.UDT)
+                        @Html.HiddenFor(model => model.VER)
+                        @Html.HiddenFor(model => model.OWNR_IMAG)
+                        @Html.HiddenFor(model => model.OWNR_AST_IMAG)
+                        @Html.HiddenFor(model => model.OWNR_DED_IMAG)
+                        @Html.HiddenFor(model => model.OWNR_RESIGN)
+                        @Html.HiddenFor(model => model.OWNR_RES_DATE)
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">User Name</span>
+                                @Html.EditorFor(model => model.OWNR_USER, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_USER, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Designation</span>
+                                @Html.EditorFor(model => model.OWNR_NAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_NAME, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Mobile</span>
+                                @Html.EditorFor(model => model.OWNR_CONTACT, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile Number or Phone" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_CONTACT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Email Address</span>
+                                @Html.EditorFor(model => model.OWNR_EMAIL, new { htmlAttributes = new { @class = "form-control", type = "email", placeholder = "Email Address" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_EMAIL, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 input-group">
+                                <span class="input-group-addon">Relase Date</span>
+                                @Html.EditorFor(model => model.OWNR_RELASE, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                                @Html.ValidationMessageFor(model => model.OWNR_RELASE, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="form-horizontal col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-10 input-group">
+                                    <span class="input-group-addon">Note</span>
+                                    @Html.EditorFor(model => model.OWNR_NOTE, new { htmlAttributes = new { @class = "form-control", maxlength = "250" } })
+                                    @Html.ValidationMessageFor(model => model.OWNR_NOTE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 input-group">
+                                    <span class="input-group-addon">Release Action</span>
+                                    @Html.EditorFor(model => model.OWNR_ACTV, new { htmlAttributes = new { @class = "form-control select2", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.OWNR_ACTV, "", new { @class = "text-danger" })
+                                    <span class="help-block">To Release Asset, set action as 'False'</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Update/Release" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                }
+            </div>
+            <div class="panel-footer">
+                Update Owner
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $('#OWNR_ACTV').change(function () {
+            var status = $("#OWNR_ACTV").val()
+            debugger;
+            if (status === 'true') {
+                //  block of code to be executed if condition1 is true
+                $("#OWNR_RELASE").prop('required', false);
+            } else if (status === 'false') {
+                //  block of code to be executed if the condition1 is false and condition2 is true
+                $("#OWNR_RELASE").prop('required', true);
+            } else {
+                //  block of code to be executed if the condition1 is false and condition2 is false
+                $("#OWNR_ACTV").prop('required', true);
+            }
+        });
+
+        function close_window() {
+            if (confirm("Close Window?")) {
+                close();
+            }
+        }
+    </script>
+
+}

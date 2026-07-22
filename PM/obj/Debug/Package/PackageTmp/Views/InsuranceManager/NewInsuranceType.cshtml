@@ -1,0 +1,49 @@
+﻿@model PM.ModelsV.InsuranceManagerVM
+@{
+    ViewBag.Title = "Insurance Type";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewInsuranceType", "InsuranceManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Insurance Type Name</span>
+                        @Html.EditorFor(model => model.INSURANCE_TYPE_NAME, new { htmlAttributes = new { @class = "form-control", required = "required", autofocus = true, placeholder = "Insurance Type Name" } })
+                        @Html.ValidationMessageFor(model => model.INSURANCE_TYPE_NAME, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Remark</span>
+                        @Html.EditorFor(model => model.REMARKS, new { htmlAttributes = new { @class = "form-control", placeholder = "Remark", autofocus = true} })
+                        @Html.ValidationMessageFor(model => model.REMARKS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("Index","InsuranceManager")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewInsuranceType","InsuranceManager")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        Insurance Type Name Entry
+    </div>
+</div>
+

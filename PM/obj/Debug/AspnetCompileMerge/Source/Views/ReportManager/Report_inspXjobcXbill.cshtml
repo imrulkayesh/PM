@@ -1,0 +1,30 @@
+﻿@model PM.ModelsV.Month_Wise_Report
+@{
+    ViewBag.Title = "inspXjobcXbill";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+@using (Html.BeginForm("Report_inspXjobcXbill", "ReportManager"))
+{
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group input-group">
+                <span class="input-group-addon">From Date</span>
+                @Html.EditorFor(model => model.F_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "From Date" } })
+                @Html.ValidationMessageFor(model => model.F_BILH_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group input-group">
+                <span class="input-group-addon">To Date</span>
+                @Html.EditorFor(model => model.T_BILH_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", type = "date", placeholder = "To Date" } })
+                @Html.ValidationMessageFor(model => model.T_BILH_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="input-group-btn">
+                <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+}

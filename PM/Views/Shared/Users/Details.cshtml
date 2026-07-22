@@ -1,0 +1,123 @@
+﻿@model PM.Models.P_USERS
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>P_USERS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_MOBL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_MOBL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_IMAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_IMAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ACTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ACTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EUSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EUSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_ROLES.ROLE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_ROLES.ROLE_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.USER_TEXT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

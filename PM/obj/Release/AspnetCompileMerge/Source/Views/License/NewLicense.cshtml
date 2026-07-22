@@ -1,0 +1,149 @@
+﻿@model PM.ModelsV.LicenseMasterNM
+@{
+    ViewBag.Title = "New License";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewLicense", "License", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Company Name</span>
+                        @Html.DropDownListFor(model => model.COMPANY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.COMPANY_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Location Name</span>
+                        @Html.DropDownListFor(model => model.LIC_LOCATION_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.LIC_LOCATION_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Type</span>
+                        @Html.DropDownListFor(model => model.LICENSE_NAME_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.LICENSE_NAME_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Number</span>
+                        @Html.EditorFor(model => model.LICENSE_NUMBER, new { htmlAttributes = new { @class = "form-control", placeholder = "License Number", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.LICENSE_NUMBER, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Issuing Authority</span>
+                        @Html.DropDownListFor(model => model.ISSUING_AUTHORITY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.ISSUING_AUTHORITY_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Item Name</span>
+                        @Html.DropDownListFor(model => model.ITEM_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;"})
+                        @Html.ValidationMessageFor(model => model.ITEM_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Fee</span>
+                        @Html.EditorFor(model => model.LICENSE_FEE, new { htmlAttributes = new { @class = "form-control", placeholder = "License Fee", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.LICENSE_FEE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Date of Issue</span>
+                        @Html.EditorFor(model => model.ISSUE_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "MM/dd/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.ISSUE_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Date of Expiration</span>
+                        @Html.EditorFor(model => model.EXPIRE_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "MM/dd/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.EXPIRE_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Holder (Mobile)</span>
+                        @Html.EditorFor(model => model.LICENSE_HOLDER_MOBILE, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile Number", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.LICENSE_HOLDER_MOBILE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Holder (Email)</span>
+                        @Html.EditorFor(model => model.LICENSE_HOLDER_EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.LICENSE_HOLDER_EMAIL, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Description</span>
+                        @Html.EditorFor(model => model.REMARK, new { htmlAttributes = new { @class = "form-control", placeholder = "Remark", autofocus = true, } })
+                        @Html.ValidationMessageFor(model => model.REMARK, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Application Date</span>
+                        @Html.EditorFor(model => model.APPLICATION_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "MM/dd/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.APPLICATION_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Status</span>
+                        @Html.DropDownListFor(model => model.LICENSE_STATUS_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.LICENSE_STATUS_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Attachment</span>
+                        <input type="file" name="FileX" id="FileX" class="form-control" accept="image/jpeg, image/png" required = "required">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("LicenseMaster","License")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewLicense","License")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        License  Entry
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

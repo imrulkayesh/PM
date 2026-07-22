@@ -1,0 +1,205 @@
+﻿@model PM.ModelsV.HandOverFormPrint
+@{
+    Layout = null;
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+            table tr th {
+                border: 1px solid black;
+            }
+    </style>
+}
+@*<div id="divToPrint">*@
+
+<table>
+    <thead>
+        <tr>
+            <td align="center" colspan="4" style="text-decoration:underline"><strong>COMPANY VEHICLE HANDOVER FORM</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Tag</th>
+            <th>Plate Number</th>
+            <th>Mileage</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => Model.ASET_TAG)</td>
+            <td>@Html.DisplayFor(model => Model.ASET_NAME)</td>
+            <td>@Html.DisplayFor(model => Model.MILEAGE)</td>
+            <td>@Html.DisplayFor(model=>Model.HO_DATE)</td>
+        </tr>
+        @*<tr>
+            <th colspan="2" align="center">Asset</th>
+            <th align="center">User</th>
+            <th align="center">Working</th>
+        </tr>
+        <tr>
+            <td>Company:</td>
+            <td>@Html.DisplayFor(model => Model.A_COMP)</td>
+            <td>@Html.DisplayFor(model => Model.T_COMP)</td>
+            <td>@Html.DisplayFor(model => Model.O_COMP)</td>
+        </tr>
+        <tr>
+            <td>Department:</td>
+            <td>@Html.DisplayFor(model => Model.A_DEPARTMENT)</td>
+            <td>@Html.DisplayFor(model => Model.T_DEPARTMENT)</td>
+            <td>@Html.DisplayFor(model => Model.O_DEPARTMENT)</td>
+        </tr>
+        <tr>
+            <td>Area:</td>
+            <td>@Html.DisplayFor(model => Model.A_AREA)</td>
+            <td>@Html.DisplayFor(model => Model.T_AREA)</td>
+            <td>@Html.DisplayFor(model => Model.O_AREA)</td>
+        </tr>*@
+        <tr>
+            <td>Reason:</td>
+            <td colspan="3">
+                @Html.DisplayFor(model => Model.NOTES)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr /></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                I am <strong>@Html.DisplayFor(model=>Model.T_STAFF_NAME)</strong> Iquma No. <strong>@Html.DisplayFor(model => Model.T_IQAMA_NO)</strong>  hereby confirmed that I have possessed the above mentioned vehicle on date:@Html.DisplayFor(model => Model.HO_DATE) and time  __:__:__:__.  in good order and condition with bellow Toyota Accessories and Documents.
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <table border="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <th>SL</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Qty</th>
+                            <th>Note</th>
+                        </tr>
+                        @if (Model.HOFP_ITEMS != null)
+                        {
+                            foreach (var item in Model.HOFP_ITEMS)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(model => item.SL_NO)</td>
+                                    <td>@Html.DisplayFor(model => item.ITEM_ID)</td>
+                                    <td>@Html.DisplayFor(model => item.ITEM_NAME)</td>
+                                    <td>@Html.DisplayFor(model => item.ITEM_QTY)</td>
+                                    <td>@Html.DisplayFor(model => item.ITEM_NOTE)</td>
+                                </tr>
+                            }
+                        }
+                        
+                    </tbody>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4"><strong>I understand that when the vehicle is under my possession: </strong></td>
+        </tr>
+        <tr>
+            <td colspan="4">1)	I shall always ensure that reasonable care must be taken to my best endeavor to maintain the condition </td>
+        </tr>
+        <tr>
+            <td colspan="4">2)	I shall not use the vehicle to third party unless company approval.</td>
+        </tr>
+        <tr>
+            <td colspan="4">3) Any repair or modification required must get the prior approval from the Authorized Person of the Company or otherwise I shall fully responsible and pay to the Company for all the costs and expenses to restore the vehicle back to the original condition and repair any other affected parts.  </td>
+        </tr>
+        <tr>
+            <td colspan="4">4)	The company has the right to take back the vehicle at any time and any place without any obligation to me. </td>
+        </tr>
+        <tr>
+            <td colspan="4">5)	I shall fully responsible and indemnify the Company against all law and regulations of any relevant authorities including the Company’s solicitors’ costs incurred in the relevant enforcement.</td>
+        </tr>
+        <tr>
+            <td>6)	In the event :-</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">i)	Any accident happened due to my default and if insurance policy will not accept to pay cost then I’ll pay back the Company for all cost. </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">ii)	Any accident due to third party default will claim his insurance policy in accordingly.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">iii) I shall fully responsible for any insurance claimed rejected.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">iv)	If there is any minor accident happen with the car, I will inform this to the company without any delay. Otherwise it will be treated as financial offence. </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table border="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">Received By</th>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>@Html.DisplayFor(model => Model.T_STAFF_NAME)</td>
+                        </tr>
+                        <tr>
+                            <td>Iquma:</td>
+                            <td>@Html.DisplayFor(model => Model.T_IQAMA_NO)</td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td>@Html.DisplayFor(model => Model.HO_DATE)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td colspan="2">
+                <table border="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <th colspan="2" align="center">Handover by</th>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Iquma:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td>@Html.DisplayFor(model => Model.HO_DATE)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@*</div>
+    <input type='button' id='btn' value='Print' onclick='PrintDiv();'>*@
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        window.print();
+        setTimeout('window.close()', 100);
+    });
+</script>
+@*<script type="text/javascript">
+        function PrintDiv() {
+            var divToPrint = document.getElementById('divToPrint');
+            var popupWin = window.open('', '', '');
+            popupWin.document.open();
+            popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+            popupWin.document.close();
+        }
+    </script>*@
+

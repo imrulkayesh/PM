@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!-- /.col-lg-4 -->
+<div class="col-lg-10">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <a href="@Url.Action("Index","CompWiseAssetReport")" class="btn btn-sm btn-default">Back</a>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="PRANAsset" id="PRANAsset" value="PRANAsset" checked>PRAN Assset
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label>Select Report</label>
+                    <select id="rpt1" class="form-control" onchange="ReportSelected();">
+                        <option value="SelectReport">--Select a Report--</option>
+                        <option value="49055">Vending Machine</option>
+                        <option value="48510">Refrigerator-Retailers</option>
+                        <option value="48511">Dairy-Juice Vending Machine</option>
+                        <option value="48503">Ice-box Retailer</option>
+                        <option>PRAN ICE BOX</option>
+                        <option value="48502">Refrigerator- Jhatpot</option>
+                        <option value="48501">Refrigerator-Dairy</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3 col-md-offset-3">
+                    <input type="submit" value="Report" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            Report List
+        </div>
+    </div>
+</div>
+<!-- /.col-lg-4 -->
+<script>
+
+</script>
+
+@section scripts{
+    <script type="text/javascript">
+        function ReportSelected() {
+            if (confirm('Are you sure you want to view Report?')) {
+                // Save it!
+                var id = document.getElementById('rpt1').value;
+                if (id !=null) {
+                    window.location.href = '@Url.Action("Export_Data", "CompWiseAssetReport")?DepotId=' + id;
+                    @*window.location.href = '@Url.Action("RPT_VENDINGMACHINE", "CompWiseAssetReport")?DepotId=' + id;*@
+                    @*window.open('@Url.Action("RPT_VENDINGMACHINE", "CompWiseAssetReport")?DepotId=' + id, '_blank');*@
+                } else {
+                    alert(this.value);
+                }
+            } else {
+                // Do nothing!
+                alert("OK. Decision changed!");
+            }
+        }
+    </script>
+}

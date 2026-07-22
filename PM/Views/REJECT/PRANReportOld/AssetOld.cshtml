@@ -1,0 +1,100 @@
+﻿@model IEnumerable<PM.Models.VW_RPT_VENDINGMACHINE>
+
+@{
+    Layout = null;
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TEXT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VHCL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VHCL_MODL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNER_MOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_ZONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_GROUP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_HLMD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_RCOT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_ULCK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_RDAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_TDAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_RSGN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OWNR_RGDT)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEXT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VHCL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VHCL_MODL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNER_MOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_ZONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_GROUP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_HLMD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_RCOT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_ULCK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_RDAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_TDAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_RSGN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OWNR_RGDT)
+        </td>
+    </tr>
+}
+
+</table>

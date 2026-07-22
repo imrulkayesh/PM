@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PM.Models.P_INSC>
+
+@{
+    ViewBag.Title = "XL";
+    Layout = null;
+}
+<h4>View Insurance</h4>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Premium
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Renew Date
+        </th>
+        <th>
+            Note
+        </th>
+        <th>
+            Aset
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSC_PREM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSC_AMNT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSC_RDAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INSC_NOTE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.P_ASSET.ASET_NAME)
+            </td>
+        </tr>
+    }
+
+</table>

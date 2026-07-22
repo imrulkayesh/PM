@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PM.ModelsV.CategoryCGWiseDetails>
+
+<table class="table table-bordered table-striped table-condensed" style="width: 100%;">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.TASK_CATEGORY_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL_REPORT_CATEGORY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PRAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RFL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CTL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GROUP_CS)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.TASK_CATEGORY_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TOTAL_REPORT_CATEGORY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PRAN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RFL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CTL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GROUP_CS)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

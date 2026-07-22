@@ -1,0 +1,178 @@
+﻿@model IEnumerable<PM.Models.P_OWNR>
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <strong> Search Result</strong> 
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Asset Name
+                            </th>
+                            <th>
+                                Outlet Id
+                            </th>
+                            <th>
+                                Outlet Name
+                            </th>
+                            <th>
+                                Proprietor
+                            </th>
+                            <th>
+                                Contact
+                            </th>
+                            <th>
+                                Outlet Address
+                            </th>
+                            <th>
+                                Outlet Picture
+                            </th>
+                            <th>
+                                Taken
+                            </th>
+                            <th>
+                                Asset Pic
+                            </th>
+                            <th>
+                                Deed Pic
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Note
+                            </th>
+                            <th>
+                                Area
+                            </th>
+                            <th>
+                                Dept
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("ReleaseOwner", new { id=item.OWNR_OID })" class="fa fa-recycle"></a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_USER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_CONTACT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_ADDRESS)
+                                </td>
+                                <td>
+                                    @if (item.OWNR_IMAG != null)
+                                    {
+                                        <a target="_blank" href="@Url.Action("ViewImages", new { id=item.OWNR_OID, imgtype="OP" })" class="fa fa-file-image-o"> View</a>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_TAKE)
+                                </td>
+                                <td>
+                                    @if (item.OWNR_AST_IMAG != null)
+                                    {
+                                        <a target="_blank" href="@Url.Action("ViewImages", new { id=item.OWNR_OID, imgtype="AP" })" class="fa fa-file-image-o"> View</a>
+                                    }
+                                </td>
+
+                                <td>
+                                    @if (item.OWNR_DED_IMAG != null)
+                                    {
+                                        <a target="_blank" href="@Url.Action("ViewImages", new { id=item.OWNR_OID, imgtype="DC" })" class="fa fa-file-image-o"> View</a>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_TYPE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OWNR_NOTE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_AREA.AREA_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_DEPT.DEPT_NAME)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Asset Name
+                            </th>
+                            <th>
+                                Outlet Id
+                            </th>
+                            <th>
+                                Outlet Name
+                            </th>
+                            <th>
+                                Proprietor
+                            </th>
+                            <th>
+                                Contact
+                            </th>
+                            <th>
+                                Outlet Address
+                            </th>
+                            <th>
+                                Outlet Picture
+                            </th>
+                            <th>
+                                Taken
+                            </th>
+                            <th>
+                                Asset Pic
+                            </th>
+                            <th>
+                                Deed Pic
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Note
+                            </th>
+                            <th>
+                                Area
+                            </th>
+                            <th>
+                                Dept
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PM.ModelsV.ItemVM>
+@{
+    ViewBag.Title = "Item Master";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewItemMaster", "Item")" class="btn btn-primary"> New Item Master</a>
+            <a href="@Url.Action("Index","Item")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ITEM_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ITEM_CODE)
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ITEM_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ITEM_CODE)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

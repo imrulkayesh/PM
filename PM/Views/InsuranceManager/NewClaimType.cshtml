@@ -1,0 +1,49 @@
+﻿@model PM.ModelsV.ClaimTypeVM
+@{
+    ViewBag.Title = "New Claim Type";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewClaimType", "InsuranceManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Claim Type Name</span>
+                        @Html.EditorFor(model => model.CLAIM_NAME, new { htmlAttributes = new { @class = "form-control", required = "required", autofocus = true, placeholder = "Claim Type Name" } })
+                        @Html.ValidationMessageFor(model => model.CLAIM_NAME, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Remark</span>
+                        @Html.EditorFor(model => model.REMARK, new { htmlAttributes = new { @class = "form-control", placeholder = "Remark", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.REMARK, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("ClaimType","InsuranceManager")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewClaimType","InsuranceManager")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        Claim Type Name Entry
+    </div>
+</div>
+

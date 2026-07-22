@@ -1,0 +1,111 @@
+﻿@model IEnumerable<PM.ModelsV.LicenseDetailsInformation>
+
+<table class="table table-bordered table-striped table-condensed" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_NUMBER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LOCATION_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.COMPANY_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AUTHORITY_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISSUE_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EXPIRE_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_HOLDER_MOBILE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_FEE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENTERTAINMENT_FEE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITEM_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REMARK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.APPLICATION_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LICENSE_STATUS_ID)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_NUMBER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LOCATION_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.COMPANY_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AUTHORITY_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISSUE_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EXPIRE_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_HOLDER_MOBILE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_FEE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENTERTAINMENT_FEE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ITEM_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.REMARK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.APPLICATION_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LICENSE_STATUS_ID)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

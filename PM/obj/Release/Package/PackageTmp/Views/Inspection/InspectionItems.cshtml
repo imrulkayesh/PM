@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PM.ModelsV.JobCardDetails>
+
+<table id="JobDetailBody" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item Code</th>
+            <th>Name</th>
+            <th>I Qty</th>
+            <th>I Rate</th>
+            <th>I Amount</th>
+            <th>J Qty</th>
+            <th>J Rate</th>
+            <th>Details</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JOBD_ITEM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JOBD_ITEM_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JOBD_IQTY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JOBD_IRATE)
+                </td>
+
+                <td>
+                    @{
+                        var x = item.JOBD_IQTY;
+                        var y = item.JOBD_IRATE;
+                        var Amount = x * y;
+                    }
+                    @Amount
+                </td>
+                <td>@Html.EditorFor(model => item.JOBD_IQTY, new { htmlAttributes = new { @class = "form-control", placeholder = "J Qty" } })</td>
+                <td>@Html.EditorFor(model => item.JOBD_IRATE, new { htmlAttributes = new { @class = "form-control", placeholder = "J Rate" } })</td>
+                <td>@Html.EditorFor(model => item.JOBD_NOTE, new { htmlAttributes = new { @class = "form-control", placeholder = "Details" } })</td>
+                <td><a data-itemId="0" href="#" class="deleteItem btn btn-danger btn-sm"><i class="fa fa-trash" /></a></td>
+            </tr>
+        }
+    </tbody>
+</table>

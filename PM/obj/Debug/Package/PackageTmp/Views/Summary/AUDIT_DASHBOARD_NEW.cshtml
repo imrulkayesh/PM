@@ -1,0 +1,1008 @@
+﻿
+@{
+    ViewBag.Title = "AUDIT DASHBOARD";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 0.1;
+    }
+
+    h5 {
+        color: white !important;
+        line-height: 0.3;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .dashboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 40px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #2f75b5;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 6px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background: #2f75b5;
+        color: white;
+    }
+
+    .highlight {
+        background: #ffeb3b;
+        font-weight: bold;
+    }
+</style>
+
+<div class="panel panel-success">
+    @*<div class="panel-heading">
+            *if the value is different from reports, you will take reports data are right.
+        </div>*@
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                Select Year :
+            </div>
+            <div class="col-md-4">
+                <form method="get">
+                    <select name="year" onchange="this.form.submit()" class="form-control">
+                        @for (int y = DateTime.Now.Year; y >= DateTime.Now.Year - 2; y--)
+                        {
+                            <option value="@y" @(ViewBag.SelectedYear == y ? "selected" : "")>
+                                @y
+                            </option>
+                        }
+                    </select>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_TASK
+                        </h1>
+                        <h5 class="op-8">Total Task</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDIT_REPORT
+                        </h1>
+                        <h5 class="op-8">Audit Report</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_REPORT_SENT
+                        </h1>
+                        <h5 class="op-8">Report Sent</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_DIRECT_SAVING_AMOUNT Cr
+                        </h1>
+                        <h5 class="op-8">Dir. Impact</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_INDIRECT_SAVING_AMOUNT Cr
+                        </h1>
+                        <h5 class="op-8">Indir. Impact</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_SAVING_AMOUNT Cr
+                        </h1>
+                        <h5 class="op-8">Total Impact</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_DEMOTION
+                        </h1>
+                        <h5 class="op-8">Demotion</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_DEVELOPMENT Cr
+                        </h1>
+                        <h5 class="op-8">Development</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_JOB_SACK_OUT
+                        </h1>
+                        <h5 class="op-8">Sack Out</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_TRANSFER
+                        </h1>
+                        <h5 class="op-8">Transfer</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_WARNING_LETTER
+                        </h1>
+                        <h5 class="op-8">Warning L.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_PENALTY
+                        </h1>
+                        <h5 class="op-8">Penalty</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_HOLD_PAYMENT Lac
+                        </h1>
+                        <h5 class="op-8">Hold Payment</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_SUPPLIER_BLACKLIST
+                        </h1>
+                        <h5 class="op-8">Supplier Black L.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_INEFFICIENCY_IDENTIFIED Cr
+                        </h1>
+                        <h5 class="op-8">Inefficiency</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_CORRUPTION_IDENTIFIED Cr
+                        </h1>
+                        <h5 class="op-8">Corruption</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_WORK_SCOPE Cr
+                        </h1>
+                        <h5 class="op-8">Work Scope</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 0.05rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDITOR
+                        </h1>
+                        <h5 class="op-8">Total Auditor</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.TASK_STATUS_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "FOUR" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Task_Status_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.REPORT_STATUS_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "FIVE" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div id="Report_Status_Data"></div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+            <div class="col-md-4">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.REPORT_SENT_STATUS_DATE).ToString("dd/MM/yyyy")</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "SIX" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <div id="Audit_Data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+
+            @foreach (var item in Model.ReportSummary)
+            {
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center" style="background-color:#2f75b5; color:white;">
+                            @item.COMPANY_GROUP_NAME
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead style="background-color:#2f75b5; color:white;">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>Total No of Report</td>
+                                        <td>@item.TOTAL_NO_OF_REPORT</td>
+                                        <td>@item.LAST_MONTH_TOTAL_REPORT</td>
+                                        <td>@item.THIS_MONTH_TOTAL_REPORT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Task completed with report</td>
+                                        <td>@item.TOTAL_WITH_REPORT</td>
+                                        <td>@item.LAST_MONTH_WITH_REPORT</td>
+                                        <td>@item.THIS_MONTH_WITH_REPORT</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Task completed without report</td>
+                                        <td>@item.TOTAL_WITHOUT_REPORT</td>
+                                        <td>@item.LAST_MONTH_WITHOUT_REPORT</td>
+                                        <td>@item.THIS_MONTH_WITHOUT_REPORT</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <br />
+        <h2 class="text-center mb-4">Yearly Financial Effect</h2>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_TASK
+                        </h1>
+                        <h5 class="op-8">Total Savings</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDIT_REPORT
+                        </h1>
+                        <h5 class="op-8">Total Expenses</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDITOR
+                        </h1>
+                        <h5 class="op-8">Net Savings</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_TASK
+                        </h1>
+                        <h5 class="op-8">Per Report Cost</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDIT_REPORT
+                        </h1>
+                        <h5 class="op-8">Per Report Income</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card card-secondary" style="background: #6861ce !important;">
+                    <div class="card-body skew-shadow" style="padding: 1.25rem;">
+                        <h1 style="color: white !important;">
+                            @Model.updateDate.TOTAL_AUDITOR
+                        </h1>
+                        <h5 class="op-8">Corruption Identified</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        @if (Model.UserRole == "10")
+        {
+            <h2 class="text-center mb-4">Risk Analysis</h2>
+            <div class="row">
+                <!-- Total -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">Total</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRAN -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">PRAN</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RFL -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">RFL</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTL -->
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <div class="card-header text-center">CTL</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                        <th>Last Month</th>
+                                        <th>This Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Total No of Report</td><td>90</td><td>25</td><td>22</td></tr>
+                                    <tr><td>Risk Mitigation Marks</td><td>85</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action Percentage (%)</td><td>6</td><td>4</td><td>4</td></tr>
+                                    <tr><td>Total Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Action on Findings</td><td>90</td><td>18</td><td>16</td></tr>
+                                    <tr><td>Less Action / No Action on Findings</td><td>60</td><td>22</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">Category/Segment Wise Total Report (Top Five)</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>Category/Segment</td>
+                                    <td>Total</td>
+                                    <td>PRAN</td>
+                                    <td>RFL</td>
+                                    <td>CTL</td>
+                                    <td>GROUP CS</td>
+                                    <td>PDL</td>
+                                    <td>Details</td>
+                                </tr>
+                                @foreach (var item in Model.CategoryCGWiseTotalReport)
+                                {
+                                    <tr>
+                                        <td>@item.TASK_CATEGORY_NAME</td>
+                                        <td>@item.TOTAL_REPORT_CATEGORY</td>
+                                        <td>@item.PRAN</td>
+                                        <td>@item.RFL</td>
+                                        <td>@item.CTL</td>
+                                        <td>@item.GROUP_CS</td>
+                                        <td>@item.PDL</td>
+                                        <td>
+                                            <input type="submit" class="btn4 btn btn-flat btn-primary" value="View" data-url="@Url.Action("ViewCategoryWisetDetails", "Summary", new { id = item.TASK_CATEGORY_NAME})" />
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">Total Work Scope Value Category wise (Top Five)</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>Category/Segment</td>
+                                    <td>Total</td>
+                                    <td>PRAN</td>
+                                    <td>RFL</td>
+                                    <td>CTL</td>
+                                    <td>GROUP CS</td>
+                                    <td>PDL</td>
+                                </tr>
+                                @foreach (var item in Model.CategoryWiseWorkScopeTotalReport)
+                                {
+                                    <tr>
+                                        <td>@item.TASK_CATEGORY_NAME</td>
+                                        <td>@item.TOTAL_WORK_SCOPE Cr</td>
+                                        <td>@item.PRAN Cr</td>
+                                        <td>@item.RFL Cr</td>
+                                        <td>@item.CTL Cr</td>
+                                        <td>@item.GROUP_CS Cr</td>
+                                        <td>@item.PDL</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-header text-center">BU Wise Total Report</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <tbody>
+                                    <tr class="highlight"><td>Total</td><td>84</td><td>18</td><td>16</td><td>50</td></tr>
+                                    <tr><td>A</td><td>32</td><td>6</td><td>6</td><td>20</td></tr>
+                                    <tr><td>B</td><td>31</td><td>6</td><td>5</td><td>20</td></tr>
+                                    <tr><td>C</td><td>25</td><td>8</td><td>5</td><td>12</td></tr>
+                                    <tr><td>D</td><td>7</td><td>1</td><td>1</td><td>5</td></tr>
+                                    <tr><td>E</td><td>21</td><td>6</td><td>5</td><td>10</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">BU Wise Total Report (Top Five)</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>Company Name</td>
+                                    <td>Total</td>
+                                    <td>PRAN</td>
+                                    <td>RFL</td>
+                                    <td>CTL</td>
+                                    <td>GROUP CS</td>
+                                    <td>PDL</td>
+                                </tr>
+                                @foreach (var item in Model.BUCGWiseTotalReport)
+                                {
+                                    <tr>
+                                        <td>@item.COMPANY_NAME</td>
+                                        <td>@item.TOTAL_REPORT_BU</td>
+                                        <td>@item.PRAN</td>
+                                        <td>@item.RFL</td>
+                                        <td>@item.CTL</td>
+                                        <td>@item.GROUP_CS</td>
+                                        <td>@item.PDL</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">Total Work Scope Value BU Wise (Top Five)</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm mb-0">
+                            <tbody>
+                                <tr class="highlight">
+                                    <td>Company Name</td>
+                                    <td>Total</td>
+                                    <td>PRAN</td>
+                                    <td>RFL</td>
+                                    <td>CTL</td>
+                                    <td>GROUP CS</td>
+                                    <td>PDL</td>
+                                </tr>
+                                @foreach (var item in Model.BUCGWiseTotalWorkScopeReport)
+                                {
+                                    <tr>
+                                        <td>@item.COMPANY_NAME</td>
+                                        <td>@item.TOTAL_WORK_SCOPE Cr</td>
+                                        <td>@item.PRAN Cr</td>
+                                        <td>@item.RFL Cr</td>
+                                        <td>@item.CTL Cr</td>
+                                        <td>@item.GROUP_CS Cr</td>
+                                        <td>@item.PDL Cr</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-header text-center">BU Wise Total Report</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm mb-0">
+                                <tbody>
+                                    <tr class="highlight"><td>Total</td><td>84</td><td>18</td><td>16</td><td>50</td></tr>
+                                    <tr><td>A</td><td>32</td><td>6</td><td>6</td><td>20</td></tr>
+                                    <tr><td>B</td><td>31</td><td>6</td><td>5</td><td>20</td></tr>
+                                    <tr><td>C</td><td>25</td><td>8</td><td>5</td><td>12</td></tr>
+                                    <tr><td>D</td><td>7</td><td>1</td><td>1</td><td>5</td></tr>
+                                    <tr><td>E</td><td>21</td><td>6</td><td>5</td><td>10</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+
+
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Auditor Wise Audit Report Data</h3>
+                        <div class="box-tools pull-right">
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        @*<h4></h4>*@
+                        <table id="scrollNbuttonDT" class="table">
+                            <thead>
+                                <tr style="background-color:darkseagreen">
+                                    <th>
+                                        Auditor Staff ID
+                                    </th>
+                                    <th>
+                                        Auditor Name
+                                    </th>
+                                    <th>
+                                        Total Report
+                                    </th>
+                                    <th>
+                                        Total With Report
+                                    </th>
+                                    <th>
+                                        Total Without Report
+                                    </th>
+
+                                    <th>
+                                        Work Scope
+                                    </th>
+                                    <th>
+                                        Direct Saving
+                                    </th>
+                                    <th>
+                                        Indirect Saving
+                                    </th>
+                                    <th>
+                                        Demotion
+                                    </th>
+                                    <th>
+                                        Development
+                                    </th>
+                                    <th>
+                                        Job Sack Out
+                                    </th>
+                                    <th>
+                                        Transfer
+                                    </th>
+                                    <th>
+                                        Warning Letter
+                                    </th>
+                                    <th>
+                                        Penalty
+                                    </th>
+                                    <th>
+                                        Hold Payment
+                                    </th>
+
+                                    <th>
+                                        Inefficiency Identified
+                                    </th>
+                                    <th>
+                                        Corruption Identified
+                                    </th>
+                                    @*<th>
+                                            Details
+                                        </th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.AuditorWiseAuditReportCount)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.AUDITOR_STAFF_ID
+                                        </td>
+                                        <td>
+                                            @item.AUDITOR_NAME
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_REPORT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WITH_REPORT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WITHOUT_REPORT
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_WORK_SCOPE Cr
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DIRECT_SAVING_AMOUNT Cr
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_INDIRECT_SAVING_AMOUNT Cr
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEMOTION
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_DEVELOPMENT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_JOB_SACK_OUT
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_TRANSFER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_WARNING_LETTER
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_PENALTY
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_HOLD_PAYMENT
+                                        </td>
+
+                                        <td>
+                                            @item.TOTAL_INEFFICIENCY_IDENTIFIED
+                                        </td>
+                                        <td>
+                                            @item.TOTAL_CORRUPTION_IDENTIFIED
+                                        </td>
+                                        @*<td>
+                                                <input type="submit" class="btn4 btn btn-flat btn-primary" value="Details" data-url="@Url.Action("ViewAuditorWisetDetails", "Summary", new { id = item.AUDITOR_STAFF_ID })" />
+                                            </td>*@
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!--/.box -->
+            </div>
+
+
+        </div>
+        <hr />
+        @if (Model.UserRole == "10")
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.CURRENT_LAST_MONTH_DATE).ToString("dd/MM/yyyy")</h3>
+                            <div class="box-tools pull-right">
+                                <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "SEVEN" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div id="Current_Last" style="height:350px; width:auto;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!--/.box -->
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Update: @Convert.ToDateTime(Model.updateDate.COMPANY_GROUP_DATE).ToString("dd/MM/yyyy")</h3>
+                            <div class="box-tools pull-right">
+                                <a href="@Url.Action("UPDATE_AUDIT_DASHBOARD", "Summary", new { id = "EIGHT" })" class="btn btn-box-tool"><i class="fa fa-refresh"></i></a>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div id="Company_Group_Wise" style="height:350px; width:auto;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!--/.box -->
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog" style="max-width: 1300px; width: 1300px;">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/DashPlugin/loader.js"></script>
+    <script type="text/javascript" src="~/Scripts/DashPlugin/ModalBox.js"></script>
+    <script src="~/Scripts/DashPlugin/MyPie.js"></script>
+    <script type="text/javascript">
+        MakeMy3DPieChart('AUDIT_TASK_STATUS_DATA', 'Audit Task Status', Task_Status_Data)
+        MakeMySlicePieChart('AUDIT_REPORT_STATUS', 'Audit Report Status', Report_Status_Data)
+        MakeMyHolePieChart('AUDIT_REPORT_SENT_SUM', 'Report Sent Status', Audit_Data)
+        MakeMyMaterialBarChart('CURRENT_LAST_MONTH_REPORT_SUM', 'Total Reports – Current Month vs. Last Month', '', 'Current_Last')
+        MakeMyMaterialBarChart('COMPAY_GROUP_WISE_REPORT_SUM', 'Company Group Wise Total Report', '', 'Company_Group_Wise')
+    </script>
+}
+
+
+
+
+

@@ -1,0 +1,194 @@
+﻿@model PM.ModelsV.UpdateTaskVM
+
+@using (Html.BeginForm("Update", "Audit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.TASK_ID)
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task Details</span>
+                @Html.TextAreaFor(model => model.TASK_DETAILS, new { @class = "form-control", placeholder = "Task Details", rows = 3 })
+                @Html.ValidationMessageFor(model => model.TASK_DETAILS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Task Type</span>
+                    @Html.DropDownListFor(model => model.TASK_TYPE_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                    @Html.ValidationMessageFor(model => model.TASK_TYPE_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Management Source</span>
+                @Html.DropDownListFor(model => model.MANAGEMENT_SOURCE_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.MANAGEMENT_SOURCE_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Source Media</span>
+                @Html.DropDownListFor(model => model.TASK_COMMUNICATION_BY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.TASK_COMMUNICATION_BY_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task Assigned By</span>
+                @Html.DropDownListFor(model => model.TASK_ASSIGN_BY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.TASK_ASSIGN_BY_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Priority</span>
+                @Html.DropDownListFor(model => model.TASK_PRIORITY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.TASK_PRIORITY_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Location Name</span>
+                @Html.DropDownListFor(model => model.LOCATION_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.LOCATION_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Company Group</span>
+                @Html.DropDownListFor(model => model.COMPANY_GROUP_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "COMPANY_GROUP_ID", id = "COMPANY_GROUP_ID", onchange = "FindCompany();" })
+                @Html.ValidationMessageFor(model => model.COMPANY_GROUP_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Company Name </span>
+                @Html.DropDownListFor(model => model.COMPANY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "COMPANY_ID", id = "COMPANY_ID" })
+                @Html.ValidationMessageFor(model => model.COMPANY_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Department</span>
+                @Html.DropDownListFor(model => model.DEPARTMENT_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.DEPARTMENT_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Mgt Source By Date</span>
+                @Html.EditorFor(model => model.MANAGEMENT_SOURCE_DATE, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/MM/yyyy" } })
+                @Html.ValidationMessageFor(model => model.MANAGEMENT_SOURCE_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task Assign By Date</span>
+                @Html.EditorFor(model => model.TASK_ASSIGN_DATE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TASK_ASSIGN_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Start Planned Date</span>
+                @Html.EditorFor(model => model.TASK_START_PLANED_DATE, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/MM/yyyy" } })
+                @Html.ValidationMessageFor(model => model.TASK_START_PLANED_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task Start Date</span>
+                @Html.EditorFor(model => model.TASK_START_DATE, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/MM/yyyy" } })
+                @Html.ValidationMessageFor(model => model.TASK_START_DATE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task deadline</span>
+                @Html.EditorFor(model => model.TASK_DEADLINE, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/MM/yyyy" } })
+                @Html.ValidationMessageFor(model => model.TASK_DEADLINE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Attachment</span>
+                <input type="file" name="FileX" id="FileX" class="form-control" accept="image/jpeg, image/png">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Task Status</span>
+                @Html.DropDownListFor(model => model.TASK_STATUS, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                @Html.ValidationMessageFor(model => model.TASK_STATUS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Report Status</span>
+                @Html.DropDownListFor(model => model.REPORT_STATUS_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;" })
+                @Html.ValidationMessageFor(model => model.REPORT_STATUS_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Remarks</span>
+                @Html.EditorFor(model => model.REMARKS, new { htmlAttributes = new { @class = "form-control", autofocus = true } })
+                @Html.ValidationMessageFor(model => model.REMARKS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Financial</span>
+                @Html.TextBoxFor(model => model.FINANCIAL, new { @class = "form-control", type = "number", placeholder = "Financial Value", @step = "any" })
+                @Html.ValidationMessageFor(model => model.FINANCIAL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group input-group">
+                <span class="input-group-addon">Non Financial</span>
+               @Html.EditorFor(model => model.NON_FINANCIAL, new { htmlAttributes = new { @class = "form-control", placeholder = "Non Financial Details Note" } })
+            @Html.ValidationMessageFor(model => model.NON_FINANCIAL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-danger pull-left"><i class="fa fa-save"></i> Save</button>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Audit/_Update.js"></script>
+}
+
+
+
+

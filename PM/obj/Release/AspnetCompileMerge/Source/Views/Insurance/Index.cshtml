@@ -1,0 +1,130 @@
+﻿@model IEnumerable<PM.ModelsV.InsuranceVM>
+
+@{
+    ViewBag.Title = "Insurance";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+   @using (Html.BeginForm("Index", "Insurance", new { Operation = "Search" }))
+   {
+            <div class="input-group margin">
+                <span class="input-group-addon">Search</span>
+                @Html.Editor("Policy", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = " Policy Number", autofocus = true, maxlength = "50" } })
+                <div class="input-group-btn">
+                    <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                </div>
+                <!-- /btn-group -->
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewInsurance", "Insurance")" class="btn btn-primary"> New Policy</a>
+            <a href="@Url.Action("UpdatePolicy", "Insurance")" class="btn btn-primary"> Update Policy</a>
+            <a href="@Url.Action("Index","Insurance")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_ASET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_POLICY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_ASET_VALUE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_PREMIUM)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_COMP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_COMP_ADDRESS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_NOTE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_REG_START)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSU_REG_END)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="submit" class="btn4 btn btn-flat btn-primary" value="View" data-url="@Url.Action("ViewPolicyDetail", "Insurance", new { id = item.INSU_ID })" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_ASET)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_POLICY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_ASET_VALUE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_PREMIUM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_COMP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_COMP_ADDRESS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_NOTE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_REG_START)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSU_REG_END)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section scripts{
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}

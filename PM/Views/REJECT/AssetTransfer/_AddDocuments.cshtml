@@ -1,0 +1,87 @@
+﻿@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+<style>
+    .red {
+        color: red;
+    }
+</style>
+<form id="uploader">
+    <div class="row">
+        <div class="col-sm-6">
+            Transfer Code: <input type="text" id="txtTRNS_TEXT" value="@ViewBag.TRNS_TEXT"  disabled/>
+            <br />            <br />
+            <input id="fileInput" type="file" multiple accept="image/jpeg, image/png,application/pdf">
+            <br />            <br />
+
+            <table class="table table-hover table-striped" id="FilesList" style="visibility:hidden">
+                <tr>
+                    <th>
+                        Attachment(s)
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </table>
+            <input type="button" id="btnupload" value="Upload" style="float:right" class="form-control btn btn-primary" />
+        </div>
+    </div>
+</form>
+@*<script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
+<script>
+    var formdata = new FormData(); //FormData object
+    $(document).ready(function () {
+
+        $("#fileInput").on("change", function () {
+            var fileInput = document.getElementById('fileInput');
+            //Iterating through each files selected in fileInput
+            for (i = 0; i < fileInput.files.length; i++) {
+
+                var sfilename = fileInput.files[i].name;
+                let srandomid = Math.random().toString(36).substring(7);
+
+                formdata.append(sfilename, fileInput.files[i]);
+
+                var markup = "<tr id='" + srandomid + "'><td>" + sfilename + "</td><td><a href='#' onclick='DeleteFile(\"" + srandomid + "\",\"" + sfilename +
+                    "\")'><span class='glyphicon glyphicon-remove red'></span></a></td></tr>"; // Binding the file name
+                $("#FilesList tbody").append(markup);
+
+            }
+            chkatchtbl();
+            $('#fileInput').val('');
+        });
+
+        $("#btnupload").click(function () {
+            formdata.append('uploadername', $('#txtTRNS_TEXT').val());
+            $.ajax({
+                url: '/AssetTransfer/AddDocuments',
+                type: "POST",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: formdata,
+                async: false,
+                success: function (result) {
+                    if (result != "") {
+                        alert(result);
+                        location.reload();
+                    }
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        });
+    });
+    function DeleteFile(Fileid, FileName) {
+        formdata.delete(FileName)
+        $("#" + Fileid).remove();
+        chkatchtbl();
+    }
+    function chkatchtbl() {
+        if ($('#FilesList tr').length > 1) {
+            $("#FilesList").css("visibility", "visible");
+        } else {
+            $("#FilesList").css("visibility", "hidden");
+        }
+    }
+</script>  

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PM.ModelsV.Report_Pending_Inspection_ForJobCard>
+
+@{
+    ViewBag.Title = "Report_Pending_Inspection_ForJobCard";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_APPR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_ASET)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_OWNR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_DEPARTMENT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_IUSER)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.INSPH_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MILEAGE)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.INSPH_APPR)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.INSPH_ID)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_ASET)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_OWNR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_DEPARTMENT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_IUSER)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.INSPH_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MILEAGE)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

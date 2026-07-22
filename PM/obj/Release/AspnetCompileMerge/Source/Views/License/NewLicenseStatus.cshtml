@@ -1,0 +1,49 @@
+﻿@model PM.ModelsV.LicenseStatusVM
+@{
+    ViewBag.Title = "License Status";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewLicenseStatus", "License", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">License Status Name</span>
+                        @Html.EditorFor(model => model.LICENSE_STATUS_NAME, new { htmlAttributes = new { @class = "form-control", required = "required", autofocus = true, placeholder = "License Status Name" } })
+                        @Html.ValidationMessageFor(model => model.LICENSE_STATUS_NAME, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Remark</span>
+                        @Html.EditorFor(model => model.REMARK, new { htmlAttributes = new { @class = "form-control", placeholder = "Remark", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.REMARK, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("LicenseStatus","License")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewLicenseStatus","License")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        License Status Name Entry
+    </div>
+</div>
+

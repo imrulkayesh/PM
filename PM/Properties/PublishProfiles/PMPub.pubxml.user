@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Publish-Imrul\PM</_PublishTargetUrl>
+    <History>True|2026-06-15T10:30:26.9910808Z||;True|2026-06-15T10:24:23.0449075+06:00||;True|2026-06-15T09:47:10.5628330+06:00||;True|2026-06-14T15:54:50.3482707+06:00||;True|2026-06-01T16:15:28.9176854+06:00||;True|2026-06-01T16:15:08.9434939+06:00||;True|2026-05-23T12:54:11.1506565+06:00||;True|2026-05-23T11:51:59.7047006+06:00||;True|2026-05-21T17:41:24.7674427+06:00||;True|2026-05-17T11:05:25.5038269+06:00||;True|2026-05-17T10:48:20.9310801+06:00||;True|2026-05-02T12:04:11.4452386+06:00||;True|2026-04-21T15:50:10.3928093+06:00||;True|2026-04-20T12:23:42.9920242+06:00||;True|2026-04-20T11:59:48.6702847+06:00||;True|2026-04-20T11:51:42.0987120+06:00||;True|2026-04-20T10:01:17.3420190+06:00||;True|2026-03-25T17:38:59.4038853+06:00||;True|2026-03-25T12:18:05.9234892+06:00||;True|2026-03-25T12:14:28.5299821+06:00||;True|2026-03-10T15:58:08.9231381+06:00||;True|2026-03-10T15:57:58.5275954+06:00||;True|2026-03-10T12:35:37.3151997+06:00||;True|2026-03-10T12:27:07.2909753+06:00||;True|2026-03-04T16:03:50.9471359+06:00||;True|2026-03-04T14:16:15.7688083+06:00||;True|2026-02-14T09:55:44.5487329+06:00||;True|2026-02-14T09:54:24.8479930+06:00||;True|2025-12-06T13:24:49.3760761+06:00||;True|2025-11-27T12:38:42.6643626+06:00||;True|2025-11-26T12:04:42.7912002+06:00||;True|2025-11-26T12:04:01.4250053+06:00||;True|2025-11-26T10:24:37.4590499+06:00||;True|2025-11-23T09:26:12.9727990+06:00||;True|2024-10-27T11:27:00.6669975+06:00||;True|2024-10-26T10:25:36.9429138+06:00||;True|2024-10-20T12:25:33.0523195+06:00||;True|2024-10-14T14:50:22.5877466+06:00||;True|2024-10-14T14:26:13.2412566+06:00||;True|2024-10-08T12:09:47.0185221+06:00||;True|2024-10-06T15:21:40.1638994+06:00||;True|2024-10-05T15:02:55.7736191+06:00||;True|2024-09-30T11:22:49.2912085+06:00||;True|2024-09-30T09:08:24.1363721+06:00||;True|2024-09-29T09:57:39.3899132+06:00||;True|2024-09-28T09:23:29.8443627+06:00||;True|2024-09-24T11:07:30.6589292+06:00||;True|2024-09-17T10:59:45.5546076+06:00||;True|2024-09-15T12:04:59.9189375+06:00||;True|2024-09-12T11:35:11.0608061+06:00||;True|2024-09-11T10:28:45.4075003+06:00||;True|2024-09-10T15:20:31.5788617+06:00||;False|2024-09-10T15:15:26.5630652+06:00||;True|2024-09-10T14:19:57.4451067+06:00||;True|2024-08-28T17:28:22.4550814+06:00||;True|2024-02-20T11:38:24.5161321+06:00||;True|2024-01-10T10:23:30.4259767+06:00||;True|2023-11-04T08:55:10.0961687+06:00||;True|2023-11-01T17:58:23.9511461+06:00||;True|2023-10-21T17:01:06.8039958+06:00||;True|2023-10-02T14:29:34.3777799+06:00||;True|2023-10-01T15:10:25.0747370+06:00||;True|2023-09-19T11:18:34.4999776+06:00||;True|2023-09-18T17:53:37.1420492+06:00||;True|2023-09-18T09:48:40.0518982+06:00||;True|2023-09-16T11:35:56.1021797+06:00||;True|2023-09-12T15:18:06.1211754+06:00||;True|2023-09-11T09:43:24.4880690+06:00||;True|2023-09-10T15:14:07.3591810+06:00||;True|2023-09-10T15:13:38.9664341+06:00||;True|2023-09-10T10:55:00.2749011+06:00||;True|2023-09-05T15:39:10.3204423+06:00||;True|2023-09-05T15:24:28.5961124+06:00||;True|2023-08-31T09:34:14.3003798+06:00||;True|2023-08-31T09:29:59.9708738+06:00||;True|2023-08-31T09:11:20.8208160+06:00||;True|2023-08-29T16:40:13.3456935+06:00||;True|2023-08-29T12:33:06.9379151+06:00||;True|2023-08-29T10:58:57.6281159+06:00||;True|2023-08-28T15:09:04.9834287+06:00||;True|2023-08-28T09:02:22.2314529+06:00||;True|2023-08-13T10:30:55.7131887+06:00||;False|2023-08-13T10:28:53.8304422+06:00||;True|2023-08-02T09:46:25.5771198+06:00||;True|2023-07-04T09:29:47.5504033+06:00||;True|2022-05-16T11:02:10.1235878+06:00||;True|2022-05-07T16:52:04.2573158+06:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>06/15/2026 16:30:18</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>06/15/2026 16:30:18</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>01/30/2020 13:13:00</publishTime>
+    </File>
+    <File Include="bin/ExcelDataReader.dll">
+      <publishTime>05/07/2022 16:25:42</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>05/07/2022 16:25:42</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.EntityFramework.dll">
+      <publishTime>05/07/2022 16:25:42</publishTime>
+    </File>
+    <File Include="bin/PM.dll">
+      <publishTime>06/15/2026 16:22:54</publishTime>
+    </File>
+    <File Include="bin/PM.pdb">
+      <publishTime>06/15/2026 16:22:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/02/2024 12:13:07</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/02/2024 12:13:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/02/2024 12:13:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/07/2022 16:25:46</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/07/2022 16:25:47</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/19/2026 17:55:27</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>06/15/2026 16:30:06</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/ApplicationUsers/UserAction.js">
+      <publishTime>08/29/2023 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/AssetAcceList.js">
+      <publishTime>08/29/2023 10:46:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/EditCar.js">
+      <publishTime>08/29/2023 10:46:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/FridgeExcel.js">
+      <publishTime>08/29/2023 10:46:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/NewCar.js">
+      <publishTime>09/10/2023 15:12:23</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/NewDepot.js">
+      <publishTime>09/10/2023 14:59:52</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/NewFridge.js">
+      <publishTime>08/29/2023 10:46:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetManager/NewMobilePhone.js">
+      <publishTime>08/29/2023 10:46:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetTransfer/NewTransfer.js">
+      <publishTime>08/29/2023 10:53:26</publishTime>
+    </File>
+    <File Include="Scripts/AssetUser/EditStaff.js">
+      <publishTime>08/29/2023 10:53:42</publishTime>
+    </File>
+    <File Include="Scripts/AssetUser/NewOutlet.js">
+      <publishTime>08/29/2023 10:53:42</publishTime>
+    </File>
+    <File Include="Scripts/AssetUser/OutletExcel.js">
+      <publishTime>08/29/2023 10:53:42</publishTime>
+    </File>
+    <File Include="Scripts/AssetUserBill/olddatafile.js">
+      <publishTime>08/29/2023 10:53:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetUserBill/OwnrBillExcel.js">
+      <publishTime>08/29/2023 10:53:56</publishTime>
+    </File>
+    <File Include="Scripts/AssetUserManager/FridgeOutletExcel.js">
+      <publishTime>08/29/2023 10:54:13</publishTime>
+    </File>
+    <File Include="Scripts/AssetUserManager/NewAssetUser.js">
+      <publishTime>08/29/2023 10:54:13</publishTime>
+    </File>
+    <File Include="Scripts/AssetUserManager/UploadFile.js">
+      <publishTime>08/29/2023 10:54:13</publishTime>
+    </File>
+    <File Include="Scripts/Audit/AuditFollowUp.js">
+      <publishTime>07/19/2025 11:22:04</publishTime>
+    </File>
+    <File Include="Scripts/Audit/AuditFollowUpSecond.js">
+      <publishTime>07/19/2025 11:22:10</publishTime>
+    </File>
+    <File Include="Scripts/Audit/AuditFollowUpThird.js">
+      <publishTime>07/19/2025 11:22:17</publishTime>
+    </File>
+    <File Include="Scripts/Audit/AuditReport.js">
+      <publishTime>12/12/2024 14:43:32</publishTime>
+    </File>
+    <File Include="Scripts/Audit/NewTask.js">
+      <publishTime>12/29/2024 10:24:17</publishTime>
+    </File>
+    <File Include="Scripts/Audit/_Update.js">
+      <publishTime>12/10/2024 15:45:54</publishTime>
+    </File>
+    <File Include="Scripts/BillPayment/NewPayment.js">
+      <publishTime>08/29/2023 10:54:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/Common/ConfirmationBoxxxx.js">
+      <publishTime>08/29/2023 10:54:39</publishTime>
+    </File>
+    <File Include="Scripts/Common/ConfirmBox.js">
+      <publishTime>01/27/2025 10:54:29</publishTime>
+    </File>
+    <File Include="Scripts/DashPlugin/loader.js">
+      <publishTime>08/29/2023 10:54:54</publishTime>
+    </File>
+    <File Include="Scripts/DashPlugin/ModalBox.js">
+      <publishTime>01/27/2025 13:00:00</publishTime>
+    </File>
+    <File Include="Scripts/DashPlugin/MyPie.js">
+      <publishTime>08/29/2023 10:54:54</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/CreateCompleteWithoutReport.js">
+      <publishTime>07/05/2025 11:25:25</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/CreateNewReport.js">
+      <publishTime>08/20/2025 10:50:06</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/EditAuditReport.js">
+      <publishTime>08/20/2025 11:35:36</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/EditInspection.js">
+      <publishTime>08/29/2023 10:55:13</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/EditJobCard.js">
+      <publishTime>08/29/2023 10:55:13</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/EditWithoutAuditReport.js">
+      <publishTime>07/05/2025 11:45:36</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/NewBundleInspection.js">
+      <publishTime>04/29/2025 14:44:11</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/NewInspection.js">
+      <publishTime>04/28/2025 17:10:17</publishTime>
+    </File>
+    <File Include="Scripts/Inspection/NewJobCard.js">
+      <publishTime>10/24/2024 09:02:33</publishTime>
+    </File>
+    <File Include="Scripts/Insurance/NewInsurance.js">
+      <publishTime>08/29/2023 10:55:40</publishTime>
+    </File>
+    <File Include="Scripts/Insurance/NewInsuranceBD.js">
+      <publishTime>08/29/2023 10:55:40</publishTime>
+    </File>
+    <File Include="Scripts/Insurance/UpdatePolicy.js">
+      <publishTime>08/29/2023 10:55:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.map">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.map">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/KSAAssets/inde.a.js">
+      <publishTime>08/29/2023 10:56:24</publishTime>
+    </File>
+    <File Include="Scripts/KSAAssets/inde.js">
+      <publishTime>08/29/2023 10:56:24</publishTime>
+    </File>
+    <File Include="Scripts/KSAAssets/NewAsset.a.js">
+      <publishTime>08/29/2023 10:56:24</publishTime>
+    </File>
+    <File Include="Scripts/KSAAssets/NewAsset.js">
+      <publishTime>08/29/2023 10:56:24</publishTime>
+    </File>
+    <File Include="Scripts/License/NewLicense.js">
+      <publishTime>01/30/2025 16:37:53</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/Reminder/Index.js">
+      <publishTime>08/29/2023 10:56:46</publishTime>
+    </File>
+    <File Include="Scripts/Reminder/NewReminder.js">
+      <publishTime>08/29/2023 10:56:46</publishTime>
+    </File>
+    <File Include="Scripts/ReportManager/PranBike.js">
+      <publishTime>08/29/2023 10:57:01</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/sweetalert.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/tether.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Scripts/tether.min.js">
+      <publishTime>08/29/2023 10:47:42</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/NewCreate.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/SetUserMenu.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserArea.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserBusiness.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserEmail.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserGroup.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserMenu.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ApplicationUsers/UserRole.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/AccesoriesAdj.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/AssetAcceList.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/AssetDismiss.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/AssetDismissApproval.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/BikeList.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/BlikeClosing.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/Edit.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/FridgeExcel.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewBike.cshtml">
+      <publishTime>04/21/2026 16:14:56</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewCar.cshtml">
+      <publishTime>04/20/2026 12:43:38</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewDepot.cshtml">
+      <publishTime>08/31/2023 11:19:21</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewDismiss.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewFridge.cshtml">
+      <publishTime>04/16/2023 11:37:40</publishTime>
+    </File>
+    <File Include="Views/AssetManager/NewMobilePhone.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/UpdateDismiss.cshtml">
+      <publishTime>09/12/2023 15:17:04</publishTime>
+    </File>
+    <File Include="Views/AssetManager/Vehicle.cshtml">
+      <publishTime>05/09/2023 10:29:27</publishTime>
+    </File>
+    <File Include="Views/AssetManager/_EditBike.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/_EditCar.cshtml">
+      <publishTime>09/10/2024 15:10:20</publishTime>
+    </File>
+    <File Include="Views/AssetManager/_ShowAccessoreis.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetManager/_ViewAccesories.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/Edit.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/NewOutlet.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/NewStaff.cshtml">
+      <publishTime>01/07/2025 17:27:44</publishTime>
+    </File>
+    <File Include="Views/AssetUser/Outlet.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/OutletExcel.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/Staff.cshtml">
+      <publishTime>08/14/2023 15:42:39</publishTime>
+    </File>
+    <File Include="Views/AssetUser/StaffHealthCardList.cshtml">
+      <publishTime>08/14/2023 16:38:33</publishTime>
+    </File>
+    <File Include="Views/AssetUser/StaffIqumaList.cshtml">
+      <publishTime>08/14/2023 15:44:36</publishTime>
+    </File>
+    <File Include="Views/AssetUser/StaffPassportList.cshtml">
+      <publishTime>08/14/2023 15:52:16</publishTime>
+    </File>
+    <File Include="Views/AssetUser/_StaffEdit.cshtml">
+      <publishTime>08/01/2023 17:06:20</publishTime>
+    </File>
+    <File Include="Views/AssetUser/_StaffHealthCard.cshtml">
+      <publishTime>08/01/2023 15:14:59</publishTime>
+    </File>
+    <File Include="Views/AssetUser/_StaffIquma.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUser/_StaffPassport.cshtml">
+      <publishTime>08/01/2023 11:46:05</publishTime>
+    </File>
+    <File Include="Views/AssetUserBill/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserBill/UserBillExcel.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserBill/ViewOldData.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/AssetUserAssignQuick.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/Edit.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/FridgeOutletExcel.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/FridgeOutletList.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/NewAssetUser.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/ReturnAsset.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/TransferFormA.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/TransferWaitingList.cshtml">
+      <publishTime>10/02/2023 16:18:49</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/UploadFile.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/_ShowAccessoreis.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/AssetUserManager/_ViewFiles.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Audit/AttachFileAudit.cshtml">
+      <publishTime>03/10/2026 12:33:46</publishTime>
+    </File>
+    <File Include="Views/Audit/AuditorWiseReportDetailList.cshtml">
+      <publishTime>06/14/2026 17:13:11</publishTime>
+    </File>
+    <File Include="Views/Audit/AuditWithoutReportList.cshtml">
+      <publishTime>05/27/2025 15:29:07</publishTime>
+    </File>
+    <File Include="Views/Audit/CreateFirstFollowUpReport.cshtml">
+      <publishTime>07/19/2025 12:40:13</publishTime>
+    </File>
+    <File Include="Views/Audit/CreateNewReport.cshtml">
+      <publishTime>05/09/2026 17:30:33</publishTime>
+    </File>
+    <File Include="Views/Audit/CreateRptForCompletedWithoutRpt.cshtml">
+      <publishTime>07/05/2025 11:27:07</publishTime>
+    </File>
+    <File Include="Views/Audit/CreateSecondFollowUpReport.cshtml">
+      <publishTime>07/17/2025 10:19:20</publishTime>
+    </File>
+    <File Include="Views/Audit/CreateThirdFollowUpReport.cshtml">
+      <publishTime>07/08/2025 11:42:06</publishTime>
+    </File>
+    <File Include="Views/Audit/EditAuditor.cshtml">
+      <publishTime>06/15/2026 15:59:33</publishTime>
+    </File>
+    <File Include="Views/Audit/EditAuditReport.cshtml">
+      <publishTime>08/20/2025 11:31:01</publishTime>
+    </File>
+    <File Include="Views/Audit/EditWithoutAuditReport.cshtml">
+      <publishTime>07/05/2025 11:26:48</publishTime>
+    </File>
+    <File Include="Views/Audit/FirstFollowUpReportList.cshtml">
+      <publishTime>07/09/2025 10:54:34</publishTime>
+    </File>
+    <File Include="Views/Audit/Index.cshtml">
+      <publishTime>06/15/2026 16:23:41</publishTime>
+    </File>
+    <File Include="Views/Audit/NewAuditor.cshtml">
+      <publishTime>11/05/2024 15:43:42</publishTime>
+    </File>
+    <File Include="Views/Audit/NewReport.cshtml">
+      <publishTime>12/04/2024 12:01:03</publishTime>
+    </File>
+    <File Include="Views/Audit/NewTask.cshtml">
+      <publishTime>12/19/2024 11:23:56</publishTime>
+    </File>
+    <File Include="Views/Audit/ReportDetailsList.cshtml">
+      <publishTime>08/21/2025 15:25:45</publishTime>
+    </File>
+    <File Include="Views/Audit/ReportList.cshtml">
+      <publishTime>03/10/2026 15:56:44</publishTime>
+    </File>
+    <File Include="Views/Audit/SecondFollowUpReportList.cshtml">
+      <publishTime>07/09/2025 10:55:34</publishTime>
+    </File>
+    <File Include="Views/Audit/TaskDetailList.cshtml">
+      <publishTime>08/24/2025 10:05:09</publishTime>
+    </File>
+    <File Include="Views/Audit/TaskList.cshtml">
+      <publishTime>08/23/2025 17:41:22</publishTime>
+    </File>
+    <File Include="Views/Audit/ThirdFollowUpReportList.cshtml">
+      <publishTime>07/09/2025 12:16:23</publishTime>
+    </File>
+    <File Include="Views/Audit/ViewAuditAttachFile.cshtml">
+      <publishTime>03/10/2026 15:55:16</publishTime>
+    </File>
+    <File Include="Views/Audit/ViewAuditReportDetails.cshtml">
+      <publishTime>03/17/2025 15:49:45</publishTime>
+    </File>
+    <File Include="Views/Audit/WithoutReportDetailsList.cshtml">
+      <publishTime>05/17/2026 11:19:35</publishTime>
+    </File>
+    <File Include="Views/Audit/_CreateNewReport.cshtml">
+      <publishTime>12/01/2024 12:39:19</publishTime>
+    </File>
+    <File Include="Views/Audit/_CreateReport.cshtml">
+      <publishTime>12/01/2024 11:32:29</publishTime>
+    </File>
+    <File Include="Views/Audit/_Update.cshtml">
+      <publishTime>01/30/2025 15:28:40</publishTime>
+    </File>
+    <File Include="Views/BillPayment/BillPrintNow.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/BillPayment/BundlePayment.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/BillPayment/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/BillPayment/NewPayment.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/CaseAndPenalty/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/CaseAndPenalty/NewCase.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/CaseAndPenalty/PleaApproval.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/CaseAndPenalty/PleaUpdate.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/CaseAndPenalty/UpdatePlea.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/ChangePassword.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/Forbidden_403.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>09/10/2024 09:30:03</publishTime>
+    </File>
+    <File Include="Views/Home/Login.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/MyProfile.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/RecPas.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Home/TestPrint.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/AttachFile.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/BundleInspectionApp.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/BundleInspectionAppView.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/BundleJobcard.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/BundleJobCardApp.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/BundleJobCardAppView.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/EditInspection.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/EditJobCard.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/InsApproval.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/InspectionAppDetail.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/InspectionItems.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/Inspections.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/JobApproval.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/JobCard.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/JobCardAppDetail.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/NewBundleInspection.cshtml">
+      <publishTime>04/29/2025 12:24:35</publishTime>
+    </File>
+    <File Include="Views/Inspection/NewInspection.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/NewJobCard.cshtml">
+      <publishTime>08/07/2022 16:31:12</publishTime>
+    </File>
+    <File Include="Views/Inspection/ViewInspection.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Inspection/ViewJobCard.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/InsuranceBD.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/NewInsurance.cshtml">
+      <publishTime>04/05/2025 14:32:27</publishTime>
+    </File>
+    <File Include="Views/Insurance/NewInsuranceBD.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/TestExcel.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/UpdatePolicy.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/ViewPolicyDetail.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/ViewPolicyDetailBD.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Insurance/ViewPolicyDetailByVehicleBD.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/AllClaimList.cshtml">
+      <publishTime>10/06/2024 14:54:19</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/ClaimList.cshtml">
+      <publishTime>10/06/2024 15:09:00</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/ClaimStatus.cshtml">
+      <publishTime>09/12/2024 16:12:02</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/ClaimType.cshtml">
+      <publishTime>10/14/2024 12:38:46</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/Delete.cshtml">
+      <publishTime>02/12/2025 10:57:23</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/Index.cshtml">
+      <publishTime>11/02/2024 14:49:30</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/InsuranceCompany.cshtml">
+      <publishTime>10/14/2024 12:18:03</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/InsuranceDetail.cshtml">
+      <publishTime>09/19/2024 15:33:56</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/InsuranceList.cshtml">
+      <publishTime>02/10/2025 11:38:45</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/InsuranceMaster.cshtml">
+      <publishTime>10/30/2024 11:55:40</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewClaim.cshtml">
+      <publishTime>10/06/2024 15:46:05</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewClaimStatus.cshtml">
+      <publishTime>09/12/2024 16:13:46</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewClaimType.cshtml">
+      <publishTime>10/14/2024 13:07:15</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewInsuranceCompany.cshtml">
+      <publishTime>10/14/2024 12:35:10</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewInsuranceMaster.cshtml">
+      <publishTime>11/30/2024 16:33:41</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/NewInsuranceType.cshtml">
+      <publishTime>10/14/2024 10:29:19</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/_Claim.cshtml">
+      <publishTime>10/20/2024 11:33:10</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/_ClaimReceive.cshtml">
+      <publishTime>10/06/2024 09:52:47</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/_INS_TYPE_EDIT.cshtml">
+      <publishTime>10/14/2024 10:59:43</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/_KickBack.cshtml">
+      <publishTime>02/20/2025 11:46:23</publishTime>
+    </File>
+    <File Include="Views/InsuranceManager/_Update.cshtml">
+      <publishTime>10/30/2024 17:54:41</publishTime>
+    </File>
+    <File Include="Views/Inventory/NewConsumption.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Item/Index.cshtml">
+      <publishTime>01/29/2025 15:37:13</publishTime>
+    </File>
+    <File Include="Views/Item/NewItemMaster.cshtml">
+      <publishTime>01/29/2025 15:48:32</publishTime>
+    </File>
+    <File Include="Views/License/Index.cshtml">
+      <publishTime>10/24/2024 15:48:03</publishTime>
+    </File>
+    <File Include="Views/License/IssuingAuthority.cshtml">
+      <publishTime>01/27/2025 17:40:23</publishTime>
+    </File>
+    <File Include="Views/License/LicenseCompany.cshtml">
+      <publishTime>01/27/2025 18:01:48</publishTime>
+    </File>
+    <File Include="Views/License/LicenseLocation.cshtml">
+      <publishTime>01/28/2025 10:37:17</publishTime>
+    </File>
+    <File Include="Views/License/LicenseMaster.cshtml">
+      <publishTime>05/23/2026 10:44:52</publishTime>
+    </File>
+    <File Include="Views/License/LicenseStatus.cshtml">
+      <publishTime>09/11/2024 15:21:25</publishTime>
+    </File>
+    <File Include="Views/License/NewIssuingAuthority.cshtml">
+      <publishTime>10/24/2024 16:48:08</publishTime>
+    </File>
+    <File Include="Views/License/NewLicense.cshtml">
+      <publishTime>01/30/2025 09:15:30</publishTime>
+    </File>
+    <File Include="Views/License/NewLicenseCompany.cshtml">
+      <publishTime>01/28/2025 09:50:37</publishTime>
+    </File>
+    <File Include="Views/License/NewLicenseDocument.cshtml">
+      <publishTime>10/24/2024 15:52:01</publishTime>
+    </File>
+    <File Include="Views/License/NewLicenseLocation.cshtml">
+      <publishTime>01/28/2025 11:54:00</publishTime>
+    </File>
+    <File Include="Views/License/NewLicenseStatus.cshtml">
+      <publishTime>09/11/2024 15:33:29</publishTime>
+    </File>
+    <File Include="Views/License/UserLocation.cshtml">
+      <publishTime>01/05/2025 11:05:53</publishTime>
+    </File>
+    <File Include="Views/License/UserLocationList.cshtml">
+      <publishTime>01/05/2025 12:19:37</publishTime>
+    </File>
+    <File Include="Views/License/_StatusUpdate.cshtml">
+      <publishTime>01/30/2025 15:35:52</publishTime>
+    </File>
+    <File Include="Views/LicenseName/Index.cshtml">
+      <publishTime>01/27/2025 17:07:50</publishTime>
+    </File>
+    <File Include="Views/LicenseName/NewLicense.cshtml">
+      <publishTime>01/27/2025 16:44:09</publishTime>
+    </File>
+    <File Include="Views/MailSetting/Index.cshtml">
+      <publishTime>02/06/2025 12:40:44</publishTime>
+    </File>
+    <File Include="Views/Reminder/Index.cshtml">
+      <publishTime>08/28/2024 17:24:16</publishTime>
+    </File>
+    <File Include="Views/Reminder/NewReminder.cshtml">
+      <publishTime>09/24/2024 10:23:38</publishTime>
+    </File>
+    <File Include="Views/ReportManager/PranBike.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_AssetList_KSA.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Asset_JobCard_Expense.cshtml">
+      <publishTime>02/20/2024 11:46:10</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_inspXjobcXbill.cshtml">
+      <publishTime>09/17/2023 17:19:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_inspXjobcXbill_Area_Wise.cshtml">
+      <publishTime>09/17/2023 17:45:51</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_InsuranceBD_By_Date.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Insurance_By_Company_Detail.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Insurance_By_Company_Summary.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Insurance_Data.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Insurance_List.cshtml">
+      <publishTime>03/06/2025 12:53:39</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Paid_Bills.cshtml">
+      <publishTime>09/17/2023 17:22:45</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Pending_Inspection_ForJobCard.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Pending_JobCard_ForBill.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_Police_Case.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/ReportManager/Report_StaffList_KSA.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/23/2026 12:53:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutLG.cshtml">
+      <publishTime>05/23/2026 11:51:00</publishTime>
+    </File>
+    <File Include="Views/Summary/AUDIT_DASHBOARD.cshtml">
+      <publishTime>03/25/2026 13:08:48</publishTime>
+    </File>
+    <File Include="Views/Summary/AUDIT_DASHBOARD_NEW.cshtml">
+      <publishTime>03/25/2026 09:53:39</publishTime>
+    </File>
+    <File Include="Views/Summary/AUDIT_DASHBOARD_TWO.cshtml">
+      <publishTime>12/06/2025 14:37:34</publishTime>
+    </File>
+    <File Include="Views/Summary/Index.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Summary/KSA_ADMIN_DASHBOARD.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/Summary/LicenseDashboard.cshtml">
+      <publishTime>05/23/2026 12:29:03</publishTime>
+    </File>
+    <File Include="Views/Summary/ViewAuditorWisetDetails.cshtml">
+      <publishTime>03/13/2025 12:41:51</publishTime>
+    </File>
+    <File Include="Views/Summary/ViewCategoryWisetDetails.cshtml">
+      <publishTime>08/18/2025 15:49:46</publishTime>
+    </File>
+    <File Include="Views/Summary/ViewLicenseWisetDetails.cshtml">
+      <publishTime>05/23/2026 12:51:57</publishTime>
+    </File>
+    <File Include="Views/Summary/ViewLocationWisetDetails.cshtml">
+      <publishTime>01/27/2025 12:45:35</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/07/2022 16:25:41</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/20/2026 10:01:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

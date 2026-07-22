@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PM.Models.P_USERS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a href="@Url.Action("UserOpenForm","Users")" class="btn btn-sm btn-primary fa fa-plus-square"></a>
+</p>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">User</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="generalDT" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Staff Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Role
+                    </th>
+                    <th>Permission</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_TEXT)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.USER_MOBL)
+                        </td>
+                        <td>
+                            @if (item.USER_ACTV == true)
+                            {
+                                <p class="fa fa-check-square" />
+                            }
+                            else
+                            {
+                                <p class="fa fa-close" />
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.P_ROLES.ROLE_NAME)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit","Users", new {/* id = item.USER_TEXT */ })" class="fa fa-edit"> Edit</a>
+                            <a href="@Url.Action("Delete","Users", new { id = item.USER_TEXT  })" class="fa fa-remove" onclick="return confirm('are you sure block?')"> Block</a>
+                            <a href="@Url.Action("Edit","Users", new {/* id = item.USER_TEXT */ })" class="fa fa-newspaper-o"> Detail</a>
+                            <a href="@Url.Action("UserMenuList","Users", new { id = item.USER_TEXT })" class="fa fa-sliders"> Menu</a>
+                            <a href="@Url.Action("UserBusinessList","Users", new { id = item.USER_TEXT })" class="fa fa-pie-chart"> Company</a>
+                            <a href="@Url.Action("UserGroupList","Users", new { id = item.USER_TEXT })" class="fa fa-object-group"> Group</a>
+                            
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        Staff Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Role
+                    </th>
+                    <th>Permission</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->

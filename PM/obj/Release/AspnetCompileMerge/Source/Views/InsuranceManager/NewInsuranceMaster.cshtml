@@ -1,0 +1,164 @@
+﻿@model PM.ModelsV.InsuranceMasterVM
+@{
+    ViewBag.Title = "New Insurance Master";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewInsuranceMaster", "InsuranceManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Beneficiary Name (Company)</span>
+                    @Html.DropDownListFor(model => model.COMPANY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                    @Html.ValidationMessageFor(model => model.COMPANY_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Beneficiary Details</span>
+                    @Html.EditorFor(model => model.BENIFICIARY_DETAILS, new { htmlAttributes = new { @class = "form-control", placeholder = "Benificiary Details", autofocus = true } })
+                    @Html.ValidationMessageFor(model => model.BENIFICIARY_DETAILS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Types of Insurance/Risk</span>
+                    @Html.DropDownListFor(model => model.INSURANCE_TYPE_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                    @Html.ValidationMessageFor(model => model.INSURANCE_TYPE_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Insurance Company</span>
+                    @Html.DropDownListFor(model => model.INSURANCE_COMPANY_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                    @Html.ValidationMessageFor(model => model.INSURANCE_COMPANY_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Insured Item</span>
+                    @Html.EditorFor(model => model.INSURED_ITEM, new { htmlAttributes = new { @class = "form-control", placeholder = "Insured Item", autofocus = true } })
+                    @Html.ValidationMessageFor(model => model.INSURED_ITEM, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Occupation</span>
+                    @Html.EditorFor(model => model.OCCUPATION, new { htmlAttributes = new { @class = "form-control", placeholder = "Occupation", autofocus = true} })
+                    @Html.ValidationMessageFor(model => model.OCCUPATION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Insurance (Policy) Number</span>
+                        @Html.EditorFor(model => model.INSURANCE_NUMBER, new { htmlAttributes = new { @class = "form-control", placeholder = "License Number", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.INSURANCE_NUMBER, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Policy Date</span>
+                        @Html.EditorFor(model => model.INSURANE_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "dd/MM/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.INSURANE_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Expire Date</span>
+                        @Html.EditorFor(model => model.INSURANCE_EXPAIR_DATE, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "dd/MM/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.INSURANCE_EXPAIR_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Insurance Amount</span>
+                        @Html.EditorFor(model => model.INSURANCE_AMOUNT, new { htmlAttributes = new { @class = "form-control", placeholder = "Total Insurance Amount", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.INSURANCE_AMOUNT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Net Premium Amount </span>
+                        @Html.EditorFor(model => model.NET_PREMIUM, new { htmlAttributes = new { @class = "form-control", placeholder = "Net Premium Amount", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.NET_PREMIUM, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">VAT</span>
+                        @Html.EditorFor(model => model.VAT, new { htmlAttributes = new { @class = "form-control", placeholder = "VAT Amount", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.VAT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">STAMP</span>
+                        @Html.EditorFor(model => model.STAMP, new { htmlAttributes = new { @class = "form-control", placeholder = "STAMP Amount", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.STAMP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Requested By</span>
+                        @Html.EditorFor(model => model.REQUEST_BY, new { htmlAttributes = new { @class = "form-control", placeholder = "Staff ID", autofocus = true, required = "required" } })
+                        @Html.ValidationMessageFor(model => model.REQUEST_BY, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    @*<div class="form-group input-group">
+                        <span class="input-group-addon">Attachment</span>
+                        <input type="file" name="file" id="file" class="form-control" accept="image/jpeg, image/png">
+                    </div>*@
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">File</span>
+                        <input type="file" name="FileX" id="FileX" class="form-control" accept=".pdf,.docx,.jpg,.png" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Description</span>
+                        @Html.EditorFor(model => model.DESCRIPTION, new { htmlAttributes = new { @class = "form-control", placeholder = "Destail Information", autofocus = true } })
+                        @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("NewInsuranceMaster","InsuranceManager")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewInsuranceMaster","InsuranceManager")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        Insurance Data Entry
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

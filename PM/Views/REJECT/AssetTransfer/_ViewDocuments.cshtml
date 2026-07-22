@@ -1,0 +1,24 @@
+﻿@model IEnumerable<PM.Models.P_ASSET_TRNS_IMG>
+
+<table class="table">
+    <tr>
+        <th>
+            Attachment(s)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMG_OLDN)
+        </td>
+        <td>
+            @Html.ActionLink("Download", "DownloadDocuments", new { fPath = item.IMG_PATH , fName =item.IMG_OLDN})
+        </td>
+    </tr>
+}
+
+</table>

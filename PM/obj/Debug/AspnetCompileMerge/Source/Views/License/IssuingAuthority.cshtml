@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PM.ModelsV.IssuingAuthorityVM>
+@{
+    ViewBag.Title = "Issuing Authority";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewIssuingAuthority", "License")" class="btn btn-primary"> New Issuing Authority</a>
+            <a href="@Url.Action("IssuingAuthority","License")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AUTHORITY_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ADDRESS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MOBILE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EMAIL)
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AUTHORITY_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ADDRESS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MOBILE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EMAIL)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

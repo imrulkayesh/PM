@@ -1,0 +1,131 @@
+﻿@model IEnumerable<PM.ModelsV.AssetAcceVM>
+@{
+    Layout = null;
+}
+@if (Model.Count() != 0)
+{
+    <table class="table table-hover table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACCE_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_QUANTITY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_RATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AAI_DESC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACT)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ACCE_ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_QUANTITY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_RATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AAI_DESC)
+                    </td>
+                    <td>
+                        @if (item.ACT == false)
+                        {
+                            <input type="submit" class="UpdateR btn btn-flat btn-warning" value="Approve" data-id="@item.ASET_ID_V" data-acce="@item.ACCE_ID_V" data-toggle="modal" data-target="#modal-app" />
+
+                            <input type="submit" class="UpdateR btn btn-flat btn-danger" value="Delete" data-id="@item.ASET_ID_V" data-acce="@item.ACCE_ID_V" data-toggle="modal" data-target="#modal-del" />
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>
+        <h5 style="color:red">No Accesoreis Available</h5>
+    </div>
+}
+
+<div class="modal fade" id="modal-del">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">This action cannot be undone</h5>
+            </div>
+            @using (Html.BeginForm("DeleteItem", "AssetManager"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <input type="hidden" name="ACCE_IDD" id="ACCE_IDD" />
+                    <input type="hidden" name="ASET_IDD" id="ASET_IDD" />
+                    <p> Are you sure you want to delete this item?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger pull-left"><i class="fa fa-trash"></i> Delete</button>
+                    <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+                </div>
+            }
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal fade" id="modal-app">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-warning">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">This action cannot be undone</h5>
+            </div>
+            @using (Html.BeginForm("ApproveItem", "AssetManager"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <input type="hidden" name="ACCE_IDA" id="ACCE_IDA" />
+                    <input type="hidden" name="ASET_IDA" id="ASET_IDA" />
+                    <p> Are you sure you want to approve this item?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger pull-left"><i class="fa fa-check"></i> Approve</button>
+                    <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+                </div>
+            }
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

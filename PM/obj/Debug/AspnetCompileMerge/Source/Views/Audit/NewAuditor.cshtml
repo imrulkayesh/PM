@@ -1,0 +1,66 @@
+﻿@model PM.ModelsV.AuditorVM
+@{
+    ViewBag.Title = "Add New Auditor";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("NewAuditor", "Audit", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Auditor Name </span>
+                        @Html.EditorFor(model => model.AUDITOR_NAME, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Auditor  Name" } })
+                        @Html.ValidationMessageFor(model => model.AUDITOR_NAME, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Auditor Staff ID </span>
+                        @Html.EditorFor(model => model.AUDITOR_STAFF_ID, new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Auditor Staff ID" } })
+                        @Html.ValidationMessageFor(model => model.AUDITOR_STAFF_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Email</span>
+                        @Html.EditorFor(model => model.AUDITOR_EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.AUDITOR_EMAIL, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Mobile</span>
+                        @Html.EditorFor(model => model.AUDITOR_MOBILE, new { htmlAttributes = new { @class = "form-control", placeholder = "Mobile" } })
+                        @Html.ValidationMessageFor(model => model.AUDITOR_MOBILE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-save"></i> Save</button>
+                    <div class="btn-group">
+                        <a href="@Url.Action("NewAuditor","Audit")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("NewAuditor","Audit")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        Auditor Name Entry
+    </div>
+</div>
+
+

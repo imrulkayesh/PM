@@ -1,0 +1,3361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="A_ACCE_ITEMS">
+    <Key>
+      <PropertyRef Name="ACCE_ID" />
+    </Key>
+    <Property Name="ACCE_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ACCE_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ACCE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACCE_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACCE_RATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_AREA">
+    <Key>
+      <PropertyRef Name="AREA_ID" />
+    </Key>
+    <Property Name="AREA_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_THANA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_BUSINESS" Type="varchar2" MaxLength="30" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="AREA_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_ASET_ACCE">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ACCE_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ACCE_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AAI_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="AAI_QUANTITY" Type="number" Precision="3" Scale="0" />
+    <Property Name="AAI_RATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_ASET_APP">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_VALUE" Type="number" Precision="10" Scale="0" />
+    <Property Name="APPLY_DATE" Type="date" />
+    <Property Name="APPLY_REASON" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="APPLY_TYPE" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="SERVICE_MONTH" Type="number" Precision="5" Scale="0" />
+    <Property Name="RECEIVE_TYPE" Type="varchar2" MaxLength="5" />
+    <Property Name="RECEIVE_DETAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="RECEIVE_DATE" Type="date" />
+    <Property Name="RECEIVE_AREA" Type="varchar2" MaxLength="30" />
+    <Property Name="INSURACE_COMP" Type="varchar2" MaxLength="50" />
+    <Property Name="INSURACE_ID" Type="varchar2" MaxLength="30" />
+    <Property Name="INSURACE_LINE" Type="number" Precision="10" Scale="0" />
+    <Property Name="REQU_USER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="APPR_USER" Type="varchar2" MaxLength="30" />
+    <Property Name="APPR_DATE" Type="date" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_ASET_DATA">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_BODY" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_BRAND" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_FUEL" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_COLOR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_MODEL" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_PO_ENGINE" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_GRN_CHASIS" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CAPACITY" Type="varchar2" MaxLength="10" />
+    <Property Name="ASET_PRICE" Type="number" Precision="10" Scale="0" />
+    <Property Name="ASET_REG_DATE" Type="date" />
+    <Property Name="ASET_HEIGHT" Type="varchar2" MaxLength="15" />
+    <Property Name="ASET_WEIGHT" Type="varchar2" MaxLength="15" />
+    <Property Name="ASET_MFG_YEAR" Type="number" Precision="4" Scale="0" />
+    <Property Name="ASET_IMAGE" Type="varchar2" MaxLength="150" />
+    <Property Name="ASET_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="ASET_USED" Type="number" Precision="1" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_ASET_USER">
+    <Key>
+      <PropertyRef Name="AU_ID" />
+    </Key>
+    <Property Name="AU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AU_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AU_USER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AU_DEPT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AU_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AU_SRDATE" Type="date" />
+    <Property Name="AU_SRUSER" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="AU_SADATE" Type="date" />
+    <Property Name="AU_SAUSER" Type="varchar2" MaxLength="10" />
+    <Property Name="AU_SNOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="AU_ERDATE" Type="date" />
+    <Property Name="AU_ERUSER" Type="varchar2" MaxLength="10" />
+    <Property Name="AU_EADATE" Type="date" />
+    <Property Name="AU_EAUSER" Type="varchar2" MaxLength="10" />
+    <Property Name="AU_ENOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+    <Property Name="AU_EMAILAGE" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_SMAILAGE" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_TRNSTYPE" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="A_ASET_USER_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_NAME" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_PATH" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="IMG_AU" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="A_ASET_USR_ACE">
+    <Key>
+      <PropertyRef Name="AUA_AU" />
+      <PropertyRef Name="AUA_LINE" />
+    </Key>
+    <Property Name="AUA_AU" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AUA_LINE" Type="number" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="AUA_ACCE_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AUA_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="AUA_QTY" Type="number" Precision="3" Scale="0" />
+    <Property Name="AUA_RATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="AUA_TYPE" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_BILL">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+    </Key>
+    <Property Name="BILH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_DATE" Type="date" />
+    <Property Name="BILH_NOTE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BILH_REF" Type="varchar2" MaxLength="50" />
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_RECEIVER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_PAID" Type="varchar2" MaxLength="1" />
+    <Property Name="BILH_IPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_UPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_CPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_DISC" Type="number" Precision="10" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_BODY">
+    <Key>
+      <PropertyRef Name="BODY_ID" />
+    </Key>
+    <Property Name="BODY_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BODY_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BODY_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_BRAND">
+    <Key>
+      <PropertyRef Name="BRAND_ID" />
+    </Key>
+    <Property Name="BRAND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BRAND_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BRAND_ORIGIN" Type="varchar2" MaxLength="30" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_BUSINESS">
+    <Key>
+      <PropertyRef Name="BUSINESS_ID" />
+    </Key>
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_COMPANY" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BUSINESS_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_COLOR">
+    <Key>
+      <PropertyRef Name="COLOR_ID" />
+    </Key>
+    <Property Name="COLOR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="COLOR_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="COMPANY_COUNTRY" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="COMPANY_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="COMPANY_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_ID" />
+    </Key>
+    <Property Name="COUNTRY_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="COUNTRY_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPARTMENT_ID" />
+    </Key>
+    <Property Name="DEPARTMENT_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTMENT_ADDR" Type="varchar2" MaxLength="50" />
+    <Property Name="DEPARTMENT_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_DISTRICT">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DISTRICT_COUNTRY" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DISTRICT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.A_EMAIL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="A_EMAIL">
+    <Key>
+      <PropertyRef Name="EMAIL_ID" />
+      <PropertyRef Name="KEEP_IN" />
+      <PropertyRef Name="MAIL_GROUP" />
+    </Key>
+    <Property Name="EMAIL_ID" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="EMAIL_DISPLAY" Type="varchar2" MaxLength="50" />
+    <Property Name="KEEP_IN" Type="varchar2" MaxLength="3" Nullable="false" />
+    <Property Name="MAIL_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="MAIL_BUSINESS" Type="varchar2" MaxLength="30" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+    <Property Name="MAIL_TYPE" Type="varchar2" MaxLength="10" />
+    <Property Name="AREA_ID" Type="varchar2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="A_EMAIL_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="TO_EMAIL" Type="number" Precision="10" Scale="0" />
+    <Property Name="CC_EMAIL" Type="number" Precision="10" Scale="0" />
+    <Property Name="CDT" Type="date" />
+  </EntityType>
+  <EntityType Name="A_FUEL">
+    <Key>
+      <PropertyRef Name="FUEL_ID" />
+    </Key>
+    <Property Name="FUEL_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="FUEL_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_GROUP">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="GROUP_DESC" Type="varchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_INSP_JOB_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_NAME" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_PATH" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="IMG_REF" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="IMG_CDT" Type="date" />
+  </EntityType>
+  <EntityType Name="A_INSP_TYPE">
+    <Key>
+      <PropertyRef Name="ITYPE_ID" />
+    </Key>
+    <Property Name="ITYPE_ID" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="ITYPE_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_INSPD">
+    <Key>
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPD_LINE" />
+    </Key>
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="INSPD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="INSPD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSPD_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="INSPD_STATE" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="A_INSPH">
+    <Key>
+      <PropertyRef Name="INSPH_ID" />
+    </Key>
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_IUSER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_DATE" Type="date" />
+    <Property Name="MILEAGE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_TYPE" Type="varchar2" MaxLength="1" />
+    <Property Name="INSPH_NOTE" Type="varchar2" MaxLength="80" Nullable="false" />
+    <Property Name="INSPH_JOB" Type="varchar2" MaxLength="1" />
+    <Property Name="INSPH_APP" Type="varchar2" MaxLength="1" />
+    <Property Name="INSPH_APDATE" Type="date" />
+    <Property Name="INSPH_APBY" Type="varchar2" MaxLength="30" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_INSUD">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="INSU_LINE" />
+    </Key>
+    <Property Name="INSU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSU_LINE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="INSU_ASET_VALUE" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_PREMIUM" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_AMOUNT" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_VAT_AMOUNT" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_DATE" Type="date" />
+    <Property Name="INSU_PAID" Type="varchar2" MaxLength="1" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_INSUH">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+    </Key>
+    <Property Name="INSU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSU_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSU_POLICY" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSU_ASET_VALUE" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_PREMIUM" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_COMP" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_COMP_ADDRESS" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="INSU_REG_START" Type="date" />
+    <Property Name="INSU_REG_END" Type="date" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+    <Property Name="REMIND" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_ITEM_LIST">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="ITEM_ID" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_DESCRIPTION" Type="varchar2" MaxLength="100" />
+    <Property Name="ITEM_NOTIF_SET" Type="varchar2" MaxLength="30" />
+    <Property Name="ITEM_BASE" Type="varchar2" MaxLength="1" />
+    <Property Name="ITEM_BILL" Type="varchar2" MaxLength="1" />
+    <Property Name="REMINDER_ENTRY" Type="varchar2" MaxLength="1" />
+    <Property Name="JOB_ENTRY" Type="varchar2" MaxLength="1" />
+    <Property Name="ITEM_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="A_JOBD">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+    </Key>
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_JQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_JRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="JOBD_STATE" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="A_JOBH">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+    </Key>
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_DATE" Type="date" />
+    <Property Name="JOBH_MILEAGE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_VENDOR" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_NOTE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_TYPE" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="JOBH_IPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBH_UPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBH_CPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBH_DISC" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBH_CNAME" Type="varchar2" MaxLength="30" />
+    <Property Name="JOBH_BILL" Type="varchar2" MaxLength="1" />
+    <Property Name="JOBH_APP" Type="varchar2" MaxLength="1" />
+    <Property Name="JOBH_APDATE" Type="date" />
+    <Property Name="JOBH_APBY" Type="varchar2" MaxLength="30" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_MENUC">
+    <Key>
+      <PropertyRef Name="CMNU_TEXT" />
+    </Key>
+    <Property Name="CMNU_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CMNU_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="CMNU_ICON" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="CMNU_CONT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CMNU_ACTN" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CMNU_ROLE" Type="number" Precision="10" Scale="0" />
+    <Property Name="CMNU_PMNU" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CMNU_NOTE" Type="nvarchar2" MaxLength="50" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_MENUP">
+    <Key>
+      <PropertyRef Name="PMNU_TEXT" />
+    </Key>
+    <Property Name="PMNU_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PMNU_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PMNU_ICON" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_NOTIF_SET">
+    <Key>
+      <PropertyRef Name="NOTIF_ID" />
+    </Key>
+    <Property Name="NOTIF_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_TYPE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FOR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_REMIND" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FIRST" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FINAL" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="A_OWNR">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_DEPT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_DESG" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_CONT" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_EMAIL" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_ADDR" Type="varchar2" MaxLength="120" />
+    <Property Name="OWNR_PIC" Type="varchar2" MaxLength="150" />
+    <Property Name="OWNR_NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="OWNR_TYPE" Type="varchar2" MaxLength="15" />
+    <Property Name="OWNR_RESIGN" Type="varchar2" MaxLength="1" />
+    <Property Name="OWNR_NDATE" Type="date" />
+    <Property Name="OWNR_RDATE" Type="date" />
+    <Property Name="OWNR_POST" Type="number" Precision="1" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+    <Property Name="REMIND" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_OWNR_BILL">
+    <Key>
+      <PropertyRef Name="BILL_ID" />
+    </Key>
+    <Property Name="BILL_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILL_OWNR" Type="varchar2" MaxLength="30" />
+    <Property Name="BILL_ASET" Type="varchar2" MaxLength="30" />
+    <Property Name="BILL_DATE" Type="date" Nullable="false" />
+    <Property Name="BILL_AMNT" Type="number" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="BILL_OWNR_NAME" Type="varchar2" MaxLength="150" />
+    <Property Name="BILL_NOTE" Type="varchar2" MaxLength="200" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_PLEA">
+    <Key>
+      <PropertyRef Name="PLEA_ID" />
+    </Key>
+    <Property Name="PLEA_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_DFND" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_PAID_BY" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_DATE" Type="date" />
+    <Property Name="PLEA_REF" Type="varchar2" MaxLength="50" />
+    <Property Name="PLEA_REASON_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_DESCRIPTION" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="PLEA_AMNT" Type="number" Precision="10" Scale="0" />
+    <Property Name="PLEA_LOCATION" Type="varchar2" MaxLength="50" />
+    <Property Name="PLEA_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_MILEAGE" Type="varchar2" MaxLength="30" />
+    <Property Name="PLEA_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_DEPT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_STATUS" Type="varchar2" MaxLength="1" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+    <Property Name="PLEA_APP" Type="varchar2" MaxLength="10" />
+    <Property Name="PLEA_APP_DATE" Type="date" />
+  </EntityType>
+  <EntityType Name="A_PLEA_REASON">
+    <Key>
+      <PropertyRef Name="REASON_ID" />
+    </Key>
+    <Property Name="REASON_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="REASON_NAME" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="REASON_DESC" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_REMINDER">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+    </Key>
+    <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="C_STATE" Type="varchar2" MaxLength="30" />
+    <Property Name="N_STATE" Type="varchar2" MaxLength="30" />
+    <Property Name="C_DATE" Type="date" />
+    <Property Name="N_DATE" Type="date" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="REMIND" Type="varchar2" MaxLength="30" />
+    <Property Name="COMPLETED" Type="varchar2" MaxLength="1" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_REMINDER_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_NAME" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="IMG_PATH" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="IMG_REMINDER" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="A_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_TEXT" />
+    </Key>
+    <Property Name="ROLE_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ROLE_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ROLE_DESC" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_SUMMARY_VIEW">
+    <Key>
+      <PropertyRef Name="SV_TABLE" />
+    </Key>
+    <Property Name="SV_ID" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="SV_TABLE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="SV_NOTE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="SV_USER" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_A" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_AN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_B" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_BN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_C" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_CN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_D" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_DN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_E" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_EN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_F" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_FN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_G" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_GN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_H" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_HN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_I" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_IN" Type="varchar2" MaxLength="30" />
+    <Property Name="DATA_J" Type="number" Precision="10" Scale="0" />
+    <Property Name="DATA_JN" Type="varchar2" MaxLength="30" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_TBL_SEQ">
+    <Key>
+      <PropertyRef Name="TABLE_ID" />
+    </Key>
+    <Property Name="TABLE_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="TABLE_SEQ" Type="number" Precision="10" Scale="0" />
+    <Property Name="TABLE_NAME" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_THANA">
+    <Key>
+      <PropertyRef Name="THANA_ID" />
+    </Key>
+    <Property Name="THANA_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="THANA_DISTRICT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="THANA_BUSINESS" Type="varchar2" MaxLength="30" />
+    <Property Name="THANA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS">
+    <Key>
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="USER_TEXT" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="USER_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="USER_PASS" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="USER_MAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="USER_MOBL" Type="varchar2" MaxLength="15" />
+    <Property Name="USER_IMAG" Type="varchar2" MaxLength="50" />
+    <Property Name="USER_ROLE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_AREA">
+    <Key>
+      <PropertyRef Name="UA_AREA" />
+      <PropertyRef Name="UA_USER" />
+    </Key>
+    <Property Name="UA_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UA_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_BUS">
+    <Key>
+      <PropertyRef Name="UB_BUSINESS" />
+      <PropertyRef Name="UB_USER" />
+    </Key>
+    <Property Name="UB_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UB_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_COUNTRY">
+    <Key>
+      <PropertyRef Name="UC_ID" />
+    </Key>
+    <Property Name="UC_ID" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="COUNTRY_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="USER_TEXT" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_GROUP">
+    <Key>
+      <PropertyRef Name="UG_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="UG_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_LOGIN">
+    <Key>
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="USER_TEXT" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="USER_IP" Type="varchar2" MaxLength="20" />
+    <Property Name="USER_PC" Type="varchar2" MaxLength="200" />
+    <Property Name="PC_USER" Type="varchar2" MaxLength="200" />
+    <Property Name="PC_TYPE" Type="varchar2" MaxLength="20" />
+    <Property Name="BROWSER_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="BROWSER_VERSION" Type="varchar2" MaxLength="20" />
+    <Property Name="SESSION_ID" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="SESSION_ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+  </EntityType>
+  <EntityType Name="A_USERS_MENUC">
+    <Key>
+      <PropertyRef Name="CMNU_TEXT" />
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="CMNU_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="USER_TEXT" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="A_USERS_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_TEXT" />
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="ROLE_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="USER_TEXT" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="CDT" Type="date" />
+    <Property Name="UDT" Type="date" />
+    <Property Name="CDU" Type="varchar2" MaxLength="10" />
+    <Property Name="UDU" Type="varchar2" MaxLength="10" />
+    <Property Name="VAR" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_ASET_BY_USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ASET_BY_USERS">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_USED" Type="number" Precision="1" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_ASSETUSERMANAGERVM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_ASSETUSERMANAGERVM">
+    <Key>
+      <PropertyRef Name="AU_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="AU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="AU_SRDATE" Type="date" />
+    <Property Name="T_USER" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_SADATE" Type="date" />
+    <Property Name="T_APPROVER" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_SNOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="AU_ERDATE" Type="date" />
+    <Property Name="R_USER" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_EADATE" Type="date" />
+    <Property Name="R_APPROVER" Type="varchar2" MaxLength="30" />
+    <Property Name="AU_ENOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="AU_TRNSTYPE" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_BNDL_INSP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_BNDL_INSP">
+    <Key>
+      <PropertyRef Name="INSPH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="INSPH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="INSPH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="INSPH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="INSPH_IUSER" />
+      <PropertyRef Name="MILEAGE" />
+      <PropertyRef Name="INSPH_NOTE" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPD_LINE" />
+      <PropertyRef Name="INSPD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="INSPH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSPH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSPH_IUSER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_DATE" Type="date" />
+    <Property Name="MILEAGE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_TYPE" Type="varchar2" MaxLength="1" />
+    <Property Name="INSPH_NOTE" Type="varchar2" MaxLength="80" Nullable="false" />
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="INSPD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="INSPD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSPD_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="INSPH_APP" Type="varchar2" MaxLength="1" />
+    <Property Name="INSPH_JOB" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_BNDL_JOBC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_BNDL_JOBC">
+    <Key>
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_VENDOR" />
+      <PropertyRef Name="JOBH_MILEAGE" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="JOBH_NOTE" />
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="JOBH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_VENDOR" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_DATE" Type="date" />
+    <Property Name="JOBH_MILEAGE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_TYPE" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="JOBH_NOTE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="JOBH_APP" Type="varchar2" MaxLength="1" />
+    <Property Name="JOBH_BILL" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_DATE_NOTIF' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_DATE_NOTIF">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+      <PropertyRef Name="NOTIF_TYPE" />
+    </Key>
+    <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ITEM_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="C_DATE" Type="date" />
+    <Property Name="N_DATE" Type="date" />
+    <Property Name="ELAPSED" Type="number" Precision="38" Scale="0" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="REMIND" Type="varchar2" MaxLength="30" />
+    <Property Name="NOTIF_FIRST" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FINAL" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="REMINDER_NOTE" Type="varchar2" MaxLength="14" />
+    <Property Name="NOTIF_TYPE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="COMPLETED" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_INSURANCE_S1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_INSURANCE_S1">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="INSU_POLICY" />
+    </Key>
+    <Property Name="INSU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_NAME_CODE" Type="varchar2" MaxLength="102" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSU_POLICY" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSU_PREMIUM" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_COMP" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_COMP_ADDRESS" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="INSU_REG_START" Type="date" />
+    <Property Name="INSU_REG_END" Type="date" />
+    <Property Name="REMIND" Type="number" Precision="1" Scale="0" />
+    <Property Name="DAYS" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_INSURANCE_S2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_INSURANCE_S2">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="INSU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_NAME_CODE" Type="varchar2" MaxLength="102" />
+    <Property Name="INSURANCE" Type="varchar2" MaxLength="91" />
+    <Property Name="COMPANY" Type="varchar2" MaxLength="101" />
+    <Property Name="INSU_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="MESSAGES" Type="varchar2" MaxLength="28" />
+    <Property Name="NEED_MAIL" Type="char" MaxLength="1" />
+    <Property Name="INSU_REG_START" Type="date" />
+    <Property Name="INSU_REG_END" Type="date" />
+    <Property Name="DAYS" Type="number" Precision="38" Scale="0" />
+    <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="112" />
+    <Property Name="MAIL_BODY" Type="char" MaxLength="520" />
+    <Property Name="UPDT" Type="char" MaxLength="56" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_IQAMA_NOTIF_V1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_IQAMA_NOTIF_V1">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="OWNR_AREA" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="AAJKEY" Type="date" />
+    <Property Name="OWNR_NDATE" Type="date" />
+    <Property Name="ELAPSED" Type="number" Precision="38" Scale="0" />
+    <Property Name="REMIND" Type="number" Precision="10" Scale="0" />
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="char" MaxLength="6" />
+    <Property Name="REMINDER_NOTE" Type="varchar2" MaxLength="14" />
+    <Property Name="NOTIF_MESSAGES" Type="varchar2" MaxLength="52" />
+    <Property Name="MAIL_SEND" Type="char" MaxLength="1" />
+    <Property Name="UPDT" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_IQAMA_NOTIF_V2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_IQAMA_NOTIF_V2">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="BUSINESS_ID" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="AAJ_DATE" Type="date" />
+    <Property Name="EXP_DATE" Type="date" />
+    <Property Name="REMIND" Type="number" Precision="10" Scale="0" />
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="char" MaxLength="6" />
+    <Property Name="ELAPSED" Type="number" Precision="38" Scale="0" />
+    <Property Name="MESSAGES" Type="varchar2" MaxLength="14" />
+    <Property Name="MESSAGE_NOTE" Type="varchar2" MaxLength="16" />
+    <Property Name="MAIL_SEND" Type="char" MaxLength="1" />
+    <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="157" />
+    <Property Name="MAIL_BODY" Type="char" MaxLength="504" />
+    <Property Name="UPDT" Type="varchar2" MaxLength="55" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_KSA_IQUMA_S1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_KSA_IQUMA_S1">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="AAJ_DATE" Type="date" />
+    <Property Name="OWNR_NDATE" Type="date" />
+    <Property Name="REMIND" Type="number" Precision="10" Scale="0" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="char" MaxLength="6" />
+    <Property Name="DAYS" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_KSA_IQUMA_S2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_KSA_IQUMA_S2">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="AAJ_DATE" Type="date" />
+    <Property Name="OWNR_NDATE" Type="date" />
+    <Property Name="REMIND" Type="number" Precision="10" Scale="0" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="char" MaxLength="6" />
+    <Property Name="DAYS" Type="number" Precision="38" Scale="0" />
+    <Property Name="MESSAGES" Type="varchar2" MaxLength="28" />
+    <Property Name="NEED_MAIL" Type="char" MaxLength="1" />
+    <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="157" />
+    <Property Name="MAIL_BODY" Type="char" MaxLength="504" />
+    <Property Name="UPDT" Type="char" MaxLength="55" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'PM.VW_MAIL_BODY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_MAIL_BODY">
+          <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" />
+          <Property Name="PH0" Type="varchar2" MaxLength="102" />
+          <Property Name="PH1" Type="varchar2" MaxLength="120" />
+          <Property Name="PH2" Type="varchar2" MaxLength="101" />
+          <Property Name="PH3" Type="varchar2" MaxLength="80" />
+          <Property Name="PH4" Type="varchar2" MaxLength="28" />
+          <Property Name="PH5" Type="date" />
+          <Property Name="PH6" Type="date" />
+          <Property Name="PH7" Type="number" Precision="38" Scale="0" />
+          <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="157" />
+          <Property Name="MAIL_BODY" Type="varchar2" MaxLength="520" />
+          <Property Name="UPDT" Type="varchar2" MaxLength="56" />
+          <Property Name="EMAIL_ID" Type="varchar2" MaxLength="50" />
+          <Property Name="KEEP_IN" Type="varchar2" MaxLength="3" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_NOTIF_MAIL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_NOTIF_MAIL">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_TYPE" />
+      <PropertyRef Name="NOTIF_REMIND" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+    </Key>
+    <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NOTIF_SET" Type="varchar2" MaxLength="30" />
+    <Property Name="NOTIF_TYPE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_REMIND" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FIRST" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FINAL" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="C_DATE" Type="date" />
+    <Property Name="N_DATE" Type="date" />
+    <Property Name="REMIND" Type="varchar2" MaxLength="30" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="COMPLETED" Type="varchar2" MaxLength="1" />
+    <Property Name="ELAPSED" Type="number" Precision="38" Scale="0" />
+    <Property Name="REMINDER_NOTE" Type="varchar2" MaxLength="14" />
+    <Property Name="NOTIF_MESSAGES" Type="varchar2" MaxLength="52" />
+    <Property Name="MAIL_SEND" Type="char" MaxLength="1" />
+    <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="90" />
+    <Property Name="MAIL_BODY" Type="char" MaxLength="517" />
+    <Property Name="UPDT" Type="char" MaxLength="53" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_NOTIF_MAIL_METER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_NOTIF_MAIL_METER">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_TYPE" />
+      <PropertyRef Name="NOTIF_REMIND" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+    </Key>
+    <Property Name="REMIND_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NOTIF_SET" Type="varchar2" MaxLength="30" />
+    <Property Name="NOTIF_TYPE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_REMIND" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FIRST" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="NOTIF_FINAL" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="C_DATE" Type="date" />
+    <Property Name="N_DATE" Type="date" />
+    <Property Name="REMIND" Type="varchar2" MaxLength="30" />
+    <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+    <Property Name="COMPLETED" Type="varchar2" MaxLength="1" />
+    <Property Name="ELAPSED" Type="number" Precision="38" Scale="0" />
+    <Property Name="REMINDER_NOTE" Type="varchar2" MaxLength="14" />
+    <Property Name="NOTIF_MESSAGES" Type="varchar2" MaxLength="52" />
+    <Property Name="MAIL_SEND" Type="char" MaxLength="1" />
+    <Property Name="MAIL_SUBJECT" Type="varchar2" MaxLength="90" />
+    <Property Name="MAIL_BODY" Type="char" MaxLength="517" />
+    <Property Name="UPDT" Type="char" MaxLength="54" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_OWNR_BY_USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_OWNR_BY_USERS">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_DEPT" />
+      <PropertyRef Name="OWNR_AREA" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="UB_USER" />
+    </Key>
+    <Property Name="OWNR_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_DEPT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="OWNR_NAME" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_DESG" Type="varchar2" MaxLength="30" />
+    <Property Name="OWNR_TYPE" Type="varchar2" MaxLength="15" />
+    <Property Name="OWNR_RESIGN" Type="varchar2" MaxLength="1" />
+    <Property Name="OWNR_POST" Type="number" Precision="1" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="UB_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_PMENU_CMENU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_PMENU_CMENU">
+    <Key>
+      <PropertyRef Name="PMNU_TEXT" />
+      <PropertyRef Name="PMNU_NAME" />
+      <PropertyRef Name="CMNU_TEXT" />
+      <PropertyRef Name="CMNU_NAME" />
+    </Key>
+    <Property Name="PMNU_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PMNU_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="CMNU_TEXT" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CMNU_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="CMNU_ROLE" Type="number" Precision="10" Scale="0" />
+    <Property Name="CMNU_NOTE" Type="nvarchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_ASET_EXP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_ASET_EXP">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_MILEAGE" />
+      <PropertyRef Name="JOBH_VENDOR" />
+      <PropertyRef Name="JOBH_NOTE" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="ITYPE_NAME" />
+    </Key>
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_IAMNT" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOBD_JQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_JRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_JAMNT" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_DATE" Type="date" />
+    <Property Name="JOBH_MILEAGE" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_VENDOR" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_NOTE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_TYPE" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="ITYPE_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_ASET_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_ASET_USER">
+    <Key>
+      <PropertyRef Name="CODE_NAME" />
+      <PropertyRef Name="ASET_DEPT" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="USER_NAME" />
+      <PropertyRef Name="WORKING_DEPT" />
+      <PropertyRef Name="WORKING_AREA" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_DEPT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_AREA" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar2" MaxLength="30" />
+    <Property Name="USER_NAME" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="WORKING_DEPT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="WORKING_AREA" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="START_DATE" Type="date" />
+    <Property Name="START_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="END_DATE" Type="date" />
+    <Property Name="END_NOTE" Type="varchar2" MaxLength="50" />
+    <Property Name="STAUTS" Type="varchar2" MaxLength="7" />
+    <Property Name="ASET_GROUP" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_BILL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_BILL">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+      <PropertyRef Name="BILH_NOTE" />
+      <PropertyRef Name="BILH_RECEIVER" />
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="ITYPE_NAME" />
+    </Key>
+    <Property Name="BILH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_DATE" Type="date" />
+    <Property Name="BILH_NOTE" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BILH_REF" Type="varchar2" MaxLength="50" />
+    <Property Name="BILH_RECEIVER" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_IPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_UPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_CPAY" Type="number" Precision="10" Scale="0" />
+    <Property Name="BILH_DISC" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="JOBH_TYPE" Type="varchar2" MaxLength="1" Nullable="false" />
+    <Property Name="ITYPE_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_BILL_SUM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_BILL_SUM">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+      <PropertyRef Name="JOBH_ID" />
+    </Key>
+    <Property Name="BILH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILH_DATE" Type="date" />
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BILL_AMT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_INSP_SUM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_INSP_SUM">
+    <Key>
+      <PropertyRef Name="INSPH_ASET" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPH_OWNR" />
+      <PropertyRef Name="INSPH_AREA" />
+      <PropertyRef Name="INSPH_DEPARTMENT" />
+    </Key>
+    <Property Name="INSPH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_DATE" Type="date" />
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSP_AMT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_INSURANCE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_INSURANCE">
+    <Key>
+      <PropertyRef Name="INSU_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="DEPARTMENT_ID" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="INSU_LINE" />
+      <PropertyRef Name="INSU_POLICY" />
+    </Key>
+    <Property Name="INSU_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="DEPARTMENT_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSU_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSU_LINE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="INSU_ASET_VALUE" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_PREMIUM" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_VAT_AMOUNT" Type="number" Precision="10" Scale="0" />
+    <Property Name="INSU_DATE" Type="date" />
+    <Property Name="INSU_PAID" Type="varchar2" MaxLength="1" />
+    <Property Name="DACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="INSU_POLICY" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="INSU_COMP" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_COMP_ADDRESS" Type="varchar2" MaxLength="50" />
+    <Property Name="INSU_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="INSU_REG_END" Type="date" />
+    <Property Name="HACT" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_JOB_SUM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_JOB_SUM">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="JOBH_ASET" />
+    </Key>
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="INSPH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBH_DATE" Type="date" />
+    <Property Name="JOBH_AMT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_JOBD_S1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_JOBD_S1">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="JOBH_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_LINE" Type="number" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ITEM_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="JOBD_IQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_IRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_IAMNT" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOBD_JQTY" Type="number" Precision="2" Scale="0" />
+    <Property Name="JOBD_JRATE" Type="number" Precision="10" Scale="0" />
+    <Property Name="JOBD_JAMNT" Type="number" Precision="38" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_RPT_POLICE_CASE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_RPT_POLICE_CASE">
+    <Key>
+      <PropertyRef Name="PLEA_ID" />
+      <PropertyRef Name="PLEA_DESCRIPTION" />
+      <PropertyRef Name="PLEA_REASON_ID" />
+      <PropertyRef Name="REASON_NAME" />
+      <PropertyRef Name="PLEA_OWNR" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="PLEA_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="PLEA_DEPT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="PLEA_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+    </Key>
+    <Property Name="PLEA_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="PLEA_REF" Type="varchar2" MaxLength="50" />
+    <Property Name="PLEA_DESCRIPTION" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="PLEA_LOCATION" Type="varchar2" MaxLength="50" />
+    <Property Name="Case On" Type="varchar2" MaxLength="12" />
+    <Property Name="Paid By" Type="varchar2" MaxLength="11" />
+    <Property Name="PLEA_REASON_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="REASON_NAME" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="PLEA_OWNR" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="OWNR_TEXT" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="OWNR_USER" Type="varchar2" MaxLength="120" Nullable="false" />
+    <Property Name="PLEA_ASET" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PLEA_DEPT" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BUSINESS_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PLEA_AREA" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PLEA_DATE" Type="date" />
+    <Property Name="PLEA_STATUS" Type="varchar2" MaxLength="1" />
+    <Property Name="Status" Type="varchar2" MaxLength="9" />
+    <Property Name="PLEA_APP_DATE" Type="date" />
+    <Property Name="Approval" Type="varchar2" MaxLength="12" />
+    <Property Name="PLEA_AMNT" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_USER_ASSET_ID_STRING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_USER_ASSET_ID_STRING">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PM.VW_USER_ASSET_LIST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_USER_ASSET_LIST">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="BODY_NAME" />
+      <PropertyRef Name="BRAND_NAME" />
+      <PropertyRef Name="FUEL_NAME" />
+      <PropertyRef Name="COLOR_NAME" />
+      <PropertyRef Name="GROUP_NAME" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="COMPANY_NAME" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="varchar2" MaxLength="30" Nullable="false" />
+    <Property Name="ASET_TAG" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CODE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="AREA_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BODY_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BRAND_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="FUEL_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="COLOR_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="GROUP_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ASET_MODEL" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_PO_ENGINE" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_GRN_CHASIS" Type="varchar2" MaxLength="50" />
+    <Property Name="ASET_CAPACITY" Type="varchar2" MaxLength="10" />
+    <Property Name="ASET_PRICE" Type="number" Precision="10" Scale="0" />
+    <Property Name="ASET_REG_DATE" Type="date" />
+    <Property Name="ASET_HEIGHT" Type="varchar2" MaxLength="15" />
+    <Property Name="ASET_WEIGHT" Type="varchar2" MaxLength="15" />
+    <Property Name="ASET_MFG_YEAR" Type="number" Precision="4" Scale="0" />
+    <Property Name="ASET_IMAGE" Type="varchar2" MaxLength="150" />
+    <Property Name="ASET_NOTE" Type="varchar2" MaxLength="80" />
+    <Property Name="ASET_USED" Type="number" Precision="1" Scale="0" />
+    <Property Name="ACT" Type="number" Precision="1" Scale="0" />
+    <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="BUSINESS_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="COMPANY_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="UG_USER" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_A_ACCE_ITEMS_GROUP">
+    <End Role="A_GROUP" Type="Self.A_GROUP" Multiplicity="1" />
+    <End Role="A_ACCE_ITEMS" Type="Self.A_ACCE_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_ACCE_A_ASET_DATA">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_ASET_ACCE" Type="Self.A_ASET_ACCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_ACCE">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_ACCE_ACCE_ITEMS">
+    <End Role="A_ACCE_ITEMS" Type="Self.A_ACCE_ITEMS" Multiplicity="1" />
+    <End Role="A_ASET_ACCE" Type="Self.A_ASET_ACCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_ACCE">
+        <PropertyRef Name="ACCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_DATA_AREA">
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_MENUC">
+    <End Role="A_MENUC" Type="Self.A_MENUC" Multiplicity="1" />
+    <End Role="A_USERS_MENUC" Type="Self.A_USERS_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_MENUC">
+        <PropertyRef Name="CMNU_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_MENUC">
+        <PropertyRef Name="CMNU_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_MENUP">
+    <End Role="A_MENUP" Type="Self.A_MENUP" Multiplicity="1" />
+    <End Role="A_MENUC" Type="Self.A_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_MENUP">
+        <PropertyRef Name="PMNU_TEXT" />
+      </Principal>
+      <Dependent Role="A_MENUC">
+        <PropertyRef Name="CMNU_PMNU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_USERS">
+    <End Role="A_USERS" Type="Self.A_USERS" Multiplicity="1" />
+    <End Role="A_USERS_MENUC" Type="Self.A_USERS_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_MENUC">
+        <PropertyRef Name="USER_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AREA_USER">
+    <End Role="A_USERS" Type="Self.A_USERS" Multiplicity="1" />
+    <End Role="A_USERS_AREA" Type="Self.A_USERS_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_AREA">
+        <PropertyRef Name="UA_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_ACCE_UA">
+    <End Role="A_ACCE_ITEMS" Type="Self.A_ACCE_ITEMS" Multiplicity="1" />
+    <End Role="A_ASET_USR_ACE" Type="Self.A_ASET_USR_ACE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USR_ACE">
+        <PropertyRef Name="AUA_ACCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_ASET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_ASET_APP" Type="Self.A_ASET_APP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_INSUH">
+    <End Role="A_INSUH" Type="Self.A_INSUH" Multiplicity="0..1" />
+    <End Role="A_ASET_APP" Type="Self.A_ASET_APP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSUH">
+        <PropertyRef Name="INSU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="INSURACE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_OWNER">
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="1" />
+    <End Role="A_ASET_APP" Type="Self.A_ASET_APP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="OWNR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_AREA">
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="1" />
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_ASET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_DEPT">
+    <End Role="A_DEPARTMENT" Type="Self.A_DEPARTMENT" Multiplicity="1" />
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_OWNR">
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="1" />
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_UA">
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="1" />
+    <End Role="A_ASET_USR_ACE" Type="Self.A_ASET_USR_ACE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_USER">
+        <PropertyRef Name="AU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USR_ACE">
+        <PropertyRef Name="AUA_AU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILH_JOBH">
+    <End Role="A_JOBH" Type="Self.A_JOBH" Multiplicity="1" />
+    <End Role="A_BILL" Type="Self.A_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_JOBH">
+        <PropertyRef Name="JOBH_ID" />
+      </Principal>
+      <Dependent Role="A_BILL">
+        <PropertyRef Name="JOBH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_ASSET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="0..1" />
+    <End Role="A_OWNR_BILL" Type="Self.A_OWNR_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR_BILL">
+        <PropertyRef Name="BILL_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_OWNR">
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="0..1" />
+    <End Role="A_OWNR_BILL" Type="Self.A_OWNR_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR_BILL">
+        <PropertyRef Name="BILL_OWNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMAIL_BUSINESS">
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="0..1" />
+    <End Role="A_EMAIL" Type="Self.A_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_EMAIL">
+        <PropertyRef Name="MAIL_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMAIL_GROUP">
+    <End Role="A_GROUP" Type="Self.A_GROUP" Multiplicity="1" />
+    <End Role="A_EMAIL" Type="Self.A_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_EMAIL">
+        <PropertyRef Name="MAIL_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMG_AU">
+    <End Role="A_ASET_USER" Type="Self.A_ASET_USER" Multiplicity="1" />
+    <End Role="A_ASET_USER_IMG" Type="Self.A_ASET_USER_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_USER">
+        <PropertyRef Name="AU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER_IMG">
+        <PropertyRef Name="IMG_AU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMG_REMIND">
+    <End Role="A_REMINDER" Type="Self.A_REMINDER" Multiplicity="1" />
+    <End Role="A_REMINDER_IMG" Type="Self.A_REMINDER_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_REMINDER">
+        <PropertyRef Name="REMIND_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER_IMG">
+        <PropertyRef Name="IMG_REMINDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSP_TYPE">
+    <End Role="A_INSP_TYPE" Type="Self.A_INSP_TYPE" Multiplicity="0..1" />
+    <End Role="A_INSPH" Type="Self.A_INSPH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSP_TYPE">
+        <PropertyRef Name="ITYPE_ID" />
+      </Principal>
+      <Dependent Role="A_INSPH">
+        <PropertyRef Name="INSPH_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPD_INSPH">
+    <End Role="A_INSPH" Type="Self.A_INSPH" Multiplicity="1" />
+    <End Role="A_INSPD" Type="Self.A_INSPD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSPH">
+        <PropertyRef Name="INSPH_ID" />
+      </Principal>
+      <Dependent Role="A_INSPD">
+        <PropertyRef Name="INSPH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPD_ITEM_LIST">
+    <End Role="A_ITEM_LIST" Type="Self.A_ITEM_LIST" Multiplicity="1" />
+    <End Role="A_INSPD" Type="Self.A_INSPD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_INSPD">
+        <PropertyRef Name="INSPD_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPH_ASET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_INSPH" Type="Self.A_INSPH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_INSPH">
+        <PropertyRef Name="INSPH_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUD_INSUH">
+    <End Role="A_INSUH" Type="Self.A_INSUH" Multiplicity="1" />
+    <End Role="A_INSUD" Type="Self.A_INSUD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSUH">
+        <PropertyRef Name="INSU_ID" />
+      </Principal>
+      <Dependent Role="A_INSUD">
+        <PropertyRef Name="INSU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUH_ASET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_INSUH" Type="Self.A_INSUH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_INSUH">
+        <PropertyRef Name="INSU_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ITEM_GROUP">
+    <End Role="A_GROUP" Type="Self.A_GROUP" Multiplicity="1" />
+    <End Role="A_ITEM_LIST" Type="Self.A_ITEM_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBD_ITEM_LIST">
+    <End Role="A_ITEM_LIST" Type="Self.A_ITEM_LIST" Multiplicity="1" />
+    <End Role="A_JOBD" Type="Self.A_JOBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_JOBD">
+        <PropertyRef Name="JOBD_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBD_JOBH">
+    <End Role="A_JOBH" Type="Self.A_JOBH" Multiplicity="1" />
+    <End Role="A_JOBD" Type="Self.A_JOBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_JOBH">
+        <PropertyRef Name="JOBH_ID" />
+      </Principal>
+      <Dependent Role="A_JOBD">
+        <PropertyRef Name="JOBH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBH_INSPH">
+    <End Role="A_INSPH" Type="Self.A_INSPH" Multiplicity="1" />
+    <End Role="A_JOBH" Type="Self.A_JOBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSPH">
+        <PropertyRef Name="INSPH_ID" />
+      </Principal>
+      <Dependent Role="A_JOBH">
+        <PropertyRef Name="INSPH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBH_TYPE">
+    <End Role="A_INSP_TYPE" Type="Self.A_INSP_TYPE" Multiplicity="1" />
+    <End Role="A_JOBH" Type="Self.A_JOBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSP_TYPE">
+        <PropertyRef Name="ITYPE_ID" />
+      </Principal>
+      <Dependent Role="A_JOBH">
+        <PropertyRef Name="JOBH_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OWNR_AREA">
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="1" />
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR">
+        <PropertyRef Name="OWNR_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OWNR_DEPT">
+    <End Role="A_DEPARTMENT" Type="Self.A_DEPARTMENT" Multiplicity="1" />
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR">
+        <PropertyRef Name="OWNR_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_AREA_BUSINESS">
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="0..1" />
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_AREA">
+        <PropertyRef Name="AREA_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_AREA_THANA">
+    <End Role="A_THANA" Type="Self.A_THANA" Multiplicity="1" />
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_THANA">
+        <PropertyRef Name="THANA_ID" />
+      </Principal>
+      <Dependent Role="A_AREA">
+        <PropertyRef Name="AREA_THANA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_BODY">
+    <End Role="A_BODY" Type="Self.A_BODY" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BODY">
+        <PropertyRef Name="BODY_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_BODY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_BRAND">
+    <End Role="A_BRAND" Type="Self.A_BRAND" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BRAND">
+        <PropertyRef Name="BRAND_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_BRAND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_COLOR">
+    <End Role="A_COLOR" Type="Self.A_COLOR" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COLOR">
+        <PropertyRef Name="COLOR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_COLOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_DEPARTMENT">
+    <End Role="A_DEPARTMENT" Type="Self.A_DEPARTMENT" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_DEPARTMENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_FUEL">
+    <End Role="A_FUEL" Type="Self.A_FUEL" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_FUEL">
+        <PropertyRef Name="FUEL_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_FUEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_GROUP">
+    <End Role="A_GROUP" Type="Self.A_GROUP" Multiplicity="1" />
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_BUSINESS_COMPANY">
+    <End Role="A_COMPANY" Type="Self.A_COMPANY" Multiplicity="1" />
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_COMPANY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_COMPANY_COUNTRY">
+    <End Role="A_COUNTRY" Type="Self.A_COUNTRY" Multiplicity="1" />
+    <End Role="A_COMPANY" Type="Self.A_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="A_COMPANY">
+        <PropertyRef Name="COMPANY_COUNTRY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_DEPARTMENT_BUSINESS">
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="1" />
+    <End Role="A_DEPARTMENT" Type="Self.A_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_DISTRICT_COUNTRY">
+    <End Role="A_COUNTRY" Type="Self.A_COUNTRY" Multiplicity="1" />
+    <End Role="A_DISTRICT" Type="Self.A_DISTRICT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="A_DISTRICT">
+        <PropertyRef Name="DISTRICT_COUNTRY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_THANA_BUSINESS">
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="0..1" />
+    <End Role="A_THANA" Type="Self.A_THANA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_THANA">
+        <PropertyRef Name="THANA_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_THANA_DISTRICT">
+    <End Role="A_DISTRICT" Type="Self.A_DISTRICT" Multiplicity="1" />
+    <End Role="A_THANA" Type="Self.A_THANA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DISTRICT">
+        <PropertyRef Name="DISTRICT_ID" />
+      </Principal>
+      <Dependent Role="A_THANA">
+        <PropertyRef Name="THANA_DISTRICT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_AREA">
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="1" />
+    <End Role="A_PLEA" Type="Self.A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_ASET">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_PLEA" Type="Self.A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_DEPT">
+    <End Role="A_DEPARTMENT" Type="Self.A_DEPARTMENT" Multiplicity="1" />
+    <End Role="A_PLEA" Type="Self.A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_OWNR">
+    <End Role="A_OWNR" Type="Self.A_OWNR" Multiplicity="1" />
+    <End Role="A_PLEA" Type="Self.A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_OWNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_REASON">
+    <End Role="A_PLEA_REASON" Type="Self.A_PLEA_REASON" Multiplicity="1" />
+    <End Role="A_PLEA" Type="Self.A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_PLEA_REASON">
+        <PropertyRef Name="REASON_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_REASON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REMIND_ASET_DATA">
+    <End Role="A_ASET_DATA" Type="Self.A_ASET_DATA" Multiplicity="1" />
+    <End Role="A_REMINDER" Type="Self.A_REMINDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REMIND_ITEM">
+    <End Role="A_ITEM_LIST" Type="Self.A_ITEM_LIST" Multiplicity="1" />
+    <End Role="A_REMINDER" Type="Self.A_REMINDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER">
+        <PropertyRef Name="ITEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UB_BUSINESS">
+    <End Role="A_BUSINESS" Type="Self.A_BUSINESS" Multiplicity="1" />
+    <End Role="A_USERS_BUS" Type="Self.A_USERS_BUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_BUS">
+        <PropertyRef Name="UB_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UB_USER">
+    <End Role="A_USERS" Type="Self.A_USERS" Multiplicity="1" />
+    <End Role="A_USERS_BUS" Type="Self.A_USERS_BUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_BUS">
+        <PropertyRef Name="UB_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UG_GROUP">
+    <End Role="A_GROUP" Type="Self.A_GROUP" Multiplicity="1" />
+    <End Role="A_USERS_GROUP" Type="Self.A_USERS_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_GROUP">
+        <PropertyRef Name="UG_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UG_USER">
+    <End Role="A_USERS" Type="Self.A_USERS" Multiplicity="1" />
+    <End Role="A_USERS_GROUP" Type="Self.A_USERS_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_GROUP">
+        <PropertyRef Name="UG_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UR_ROLES">
+    <End Role="A_ROLES" Type="Self.A_ROLES" Multiplicity="1" />
+    <End Role="A_USERS_ROLES" Type="Self.A_USERS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ROLES">
+        <PropertyRef Name="ROLE_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_ROLES">
+        <PropertyRef Name="ROLE_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UR_USERS">
+    <End Role="A_USERS" Type="Self.A_USERS" Multiplicity="1" />
+    <End Role="A_USERS_ROLES" Type="Self.A_USERS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_ROLES">
+        <PropertyRef Name="USER_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_AREA">
+    <End Role="A_AREA" Type="Self.A_AREA" Multiplicity="1" />
+    <End Role="A_USERS_AREA" Type="Self.A_USERS_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_AREA">
+        <PropertyRef Name="UA_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="PRO_DAMAGE_LOST_OWNERSHIP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASSETOID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_DAMAGE_LOST_OWNERSHIP_APP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASSETOID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_EXPD_XL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASSETOID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_EXPD_XL_JUNK_CLEAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM" />
+  <Function Name="PRO_INSC_XL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASSETOID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_INSC_XL_JUNK_CLEAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM" />
+  <Function Name="PRO_SUM_EIGHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_FIVE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_FOUR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_ONE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_SEVEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_SIX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_THREE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PRO_SUM_TWO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="USERID" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="P_ASET_ACTV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASET_ID" Type="number" Mode="In" />
+    <Parameter Name="DAMAGED" Type="number" Mode="In" />
+  </Function>
+  <Function Name="P_ASET_CHANGE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASET_ID" Type="number" Mode="In" />
+    <Parameter Name="DAMAGED" Type="varchar2" Mode="In" />
+    <Parameter Name="OWNR" Type="varchar2" Mode="In" />
+    <Parameter Name="RDAT" Type="date" Mode="In" />
+    <Parameter Name="NOTES" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="P_ISBOOKED_BOOKING" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="ASET_ID" Type="number" Mode="In" />
+    <Parameter Name="BOOKING" Type="number" Mode="In" />
+  </Function>
+  <Function Name="USER_MENU_PERMISSION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PM">
+    <Parameter Name="VUSER" Type="varchar2" Mode="In" />
+    <Parameter Name="VLOV" Type="varchar2" Mode="In" />
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="A_ACCE_ITEMS" EntityType="Self.A_ACCE_ITEMS" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_AREA" EntityType="Self.A_AREA" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_ACCE" EntityType="Self.A_ASET_ACCE" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_APP" EntityType="Self.A_ASET_APP" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_DATA" EntityType="Self.A_ASET_DATA" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_USER" EntityType="Self.A_ASET_USER" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_USER_IMG" EntityType="Self.A_ASET_USER_IMG" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ASET_USR_ACE" EntityType="Self.A_ASET_USR_ACE" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_BILL" EntityType="Self.A_BILL" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_BODY" EntityType="Self.A_BODY" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_BRAND" EntityType="Self.A_BRAND" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_BUSINESS" EntityType="Self.A_BUSINESS" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_COLOR" EntityType="Self.A_COLOR" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_COMPANY" EntityType="Self.A_COMPANY" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_COUNTRY" EntityType="Self.A_COUNTRY" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_DEPARTMENT" EntityType="Self.A_DEPARTMENT" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_DISTRICT" EntityType="Self.A_DISTRICT" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_EMAIL_LOG" EntityType="Self.A_EMAIL_LOG" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_FUEL" EntityType="Self.A_FUEL" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_GROUP" EntityType="Self.A_GROUP" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSP_JOB_IMG" EntityType="Self.A_INSP_JOB_IMG" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSP_TYPE" EntityType="Self.A_INSP_TYPE" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSPD" EntityType="Self.A_INSPD" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSPH" EntityType="Self.A_INSPH" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSUD" EntityType="Self.A_INSUD" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_INSUH" EntityType="Self.A_INSUH" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ITEM_LIST" EntityType="Self.A_ITEM_LIST" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_JOBD" EntityType="Self.A_JOBD" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_JOBH" EntityType="Self.A_JOBH" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_MENUC" EntityType="Self.A_MENUC" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_MENUP" EntityType="Self.A_MENUP" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_NOTIF_SET" EntityType="Self.A_NOTIF_SET" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_OWNR" EntityType="Self.A_OWNR" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_OWNR_BILL" EntityType="Self.A_OWNR_BILL" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_PLEA" EntityType="Self.A_PLEA" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_PLEA_REASON" EntityType="Self.A_PLEA_REASON" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_REMINDER" EntityType="Self.A_REMINDER" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_REMINDER_IMG" EntityType="Self.A_REMINDER_IMG" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_ROLES" EntityType="Self.A_ROLES" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_SUMMARY_VIEW" EntityType="Self.A_SUMMARY_VIEW" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_TBL_SEQ" EntityType="Self.A_TBL_SEQ" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_THANA" EntityType="Self.A_THANA" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS" EntityType="Self.A_USERS" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_AREA" EntityType="Self.A_USERS_AREA" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_BUS" EntityType="Self.A_USERS_BUS" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_COUNTRY" EntityType="Self.A_USERS_COUNTRY" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_GROUP" EntityType="Self.A_USERS_GROUP" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_LOGIN" EntityType="Self.A_USERS_LOGIN" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_MENUC" EntityType="Self.A_USERS_MENUC" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_USERS_ROLES" EntityType="Self.A_USERS_ROLES" Schema="PM" store:Type="Tables" />
+    <EntitySet Name="A_EMAIL" EntityType="Self.A_EMAIL" store:Type="Tables" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"A_EMAIL"."EMAIL_ID" AS "EMAIL_ID", 
+"A_EMAIL"."EMAIL_DISPLAY" AS "EMAIL_DISPLAY", 
+"A_EMAIL"."KEEP_IN" AS "KEEP_IN", 
+"A_EMAIL"."MAIL_GROUP" AS "MAIL_GROUP", 
+"A_EMAIL"."MAIL_BUSINESS" AS "MAIL_BUSINESS", 
+"A_EMAIL"."ACT" AS "ACT", 
+"A_EMAIL"."CDT" AS "CDT", 
+"A_EMAIL"."UDT" AS "UDT", 
+"A_EMAIL"."CDU" AS "CDU", 
+"A_EMAIL"."UDU" AS "UDU", 
+"A_EMAIL"."VAR" AS "VAR", 
+"A_EMAIL"."MAIL_TYPE" AS "MAIL_TYPE", 
+"A_EMAIL"."AREA_ID" AS "AREA_ID"
+FROM "PM"."A_EMAIL" "A_EMAIL"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_ASET_BY_USERS" EntityType="Self.VW_ASET_BY_USERS" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_ASET_BY_USERS"."ASET_ID" AS "ASET_ID", 
+"VW_ASET_BY_USERS"."ASET_TAG" AS "ASET_TAG", 
+"VW_ASET_BY_USERS"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_ASET_BY_USERS"."ASET_DEPARTMENT" AS "ASET_DEPARTMENT", 
+"VW_ASET_BY_USERS"."ASET_AREA" AS "ASET_AREA", 
+"VW_ASET_BY_USERS"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_ASET_BY_USERS"."ASET_USED" AS "ASET_USED", 
+"VW_ASET_BY_USERS"."ACT" AS "ACT", 
+"VW_ASET_BY_USERS"."UG_USER" AS "UG_USER"
+FROM "PM"."VW_ASET_BY_USERS" "VW_ASET_BY_USERS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_ASSETUSERMANAGERVM" EntityType="Self.VW_ASSETUSERMANAGERVM" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_ASSETUSERMANAGERVM"."AU_ID" AS "AU_ID", 
+"VW_ASSETUSERMANAGERVM"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_ASSETUSERMANAGERVM"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_ASSETUSERMANAGERVM"."OWNR_USER" AS "OWNR_USER", 
+"VW_ASSETUSERMANAGERVM"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_ASSETUSERMANAGERVM"."AREA_NAME" AS "AREA_NAME", 
+"VW_ASSETUSERMANAGERVM"."AU_SRDATE" AS "AU_SRDATE", 
+"VW_ASSETUSERMANAGERVM"."T_USER" AS "T_USER", 
+"VW_ASSETUSERMANAGERVM"."AU_SADATE" AS "AU_SADATE", 
+"VW_ASSETUSERMANAGERVM"."T_APPROVER" AS "T_APPROVER", 
+"VW_ASSETUSERMANAGERVM"."AU_SNOTE" AS "AU_SNOTE", 
+"VW_ASSETUSERMANAGERVM"."AU_ERDATE" AS "AU_ERDATE", 
+"VW_ASSETUSERMANAGERVM"."R_USER" AS "R_USER", 
+"VW_ASSETUSERMANAGERVM"."AU_EADATE" AS "AU_EADATE", 
+"VW_ASSETUSERMANAGERVM"."R_APPROVER" AS "R_APPROVER", 
+"VW_ASSETUSERMANAGERVM"."AU_ENOTE" AS "AU_ENOTE", 
+"VW_ASSETUSERMANAGERVM"."UG_USER" AS "UG_USER", 
+"VW_ASSETUSERMANAGERVM"."AU_TRNSTYPE" AS "AU_TRNSTYPE"
+FROM "PM"."VW_ASSETUSERMANAGERVM" "VW_ASSETUSERMANAGERVM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_BNDL_INSP" EntityType="Self.VW_BNDL_INSP" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_BNDL_INSP"."INSPH_ASET" AS "INSPH_ASET", 
+"VW_BNDL_INSP"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_BNDL_INSP"."INSPH_OWNR" AS "INSPH_OWNR", 
+"VW_BNDL_INSP"."OWNR_USER" AS "OWNR_USER", 
+"VW_BNDL_INSP"."INSPH_DEPARTMENT" AS "INSPH_DEPARTMENT", 
+"VW_BNDL_INSP"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_BNDL_INSP"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_BNDL_INSP"."INSPH_AREA" AS "INSPH_AREA", 
+"VW_BNDL_INSP"."AREA_NAME" AS "AREA_NAME", 
+"VW_BNDL_INSP"."INSPH_IUSER" AS "INSPH_IUSER", 
+"VW_BNDL_INSP"."INSPH_DATE" AS "INSPH_DATE", 
+"VW_BNDL_INSP"."MILEAGE" AS "MILEAGE", 
+"VW_BNDL_INSP"."INSPH_TYPE" AS "INSPH_TYPE", 
+"VW_BNDL_INSP"."INSPH_NOTE" AS "INSPH_NOTE", 
+"VW_BNDL_INSP"."INSPH_ID" AS "INSPH_ID", 
+"VW_BNDL_INSP"."INSPD_LINE" AS "INSPD_LINE", 
+"VW_BNDL_INSP"."INSPD_ITEM" AS "INSPD_ITEM", 
+"VW_BNDL_INSP"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_BNDL_INSP"."INSPD_IQTY" AS "INSPD_IQTY", 
+"VW_BNDL_INSP"."INSPD_IRATE" AS "INSPD_IRATE", 
+"VW_BNDL_INSP"."INSPD_NOTE" AS "INSPD_NOTE", 
+"VW_BNDL_INSP"."INSPH_APP" AS "INSPH_APP", 
+"VW_BNDL_INSP"."INSPH_JOB" AS "INSPH_JOB"
+FROM "PM"."VW_BNDL_INSP" "VW_BNDL_INSP"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_BNDL_JOBC" EntityType="Self.VW_BNDL_JOBC" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_BNDL_JOBC"."JOBH_ASET" AS "JOBH_ASET", 
+"VW_BNDL_JOBC"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_BNDL_JOBC"."JOBH_OWNR" AS "JOBH_OWNR", 
+"VW_BNDL_JOBC"."OWNR_USER" AS "OWNR_USER", 
+"VW_BNDL_JOBC"."JOBH_DEPARTMENT" AS "JOBH_DEPARTMENT", 
+"VW_BNDL_JOBC"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_BNDL_JOBC"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_BNDL_JOBC"."JOBH_AREA" AS "JOBH_AREA", 
+"VW_BNDL_JOBC"."AREA_NAME" AS "AREA_NAME", 
+"VW_BNDL_JOBC"."JOBH_VENDOR" AS "JOBH_VENDOR", 
+"VW_BNDL_JOBC"."JOBH_DATE" AS "JOBH_DATE", 
+"VW_BNDL_JOBC"."JOBH_MILEAGE" AS "JOBH_MILEAGE", 
+"VW_BNDL_JOBC"."JOBH_TYPE" AS "JOBH_TYPE", 
+"VW_BNDL_JOBC"."JOBH_NOTE" AS "JOBH_NOTE", 
+"VW_BNDL_JOBC"."JOBH_ID" AS "JOBH_ID", 
+"VW_BNDL_JOBC"."JOBD_LINE" AS "JOBD_LINE", 
+"VW_BNDL_JOBC"."JOBD_ITEM" AS "JOBD_ITEM", 
+"VW_BNDL_JOBC"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_BNDL_JOBC"."JOBD_IQTY" AS "JOBD_IQTY", 
+"VW_BNDL_JOBC"."JOBD_IRATE" AS "JOBD_IRATE", 
+"VW_BNDL_JOBC"."JOBD_NOTE" AS "JOBD_NOTE", 
+"VW_BNDL_JOBC"."JOBH_APP" AS "JOBH_APP", 
+"VW_BNDL_JOBC"."JOBH_BILL" AS "JOBH_BILL"
+FROM "PM"."VW_BNDL_JOBC" "VW_BNDL_JOBC"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_DATE_NOTIF" EntityType="Self.VW_DATE_NOTIF" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_DATE_NOTIF"."REMIND_ID" AS "REMIND_ID", 
+"VW_DATE_NOTIF"."ASET_ID" AS "ASET_ID", 
+"VW_DATE_NOTIF"."ASET_TAG" AS "ASET_TAG", 
+"VW_DATE_NOTIF"."ITEM_ID" AS "ITEM_ID", 
+"VW_DATE_NOTIF"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_DATE_NOTIF"."C_DATE" AS "C_DATE", 
+"VW_DATE_NOTIF"."N_DATE" AS "N_DATE", 
+"VW_DATE_NOTIF"."ELAPSED" AS "ELAPSED", 
+"VW_DATE_NOTIF"."NOTE" AS "NOTE", 
+"VW_DATE_NOTIF"."REMIND" AS "REMIND", 
+"VW_DATE_NOTIF"."NOTIF_FIRST" AS "NOTIF_FIRST", 
+"VW_DATE_NOTIF"."NOTIF_FINAL" AS "NOTIF_FINAL", 
+"VW_DATE_NOTIF"."REMINDER_NOTE" AS "REMINDER_NOTE", 
+"VW_DATE_NOTIF"."NOTIF_TYPE" AS "NOTIF_TYPE", 
+"VW_DATE_NOTIF"."COMPLETED" AS "COMPLETED"
+FROM "PM"."VW_DATE_NOTIF" "VW_DATE_NOTIF"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_INSURANCE_S1" EntityType="Self.VW_INSURANCE_S1" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_INSURANCE_S1"."INSU_ID" AS "INSU_ID", 
+"VW_INSURANCE_S1"."ASET_NAME_CODE" AS "ASET_NAME_CODE", 
+"VW_INSURANCE_S1"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_INSURANCE_S1"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_INSURANCE_S1"."ASET_AREA" AS "ASET_AREA", 
+"VW_INSURANCE_S1"."INSU_POLICY" AS "INSU_POLICY", 
+"VW_INSURANCE_S1"."INSU_PREMIUM" AS "INSU_PREMIUM", 
+"VW_INSURANCE_S1"."INSU_COMP" AS "INSU_COMP", 
+"VW_INSURANCE_S1"."INSU_COMP_ADDRESS" AS "INSU_COMP_ADDRESS", 
+"VW_INSURANCE_S1"."INSU_NOTE" AS "INSU_NOTE", 
+"VW_INSURANCE_S1"."INSU_REG_START" AS "INSU_REG_START", 
+"VW_INSURANCE_S1"."INSU_REG_END" AS "INSU_REG_END", 
+"VW_INSURANCE_S1"."REMIND" AS "REMIND", 
+"VW_INSURANCE_S1"."DAYS" AS "DAYS"
+FROM "PM"."VW_INSURANCE_S1" "VW_INSURANCE_S1"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_INSURANCE_S2" EntityType="Self.VW_INSURANCE_S2" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_INSURANCE_S2"."INSU_ID" AS "INSU_ID", 
+"VW_INSURANCE_S2"."ASET_NAME_CODE" AS "ASET_NAME_CODE", 
+"VW_INSURANCE_S2"."INSURANCE" AS "INSURANCE", 
+"VW_INSURANCE_S2"."COMPANY" AS "COMPANY", 
+"VW_INSURANCE_S2"."INSU_NOTE" AS "INSU_NOTE", 
+"VW_INSURANCE_S2"."MESSAGES" AS "MESSAGES", 
+"VW_INSURANCE_S2"."NEED_MAIL" AS "NEED_MAIL", 
+"VW_INSURANCE_S2"."INSU_REG_START" AS "INSU_REG_START", 
+"VW_INSURANCE_S2"."INSU_REG_END" AS "INSU_REG_END", 
+"VW_INSURANCE_S2"."DAYS" AS "DAYS", 
+"VW_INSURANCE_S2"."MAIL_SUBJECT" AS "MAIL_SUBJECT", 
+"VW_INSURANCE_S2"."MAIL_BODY" AS "MAIL_BODY", 
+"VW_INSURANCE_S2"."UPDT" AS "UPDT", 
+"VW_INSURANCE_S2"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_INSURANCE_S2"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS"
+FROM "PM"."VW_INSURANCE_S2" "VW_INSURANCE_S2"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_IQAMA_NOTIF_V1" EntityType="Self.VW_IQAMA_NOTIF_V1" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_IQAMA_NOTIF_V1"."OWNR_ID" AS "OWNR_ID", 
+"VW_IQAMA_NOTIF_V1"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_IQAMA_NOTIF_V1"."OWNR_USER" AS "OWNR_USER", 
+"VW_IQAMA_NOTIF_V1"."OWNR_NAME" AS "OWNR_NAME", 
+"VW_IQAMA_NOTIF_V1"."AAJKEY" AS "AAJKEY", 
+"VW_IQAMA_NOTIF_V1"."OWNR_NDATE" AS "OWNR_NDATE", 
+"VW_IQAMA_NOTIF_V1"."ELAPSED" AS "ELAPSED", 
+"VW_IQAMA_NOTIF_V1"."REMIND" AS "REMIND", 
+"VW_IQAMA_NOTIF_V1"."BUSINESS_ID" AS "BUSINESS_ID", 
+"VW_IQAMA_NOTIF_V1"."OWNR_AREA" AS "OWNR_AREA", 
+"VW_IQAMA_NOTIF_V1"."GROUP_NAME" AS "GROUP_NAME", 
+"VW_IQAMA_NOTIF_V1"."REMINDER_NOTE" AS "REMINDER_NOTE", 
+"VW_IQAMA_NOTIF_V1"."NOTIF_MESSAGES" AS "NOTIF_MESSAGES", 
+"VW_IQAMA_NOTIF_V1"."MAIL_SEND" AS "MAIL_SEND", 
+"VW_IQAMA_NOTIF_V1"."UPDT" AS "UPDT"
+FROM "PM"."VW_IQAMA_NOTIF_V1" "VW_IQAMA_NOTIF_V1"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_IQAMA_NOTIF_V2" EntityType="Self.VW_IQAMA_NOTIF_V2" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_IQAMA_NOTIF_V2"."OWNR_ID" AS "OWNR_ID", 
+"VW_IQAMA_NOTIF_V2"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_IQAMA_NOTIF_V2"."OWNR_USER" AS "OWNR_USER", 
+"VW_IQAMA_NOTIF_V2"."OWNR_NAME" AS "OWNR_NAME", 
+"VW_IQAMA_NOTIF_V2"."OWNR_NOTE" AS "OWNR_NOTE", 
+"VW_IQAMA_NOTIF_V2"."AAJ_DATE" AS "AAJ_DATE", 
+"VW_IQAMA_NOTIF_V2"."EXP_DATE" AS "EXP_DATE", 
+"VW_IQAMA_NOTIF_V2"."REMIND" AS "REMIND", 
+"VW_IQAMA_NOTIF_V2"."BUSINESS_ID" AS "BUSINESS_ID", 
+"VW_IQAMA_NOTIF_V2"."GROUP_NAME" AS "GROUP_NAME", 
+"VW_IQAMA_NOTIF_V2"."ELAPSED" AS "ELAPSED", 
+"VW_IQAMA_NOTIF_V2"."MESSAGES" AS "MESSAGES", 
+"VW_IQAMA_NOTIF_V2"."MESSAGE_NOTE" AS "MESSAGE_NOTE", 
+"VW_IQAMA_NOTIF_V2"."MAIL_SEND" AS "MAIL_SEND", 
+"VW_IQAMA_NOTIF_V2"."MAIL_SUBJECT" AS "MAIL_SUBJECT", 
+"VW_IQAMA_NOTIF_V2"."MAIL_BODY" AS "MAIL_BODY", 
+"VW_IQAMA_NOTIF_V2"."UPDT" AS "UPDT"
+FROM "PM"."VW_IQAMA_NOTIF_V2" "VW_IQAMA_NOTIF_V2"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_KSA_IQUMA_S1" EntityType="Self.VW_KSA_IQUMA_S1" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_KSA_IQUMA_S1"."OWNR_ID" AS "OWNR_ID", 
+"VW_KSA_IQUMA_S1"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_KSA_IQUMA_S1"."OWNR_USER" AS "OWNR_USER", 
+"VW_KSA_IQUMA_S1"."OWNR_NAME" AS "OWNR_NAME", 
+"VW_KSA_IQUMA_S1"."OWNR_NOTE" AS "OWNR_NOTE", 
+"VW_KSA_IQUMA_S1"."AAJ_DATE" AS "AAJ_DATE", 
+"VW_KSA_IQUMA_S1"."OWNR_NDATE" AS "OWNR_NDATE", 
+"VW_KSA_IQUMA_S1"."REMIND" AS "REMIND", 
+"VW_KSA_IQUMA_S1"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_KSA_IQUMA_S1"."GROUP_NAME" AS "GROUP_NAME", 
+"VW_KSA_IQUMA_S1"."DAYS" AS "DAYS"
+FROM "PM"."VW_KSA_IQUMA_S1" "VW_KSA_IQUMA_S1"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_KSA_IQUMA_S2" EntityType="Self.VW_KSA_IQUMA_S2" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_KSA_IQUMA_S2"."OWNR_ID" AS "OWNR_ID", 
+"VW_KSA_IQUMA_S2"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_KSA_IQUMA_S2"."OWNR_USER" AS "OWNR_USER", 
+"VW_KSA_IQUMA_S2"."OWNR_NAME" AS "OWNR_NAME", 
+"VW_KSA_IQUMA_S2"."OWNR_NOTE" AS "OWNR_NOTE", 
+"VW_KSA_IQUMA_S2"."AAJ_DATE" AS "AAJ_DATE", 
+"VW_KSA_IQUMA_S2"."OWNR_NDATE" AS "OWNR_NDATE", 
+"VW_KSA_IQUMA_S2"."REMIND" AS "REMIND", 
+"VW_KSA_IQUMA_S2"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_KSA_IQUMA_S2"."GROUP_NAME" AS "GROUP_NAME", 
+"VW_KSA_IQUMA_S2"."DAYS" AS "DAYS", 
+"VW_KSA_IQUMA_S2"."MESSAGES" AS "MESSAGES", 
+"VW_KSA_IQUMA_S2"."NEED_MAIL" AS "NEED_MAIL", 
+"VW_KSA_IQUMA_S2"."MAIL_SUBJECT" AS "MAIL_SUBJECT", 
+"VW_KSA_IQUMA_S2"."MAIL_BODY" AS "MAIL_BODY", 
+"VW_KSA_IQUMA_S2"."UPDT" AS "UPDT"
+FROM "PM"."VW_KSA_IQUMA_S2" "VW_KSA_IQUMA_S2"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_NOTIF_MAIL" EntityType="Self.VW_NOTIF_MAIL" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_NOTIF_MAIL"."REMIND_ID" AS "REMIND_ID", 
+"VW_NOTIF_MAIL"."ASET_ID" AS "ASET_ID", 
+"VW_NOTIF_MAIL"."ASET_TAG" AS "ASET_TAG", 
+"VW_NOTIF_MAIL"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_NOTIF_MAIL"."ASET_DEPARTMENT" AS "ASET_DEPARTMENT", 
+"VW_NOTIF_MAIL"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_NOTIF_MAIL"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_NOTIF_MAIL"."ITEM_ID" AS "ITEM_ID", 
+"VW_NOTIF_MAIL"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_NOTIF_MAIL"."ITEM_NOTIF_SET" AS "ITEM_NOTIF_SET", 
+"VW_NOTIF_MAIL"."NOTIF_TYPE" AS "NOTIF_TYPE", 
+"VW_NOTIF_MAIL"."NOTIF_REMIND" AS "NOTIF_REMIND", 
+"VW_NOTIF_MAIL"."NOTIF_FIRST" AS "NOTIF_FIRST", 
+"VW_NOTIF_MAIL"."NOTIF_FINAL" AS "NOTIF_FINAL", 
+"VW_NOTIF_MAIL"."C_DATE" AS "C_DATE", 
+"VW_NOTIF_MAIL"."N_DATE" AS "N_DATE", 
+"VW_NOTIF_MAIL"."REMIND" AS "REMIND", 
+"VW_NOTIF_MAIL"."NOTE" AS "NOTE", 
+"VW_NOTIF_MAIL"."COMPLETED" AS "COMPLETED", 
+"VW_NOTIF_MAIL"."ELAPSED" AS "ELAPSED", 
+"VW_NOTIF_MAIL"."REMINDER_NOTE" AS "REMINDER_NOTE", 
+"VW_NOTIF_MAIL"."NOTIF_MESSAGES" AS "NOTIF_MESSAGES", 
+"VW_NOTIF_MAIL"."MAIL_SEND" AS "MAIL_SEND", 
+"VW_NOTIF_MAIL"."MAIL_SUBJECT" AS "MAIL_SUBJECT", 
+"VW_NOTIF_MAIL"."MAIL_BODY" AS "MAIL_BODY", 
+"VW_NOTIF_MAIL"."UPDT" AS "UPDT"
+FROM "PM"."VW_NOTIF_MAIL" "VW_NOTIF_MAIL"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_NOTIF_MAIL_METER" EntityType="Self.VW_NOTIF_MAIL_METER" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_NOTIF_MAIL_METER"."REMIND_ID" AS "REMIND_ID", 
+"VW_NOTIF_MAIL_METER"."ASET_ID" AS "ASET_ID", 
+"VW_NOTIF_MAIL_METER"."ASET_TAG" AS "ASET_TAG", 
+"VW_NOTIF_MAIL_METER"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_NOTIF_MAIL_METER"."ASET_DEPARTMENT" AS "ASET_DEPARTMENT", 
+"VW_NOTIF_MAIL_METER"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_NOTIF_MAIL_METER"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_NOTIF_MAIL_METER"."ITEM_ID" AS "ITEM_ID", 
+"VW_NOTIF_MAIL_METER"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_NOTIF_MAIL_METER"."ITEM_NOTIF_SET" AS "ITEM_NOTIF_SET", 
+"VW_NOTIF_MAIL_METER"."NOTIF_TYPE" AS "NOTIF_TYPE", 
+"VW_NOTIF_MAIL_METER"."NOTIF_REMIND" AS "NOTIF_REMIND", 
+"VW_NOTIF_MAIL_METER"."NOTIF_FIRST" AS "NOTIF_FIRST", 
+"VW_NOTIF_MAIL_METER"."NOTIF_FINAL" AS "NOTIF_FINAL", 
+"VW_NOTIF_MAIL_METER"."C_DATE" AS "C_DATE", 
+"VW_NOTIF_MAIL_METER"."N_DATE" AS "N_DATE", 
+"VW_NOTIF_MAIL_METER"."REMIND" AS "REMIND", 
+"VW_NOTIF_MAIL_METER"."NOTE" AS "NOTE", 
+"VW_NOTIF_MAIL_METER"."COMPLETED" AS "COMPLETED", 
+"VW_NOTIF_MAIL_METER"."ELAPSED" AS "ELAPSED", 
+"VW_NOTIF_MAIL_METER"."REMINDER_NOTE" AS "REMINDER_NOTE", 
+"VW_NOTIF_MAIL_METER"."NOTIF_MESSAGES" AS "NOTIF_MESSAGES", 
+"VW_NOTIF_MAIL_METER"."MAIL_SEND" AS "MAIL_SEND", 
+"VW_NOTIF_MAIL_METER"."MAIL_SUBJECT" AS "MAIL_SUBJECT", 
+"VW_NOTIF_MAIL_METER"."MAIL_BODY" AS "MAIL_BODY", 
+"VW_NOTIF_MAIL_METER"."UPDT" AS "UPDT"
+FROM "PM"."VW_NOTIF_MAIL_METER" "VW_NOTIF_MAIL_METER"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_OWNR_BY_USERS" EntityType="Self.VW_OWNR_BY_USERS" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_OWNR_BY_USERS"."OWNR_ID" AS "OWNR_ID", 
+"VW_OWNR_BY_USERS"."OWNR_DEPT" AS "OWNR_DEPT", 
+"VW_OWNR_BY_USERS"."OWNR_AREA" AS "OWNR_AREA", 
+"VW_OWNR_BY_USERS"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_OWNR_BY_USERS"."OWNR_USER" AS "OWNR_USER", 
+"VW_OWNR_BY_USERS"."OWNR_NAME" AS "OWNR_NAME", 
+"VW_OWNR_BY_USERS"."OWNR_DESG" AS "OWNR_DESG", 
+"VW_OWNR_BY_USERS"."OWNR_TYPE" AS "OWNR_TYPE", 
+"VW_OWNR_BY_USERS"."OWNR_RESIGN" AS "OWNR_RESIGN", 
+"VW_OWNR_BY_USERS"."OWNR_POST" AS "OWNR_POST", 
+"VW_OWNR_BY_USERS"."ACT" AS "ACT", 
+"VW_OWNR_BY_USERS"."UB_USER" AS "UB_USER"
+FROM "PM"."VW_OWNR_BY_USERS" "VW_OWNR_BY_USERS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_PMENU_CMENU" EntityType="Self.VW_PMENU_CMENU" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_PMENU_CMENU"."PMNU_TEXT" AS "PMNU_TEXT", 
+"VW_PMENU_CMENU"."PMNU_NAME" AS "PMNU_NAME", 
+"VW_PMENU_CMENU"."CMNU_TEXT" AS "CMNU_TEXT", 
+"VW_PMENU_CMENU"."CMNU_NAME" AS "CMNU_NAME", 
+"VW_PMENU_CMENU"."CMNU_ROLE" AS "CMNU_ROLE", 
+"VW_PMENU_CMENU"."CMNU_NOTE" AS "CMNU_NOTE"
+FROM "PM"."VW_PMENU_CMENU" "VW_PMENU_CMENU"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_ASET_EXP" EntityType="Self.VW_RPT_ASET_EXP" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_ASET_EXP"."JOBH_ID" AS "JOBH_ID", 
+"VW_RPT_ASET_EXP"."JOBD_LINE" AS "JOBD_LINE", 
+"VW_RPT_ASET_EXP"."JOBD_ITEM" AS "JOBD_ITEM", 
+"VW_RPT_ASET_EXP"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_RPT_ASET_EXP"."JOBD_IQTY" AS "JOBD_IQTY", 
+"VW_RPT_ASET_EXP"."JOBD_IRATE" AS "JOBD_IRATE", 
+"VW_RPT_ASET_EXP"."JOBD_IAMNT" AS "JOBD_IAMNT", 
+"VW_RPT_ASET_EXP"."JOBD_JQTY" AS "JOBD_JQTY", 
+"VW_RPT_ASET_EXP"."JOBD_JRATE" AS "JOBD_JRATE", 
+"VW_RPT_ASET_EXP"."JOBD_JAMNT" AS "JOBD_JAMNT", 
+"VW_RPT_ASET_EXP"."JOBD_NOTE" AS "JOBD_NOTE", 
+"VW_RPT_ASET_EXP"."INSPH_ID" AS "INSPH_ID", 
+"VW_RPT_ASET_EXP"."JOBH_ASET" AS "JOBH_ASET", 
+"VW_RPT_ASET_EXP"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_RPT_ASET_EXP"."JOBH_OWNR" AS "JOBH_OWNR", 
+"VW_RPT_ASET_EXP"."OWNR_USER" AS "OWNR_USER", 
+"VW_RPT_ASET_EXP"."JOBH_DEPARTMENT" AS "JOBH_DEPARTMENT", 
+"VW_RPT_ASET_EXP"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_RPT_ASET_EXP"."BUSINESS_ID" AS "BUSINESS_ID", 
+"VW_RPT_ASET_EXP"."BUSINESS_NAME" AS "BUSINESS_NAME", 
+"VW_RPT_ASET_EXP"."JOBH_AREA" AS "JOBH_AREA", 
+"VW_RPT_ASET_EXP"."AREA_NAME" AS "AREA_NAME", 
+"VW_RPT_ASET_EXP"."JOBH_DATE" AS "JOBH_DATE", 
+"VW_RPT_ASET_EXP"."JOBH_MILEAGE" AS "JOBH_MILEAGE", 
+"VW_RPT_ASET_EXP"."JOBH_VENDOR" AS "JOBH_VENDOR", 
+"VW_RPT_ASET_EXP"."JOBH_NOTE" AS "JOBH_NOTE", 
+"VW_RPT_ASET_EXP"."JOBH_TYPE" AS "JOBH_TYPE", 
+"VW_RPT_ASET_EXP"."ITYPE_NAME" AS "ITYPE_NAME"
+FROM "PM"."VW_RPT_ASET_EXP" "VW_RPT_ASET_EXP"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_ASET_USER" EntityType="Self.VW_RPT_ASET_USER" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_ASET_USER"."TAG" AS "TAG", 
+"VW_RPT_ASET_USER"."CODE_NAME" AS "CODE_NAME", 
+"VW_RPT_ASET_USER"."ASET_DEPT" AS "ASET_DEPT", 
+"VW_RPT_ASET_USER"."ASET_AREA" AS "ASET_AREA", 
+"VW_RPT_ASET_USER"."USER_ID" AS "USER_ID", 
+"VW_RPT_ASET_USER"."USER_NAME" AS "USER_NAME", 
+"VW_RPT_ASET_USER"."WORKING_DEPT" AS "WORKING_DEPT", 
+"VW_RPT_ASET_USER"."WORKING_AREA" AS "WORKING_AREA", 
+"VW_RPT_ASET_USER"."START_DATE" AS "START_DATE", 
+"VW_RPT_ASET_USER"."START_NOTE" AS "START_NOTE", 
+"VW_RPT_ASET_USER"."END_DATE" AS "END_DATE", 
+"VW_RPT_ASET_USER"."END_NOTE" AS "END_NOTE", 
+"VW_RPT_ASET_USER"."STAUTS" AS "STAUTS", 
+"VW_RPT_ASET_USER"."ASET_GROUP" AS "ASET_GROUP", 
+"VW_RPT_ASET_USER"."UG_USER" AS "UG_USER"
+FROM "PM"."VW_RPT_ASET_USER" "VW_RPT_ASET_USER"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_BILL" EntityType="Self.VW_RPT_BILL" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_BILL"."BILH_ID" AS "BILH_ID", 
+"VW_RPT_BILL"."BILH_DATE" AS "BILH_DATE", 
+"VW_RPT_BILL"."BILH_NOTE" AS "BILH_NOTE", 
+"VW_RPT_BILL"."BILH_REF" AS "BILH_REF", 
+"VW_RPT_BILL"."BILH_RECEIVER" AS "BILH_RECEIVER", 
+"VW_RPT_BILL"."BILH_IPAY" AS "BILH_IPAY", 
+"VW_RPT_BILL"."BILH_UPAY" AS "BILH_UPAY", 
+"VW_RPT_BILL"."BILH_CPAY" AS "BILH_CPAY", 
+"VW_RPT_BILL"."BILH_DISC" AS "BILH_DISC", 
+"VW_RPT_BILL"."JOBH_ASET" AS "JOBH_ASET", 
+"VW_RPT_BILL"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_RPT_BILL"."JOBH_OWNR" AS "JOBH_OWNR", 
+"VW_RPT_BILL"."OWNR_USER" AS "OWNR_USER", 
+"VW_RPT_BILL"."JOBH_DEPARTMENT" AS "JOBH_DEPARTMENT", 
+"VW_RPT_BILL"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_RPT_BILL"."DEPARTMENT_BUSINESS" AS "DEPARTMENT_BUSINESS", 
+"VW_RPT_BILL"."BUSINESS_NAME" AS "BUSINESS_NAME", 
+"VW_RPT_BILL"."JOBH_AREA" AS "JOBH_AREA", 
+"VW_RPT_BILL"."AREA_NAME" AS "AREA_NAME", 
+"VW_RPT_BILL"."JOBH_TYPE" AS "JOBH_TYPE", 
+"VW_RPT_BILL"."ITYPE_NAME" AS "ITYPE_NAME"
+FROM "PM"."VW_RPT_BILL" "VW_RPT_BILL"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_BILL_SUM" EntityType="Self.VW_RPT_BILL_SUM" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_BILL_SUM"."BILH_ID" AS "BILH_ID", 
+"VW_RPT_BILL_SUM"."BILH_DATE" AS "BILH_DATE", 
+"VW_RPT_BILL_SUM"."JOBH_ID" AS "JOBH_ID", 
+"VW_RPT_BILL_SUM"."BILL_AMT" AS "BILL_AMT"
+FROM "PM"."VW_RPT_BILL_SUM" "VW_RPT_BILL_SUM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_INSP_SUM" EntityType="Self.VW_RPT_INSP_SUM" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_INSP_SUM"."INSPH_ASET" AS "INSPH_ASET", 
+"VW_RPT_INSP_SUM"."INSPH_DATE" AS "INSPH_DATE", 
+"VW_RPT_INSP_SUM"."INSPH_ID" AS "INSPH_ID", 
+"VW_RPT_INSP_SUM"."INSPH_OWNR" AS "INSPH_OWNR", 
+"VW_RPT_INSP_SUM"."INSPH_AREA" AS "INSPH_AREA", 
+"VW_RPT_INSP_SUM"."INSPH_DEPARTMENT" AS "INSPH_DEPARTMENT", 
+"VW_RPT_INSP_SUM"."INSP_AMT" AS "INSP_AMT"
+FROM "PM"."VW_RPT_INSP_SUM" "VW_RPT_INSP_SUM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_INSURANCE" EntityType="Self.VW_RPT_INSURANCE" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_INSURANCE"."INSU_ASET" AS "INSU_ASET", 
+"VW_RPT_INSURANCE"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_RPT_INSURANCE"."ASET_AREA" AS "ASET_AREA", 
+"VW_RPT_INSURANCE"."AREA_NAME" AS "AREA_NAME", 
+"VW_RPT_INSURANCE"."DEPARTMENT_ID" AS "DEPARTMENT_ID", 
+"VW_RPT_INSURANCE"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_RPT_INSURANCE"."BUSINESS_ID" AS "BUSINESS_ID", 
+"VW_RPT_INSURANCE"."BUSINESS_NAME" AS "BUSINESS_NAME", 
+"VW_RPT_INSURANCE"."INSU_ID" AS "INSU_ID", 
+"VW_RPT_INSURANCE"."INSU_LINE" AS "INSU_LINE", 
+"VW_RPT_INSURANCE"."INSU_ASET_VALUE" AS "INSU_ASET_VALUE", 
+"VW_RPT_INSURANCE"."INSU_PREMIUM" AS "INSU_PREMIUM", 
+"VW_RPT_INSURANCE"."INSU_VAT_AMOUNT" AS "INSU_VAT_AMOUNT", 
+"VW_RPT_INSURANCE"."INSU_DATE" AS "INSU_DATE", 
+"VW_RPT_INSURANCE"."INSU_PAID" AS "INSU_PAID", 
+"VW_RPT_INSURANCE"."DACT" AS "DACT", 
+"VW_RPT_INSURANCE"."INSU_POLICY" AS "INSU_POLICY", 
+"VW_RPT_INSURANCE"."INSU_COMP" AS "INSU_COMP", 
+"VW_RPT_INSURANCE"."INSU_COMP_ADDRESS" AS "INSU_COMP_ADDRESS", 
+"VW_RPT_INSURANCE"."INSU_NOTE" AS "INSU_NOTE", 
+"VW_RPT_INSURANCE"."INSU_REG_END" AS "INSU_REG_END", 
+"VW_RPT_INSURANCE"."HACT" AS "HACT"
+FROM "PM"."VW_RPT_INSURANCE" "VW_RPT_INSURANCE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_JOB_SUM" EntityType="Self.VW_RPT_JOB_SUM" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_JOB_SUM"."JOBH_ID" AS "JOBH_ID", 
+"VW_RPT_JOB_SUM"."INSPH_ID" AS "INSPH_ID", 
+"VW_RPT_JOB_SUM"."JOBH_ASET" AS "JOBH_ASET", 
+"VW_RPT_JOB_SUM"."JOBH_DATE" AS "JOBH_DATE", 
+"VW_RPT_JOB_SUM"."JOBH_AMT" AS "JOBH_AMT"
+FROM "PM"."VW_RPT_JOB_SUM" "VW_RPT_JOB_SUM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_JOBD_S1" EntityType="Self.VW_RPT_JOBD_S1" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_JOBD_S1"."JOBH_ID" AS "JOBH_ID", 
+"VW_RPT_JOBD_S1"."JOBD_LINE" AS "JOBD_LINE", 
+"VW_RPT_JOBD_S1"."JOBD_ITEM" AS "JOBD_ITEM", 
+"VW_RPT_JOBD_S1"."ITEM_NAME" AS "ITEM_NAME", 
+"VW_RPT_JOBD_S1"."JOBD_IQTY" AS "JOBD_IQTY", 
+"VW_RPT_JOBD_S1"."JOBD_IRATE" AS "JOBD_IRATE", 
+"VW_RPT_JOBD_S1"."JOBD_IAMNT" AS "JOBD_IAMNT", 
+"VW_RPT_JOBD_S1"."JOBD_JQTY" AS "JOBD_JQTY", 
+"VW_RPT_JOBD_S1"."JOBD_JRATE" AS "JOBD_JRATE", 
+"VW_RPT_JOBD_S1"."JOBD_JAMNT" AS "JOBD_JAMNT", 
+"VW_RPT_JOBD_S1"."JOBD_NOTE" AS "JOBD_NOTE"
+FROM "PM"."VW_RPT_JOBD_S1" "VW_RPT_JOBD_S1"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_RPT_POLICE_CASE" EntityType="Self.VW_RPT_POLICE_CASE" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_RPT_POLICE_CASE"."PLEA_ID" AS "PLEA_ID", 
+"VW_RPT_POLICE_CASE"."PLEA_REF" AS "PLEA_REF", 
+"VW_RPT_POLICE_CASE"."PLEA_DESCRIPTION" AS "PLEA_DESCRIPTION", 
+"VW_RPT_POLICE_CASE"."PLEA_LOCATION" AS "PLEA_LOCATION", 
+"VW_RPT_POLICE_CASE"."Case On" AS "Case On", 
+"VW_RPT_POLICE_CASE"."Paid By" AS "Paid By", 
+"VW_RPT_POLICE_CASE"."PLEA_REASON_ID" AS "PLEA_REASON_ID", 
+"VW_RPT_POLICE_CASE"."REASON_NAME" AS "REASON_NAME", 
+"VW_RPT_POLICE_CASE"."PLEA_OWNR" AS "PLEA_OWNR", 
+"VW_RPT_POLICE_CASE"."OWNR_TEXT" AS "OWNR_TEXT", 
+"VW_RPT_POLICE_CASE"."OWNR_USER" AS "OWNR_USER", 
+"VW_RPT_POLICE_CASE"."PLEA_ASET" AS "PLEA_ASET", 
+"VW_RPT_POLICE_CASE"."ASET_TAG" AS "ASET_TAG", 
+"VW_RPT_POLICE_CASE"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_RPT_POLICE_CASE"."PLEA_DEPT" AS "PLEA_DEPT", 
+"VW_RPT_POLICE_CASE"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_RPT_POLICE_CASE"."BUSINESS_ID" AS "BUSINESS_ID", 
+"VW_RPT_POLICE_CASE"."BUSINESS_NAME" AS "BUSINESS_NAME", 
+"VW_RPT_POLICE_CASE"."PLEA_AREA" AS "PLEA_AREA", 
+"VW_RPT_POLICE_CASE"."AREA_NAME" AS "AREA_NAME", 
+"VW_RPT_POLICE_CASE"."PLEA_DATE" AS "PLEA_DATE", 
+"VW_RPT_POLICE_CASE"."PLEA_STATUS" AS "PLEA_STATUS", 
+"VW_RPT_POLICE_CASE"."Status" AS "Status", 
+"VW_RPT_POLICE_CASE"."PLEA_APP_DATE" AS "PLEA_APP_DATE", 
+"VW_RPT_POLICE_CASE"."Approval" AS "Approval", 
+"VW_RPT_POLICE_CASE"."PLEA_AMNT" AS "PLEA_AMNT"
+FROM "PM"."VW_RPT_POLICE_CASE" "VW_RPT_POLICE_CASE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_USER_ASSET_ID_STRING" EntityType="Self.VW_USER_ASSET_ID_STRING" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_USER_ASSET_ID_STRING"."ASET_ID" AS "ASET_ID", 
+"VW_USER_ASSET_ID_STRING"."UG_USER" AS "UG_USER"
+FROM "PM"."VW_USER_ASSET_ID_STRING" "VW_USER_ASSET_ID_STRING"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_USER_ASSET_LIST" EntityType="Self.VW_USER_ASSET_LIST" store:Type="Views" store:Schema="PM">
+      <DefiningQuery>SELECT 
+"VW_USER_ASSET_LIST"."ASET_ID" AS "ASET_ID", 
+"VW_USER_ASSET_LIST"."ASET_TAG" AS "ASET_TAG", 
+"VW_USER_ASSET_LIST"."ASET_CODE_NAME" AS "ASET_CODE_NAME", 
+"VW_USER_ASSET_LIST"."AREA_NAME" AS "AREA_NAME", 
+"VW_USER_ASSET_LIST"."BODY_NAME" AS "BODY_NAME", 
+"VW_USER_ASSET_LIST"."BRAND_NAME" AS "BRAND_NAME", 
+"VW_USER_ASSET_LIST"."FUEL_NAME" AS "FUEL_NAME", 
+"VW_USER_ASSET_LIST"."COLOR_NAME" AS "COLOR_NAME", 
+"VW_USER_ASSET_LIST"."GROUP_NAME" AS "GROUP_NAME", 
+"VW_USER_ASSET_LIST"."ASET_MODEL" AS "ASET_MODEL", 
+"VW_USER_ASSET_LIST"."ASET_PO_ENGINE" AS "ASET_PO_ENGINE", 
+"VW_USER_ASSET_LIST"."ASET_GRN_CHASIS" AS "ASET_GRN_CHASIS", 
+"VW_USER_ASSET_LIST"."ASET_CAPACITY" AS "ASET_CAPACITY", 
+"VW_USER_ASSET_LIST"."ASET_PRICE" AS "ASET_PRICE", 
+"VW_USER_ASSET_LIST"."ASET_REG_DATE" AS "ASET_REG_DATE", 
+"VW_USER_ASSET_LIST"."ASET_HEIGHT" AS "ASET_HEIGHT", 
+"VW_USER_ASSET_LIST"."ASET_WEIGHT" AS "ASET_WEIGHT", 
+"VW_USER_ASSET_LIST"."ASET_MFG_YEAR" AS "ASET_MFG_YEAR", 
+"VW_USER_ASSET_LIST"."ASET_IMAGE" AS "ASET_IMAGE", 
+"VW_USER_ASSET_LIST"."ASET_NOTE" AS "ASET_NOTE", 
+"VW_USER_ASSET_LIST"."ASET_USED" AS "ASET_USED", 
+"VW_USER_ASSET_LIST"."ACT" AS "ACT", 
+"VW_USER_ASSET_LIST"."DEPARTMENT_NAME" AS "DEPARTMENT_NAME", 
+"VW_USER_ASSET_LIST"."BUSINESS_NAME" AS "BUSINESS_NAME", 
+"VW_USER_ASSET_LIST"."COMPANY_NAME" AS "COMPANY_NAME", 
+"VW_USER_ASSET_LIST"."UG_USER" AS "UG_USER"
+FROM "PM"."VW_USER_ASSET_LIST" "VW_USER_ASSET_LIST"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_A_ACCE_ITEMS_GROUP" Association="Self.FK_A_ACCE_ITEMS_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_ACCE_A_ASET_DATA" Association="Self.FK_A_ASET_ACCE_A_ASET_DATA">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_ACCE" EntitySet="A_ASET_ACCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_ACCE_ACCE_ITEMS" Association="Self.FK_A_ASET_ACCE_ACCE_ITEMS">
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+      <End Role="A_ASET_ACCE" EntitySet="A_ASET_ACCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_DATA_AREA" Association="Self.FK_A_ASET_DATA_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_MENUC" Association="Self.FK_A_MENUC">
+      <End Role="A_MENUC" EntitySet="A_MENUC" />
+      <End Role="A_USERS_MENUC" EntitySet="A_USERS_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_MENUP" Association="Self.FK_A_MENUP">
+      <End Role="A_MENUP" EntitySet="A_MENUP" />
+      <End Role="A_MENUC" EntitySet="A_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_USERS" Association="Self.FK_A_USERS">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_MENUC" EntitySet="A_USERS_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AREA_USER" Association="Self.FK_AREA_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_AREA" EntitySet="A_USERS_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_ACCE_UA" Association="Self.FK_ASET_ACCE_UA">
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+      <End Role="A_ASET_USR_ACE" EntitySet="A_ASET_USR_ACE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_ASET" Association="Self.FK_ASET_APP_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_INSUH" Association="Self.FK_ASET_APP_INSUH">
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_OWNER" Association="Self.FK_ASET_APP_OWNER">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_AREA" Association="Self.FK_ASET_USR_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_ASET" Association="Self.FK_ASET_USR_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_DEPT" Association="Self.FK_ASET_USR_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_OWNR" Association="Self.FK_ASET_USR_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_UA" Association="Self.FK_ASET_USR_UA">
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+      <End Role="A_ASET_USR_ACE" EntitySet="A_ASET_USR_ACE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILH_JOBH" Association="Self.FK_BILH_JOBH">
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+      <End Role="A_BILL" EntitySet="A_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_ASSET" Association="Self.FK_BILL_ASSET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_OWNR_BILL" EntitySet="A_OWNR_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_OWNR" Association="Self.FK_BILL_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_OWNR_BILL" EntitySet="A_OWNR_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMAIL_BUSINESS" Association="Self.FK_EMAIL_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_EMAIL" EntitySet="A_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMAIL_GROUP" Association="Self.FK_EMAIL_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_EMAIL" EntitySet="A_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMG_AU" Association="Self.FK_IMG_AU">
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+      <End Role="A_ASET_USER_IMG" EntitySet="A_ASET_USER_IMG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMG_REMIND" Association="Self.FK_IMG_REMIND">
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+      <End Role="A_REMINDER_IMG" EntitySet="A_REMINDER_IMG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSP_TYPE" Association="Self.FK_INSP_TYPE">
+      <End Role="A_INSP_TYPE" EntitySet="A_INSP_TYPE" />
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPD_INSPH" Association="Self.FK_INSPD_INSPH">
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+      <End Role="A_INSPD" EntitySet="A_INSPD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPD_ITEM_LIST" Association="Self.FK_INSPD_ITEM_LIST">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_INSPD" EntitySet="A_INSPD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPH_ASET" Association="Self.FK_INSPH_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUD_INSUH" Association="Self.FK_INSUD_INSUH">
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+      <End Role="A_INSUD" EntitySet="A_INSUD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUH_ASET" Association="Self.FK_INSUH_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ITEM_GROUP" Association="Self.FK_ITEM_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBD_ITEM_LIST" Association="Self.FK_JOBD_ITEM_LIST">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_JOBD" EntitySet="A_JOBD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBD_JOBH" Association="Self.FK_JOBD_JOBH">
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+      <End Role="A_JOBD" EntitySet="A_JOBD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBH_INSPH" Association="Self.FK_JOBH_INSPH">
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBH_TYPE" Association="Self.FK_JOBH_TYPE">
+      <End Role="A_INSP_TYPE" EntitySet="A_INSP_TYPE" />
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OWNR_AREA" Association="Self.FK_OWNR_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OWNR_DEPT" Association="Self.FK_OWNR_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_AREA_BUSINESS" Association="Self.FK_P_AREA_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_AREA" EntitySet="A_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_AREA_THANA" Association="Self.FK_P_AREA_THANA">
+      <End Role="A_THANA" EntitySet="A_THANA" />
+      <End Role="A_AREA" EntitySet="A_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_BODY" Association="Self.FK_P_ASET_DATA_BODY">
+      <End Role="A_BODY" EntitySet="A_BODY" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_BRAND" Association="Self.FK_P_ASET_DATA_BRAND">
+      <End Role="A_BRAND" EntitySet="A_BRAND" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_COLOR" Association="Self.FK_P_ASET_DATA_COLOR">
+      <End Role="A_COLOR" EntitySet="A_COLOR" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_DEPARTMENT" Association="Self.FK_P_ASET_DATA_DEPARTMENT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_FUEL" Association="Self.FK_P_ASET_DATA_FUEL">
+      <End Role="A_FUEL" EntitySet="A_FUEL" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_GROUP" Association="Self.FK_P_ASET_DATA_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_BUSINESS_COMPANY" Association="Self.FK_P_BUSINESS_COMPANY">
+      <End Role="A_COMPANY" EntitySet="A_COMPANY" />
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_COMPANY_COUNTRY" Association="Self.FK_P_COMPANY_COUNTRY">
+      <End Role="A_COUNTRY" EntitySet="A_COUNTRY" />
+      <End Role="A_COMPANY" EntitySet="A_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_DEPARTMENT_BUSINESS" Association="Self.FK_P_DEPARTMENT_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_DISTRICT_COUNTRY" Association="Self.FK_P_DISTRICT_COUNTRY">
+      <End Role="A_COUNTRY" EntitySet="A_COUNTRY" />
+      <End Role="A_DISTRICT" EntitySet="A_DISTRICT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_THANA_BUSINESS" Association="Self.FK_P_THANA_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_THANA" EntitySet="A_THANA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_THANA_DISTRICT" Association="Self.FK_P_THANA_DISTRICT">
+      <End Role="A_DISTRICT" EntitySet="A_DISTRICT" />
+      <End Role="A_THANA" EntitySet="A_THANA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_AREA" Association="Self.FK_PLEA_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_ASET" Association="Self.FK_PLEA_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_DEPT" Association="Self.FK_PLEA_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_OWNR" Association="Self.FK_PLEA_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_REASON" Association="Self.FK_PLEA_REASON">
+      <End Role="A_PLEA_REASON" EntitySet="A_PLEA_REASON" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REMIND_ASET_DATA" Association="Self.FK_REMIND_ASET_DATA">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REMIND_ITEM" Association="Self.FK_REMIND_ITEM">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UB_BUSINESS" Association="Self.FK_UB_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_USERS_BUS" EntitySet="A_USERS_BUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UB_USER" Association="Self.FK_UB_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_BUS" EntitySet="A_USERS_BUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UG_GROUP" Association="Self.FK_UG_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_USERS_GROUP" EntitySet="A_USERS_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UG_USER" Association="Self.FK_UG_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_GROUP" EntitySet="A_USERS_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UR_ROLES" Association="Self.FK_UR_ROLES">
+      <End Role="A_ROLES" EntitySet="A_ROLES" />
+      <End Role="A_USERS_ROLES" EntitySet="A_USERS_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UR_USERS" Association="Self.FK_UR_USERS">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_ROLES" EntitySet="A_USERS_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_AREA" Association="Self.FK_USER_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_USERS_AREA" EntitySet="A_USERS_AREA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

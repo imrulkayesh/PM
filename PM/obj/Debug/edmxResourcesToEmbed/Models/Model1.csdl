@@ -1,0 +1,2912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="A_ACCE_ITEMS" EntityType="Model.A_ACCE_ITEMS" />
+    <EntitySet Name="A_AREA" EntityType="Model.A_AREA" />
+    <EntitySet Name="A_ASET_ACCE" EntityType="Model.A_ASET_ACCE" />
+    <EntitySet Name="A_ASET_APP" EntityType="Model.A_ASET_APP" />
+    <EntitySet Name="A_ASET_DATA" EntityType="Model.A_ASET_DATA" />
+    <EntitySet Name="A_ASET_USER" EntityType="Model.A_ASET_USER" />
+    <EntitySet Name="A_ASET_USER_IMG" EntityType="Model.A_ASET_USER_IMG" />
+    <EntitySet Name="A_ASET_USR_ACE" EntityType="Model.A_ASET_USR_ACE" />
+    <EntitySet Name="A_BILL" EntityType="Model.A_BILL" />
+    <EntitySet Name="A_BODY" EntityType="Model.A_BODY" />
+    <EntitySet Name="A_BRAND" EntityType="Model.A_BRAND" />
+    <EntitySet Name="A_BUSINESS" EntityType="Model.A_BUSINESS" />
+    <EntitySet Name="A_COLOR" EntityType="Model.A_COLOR" />
+    <EntitySet Name="A_COMPANY" EntityType="Model.A_COMPANY" />
+    <EntitySet Name="A_COUNTRY" EntityType="Model.A_COUNTRY" />
+    <EntitySet Name="A_DEPARTMENT" EntityType="Model.A_DEPARTMENT" />
+    <EntitySet Name="A_DISTRICT" EntityType="Model.A_DISTRICT" />
+    <EntitySet Name="A_EMAIL_LOG" EntityType="Model.A_EMAIL_LOG" />
+    <EntitySet Name="A_FUEL" EntityType="Model.A_FUEL" />
+    <EntitySet Name="A_GROUP" EntityType="Model.A_GROUP" />
+    <EntitySet Name="A_INSP_JOB_IMG" EntityType="Model.A_INSP_JOB_IMG" />
+    <EntitySet Name="A_INSP_TYPE" EntityType="Model.A_INSP_TYPE" />
+    <EntitySet Name="A_INSPD" EntityType="Model.A_INSPD" />
+    <EntitySet Name="A_INSPH" EntityType="Model.A_INSPH" />
+    <EntitySet Name="A_INSUD" EntityType="Model.A_INSUD" />
+    <EntitySet Name="A_INSUH" EntityType="Model.A_INSUH" />
+    <EntitySet Name="A_ITEM_LIST" EntityType="Model.A_ITEM_LIST" />
+    <EntitySet Name="A_JOBD" EntityType="Model.A_JOBD" />
+    <EntitySet Name="A_JOBH" EntityType="Model.A_JOBH" />
+    <EntitySet Name="A_MENUC" EntityType="Model.A_MENUC" />
+    <EntitySet Name="A_MENUP" EntityType="Model.A_MENUP" />
+    <EntitySet Name="A_NOTIF_SET" EntityType="Model.A_NOTIF_SET" />
+    <EntitySet Name="A_OWNR" EntityType="Model.A_OWNR" />
+    <EntitySet Name="A_OWNR_BILL" EntityType="Model.A_OWNR_BILL" />
+    <EntitySet Name="A_PLEA" EntityType="Model.A_PLEA" />
+    <EntitySet Name="A_PLEA_REASON" EntityType="Model.A_PLEA_REASON" />
+    <EntitySet Name="A_REMINDER" EntityType="Model.A_REMINDER" />
+    <EntitySet Name="A_REMINDER_IMG" EntityType="Model.A_REMINDER_IMG" />
+    <EntitySet Name="A_ROLES" EntityType="Model.A_ROLES" />
+    <EntitySet Name="A_SUMMARY_VIEW" EntityType="Model.A_SUMMARY_VIEW" />
+    <EntitySet Name="A_TBL_SEQ" EntityType="Model.A_TBL_SEQ" />
+    <EntitySet Name="A_THANA" EntityType="Model.A_THANA" />
+    <EntitySet Name="A_USERS" EntityType="Model.A_USERS" />
+    <EntitySet Name="A_USERS_AREA" EntityType="Model.A_USERS_AREA" />
+    <EntitySet Name="A_USERS_BUS" EntityType="Model.A_USERS_BUS" />
+    <EntitySet Name="A_USERS_COUNTRY" EntityType="Model.A_USERS_COUNTRY" />
+    <EntitySet Name="A_USERS_GROUP" EntityType="Model.A_USERS_GROUP" />
+    <EntitySet Name="A_USERS_LOGIN" EntityType="Model.A_USERS_LOGIN" />
+    <EntitySet Name="A_USERS_MENUC" EntityType="Model.A_USERS_MENUC" />
+    <EntitySet Name="A_USERS_ROLES" EntityType="Model.A_USERS_ROLES" />
+    <EntitySet Name="A_EMAIL" EntityType="Model.A_EMAIL" />
+    <EntitySet Name="VW_ASET_BY_USERS" EntityType="Model.VW_ASET_BY_USERS" />
+    <EntitySet Name="VW_ASSETUSERMANAGERVM" EntityType="Model.VW_ASSETUSERMANAGERVM" />
+    <EntitySet Name="VW_BNDL_INSP" EntityType="Model.VW_BNDL_INSP" />
+    <EntitySet Name="VW_BNDL_JOBC" EntityType="Model.VW_BNDL_JOBC" />
+    <EntitySet Name="VW_DATE_NOTIF" EntityType="Model.VW_DATE_NOTIF" />
+    <EntitySet Name="VW_INSURANCE_S1" EntityType="Model.VW_INSURANCE_S1" />
+    <EntitySet Name="VW_INSURANCE_S2" EntityType="Model.VW_INSURANCE_S2" />
+    <EntitySet Name="VW_IQAMA_NOTIF_V1" EntityType="Model.VW_IQAMA_NOTIF_V1" />
+    <EntitySet Name="VW_IQAMA_NOTIF_V2" EntityType="Model.VW_IQAMA_NOTIF_V2" />
+    <EntitySet Name="VW_KSA_IQUMA_S1" EntityType="Model.VW_KSA_IQUMA_S1" />
+    <EntitySet Name="VW_KSA_IQUMA_S2" EntityType="Model.VW_KSA_IQUMA_S2" />
+    <EntitySet Name="VW_NOTIF_MAIL" EntityType="Model.VW_NOTIF_MAIL" />
+    <EntitySet Name="VW_NOTIF_MAIL_METER" EntityType="Model.VW_NOTIF_MAIL_METER" />
+    <EntitySet Name="VW_OWNR_BY_USERS" EntityType="Model.VW_OWNR_BY_USERS" />
+    <EntitySet Name="VW_PMENU_CMENU" EntityType="Model.VW_PMENU_CMENU" />
+    <EntitySet Name="VW_RPT_ASET_EXP" EntityType="Model.VW_RPT_ASET_EXP" />
+    <EntitySet Name="VW_RPT_ASET_USER" EntityType="Model.VW_RPT_ASET_USER" />
+    <EntitySet Name="VW_RPT_BILL" EntityType="Model.VW_RPT_BILL" />
+    <EntitySet Name="VW_RPT_BILL_SUM" EntityType="Model.VW_RPT_BILL_SUM" />
+    <EntitySet Name="VW_RPT_INSP_SUM" EntityType="Model.VW_RPT_INSP_SUM" />
+    <EntitySet Name="VW_RPT_INSURANCE" EntityType="Model.VW_RPT_INSURANCE" />
+    <EntitySet Name="VW_RPT_JOB_SUM" EntityType="Model.VW_RPT_JOB_SUM" />
+    <EntitySet Name="VW_RPT_JOBD_S1" EntityType="Model.VW_RPT_JOBD_S1" />
+    <EntitySet Name="VW_RPT_POLICE_CASE" EntityType="Model.VW_RPT_POLICE_CASE" />
+    <EntitySet Name="VW_USER_ASSET_ID_STRING" EntityType="Model.VW_USER_ASSET_ID_STRING" />
+    <EntitySet Name="VW_USER_ASSET_LIST" EntityType="Model.VW_USER_ASSET_LIST" />
+    <AssociationSet Name="FK_A_ACCE_ITEMS_GROUP" Association="Model.FK_A_ACCE_ITEMS_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_ACCE_ACCE_ITEMS" Association="Model.FK_A_ASET_ACCE_ACCE_ITEMS">
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+      <End Role="A_ASET_ACCE" EntitySet="A_ASET_ACCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_ACCE_UA" Association="Model.FK_ASET_ACCE_UA">
+      <End Role="A_ACCE_ITEMS" EntitySet="A_ACCE_ITEMS" />
+      <End Role="A_ASET_USR_ACE" EntitySet="A_ASET_USR_ACE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_DATA_AREA" Association="Model.FK_A_ASET_DATA_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_AREA" Association="Model.FK_ASET_USR_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OWNR_AREA" Association="Model.FK_OWNR_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_AREA_BUSINESS" Association="Model.FK_P_AREA_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_AREA" EntitySet="A_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_AREA_THANA" Association="Model.FK_P_AREA_THANA">
+      <End Role="A_THANA" EntitySet="A_THANA" />
+      <End Role="A_AREA" EntitySet="A_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_AREA" Association="Model.FK_PLEA_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_AREA" Association="Model.FK_USER_AREA">
+      <End Role="A_AREA" EntitySet="A_AREA" />
+      <End Role="A_USERS_AREA" EntitySet="A_USERS_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_ASET_ACCE_A_ASET_DATA" Association="Model.FK_A_ASET_ACCE_A_ASET_DATA">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_ACCE" EntitySet="A_ASET_ACCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_ASET" Association="Model.FK_ASET_APP_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_INSUH" Association="Model.FK_ASET_APP_INSUH">
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_APP_OWNER" Association="Model.FK_ASET_APP_OWNER">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_ASET_APP" EntitySet="A_ASET_APP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_ASET" Association="Model.FK_ASET_USR_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_ASSET" Association="Model.FK_BILL_ASSET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_OWNR_BILL" EntitySet="A_OWNR_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPH_ASET" Association="Model.FK_INSPH_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUH_ASET" Association="Model.FK_INSUH_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_BODY" Association="Model.FK_P_ASET_DATA_BODY">
+      <End Role="A_BODY" EntitySet="A_BODY" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_BRAND" Association="Model.FK_P_ASET_DATA_BRAND">
+      <End Role="A_BRAND" EntitySet="A_BRAND" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_COLOR" Association="Model.FK_P_ASET_DATA_COLOR">
+      <End Role="A_COLOR" EntitySet="A_COLOR" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_DEPARTMENT" Association="Model.FK_P_ASET_DATA_DEPARTMENT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_FUEL" Association="Model.FK_P_ASET_DATA_FUEL">
+      <End Role="A_FUEL" EntitySet="A_FUEL" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_ASET_DATA_GROUP" Association="Model.FK_P_ASET_DATA_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_ASET" Association="Model.FK_PLEA_ASET">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REMIND_ASET_DATA" Association="Model.FK_REMIND_ASET_DATA">
+      <End Role="A_ASET_DATA" EntitySet="A_ASET_DATA" />
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_DEPT" Association="Model.FK_ASET_USR_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_OWNR" Association="Model.FK_ASET_USR_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASET_USR_UA" Association="Model.FK_ASET_USR_UA">
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+      <End Role="A_ASET_USR_ACE" EntitySet="A_ASET_USR_ACE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMG_AU" Association="Model.FK_IMG_AU">
+      <End Role="A_ASET_USER" EntitySet="A_ASET_USER" />
+      <End Role="A_ASET_USER_IMG" EntitySet="A_ASET_USER_IMG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILH_JOBH" Association="Model.FK_BILH_JOBH">
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+      <End Role="A_BILL" EntitySet="A_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMAIL_BUSINESS" Association="Model.FK_EMAIL_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_EMAIL" EntitySet="A_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_BUSINESS_COMPANY" Association="Model.FK_P_BUSINESS_COMPANY">
+      <End Role="A_COMPANY" EntitySet="A_COMPANY" />
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_DEPARTMENT_BUSINESS" Association="Model.FK_P_DEPARTMENT_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_THANA_BUSINESS" Association="Model.FK_P_THANA_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_THANA" EntitySet="A_THANA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UB_BUSINESS" Association="Model.FK_UB_BUSINESS">
+      <End Role="A_BUSINESS" EntitySet="A_BUSINESS" />
+      <End Role="A_USERS_BUS" EntitySet="A_USERS_BUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_COMPANY_COUNTRY" Association="Model.FK_P_COMPANY_COUNTRY">
+      <End Role="A_COUNTRY" EntitySet="A_COUNTRY" />
+      <End Role="A_COMPANY" EntitySet="A_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_DISTRICT_COUNTRY" Association="Model.FK_P_DISTRICT_COUNTRY">
+      <End Role="A_COUNTRY" EntitySet="A_COUNTRY" />
+      <End Role="A_DISTRICT" EntitySet="A_DISTRICT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OWNR_DEPT" Association="Model.FK_OWNR_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_DEPT" Association="Model.FK_PLEA_DEPT">
+      <End Role="A_DEPARTMENT" EntitySet="A_DEPARTMENT" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_P_THANA_DISTRICT" Association="Model.FK_P_THANA_DISTRICT">
+      <End Role="A_DISTRICT" EntitySet="A_DISTRICT" />
+      <End Role="A_THANA" EntitySet="A_THANA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMAIL_GROUP" Association="Model.FK_EMAIL_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_EMAIL" EntitySet="A_EMAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ITEM_GROUP" Association="Model.FK_ITEM_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UG_GROUP" Association="Model.FK_UG_GROUP">
+      <End Role="A_GROUP" EntitySet="A_GROUP" />
+      <End Role="A_USERS_GROUP" EntitySet="A_USERS_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSP_TYPE" Association="Model.FK_INSP_TYPE">
+      <End Role="A_INSP_TYPE" EntitySet="A_INSP_TYPE" />
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBH_TYPE" Association="Model.FK_JOBH_TYPE">
+      <End Role="A_INSP_TYPE" EntitySet="A_INSP_TYPE" />
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPD_INSPH" Association="Model.FK_INSPD_INSPH">
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+      <End Role="A_INSPD" EntitySet="A_INSPD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSPD_ITEM_LIST" Association="Model.FK_INSPD_ITEM_LIST">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_INSPD" EntitySet="A_INSPD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBH_INSPH" Association="Model.FK_JOBH_INSPH">
+      <End Role="A_INSPH" EntitySet="A_INSPH" />
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSUD_INSUH" Association="Model.FK_INSUD_INSUH">
+      <End Role="A_INSUH" EntitySet="A_INSUH" />
+      <End Role="A_INSUD" EntitySet="A_INSUD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBD_ITEM_LIST" Association="Model.FK_JOBD_ITEM_LIST">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_JOBD" EntitySet="A_JOBD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REMIND_ITEM" Association="Model.FK_REMIND_ITEM">
+      <End Role="A_ITEM_LIST" EntitySet="A_ITEM_LIST" />
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOBD_JOBH" Association="Model.FK_JOBD_JOBH">
+      <End Role="A_JOBH" EntitySet="A_JOBH" />
+      <End Role="A_JOBD" EntitySet="A_JOBD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_MENUC" Association="Model.FK_A_MENUC">
+      <End Role="A_MENUC" EntitySet="A_MENUC" />
+      <End Role="A_USERS_MENUC" EntitySet="A_USERS_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_MENUP" Association="Model.FK_A_MENUP">
+      <End Role="A_MENUP" EntitySet="A_MENUP" />
+      <End Role="A_MENUC" EntitySet="A_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_OWNR" Association="Model.FK_BILL_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_OWNR_BILL" EntitySet="A_OWNR_BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_OWNR" Association="Model.FK_PLEA_OWNR">
+      <End Role="A_OWNR" EntitySet="A_OWNR" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PLEA_REASON" Association="Model.FK_PLEA_REASON">
+      <End Role="A_PLEA_REASON" EntitySet="A_PLEA_REASON" />
+      <End Role="A_PLEA" EntitySet="A_PLEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMG_REMIND" Association="Model.FK_IMG_REMIND">
+      <End Role="A_REMINDER" EntitySet="A_REMINDER" />
+      <End Role="A_REMINDER_IMG" EntitySet="A_REMINDER_IMG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UR_ROLES" Association="Model.FK_UR_ROLES">
+      <End Role="A_ROLES" EntitySet="A_ROLES" />
+      <End Role="A_USERS_ROLES" EntitySet="A_USERS_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_A_USERS" Association="Model.FK_A_USERS">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_MENUC" EntitySet="A_USERS_MENUC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AREA_USER" Association="Model.FK_AREA_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_AREA" EntitySet="A_USERS_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UB_USER" Association="Model.FK_UB_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_BUS" EntitySet="A_USERS_BUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UG_USER" Association="Model.FK_UG_USER">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_GROUP" EntitySet="A_USERS_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UR_USERS" Association="Model.FK_UR_USERS">
+      <End Role="A_USERS" EntitySet="A_USERS" />
+      <End Role="A_USERS_ROLES" EntitySet="A_USERS_ROLES" />
+    </AssociationSet>
+    <FunctionImport Name="PRO_DAMAGE_LOST_OWNERSHIP">
+      <Parameter Name="ASSETOID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_DAMAGE_LOST_OWNERSHIP_APP">
+      <Parameter Name="ASSETOID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_EXPD_XL">
+      <Parameter Name="ASSETOID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_EXPD_XL_JUNK_CLEAR" />
+    <FunctionImport Name="PRO_INSC_XL">
+      <Parameter Name="ASSETOID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_INSC_XL_JUNK_CLEAR" />
+    <FunctionImport Name="PRO_SUM_EIGHT">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_FIVE">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_FOUR">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_ONE">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_SEVEN">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_SIX">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_THREE">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_SUM_TWO">
+      <Parameter Name="USERID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="P_ASET_ACTV">
+      <Parameter Name="ASET_ID" Mode="In" Type="Decimal" />
+      <Parameter Name="DAMAGED" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="P_ASET_CHANGE">
+      <Parameter Name="ASET_ID" Mode="In" Type="Decimal" />
+      <Parameter Name="DAMAGED" Mode="In" Type="String" />
+      <Parameter Name="OWNR" Mode="In" Type="String" />
+      <Parameter Name="RDAT" Mode="In" Type="DateTime" />
+      <Parameter Name="NOTES" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="P_ISBOOKED_BOOKING">
+      <Parameter Name="ASET_ID" Mode="In" Type="Decimal" />
+      <Parameter Name="BOOKING" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="USER_MENU_PERMISSION">
+      <Parameter Name="VUSER" Mode="In" Type="String" />
+      <Parameter Name="VLOV" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="A_ACCE_ITEMS">
+    <Key>
+      <PropertyRef Name="ACCE_ID" />
+    </Key>
+    <Property Name="ACCE_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACCE_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACCE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACCE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACCE_RATE" Type="Int32" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_GROUP" Relationship="Model.FK_A_ACCE_ITEMS_GROUP" FromRole="A_ACCE_ITEMS" ToRole="A_GROUP" />
+    <NavigationProperty Name="A_ASET_ACCE" Relationship="Model.FK_A_ASET_ACCE_ACCE_ITEMS" FromRole="A_ACCE_ITEMS" ToRole="A_ASET_ACCE" />
+    <NavigationProperty Name="A_ASET_USR_ACE" Relationship="Model.FK_ASET_ACCE_UA" FromRole="A_ACCE_ITEMS" ToRole="A_ASET_USR_ACE" />
+  </EntityType>
+  <EntityType Name="A_AREA">
+    <Key>
+      <PropertyRef Name="AREA_ID" />
+    </Key>
+    <Property Name="AREA_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_THANA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_BUSINESS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_A_ASET_DATA_AREA" FromRole="A_AREA" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_ASET_USR_AREA" FromRole="A_AREA" ToRole="A_ASET_USER" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_OWNR_AREA" FromRole="A_AREA" ToRole="A_OWNR" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_P_AREA_BUSINESS" FromRole="A_AREA" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_THANA" Relationship="Model.FK_P_AREA_THANA" FromRole="A_AREA" ToRole="A_THANA" />
+    <NavigationProperty Name="A_PLEA" Relationship="Model.FK_PLEA_AREA" FromRole="A_AREA" ToRole="A_PLEA" />
+    <NavigationProperty Name="A_USERS_AREA" Relationship="Model.FK_USER_AREA" FromRole="A_AREA" ToRole="A_USERS_AREA" />
+  </EntityType>
+  <EntityType Name="A_ASET_ACCE">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ACCE_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACCE_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AAI_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AAI_QUANTITY" Type="Byte" />
+    <Property Name="AAI_RATE" Type="Int32" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ACCE_ITEMS" Relationship="Model.FK_A_ASET_ACCE_ACCE_ITEMS" FromRole="A_ASET_ACCE" ToRole="A_ACCE_ITEMS" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_A_ASET_ACCE_A_ASET_DATA" FromRole="A_ASET_ACCE" ToRole="A_ASET_DATA" />
+  </EntityType>
+  <EntityType Name="A_ASET_APP">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_VALUE" Type="Int32" />
+    <Property Name="APPLY_DATE" Type="DateTime" />
+    <Property Name="APPLY_REASON" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="APPLY_TYPE" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SERVICE_MONTH" Type="Int16" />
+    <Property Name="RECEIVE_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVE_DETAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVE_DATE" Type="DateTime" />
+    <Property Name="RECEIVE_AREA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSURACE_COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSURACE_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSURACE_LINE" Type="Int32" />
+    <Property Name="REQU_USER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="APPR_USER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="APPR_DATE" Type="DateTime" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_ASET_APP_ASET" FromRole="A_ASET_APP" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_INSUH" Relationship="Model.FK_ASET_APP_INSUH" FromRole="A_ASET_APP" ToRole="A_INSUH" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_ASET_APP_OWNER" FromRole="A_ASET_APP" ToRole="A_OWNR" />
+  </EntityType>
+  <EntityType Name="A_ASET_DATA">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_BODY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_BRAND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_FUEL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_COLOR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_PO_ENGINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GRN_CHASIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CAPACITY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_PRICE" Type="Int32" />
+    <Property Name="ASET_REG_DATE" Type="DateTime" />
+    <Property Name="ASET_HEIGHT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_WEIGHT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_MFG_YEAR" Type="Int16" />
+    <Property Name="ASET_IMAGE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_USED" Type="Boolean" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_A_ASET_DATA_AREA" FromRole="A_ASET_DATA" ToRole="A_AREA" />
+    <NavigationProperty Name="A_ASET_ACCE" Relationship="Model.FK_A_ASET_ACCE_A_ASET_DATA" FromRole="A_ASET_DATA" ToRole="A_ASET_ACCE" />
+    <NavigationProperty Name="A_ASET_APP" Relationship="Model.FK_ASET_APP_ASET" FromRole="A_ASET_DATA" ToRole="A_ASET_APP" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_ASET_USR_ASET" FromRole="A_ASET_DATA" ToRole="A_ASET_USER" />
+    <NavigationProperty Name="A_OWNR_BILL" Relationship="Model.FK_BILL_ASSET" FromRole="A_ASET_DATA" ToRole="A_OWNR_BILL" />
+    <NavigationProperty Name="A_INSPH" Relationship="Model.FK_INSPH_ASET" FromRole="A_ASET_DATA" ToRole="A_INSPH" />
+    <NavigationProperty Name="A_INSUH" Relationship="Model.FK_INSUH_ASET" FromRole="A_ASET_DATA" ToRole="A_INSUH" />
+    <NavigationProperty Name="A_BODY" Relationship="Model.FK_P_ASET_DATA_BODY" FromRole="A_ASET_DATA" ToRole="A_BODY" />
+    <NavigationProperty Name="A_BRAND" Relationship="Model.FK_P_ASET_DATA_BRAND" FromRole="A_ASET_DATA" ToRole="A_BRAND" />
+    <NavigationProperty Name="A_COLOR" Relationship="Model.FK_P_ASET_DATA_COLOR" FromRole="A_ASET_DATA" ToRole="A_COLOR" />
+    <NavigationProperty Name="A_DEPARTMENT" Relationship="Model.FK_P_ASET_DATA_DEPARTMENT" FromRole="A_ASET_DATA" ToRole="A_DEPARTMENT" />
+    <NavigationProperty Name="A_FUEL" Relationship="Model.FK_P_ASET_DATA_FUEL" FromRole="A_ASET_DATA" ToRole="A_FUEL" />
+    <NavigationProperty Name="A_GROUP" Relationship="Model.FK_P_ASET_DATA_GROUP" FromRole="A_ASET_DATA" ToRole="A_GROUP" />
+    <NavigationProperty Name="A_PLEA" Relationship="Model.FK_PLEA_ASET" FromRole="A_ASET_DATA" ToRole="A_PLEA" />
+    <NavigationProperty Name="A_REMINDER" Relationship="Model.FK_REMIND_ASET_DATA" FromRole="A_ASET_DATA" ToRole="A_REMINDER" />
+  </EntityType>
+  <EntityType Name="A_ASET_USER">
+    <Key>
+      <PropertyRef Name="AU_ID" />
+    </Key>
+    <Property Name="AU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_USER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_DEPT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SRDATE" Type="DateTime" />
+    <Property Name="AU_SRUSER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SADATE" Type="DateTime" />
+    <Property Name="AU_SAUSER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AU_ERDATE" Type="DateTime" />
+    <Property Name="AU_ERUSER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AU_EADATE" Type="DateTime" />
+    <Property Name="AU_EAUSER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AU_ENOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <Property Name="AU_EMAILAGE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SMAILAGE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_TRNSTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_ASET_USR_AREA" FromRole="A_ASET_USER" ToRole="A_AREA" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_ASET_USR_ASET" FromRole="A_ASET_USER" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_DEPARTMENT" Relationship="Model.FK_ASET_USR_DEPT" FromRole="A_ASET_USER" ToRole="A_DEPARTMENT" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_ASET_USR_OWNR" FromRole="A_ASET_USER" ToRole="A_OWNR" />
+    <NavigationProperty Name="A_ASET_USR_ACE" Relationship="Model.FK_ASET_USR_UA" FromRole="A_ASET_USER" ToRole="A_ASET_USR_ACE" />
+    <NavigationProperty Name="A_ASET_USER_IMG" Relationship="Model.FK_IMG_AU" FromRole="A_ASET_USER" ToRole="A_ASET_USER_IMG" />
+  </EntityType>
+  <EntityType Name="A_ASET_USER_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_NAME" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_PATH" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_AU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_IMG_AU" FromRole="A_ASET_USER_IMG" ToRole="A_ASET_USER" />
+  </EntityType>
+  <EntityType Name="A_ASET_USR_ACE">
+    <Key>
+      <PropertyRef Name="AUA_AU" />
+      <PropertyRef Name="AUA_LINE" />
+    </Key>
+    <Property Name="AUA_AU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AUA_LINE" Type="Byte" Nullable="false" />
+    <Property Name="AUA_ACCE_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AUA_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AUA_QTY" Type="Byte" />
+    <Property Name="AUA_RATE" Type="Int32" />
+    <Property Name="AUA_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ACCE_ITEMS" Relationship="Model.FK_ASET_ACCE_UA" FromRole="A_ASET_USR_ACE" ToRole="A_ACCE_ITEMS" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_ASET_USR_UA" FromRole="A_ASET_USR_ACE" ToRole="A_ASET_USER" />
+  </EntityType>
+  <EntityType Name="A_BILL">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+    </Key>
+    <Property Name="BILH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_DATE" Type="DateTime" />
+    <Property Name="BILH_NOTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_RECEIVER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_PAID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_IPAY" Type="Int32" />
+    <Property Name="BILH_UPAY" Type="Int32" />
+    <Property Name="BILH_CPAY" Type="Int32" />
+    <Property Name="BILH_DISC" Type="Int32" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_JOBH" Relationship="Model.FK_BILH_JOBH" FromRole="A_BILL" ToRole="A_JOBH" />
+  </EntityType>
+  <EntityType Name="A_BODY">
+    <Key>
+      <PropertyRef Name="BODY_ID" />
+    </Key>
+    <Property Name="BODY_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BODY_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BODY_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_BODY" FromRole="A_BODY" ToRole="A_ASET_DATA" />
+  </EntityType>
+  <EntityType Name="A_BRAND">
+    <Key>
+      <PropertyRef Name="BRAND_ID" />
+    </Key>
+    <Property Name="BRAND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BRAND_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRAND_ORIGIN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_BRAND" FromRole="A_BRAND" ToRole="A_ASET_DATA" />
+  </EntityType>
+  <EntityType Name="A_BUSINESS">
+    <Key>
+      <PropertyRef Name="BUSINESS_ID" />
+    </Key>
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_COMPANY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_P_AREA_BUSINESS" FromRole="A_BUSINESS" ToRole="A_AREA" />
+    <NavigationProperty Name="A_EMAIL" Relationship="Model.FK_EMAIL_BUSINESS" FromRole="A_BUSINESS" ToRole="A_EMAIL" />
+    <NavigationProperty Name="A_COMPANY" Relationship="Model.FK_P_BUSINESS_COMPANY" FromRole="A_BUSINESS" ToRole="A_COMPANY" />
+    <NavigationProperty Name="A_DEPARTMENT" Relationship="Model.FK_P_DEPARTMENT_BUSINESS" FromRole="A_BUSINESS" ToRole="A_DEPARTMENT" />
+    <NavigationProperty Name="A_THANA" Relationship="Model.FK_P_THANA_BUSINESS" FromRole="A_BUSINESS" ToRole="A_THANA" />
+    <NavigationProperty Name="A_USERS_BUS" Relationship="Model.FK_UB_BUSINESS" FromRole="A_BUSINESS" ToRole="A_USERS_BUS" />
+  </EntityType>
+  <EntityType Name="A_COLOR">
+    <Key>
+      <PropertyRef Name="COLOR_ID" />
+    </Key>
+    <Property Name="COLOR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_COLOR" FromRole="A_COLOR" ToRole="A_ASET_DATA" />
+  </EntityType>
+  <EntityType Name="A_COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_COUNTRY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_P_BUSINESS_COMPANY" FromRole="A_COMPANY" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_COUNTRY" Relationship="Model.FK_P_COMPANY_COUNTRY" FromRole="A_COMPANY" ToRole="A_COUNTRY" />
+  </EntityType>
+  <EntityType Name="A_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRY_ID" />
+    </Key>
+    <Property Name="COUNTRY_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_COMPANY" Relationship="Model.FK_P_COMPANY_COUNTRY" FromRole="A_COUNTRY" ToRole="A_COMPANY" />
+    <NavigationProperty Name="A_DISTRICT" Relationship="Model.FK_P_DISTRICT_COUNTRY" FromRole="A_COUNTRY" ToRole="A_DISTRICT" />
+  </EntityType>
+  <EntityType Name="A_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="DEPARTMENT_ID" />
+    </Key>
+    <Property Name="DEPARTMENT_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_ADDR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_DEPARTMENT" FromRole="A_DEPARTMENT" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_ASET_USR_DEPT" FromRole="A_DEPARTMENT" ToRole="A_ASET_USER" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_P_DEPARTMENT_BUSINESS" FromRole="A_DEPARTMENT" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_OWNR_DEPT" FromRole="A_DEPARTMENT" ToRole="A_OWNR" />
+    <NavigationProperty Name="A_PLEA" Relationship="Model.FK_PLEA_DEPT" FromRole="A_DEPARTMENT" ToRole="A_PLEA" />
+  </EntityType>
+  <EntityType Name="A_DISTRICT">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_COUNTRY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_COUNTRY" Relationship="Model.FK_P_DISTRICT_COUNTRY" FromRole="A_DISTRICT" ToRole="A_COUNTRY" />
+    <NavigationProperty Name="A_THANA" Relationship="Model.FK_P_THANA_DISTRICT" FromRole="A_DISTRICT" ToRole="A_THANA" />
+  </EntityType>
+  <EntityType Name="A_EMAIL_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REMIND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TO_EMAIL" Type="Int32" />
+    <Property Name="CC_EMAIL" Type="Int32" />
+    <Property Name="CDT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="A_FUEL">
+    <Key>
+      <PropertyRef Name="FUEL_ID" />
+    </Key>
+    <Property Name="FUEL_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FUEL_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_FUEL" FromRole="A_FUEL" ToRole="A_ASET_DATA" />
+  </EntityType>
+  <EntityType Name="A_GROUP">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ACCE_ITEMS" Relationship="Model.FK_A_ACCE_ITEMS_GROUP" FromRole="A_GROUP" ToRole="A_ACCE_ITEMS" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_P_ASET_DATA_GROUP" FromRole="A_GROUP" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_EMAIL" Relationship="Model.FK_EMAIL_GROUP" FromRole="A_GROUP" ToRole="A_EMAIL" />
+    <NavigationProperty Name="A_ITEM_LIST" Relationship="Model.FK_ITEM_GROUP" FromRole="A_GROUP" ToRole="A_ITEM_LIST" />
+    <NavigationProperty Name="A_USERS_GROUP" Relationship="Model.FK_UG_GROUP" FromRole="A_GROUP" ToRole="A_USERS_GROUP" />
+  </EntityType>
+  <EntityType Name="A_INSP_JOB_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_NAME" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_PATH" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_REF" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_CDT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="A_INSP_TYPE">
+    <Key>
+      <PropertyRef Name="ITYPE_ID" />
+    </Key>
+    <Property Name="ITYPE_ID" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ITYPE_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_INSPH" Relationship="Model.FK_INSP_TYPE" FromRole="A_INSP_TYPE" ToRole="A_INSPH" />
+    <NavigationProperty Name="A_JOBH" Relationship="Model.FK_JOBH_TYPE" FromRole="A_INSP_TYPE" ToRole="A_JOBH" />
+  </EntityType>
+  <EntityType Name="A_INSPD">
+    <Key>
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPD_LINE" />
+    </Key>
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="INSPD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPD_IQTY" Type="Byte" />
+    <Property Name="INSPD_IRATE" Type="Int32" />
+    <Property Name="INSPD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSPD_STATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_INSPH" Relationship="Model.FK_INSPD_INSPH" FromRole="A_INSPD" ToRole="A_INSPH" />
+    <NavigationProperty Name="A_ITEM_LIST" Relationship="Model.FK_INSPD_ITEM_LIST" FromRole="A_INSPD" ToRole="A_ITEM_LIST" />
+  </EntityType>
+  <EntityType Name="A_INSPH">
+    <Key>
+      <PropertyRef Name="INSPH_ID" />
+    </Key>
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_IUSER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DATE" Type="DateTime" />
+    <Property Name="MILEAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_NOTE" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_JOB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_APP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_APDATE" Type="DateTime" />
+    <Property Name="INSPH_APBY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_INSPH_ASET" FromRole="A_INSPH" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_INSP_TYPE" Relationship="Model.FK_INSP_TYPE" FromRole="A_INSPH" ToRole="A_INSP_TYPE" />
+    <NavigationProperty Name="A_INSPD" Relationship="Model.FK_INSPD_INSPH" FromRole="A_INSPH" ToRole="A_INSPD" />
+    <NavigationProperty Name="A_JOBH" Relationship="Model.FK_JOBH_INSPH" FromRole="A_INSPH" ToRole="A_JOBH" />
+  </EntityType>
+  <EntityType Name="A_INSUD">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="INSU_LINE" />
+    </Key>
+    <Property Name="INSU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_LINE" Type="Int32" Nullable="false" />
+    <Property Name="INSU_ASET_VALUE" Type="Int32" />
+    <Property Name="INSU_PREMIUM" Type="Int32" />
+    <Property Name="INSU_AMOUNT" Type="Int32" />
+    <Property Name="INSU_VAT_AMOUNT" Type="Int32" />
+    <Property Name="INSU_DATE" Type="DateTime" />
+    <Property Name="INSU_PAID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_INSUH" Relationship="Model.FK_INSUD_INSUH" FromRole="A_INSUD" ToRole="A_INSUH" />
+  </EntityType>
+  <EntityType Name="A_INSUH">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+    </Key>
+    <Property Name="INSU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_POLICY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_ASET_VALUE" Type="Int32" />
+    <Property Name="INSU_PREMIUM" Type="Int32" />
+    <Property Name="INSU_COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_COMP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_REG_START" Type="DateTime" />
+    <Property Name="INSU_REG_END" Type="DateTime" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <Property Name="REMIND" Type="Boolean" />
+    <NavigationProperty Name="A_ASET_APP" Relationship="Model.FK_ASET_APP_INSUH" FromRole="A_INSUH" ToRole="A_ASET_APP" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_INSUH_ASET" FromRole="A_INSUH" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_INSUD" Relationship="Model.FK_INSUD_INSUH" FromRole="A_INSUH" ToRole="A_INSUD" />
+  </EntityType>
+  <EntityType Name="A_ITEM_LIST">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="ITEM_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NOTIF_SET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_BASE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_BILL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="REMINDER_ENTRY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOB_ENTRY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_GROUP" Relationship="Model.FK_ITEM_GROUP" FromRole="A_ITEM_LIST" ToRole="A_GROUP" />
+    <NavigationProperty Name="A_INSPD" Relationship="Model.FK_INSPD_ITEM_LIST" FromRole="A_ITEM_LIST" ToRole="A_INSPD" />
+    <NavigationProperty Name="A_JOBD" Relationship="Model.FK_JOBD_ITEM_LIST" FromRole="A_ITEM_LIST" ToRole="A_JOBD" />
+    <NavigationProperty Name="A_REMINDER" Relationship="Model.FK_REMIND_ITEM" FromRole="A_ITEM_LIST" ToRole="A_REMINDER" />
+  </EntityType>
+  <EntityType Name="A_JOBD">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+    </Key>
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_IQTY" Type="Byte" />
+    <Property Name="JOBD_JQTY" Type="Byte" />
+    <Property Name="JOBD_IRATE" Type="Int32" />
+    <Property Name="JOBD_JRATE" Type="Int32" />
+    <Property Name="JOBD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_STATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_ITEM_LIST" Relationship="Model.FK_JOBD_ITEM_LIST" FromRole="A_JOBD" ToRole="A_ITEM_LIST" />
+    <NavigationProperty Name="A_JOBH" Relationship="Model.FK_JOBD_JOBH" FromRole="A_JOBD" ToRole="A_JOBH" />
+  </EntityType>
+  <EntityType Name="A_JOBH">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+    </Key>
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DATE" Type="DateTime" />
+    <Property Name="JOBH_MILEAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_VENDOR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_NOTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_IPAY" Type="Int32" />
+    <Property Name="JOBH_UPAY" Type="Int32" />
+    <Property Name="JOBH_CPAY" Type="Int32" />
+    <Property Name="JOBH_DISC" Type="Int32" />
+    <Property Name="JOBH_CNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_BILL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_APP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_APDATE" Type="DateTime" />
+    <Property Name="JOBH_APBY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_BILL" Relationship="Model.FK_BILH_JOBH" FromRole="A_JOBH" ToRole="A_BILL" />
+    <NavigationProperty Name="A_INSP_TYPE" Relationship="Model.FK_JOBH_TYPE" FromRole="A_JOBH" ToRole="A_INSP_TYPE" />
+    <NavigationProperty Name="A_INSPH" Relationship="Model.FK_JOBH_INSPH" FromRole="A_JOBH" ToRole="A_INSPH" />
+    <NavigationProperty Name="A_JOBD" Relationship="Model.FK_JOBD_JOBH" FromRole="A_JOBH" ToRole="A_JOBD" />
+  </EntityType>
+  <EntityType Name="A_MENUC">
+    <Key>
+      <PropertyRef Name="CMNU_TEXT" />
+    </Key>
+    <Property Name="CMNU_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="CMNU_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_ICON" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_CONT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_ACTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_ROLE" Type="Int32" />
+    <Property Name="CMNU_PMNU" Type="Int32" Nullable="false" />
+    <Property Name="CMNU_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_USERS_MENUC" Relationship="Model.FK_A_MENUC" FromRole="A_MENUC" ToRole="A_USERS_MENUC" />
+    <NavigationProperty Name="A_MENUP" Relationship="Model.FK_A_MENUP" FromRole="A_MENUC" ToRole="A_MENUP" />
+  </EntityType>
+  <EntityType Name="A_MENUP">
+    <Key>
+      <PropertyRef Name="PMNU_TEXT" />
+    </Key>
+    <Property Name="PMNU_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="PMNU_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PMNU_ICON" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_MENUC" Relationship="Model.FK_A_MENUP" FromRole="A_MENUP" ToRole="A_MENUC" />
+  </EntityType>
+  <EntityType Name="A_NOTIF_SET">
+    <Key>
+      <PropertyRef Name="NOTIF_ID" />
+    </Key>
+    <Property Name="NOTIF_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_TYPE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FOR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_REMIND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FIRST" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FINAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="A_OWNR">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_DEPT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_DESG" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_CONT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_ADDR" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_PIC" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_RESIGN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NDATE" Type="DateTime" />
+    <Property Name="OWNR_RDATE" Type="DateTime" />
+    <Property Name="OWNR_POST" Type="Boolean" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <Property Name="REMIND" Type="Int32" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_OWNR_AREA" FromRole="A_OWNR" ToRole="A_AREA" />
+    <NavigationProperty Name="A_ASET_APP" Relationship="Model.FK_ASET_APP_OWNER" FromRole="A_OWNR" ToRole="A_ASET_APP" />
+    <NavigationProperty Name="A_ASET_USER" Relationship="Model.FK_ASET_USR_OWNR" FromRole="A_OWNR" ToRole="A_ASET_USER" />
+    <NavigationProperty Name="A_DEPARTMENT" Relationship="Model.FK_OWNR_DEPT" FromRole="A_OWNR" ToRole="A_DEPARTMENT" />
+    <NavigationProperty Name="A_OWNR_BILL" Relationship="Model.FK_BILL_OWNR" FromRole="A_OWNR" ToRole="A_OWNR_BILL" />
+    <NavigationProperty Name="A_PLEA" Relationship="Model.FK_PLEA_OWNR" FromRole="A_OWNR" ToRole="A_PLEA" />
+  </EntityType>
+  <EntityType Name="A_OWNR_BILL">
+    <Key>
+      <PropertyRef Name="BILL_ID" />
+    </Key>
+    <Property Name="BILL_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILL_OWNR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILL_ASET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILL_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="BILL_AMNT" Type="Int64" Nullable="false" />
+    <Property Name="BILL_OWNR_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BILL_NOTE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_BILL_ASSET" FromRole="A_OWNR_BILL" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_BILL_OWNR" FromRole="A_OWNR_BILL" ToRole="A_OWNR" />
+  </EntityType>
+  <EntityType Name="A_PLEA">
+    <Key>
+      <PropertyRef Name="PLEA_ID" />
+    </Key>
+    <Property Name="PLEA_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DFND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_PAID_BY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DATE" Type="DateTime" />
+    <Property Name="PLEA_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_REASON_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DESCRIPTION" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_AMNT" Type="Int32" />
+    <Property Name="PLEA_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_MILEAGE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DEPT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <Property Name="PLEA_APP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_APP_DATE" Type="DateTime" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_PLEA_AREA" FromRole="A_PLEA" ToRole="A_AREA" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_PLEA_ASET" FromRole="A_PLEA" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_DEPARTMENT" Relationship="Model.FK_PLEA_DEPT" FromRole="A_PLEA" ToRole="A_DEPARTMENT" />
+    <NavigationProperty Name="A_OWNR" Relationship="Model.FK_PLEA_OWNR" FromRole="A_PLEA" ToRole="A_OWNR" />
+    <NavigationProperty Name="A_PLEA_REASON" Relationship="Model.FK_PLEA_REASON" FromRole="A_PLEA" ToRole="A_PLEA_REASON" />
+  </EntityType>
+  <EntityType Name="A_PLEA_REASON">
+    <Key>
+      <PropertyRef Name="REASON_ID" />
+    </Key>
+    <Property Name="REASON_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="REASON_NAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="REASON_DESC" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_PLEA" Relationship="Model.FK_PLEA_REASON" FromRole="A_PLEA_REASON" ToRole="A_PLEA" />
+  </EntityType>
+  <EntityType Name="A_REMINDER">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+    </Key>
+    <Property Name="REMIND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="C_STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="N_STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="C_DATE" Type="DateTime" />
+    <Property Name="N_DATE" Type="DateTime" />
+    <Property Name="NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REMIND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ASET_DATA" Relationship="Model.FK_REMIND_ASET_DATA" FromRole="A_REMINDER" ToRole="A_ASET_DATA" />
+    <NavigationProperty Name="A_ITEM_LIST" Relationship="Model.FK_REMIND_ITEM" FromRole="A_REMINDER" ToRole="A_ITEM_LIST" />
+    <NavigationProperty Name="A_REMINDER_IMG" Relationship="Model.FK_IMG_REMIND" FromRole="A_REMINDER" ToRole="A_REMINDER_IMG" />
+  </EntityType>
+  <EntityType Name="A_REMINDER_IMG">
+    <Key>
+      <PropertyRef Name="IMG_ID" />
+    </Key>
+    <Property Name="IMG_ID" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_NAME" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_PATH" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IMG_REMINDER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_REMINDER" Relationship="Model.FK_IMG_REMIND" FromRole="A_REMINDER_IMG" ToRole="A_REMINDER" />
+  </EntityType>
+  <EntityType Name="A_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_TEXT" />
+    </Key>
+    <Property Name="ROLE_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="ROLE_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ROLE_DESC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_USERS_ROLES" Relationship="Model.FK_UR_ROLES" FromRole="A_ROLES" ToRole="A_USERS_ROLES" />
+  </EntityType>
+  <EntityType Name="A_SUMMARY_VIEW">
+    <Key>
+      <PropertyRef Name="SV_TABLE" />
+    </Key>
+    <Property Name="SV_ID" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="SV_TABLE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SV_NOTE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SV_USER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_A" Type="Int32" />
+    <Property Name="DATA_AN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_B" Type="Int32" />
+    <Property Name="DATA_BN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_C" Type="Int32" />
+    <Property Name="DATA_CN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_D" Type="Int32" />
+    <Property Name="DATA_DN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_E" Type="Int32" />
+    <Property Name="DATA_EN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_F" Type="Int32" />
+    <Property Name="DATA_FN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_G" Type="Int32" />
+    <Property Name="DATA_GN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_H" Type="Int32" />
+    <Property Name="DATA_HN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_I" Type="Int32" />
+    <Property Name="DATA_IN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_J" Type="Int32" />
+    <Property Name="DATA_JN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+  </EntityType>
+  <EntityType Name="A_TBL_SEQ">
+    <Key>
+      <PropertyRef Name="TABLE_ID" />
+    </Key>
+    <Property Name="TABLE_ID" Type="Int32" Nullable="false" />
+    <Property Name="TABLE_SEQ" Type="Int32" />
+    <Property Name="TABLE_NAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+  </EntityType>
+  <EntityType Name="A_THANA">
+    <Key>
+      <PropertyRef Name="THANA_ID" />
+    </Key>
+    <Property Name="THANA_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="THANA_DISTRICT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="THANA_BUSINESS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="THANA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_P_AREA_THANA" FromRole="A_THANA" ToRole="A_AREA" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_P_THANA_BUSINESS" FromRole="A_THANA" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_DISTRICT" Relationship="Model.FK_P_THANA_DISTRICT" FromRole="A_THANA" ToRole="A_DISTRICT" />
+  </EntityType>
+  <EntityType Name="A_USERS">
+    <Key>
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="USER_TEXT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="USER_PASS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_MOBL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="USER_IMAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ROLE" Type="Int32" Nullable="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_USERS_MENUC" Relationship="Model.FK_A_USERS" FromRole="A_USERS" ToRole="A_USERS_MENUC" />
+    <NavigationProperty Name="A_USERS_AREA" Relationship="Model.FK_AREA_USER" FromRole="A_USERS" ToRole="A_USERS_AREA" />
+    <NavigationProperty Name="A_USERS_BUS" Relationship="Model.FK_UB_USER" FromRole="A_USERS" ToRole="A_USERS_BUS" />
+    <NavigationProperty Name="A_USERS_GROUP" Relationship="Model.FK_UG_USER" FromRole="A_USERS" ToRole="A_USERS_GROUP" />
+    <NavigationProperty Name="A_USERS_ROLES" Relationship="Model.FK_UR_USERS" FromRole="A_USERS" ToRole="A_USERS_ROLES" />
+  </EntityType>
+  <EntityType Name="A_USERS_AREA">
+    <Key>
+      <PropertyRef Name="UA_AREA" />
+      <PropertyRef Name="UA_USER" />
+    </Key>
+    <Property Name="UA_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UA_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_AREA" Relationship="Model.FK_USER_AREA" FromRole="A_USERS_AREA" ToRole="A_AREA" />
+    <NavigationProperty Name="A_USERS" Relationship="Model.FK_AREA_USER" FromRole="A_USERS_AREA" ToRole="A_USERS" />
+  </EntityType>
+  <EntityType Name="A_USERS_BUS">
+    <Key>
+      <PropertyRef Name="UB_BUSINESS" />
+      <PropertyRef Name="UB_USER" />
+    </Key>
+    <Property Name="UB_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UB_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_UB_BUSINESS" FromRole="A_USERS_BUS" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_USERS" Relationship="Model.FK_UB_USER" FromRole="A_USERS_BUS" ToRole="A_USERS" />
+  </EntityType>
+  <EntityType Name="A_USERS_COUNTRY">
+    <Key>
+      <PropertyRef Name="UC_ID" />
+    </Key>
+    <Property Name="UC_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="USER_TEXT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="A_USERS_GROUP">
+    <Key>
+      <PropertyRef Name="UG_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="UG_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_GROUP" Relationship="Model.FK_UG_GROUP" FromRole="A_USERS_GROUP" ToRole="A_GROUP" />
+    <NavigationProperty Name="A_USERS" Relationship="Model.FK_UG_USER" FromRole="A_USERS_GROUP" ToRole="A_USERS" />
+  </EntityType>
+  <EntityType Name="A_USERS_LOGIN">
+    <Key>
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="USER_TEXT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="USER_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="USER_PC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PC_USER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PC_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BROWSER_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BROWSER_VERSION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SESSION_ID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SESSION_ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="A_USERS_MENUC">
+    <Key>
+      <PropertyRef Name="CMNU_TEXT" />
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="CMNU_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="USER_TEXT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_MENUC" Relationship="Model.FK_A_MENUC" FromRole="A_USERS_MENUC" ToRole="A_MENUC" />
+    <NavigationProperty Name="A_USERS" Relationship="Model.FK_A_USERS" FromRole="A_USERS_MENUC" ToRole="A_USERS" />
+  </EntityType>
+  <EntityType Name="A_USERS_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_TEXT" />
+      <PropertyRef Name="USER_TEXT" />
+    </Key>
+    <Property Name="ROLE_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="USER_TEXT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <NavigationProperty Name="A_ROLES" Relationship="Model.FK_UR_ROLES" FromRole="A_USERS_ROLES" ToRole="A_ROLES" />
+    <NavigationProperty Name="A_USERS" Relationship="Model.FK_UR_USERS" FromRole="A_USERS_ROLES" ToRole="A_USERS" />
+  </EntityType>
+  <EntityType Name="A_EMAIL">
+    <Key>
+      <PropertyRef Name="EMAIL_ID" />
+      <PropertyRef Name="KEEP_IN" />
+      <PropertyRef Name="MAIL_GROUP" />
+    </Key>
+    <Property Name="EMAIL_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_DISPLAY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KEEP_IN" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BUSINESS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="CDT" Type="DateTime" />
+    <Property Name="UDT" Type="DateTime" />
+    <Property Name="CDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UDU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VAR" Type="Int32" />
+    <Property Name="MAIL_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="A_BUSINESS" Relationship="Model.FK_EMAIL_BUSINESS" FromRole="A_EMAIL" ToRole="A_BUSINESS" />
+    <NavigationProperty Name="A_GROUP" Relationship="Model.FK_EMAIL_GROUP" FromRole="A_EMAIL" ToRole="A_GROUP" />
+  </EntityType>
+  <EntityType Name="VW_ASET_BY_USERS">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_USED" Type="Boolean" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_ASSETUSERMANAGERVM">
+    <Key>
+      <PropertyRef Name="AU_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="AU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SRDATE" Type="DateTime" />
+    <Property Name="T_USER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SADATE" Type="DateTime" />
+    <Property Name="T_APPROVER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_SNOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AU_ERDATE" Type="DateTime" />
+    <Property Name="R_USER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_EADATE" Type="DateTime" />
+    <Property Name="R_APPROVER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AU_ENOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AU_TRNSTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_BNDL_INSP">
+    <Key>
+      <PropertyRef Name="INSPH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="INSPH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="INSPH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="INSPH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="INSPH_IUSER" />
+      <PropertyRef Name="MILEAGE" />
+      <PropertyRef Name="INSPH_NOTE" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPD_LINE" />
+      <PropertyRef Name="INSPD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="INSPH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_IUSER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DATE" Type="DateTime" />
+    <Property Name="MILEAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_NOTE" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="INSPD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPD_IQTY" Type="Byte" />
+    <Property Name="INSPD_IRATE" Type="Int32" />
+    <Property Name="INSPD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_APP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_JOB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_BNDL_JOBC">
+    <Key>
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_VENDOR" />
+      <PropertyRef Name="JOBH_MILEAGE" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="JOBH_NOTE" />
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="JOBH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_VENDOR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DATE" Type="DateTime" />
+    <Property Name="JOBH_MILEAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_NOTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_IQTY" Type="Byte" />
+    <Property Name="JOBD_IRATE" Type="Int32" />
+    <Property Name="JOBD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_APP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_BILL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_DATE_NOTIF">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+      <PropertyRef Name="NOTIF_TYPE" />
+    </Key>
+    <Property Name="REMIND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="C_DATE" Type="DateTime" />
+    <Property Name="N_DATE" Type="DateTime" />
+    <Property Name="ELAPSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="REMIND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FIRST" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FINAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="REMINDER_NOTE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_TYPE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_INSURANCE_S1">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="INSU_POLICY" />
+    </Key>
+    <Property Name="INSU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_NAME_CODE" Type="String" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_POLICY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_PREMIUM" Type="Int32" />
+    <Property Name="INSU_COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_COMP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_REG_START" Type="DateTime" />
+    <Property Name="INSU_REG_END" Type="DateTime" />
+    <Property Name="REMIND" Type="Boolean" />
+    <Property Name="DAYS" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="VW_INSURANCE_S2">
+    <Key>
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="INSU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_NAME_CODE" Type="String" MaxLength="102" FixedLength="false" Unicode="false" />
+    <Property Name="INSURANCE" Type="String" MaxLength="91" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="MESSAGES" Type="String" MaxLength="28" FixedLength="false" Unicode="false" />
+    <Property Name="NEED_MAIL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="INSU_REG_START" Type="DateTime" />
+    <Property Name="INSU_REG_END" Type="DateTime" />
+    <Property Name="DAYS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MAIL_SUBJECT" Type="String" MaxLength="112" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BODY" Type="String" MaxLength="520" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="56" FixedLength="true" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_IQAMA_NOTIF_V1">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="OWNR_AREA" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AAJKEY" Type="DateTime" />
+    <Property Name="OWNR_NDATE" Type="DateTime" />
+    <Property Name="ELAPSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REMIND" Type="Int32" />
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="REMINDER_NOTE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_MESSAGES" Type="String" MaxLength="52" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_SEND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_IQAMA_NOTIF_V2">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="BUSINESS_ID" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AAJ_DATE" Type="DateTime" />
+    <Property Name="EXP_DATE" Type="DateTime" />
+    <Property Name="REMIND" Type="Int32" />
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="ELAPSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MESSAGES" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="MESSAGE_NOTE" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_SEND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL_SUBJECT" Type="String" MaxLength="157" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BODY" Type="String" MaxLength="504" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_KSA_IQUMA_S1">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AAJ_DATE" Type="DateTime" />
+    <Property Name="OWNR_NDATE" Type="DateTime" />
+    <Property Name="REMIND" Type="Int32" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DAYS" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="VW_KSA_IQUMA_S2">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AAJ_DATE" Type="DateTime" />
+    <Property Name="OWNR_NDATE" Type="DateTime" />
+    <Property Name="REMIND" Type="Int32" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="DAYS" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="MESSAGES" Type="String" MaxLength="28" FixedLength="false" Unicode="false" />
+    <Property Name="NEED_MAIL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL_SUBJECT" Type="String" MaxLength="157" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BODY" Type="String" MaxLength="504" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="55" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_NOTIF_MAIL">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_TYPE" />
+      <PropertyRef Name="NOTIF_REMIND" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+    </Key>
+    <Property Name="REMIND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NOTIF_SET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_TYPE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_REMIND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FIRST" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FINAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="C_DATE" Type="DateTime" />
+    <Property Name="N_DATE" Type="DateTime" />
+    <Property Name="REMIND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ELAPSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REMINDER_NOTE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_MESSAGES" Type="String" MaxLength="52" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_SEND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL_SUBJECT" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BODY" Type="String" MaxLength="517" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="53" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_NOTIF_MAIL_METER">
+    <Key>
+      <PropertyRef Name="REMIND_ID" />
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="ITEM_ID" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="NOTIF_TYPE" />
+      <PropertyRef Name="NOTIF_REMIND" />
+      <PropertyRef Name="NOTIF_FIRST" />
+      <PropertyRef Name="NOTIF_FINAL" />
+    </Key>
+    <Property Name="REMIND_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NOTIF_SET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_TYPE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_REMIND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FIRST" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_FINAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="C_DATE" Type="DateTime" />
+    <Property Name="N_DATE" Type="DateTime" />
+    <Property Name="REMIND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NOTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ELAPSED" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="REMINDER_NOTE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIF_MESSAGES" Type="String" MaxLength="52" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_SEND" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MAIL_SUBJECT" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="MAIL_BODY" Type="String" MaxLength="517" FixedLength="true" Unicode="false" />
+    <Property Name="UPDT" Type="String" MaxLength="54" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_OWNR_BY_USERS">
+    <Key>
+      <PropertyRef Name="OWNR_ID" />
+      <PropertyRef Name="OWNR_DEPT" />
+      <PropertyRef Name="OWNR_AREA" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="UB_USER" />
+    </Key>
+    <Property Name="OWNR_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_DEPT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_DESG" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_RESIGN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_POST" Type="Boolean" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="UB_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_PMENU_CMENU">
+    <Key>
+      <PropertyRef Name="PMNU_TEXT" />
+      <PropertyRef Name="PMNU_NAME" />
+      <PropertyRef Name="CMNU_TEXT" />
+      <PropertyRef Name="CMNU_NAME" />
+    </Key>
+    <Property Name="PMNU_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="PMNU_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_TEXT" Type="Int32" Nullable="false" />
+    <Property Name="CMNU_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CMNU_ROLE" Type="Int32" />
+    <Property Name="CMNU_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VW_RPT_ASET_EXP">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_MILEAGE" />
+      <PropertyRef Name="JOBH_VENDOR" />
+      <PropertyRef Name="JOBH_NOTE" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="ITYPE_NAME" />
+    </Key>
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_IQTY" Type="Byte" />
+    <Property Name="JOBD_IRATE" Type="Int32" />
+    <Property Name="JOBD_IAMNT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JOBD_JQTY" Type="Byte" />
+    <Property Name="JOBD_JRATE" Type="Int32" />
+    <Property Name="JOBD_JAMNT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DATE" Type="DateTime" />
+    <Property Name="JOBH_MILEAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_VENDOR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_NOTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ITYPE_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_RPT_ASET_USER">
+    <Key>
+      <PropertyRef Name="CODE_NAME" />
+      <PropertyRef Name="ASET_DEPT" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="USER_NAME" />
+      <PropertyRef Name="WORKING_DEPT" />
+      <PropertyRef Name="WORKING_AREA" />
+      <PropertyRef Name="ASET_GROUP" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_DEPT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_AREA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="WORKING_DEPT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WORKING_AREA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="START_DATE" Type="DateTime" />
+    <Property Name="START_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="END_DATE" Type="DateTime" />
+    <Property Name="END_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STAUTS" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GROUP" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_RPT_BILL">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+      <PropertyRef Name="BILH_NOTE" />
+      <PropertyRef Name="BILH_RECEIVER" />
+      <PropertyRef Name="JOBH_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="JOBH_OWNR" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="JOBH_DEPARTMENT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="JOBH_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="JOBH_TYPE" />
+      <PropertyRef Name="ITYPE_NAME" />
+    </Key>
+    <Property Name="BILH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_DATE" Type="DateTime" />
+    <Property Name="BILH_NOTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_RECEIVER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_IPAY" Type="Int32" />
+    <Property Name="BILH_UPAY" Type="Int32" />
+    <Property Name="BILH_CPAY" Type="Int32" />
+    <Property Name="BILH_DISC" Type="Int32" />
+    <Property Name="JOBH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_BUSINESS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_TYPE" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ITYPE_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_RPT_BILL_SUM">
+    <Key>
+      <PropertyRef Name="BILH_ID" />
+      <PropertyRef Name="JOBH_ID" />
+    </Key>
+    <Property Name="BILH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILH_DATE" Type="DateTime" />
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BILL_AMT" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="VW_RPT_INSP_SUM">
+    <Key>
+      <PropertyRef Name="INSPH_ASET" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="INSPH_OWNR" />
+      <PropertyRef Name="INSPH_AREA" />
+      <PropertyRef Name="INSPH_DEPARTMENT" />
+    </Key>
+    <Property Name="INSPH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DATE" Type="DateTime" />
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_DEPARTMENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSP_AMT" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="VW_RPT_INSURANCE">
+    <Key>
+      <PropertyRef Name="INSU_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="ASET_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="DEPARTMENT_ID" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="INSU_ID" />
+      <PropertyRef Name="INSU_LINE" />
+      <PropertyRef Name="INSU_POLICY" />
+    </Key>
+    <Property Name="INSU_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_LINE" Type="Int32" Nullable="false" />
+    <Property Name="INSU_ASET_VALUE" Type="Int32" />
+    <Property Name="INSU_PREMIUM" Type="Int32" />
+    <Property Name="INSU_VAT_AMOUNT" Type="Int32" />
+    <Property Name="INSU_DATE" Type="DateTime" />
+    <Property Name="INSU_PAID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DACT" Type="Boolean" />
+    <Property Name="INSU_POLICY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_COMP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="INSU_REG_END" Type="DateTime" />
+    <Property Name="HACT" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="VW_RPT_JOB_SUM">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="INSPH_ID" />
+      <PropertyRef Name="JOBH_ASET" />
+    </Key>
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="INSPH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBH_DATE" Type="DateTime" />
+    <Property Name="JOBH_AMT" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="VW_RPT_JOBD_S1">
+    <Key>
+      <PropertyRef Name="JOBH_ID" />
+      <PropertyRef Name="JOBD_LINE" />
+      <PropertyRef Name="JOBD_ITEM" />
+      <PropertyRef Name="ITEM_NAME" />
+    </Key>
+    <Property Name="JOBH_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_LINE" Type="Byte" Nullable="false" />
+    <Property Name="JOBD_ITEM" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="JOBD_IQTY" Type="Byte" />
+    <Property Name="JOBD_IRATE" Type="Int32" />
+    <Property Name="JOBD_IAMNT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JOBD_JQTY" Type="Byte" />
+    <Property Name="JOBD_JRATE" Type="Int32" />
+    <Property Name="JOBD_JAMNT" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JOBD_NOTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_RPT_POLICE_CASE">
+    <Key>
+      <PropertyRef Name="PLEA_ID" />
+      <PropertyRef Name="PLEA_DESCRIPTION" />
+      <PropertyRef Name="PLEA_REASON_ID" />
+      <PropertyRef Name="REASON_NAME" />
+      <PropertyRef Name="PLEA_OWNR" />
+      <PropertyRef Name="OWNR_TEXT" />
+      <PropertyRef Name="OWNR_USER" />
+      <PropertyRef Name="PLEA_ASET" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="PLEA_DEPT" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_ID" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="PLEA_AREA" />
+      <PropertyRef Name="AREA_NAME" />
+    </Key>
+    <Property Name="PLEA_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DESCRIPTION" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Case_On" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Paid_By" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_REASON_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="REASON_NAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_OWNR" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_TEXT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNR_USER" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_ASET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DEPT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_AREA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_DATE" Type="DateTime" />
+    <Property Name="PLEA_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_APP_DATE" Type="DateTime" />
+    <Property Name="Approval" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="PLEA_AMNT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VW_USER_ASSET_ID_STRING">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_USER_ASSET_LIST">
+    <Key>
+      <PropertyRef Name="ASET_ID" />
+      <PropertyRef Name="ASET_CODE_NAME" />
+      <PropertyRef Name="AREA_NAME" />
+      <PropertyRef Name="BODY_NAME" />
+      <PropertyRef Name="BRAND_NAME" />
+      <PropertyRef Name="FUEL_NAME" />
+      <PropertyRef Name="COLOR_NAME" />
+      <PropertyRef Name="GROUP_NAME" />
+      <PropertyRef Name="DEPARTMENT_NAME" />
+      <PropertyRef Name="BUSINESS_NAME" />
+      <PropertyRef Name="COMPANY_NAME" />
+      <PropertyRef Name="UG_USER" />
+    </Key>
+    <Property Name="ASET_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CODE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BODY_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BRAND_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FUEL_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GROUP_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_PO_ENGINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_GRN_CHASIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_CAPACITY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_PRICE" Type="Int32" />
+    <Property Name="ASET_REG_DATE" Type="DateTime" />
+    <Property Name="ASET_HEIGHT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_WEIGHT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_MFG_YEAR" Type="Int16" />
+    <Property Name="ASET_IMAGE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_NOTE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ASET_USED" Type="Boolean" />
+    <Property Name="ACT" Type="Boolean" />
+    <Property Name="DEPARTMENT_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUSINESS_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UG_USER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_A_ACCE_ITEMS_GROUP">
+    <End Type="Model.A_GROUP" Role="A_GROUP" Multiplicity="1" />
+    <End Type="Model.A_ACCE_ITEMS" Role="A_ACCE_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_ACCE_ACCE_ITEMS">
+    <End Type="Model.A_ACCE_ITEMS" Role="A_ACCE_ITEMS" Multiplicity="1" />
+    <End Type="Model.A_ASET_ACCE" Role="A_ASET_ACCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_ACCE">
+        <PropertyRef Name="ACCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_ACCE_UA">
+    <End Type="Model.A_ACCE_ITEMS" Role="A_ACCE_ITEMS" Multiplicity="1" />
+    <End Type="Model.A_ASET_USR_ACE" Role="A_ASET_USR_ACE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ACCE_ITEMS">
+        <PropertyRef Name="ACCE_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USR_ACE">
+        <PropertyRef Name="AUA_ACCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_DATA_AREA">
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_AREA">
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="1" />
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OWNR_AREA">
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="1" />
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR">
+        <PropertyRef Name="OWNR_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_AREA_BUSINESS">
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="0..1" />
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_AREA">
+        <PropertyRef Name="AREA_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_AREA_THANA">
+    <End Type="Model.A_THANA" Role="A_THANA" Multiplicity="1" />
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_THANA">
+        <PropertyRef Name="THANA_ID" />
+      </Principal>
+      <Dependent Role="A_AREA">
+        <PropertyRef Name="AREA_THANA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_AREA">
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="1" />
+    <End Type="Model.A_PLEA" Role="A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_AREA">
+    <End Type="Model.A_AREA" Role="A_AREA" Multiplicity="1" />
+    <End Type="Model.A_USERS_AREA" Role="A_USERS_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_AREA">
+        <PropertyRef Name="AREA_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_AREA">
+        <PropertyRef Name="UA_AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_ASET_ACCE_A_ASET_DATA">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_ASET_ACCE" Role="A_ASET_ACCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_ACCE">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_ASET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_ASET_APP" Role="A_ASET_APP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_INSUH">
+    <End Type="Model.A_INSUH" Role="A_INSUH" Multiplicity="0..1" />
+    <End Type="Model.A_ASET_APP" Role="A_ASET_APP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSUH">
+        <PropertyRef Name="INSU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="INSURACE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_APP_OWNER">
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="1" />
+    <End Type="Model.A_ASET_APP" Role="A_ASET_APP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_APP">
+        <PropertyRef Name="OWNR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_ASET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_ASSET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="0..1" />
+    <End Type="Model.A_OWNR_BILL" Role="A_OWNR_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR_BILL">
+        <PropertyRef Name="BILL_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPH_ASET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_INSPH" Role="A_INSPH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_INSPH">
+        <PropertyRef Name="INSPH_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUH_ASET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_INSUH" Role="A_INSUH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_INSUH">
+        <PropertyRef Name="INSU_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_BODY">
+    <End Type="Model.A_BODY" Role="A_BODY" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BODY">
+        <PropertyRef Name="BODY_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_BODY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_BRAND">
+    <End Type="Model.A_BRAND" Role="A_BRAND" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BRAND">
+        <PropertyRef Name="BRAND_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_BRAND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_COLOR">
+    <End Type="Model.A_COLOR" Role="A_COLOR" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COLOR">
+        <PropertyRef Name="COLOR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_COLOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_DEPARTMENT">
+    <End Type="Model.A_DEPARTMENT" Role="A_DEPARTMENT" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_DEPARTMENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_FUEL">
+    <End Type="Model.A_FUEL" Role="A_FUEL" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_FUEL">
+        <PropertyRef Name="FUEL_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_FUEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_ASET_DATA_GROUP">
+    <End Type="Model.A_GROUP" Role="A_GROUP" Multiplicity="1" />
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_ASET">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_PLEA" Role="A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_ASET" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REMIND_ASET_DATA">
+    <End Type="Model.A_ASET_DATA" Role="A_ASET_DATA" Multiplicity="1" />
+    <End Type="Model.A_REMINDER" Role="A_REMINDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_DATA">
+        <PropertyRef Name="ASET_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER">
+        <PropertyRef Name="ASET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_DEPT">
+    <End Type="Model.A_DEPARTMENT" Role="A_DEPARTMENT" Multiplicity="1" />
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_OWNR">
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="1" />
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER">
+        <PropertyRef Name="AU_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASET_USR_UA">
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="1" />
+    <End Type="Model.A_ASET_USR_ACE" Role="A_ASET_USR_ACE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_USER">
+        <PropertyRef Name="AU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USR_ACE">
+        <PropertyRef Name="AUA_AU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMG_AU">
+    <End Type="Model.A_ASET_USER" Role="A_ASET_USER" Multiplicity="1" />
+    <End Type="Model.A_ASET_USER_IMG" Role="A_ASET_USER_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ASET_USER">
+        <PropertyRef Name="AU_ID" />
+      </Principal>
+      <Dependent Role="A_ASET_USER_IMG">
+        <PropertyRef Name="IMG_AU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILH_JOBH">
+    <End Type="Model.A_JOBH" Role="A_JOBH" Multiplicity="1" />
+    <End Type="Model.A_BILL" Role="A_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_JOBH">
+        <PropertyRef Name="JOBH_ID" />
+      </Principal>
+      <Dependent Role="A_BILL">
+        <PropertyRef Name="JOBH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMAIL_BUSINESS">
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="0..1" />
+    <End Type="Model.A_EMAIL" Role="A_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_EMAIL">
+        <PropertyRef Name="MAIL_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_BUSINESS_COMPANY">
+    <End Type="Model.A_COMPANY" Role="A_COMPANY" Multiplicity="1" />
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_COMPANY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_DEPARTMENT_BUSINESS">
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="1" />
+    <End Type="Model.A_DEPARTMENT" Role="A_DEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_THANA_BUSINESS">
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="0..1" />
+    <End Type="Model.A_THANA" Role="A_THANA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_THANA">
+        <PropertyRef Name="THANA_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UB_BUSINESS">
+    <End Type="Model.A_BUSINESS" Role="A_BUSINESS" Multiplicity="1" />
+    <End Type="Model.A_USERS_BUS" Role="A_USERS_BUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_BUSINESS">
+        <PropertyRef Name="BUSINESS_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_BUS">
+        <PropertyRef Name="UB_BUSINESS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_COMPANY_COUNTRY">
+    <End Type="Model.A_COUNTRY" Role="A_COUNTRY" Multiplicity="1" />
+    <End Type="Model.A_COMPANY" Role="A_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="A_COMPANY">
+        <PropertyRef Name="COMPANY_COUNTRY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_DISTRICT_COUNTRY">
+    <End Type="Model.A_COUNTRY" Role="A_COUNTRY" Multiplicity="1" />
+    <End Type="Model.A_DISTRICT" Role="A_DISTRICT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_COUNTRY">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Principal>
+      <Dependent Role="A_DISTRICT">
+        <PropertyRef Name="DISTRICT_COUNTRY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OWNR_DEPT">
+    <End Type="Model.A_DEPARTMENT" Role="A_DEPARTMENT" Multiplicity="1" />
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR">
+        <PropertyRef Name="OWNR_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_DEPT">
+    <End Type="Model.A_DEPARTMENT" Role="A_DEPARTMENT" Multiplicity="1" />
+    <End Type="Model.A_PLEA" Role="A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DEPARTMENT">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_P_THANA_DISTRICT">
+    <End Type="Model.A_DISTRICT" Role="A_DISTRICT" Multiplicity="1" />
+    <End Type="Model.A_THANA" Role="A_THANA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_DISTRICT">
+        <PropertyRef Name="DISTRICT_ID" />
+      </Principal>
+      <Dependent Role="A_THANA">
+        <PropertyRef Name="THANA_DISTRICT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMAIL_GROUP">
+    <End Type="Model.A_GROUP" Role="A_GROUP" Multiplicity="1" />
+    <End Type="Model.A_EMAIL" Role="A_EMAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_EMAIL">
+        <PropertyRef Name="MAIL_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ITEM_GROUP">
+    <End Type="Model.A_GROUP" Role="A_GROUP" Multiplicity="1" />
+    <End Type="Model.A_ITEM_LIST" Role="A_ITEM_LIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UG_GROUP">
+    <End Type="Model.A_GROUP" Role="A_GROUP" Multiplicity="1" />
+    <End Type="Model.A_USERS_GROUP" Role="A_USERS_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_GROUP">
+        <PropertyRef Name="GROUP_ID" />
+      </Principal>
+      <Dependent Role="A_USERS_GROUP">
+        <PropertyRef Name="UG_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSP_TYPE">
+    <End Type="Model.A_INSP_TYPE" Role="A_INSP_TYPE" Multiplicity="0..1" />
+    <End Type="Model.A_INSPH" Role="A_INSPH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSP_TYPE">
+        <PropertyRef Name="ITYPE_ID" />
+      </Principal>
+      <Dependent Role="A_INSPH">
+        <PropertyRef Name="INSPH_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBH_TYPE">
+    <End Type="Model.A_INSP_TYPE" Role="A_INSP_TYPE" Multiplicity="1" />
+    <End Type="Model.A_JOBH" Role="A_JOBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSP_TYPE">
+        <PropertyRef Name="ITYPE_ID" />
+      </Principal>
+      <Dependent Role="A_JOBH">
+        <PropertyRef Name="JOBH_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPD_INSPH">
+    <End Type="Model.A_INSPH" Role="A_INSPH" Multiplicity="1" />
+    <End Type="Model.A_INSPD" Role="A_INSPD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSPH">
+        <PropertyRef Name="INSPH_ID" />
+      </Principal>
+      <Dependent Role="A_INSPD">
+        <PropertyRef Name="INSPH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSPD_ITEM_LIST">
+    <End Type="Model.A_ITEM_LIST" Role="A_ITEM_LIST" Multiplicity="1" />
+    <End Type="Model.A_INSPD" Role="A_INSPD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_INSPD">
+        <PropertyRef Name="INSPD_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBH_INSPH">
+    <End Type="Model.A_INSPH" Role="A_INSPH" Multiplicity="1" />
+    <End Type="Model.A_JOBH" Role="A_JOBH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSPH">
+        <PropertyRef Name="INSPH_ID" />
+      </Principal>
+      <Dependent Role="A_JOBH">
+        <PropertyRef Name="INSPH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSUD_INSUH">
+    <End Type="Model.A_INSUH" Role="A_INSUH" Multiplicity="1" />
+    <End Type="Model.A_INSUD" Role="A_INSUD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_INSUH">
+        <PropertyRef Name="INSU_ID" />
+      </Principal>
+      <Dependent Role="A_INSUD">
+        <PropertyRef Name="INSU_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBD_ITEM_LIST">
+    <End Type="Model.A_ITEM_LIST" Role="A_ITEM_LIST" Multiplicity="1" />
+    <End Type="Model.A_JOBD" Role="A_JOBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_JOBD">
+        <PropertyRef Name="JOBD_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REMIND_ITEM">
+    <End Type="Model.A_ITEM_LIST" Role="A_ITEM_LIST" Multiplicity="1" />
+    <End Type="Model.A_REMINDER" Role="A_REMINDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ITEM_LIST">
+        <PropertyRef Name="ITEM_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER">
+        <PropertyRef Name="ITEM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOBD_JOBH">
+    <End Type="Model.A_JOBH" Role="A_JOBH" Multiplicity="1" />
+    <End Type="Model.A_JOBD" Role="A_JOBD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_JOBH">
+        <PropertyRef Name="JOBH_ID" />
+      </Principal>
+      <Dependent Role="A_JOBD">
+        <PropertyRef Name="JOBH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_MENUC">
+    <End Type="Model.A_MENUC" Role="A_MENUC" Multiplicity="1" />
+    <End Type="Model.A_USERS_MENUC" Role="A_USERS_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_MENUC">
+        <PropertyRef Name="CMNU_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_MENUC">
+        <PropertyRef Name="CMNU_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_MENUP">
+    <End Type="Model.A_MENUP" Role="A_MENUP" Multiplicity="1" />
+    <End Type="Model.A_MENUC" Role="A_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_MENUP">
+        <PropertyRef Name="PMNU_TEXT" />
+      </Principal>
+      <Dependent Role="A_MENUC">
+        <PropertyRef Name="CMNU_PMNU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_OWNR">
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="0..1" />
+    <End Type="Model.A_OWNR_BILL" Role="A_OWNR_BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_OWNR_BILL">
+        <PropertyRef Name="BILL_OWNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_OWNR">
+    <End Type="Model.A_OWNR" Role="A_OWNR" Multiplicity="1" />
+    <End Type="Model.A_PLEA" Role="A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_OWNR">
+        <PropertyRef Name="OWNR_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_OWNR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PLEA_REASON">
+    <End Type="Model.A_PLEA_REASON" Role="A_PLEA_REASON" Multiplicity="1" />
+    <End Type="Model.A_PLEA" Role="A_PLEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_PLEA_REASON">
+        <PropertyRef Name="REASON_ID" />
+      </Principal>
+      <Dependent Role="A_PLEA">
+        <PropertyRef Name="PLEA_REASON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMG_REMIND">
+    <End Type="Model.A_REMINDER" Role="A_REMINDER" Multiplicity="1" />
+    <End Type="Model.A_REMINDER_IMG" Role="A_REMINDER_IMG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_REMINDER">
+        <PropertyRef Name="REMIND_ID" />
+      </Principal>
+      <Dependent Role="A_REMINDER_IMG">
+        <PropertyRef Name="IMG_REMINDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UR_ROLES">
+    <End Type="Model.A_ROLES" Role="A_ROLES" Multiplicity="1" />
+    <End Type="Model.A_USERS_ROLES" Role="A_USERS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_ROLES">
+        <PropertyRef Name="ROLE_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_ROLES">
+        <PropertyRef Name="ROLE_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_A_USERS">
+    <End Type="Model.A_USERS" Role="A_USERS" Multiplicity="1" />
+    <End Type="Model.A_USERS_MENUC" Role="A_USERS_MENUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_MENUC">
+        <PropertyRef Name="USER_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AREA_USER">
+    <End Type="Model.A_USERS" Role="A_USERS" Multiplicity="1" />
+    <End Type="Model.A_USERS_AREA" Role="A_USERS_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_AREA">
+        <PropertyRef Name="UA_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UB_USER">
+    <End Type="Model.A_USERS" Role="A_USERS" Multiplicity="1" />
+    <End Type="Model.A_USERS_BUS" Role="A_USERS_BUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_BUS">
+        <PropertyRef Name="UB_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UG_USER">
+    <End Type="Model.A_USERS" Role="A_USERS" Multiplicity="1" />
+    <End Type="Model.A_USERS_GROUP" Role="A_USERS_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_GROUP">
+        <PropertyRef Name="UG_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UR_USERS">
+    <End Type="Model.A_USERS" Role="A_USERS" Multiplicity="1" />
+    <End Type="Model.A_USERS_ROLES" Role="A_USERS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="A_USERS">
+        <PropertyRef Name="USER_TEXT" />
+      </Principal>
+      <Dependent Role="A_USERS_ROLES">
+        <PropertyRef Name="USER_TEXT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,157 @@
+﻿@model PM.ModelsV.AuditFollowUpReportVM
+
+@{
+    @*@if (ViewBag.FollowUpType == "SecondFollowUp")
+    {
+        <p>Create Second Follow Up Report</p>
+    }
+    else
+    {
+        <p>Create First Follow Up Report</p>
+    }*@
+    ViewBag.Title = "Create Report Follow Up";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @ViewBag.Title
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateFirstFollowUpReport", "Audit", FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Select Report</span>
+                        @Html.DropDownListFor(model => model.AUDIT_RPT_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "AUDIT_RPT_ID", id = "AUDIT_RPT_ID" })
+                        @Html.ValidationMessageFor(model => model.AUDIT_RPT_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Follow up Date</span>
+                        @Html.EditorFor(model => model.FOLLOWUP_DATE, new { htmlAttributes = new { @class = "form-control", placeholder = "dd/MM/yyyy" } })
+                        @Html.ValidationMessageFor(model => model.FOLLOWUP_DATE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Total Findings</span>
+                        @Html.EditorFor(model => model.TOTAL_FINDINGS, new { htmlAttributes = new { @class = "form-control", placeholder = "Total Findings", autofocus = true, type = "number" } })
+                        @Html.ValidationMessageFor(model => model.TOTAL_FINDINGS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Action on Findings</span>
+                        @Html.EditorFor(model => model.ACTION_FINDINGS, new { htmlAttributes = new { @class = "form-control", placeholder = "Acton on Findings", autofocus = true, type = "number" } })
+                        @Html.ValidationMessageFor(model => model.ACTION_FINDINGS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @*<div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Risk Type</span>
+                        @Html.DropDownListFor(model => model.RISK_TYPE_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.RISK_TYPE_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Risk mitigation</span>
+                        @Html.DropDownListFor(model => model.RISK_MITIGATION_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required", name = "RISK_MITIGATION_ID", id = "RISK_MITIGATION_ID" })
+                        @Html.ValidationMessageFor(model => model.RISK_MITIGATION_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Risk mitigation Marks</span>
+                        @Html.EditorFor(model => model.RISK_MITIGATION_MARKS, new { htmlAttributes = new { @class = "form-control", placeholder = "Marks", autofocus = true, type = "number" } })
+                        @Html.ValidationMessageFor(model => model.RISK_MITIGATION_MARKS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Reply person</span>
+                        @Html.EditorFor(model => model.REPLY_PERSON, new { htmlAttributes = new { @class = "form-control", placeholder = "Name and Email", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.REPLY_PERSON, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Responsible Dept Head</span>
+                        @Html.EditorFor(model => model.RESPONSIBLE_DEPT_HEAD, new { htmlAttributes = new { @class = "form-control", placeholder = "Name and Email", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.RESPONSIBLE_DEPT_HEAD, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Remarks</span>
+                        @Html.EditorFor(model => model.REMARKS, new { htmlAttributes = new { @class = "form-control", placeholder = "Remarks", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.REMARKS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Significant Gap</span>
+                        @Html.EditorFor(model => model.SIGNIFICANT_GAP, new { htmlAttributes = new { @class = "form-control", placeholder = "Significant Gap", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.SIGNIFICANT_GAP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Next Followup Requirement</span>
+                        @Html.DropDownListFor(model => model.FOLLOWUP_REQUIREMENT_ID, null, "--Select--", htmlAttributes: new { @class = "form-control select2", style = "width:100%;", required = "required" })
+                        @Html.ValidationMessageFor(model => model.FOLLOWUP_REQUIREMENT_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-group col-md-12">
+                    @if (ViewBag.FollowUpType == "FirstFollowUp")
+                    {
+                        <a href="@Url.Action("CreateFirstFollowUpReport","Audit")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("CreateFirstFollowUpReport","Audit")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                        <button type="submit" id="CreateAuditFollowUp" class="btn btn-danger pull-right"><i class="fa fa-save"></i>Create 1st Follow Up</button>
+                    }
+
+                    @if (ViewBag.FollowUpType == "SecondFollowUp")
+                    {
+                        <a href="@Url.Action("CreateSecondFollowUpReport","Audit")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("CreateSecondFollowUpReport","Audit")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                        <button type="submit" id="CreateAuditSecondFollowUp" class="btn btn-danger pull-right"><i class="fa fa-save"></i>Create 2nd Follow Up</button>
+                    }
+
+                    @if (ViewBag.FollowUpType == "ThirdFollowUp")
+                    {
+                        <a href="@Url.Action("CreateThirdFollowUpReport","Audit")" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                        <a href="@Url.Action("CreateThirdFollowUpReport","Audit")" class="btn btn-warning"><i class="fa fa-close"></i> Cancel</a>
+                        <button type="submit" id="CreateAuditThirdFollowUp" class="btn btn-danger pull-right"><i class="fa fa-save"></i>Create 3rd Follow Up</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+    <div class="panel-footer">
+        First Follow Up Report 
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Audit/AuditFollowUp.js"></script>
+    <script src="~/Scripts/Audit/AuditFollowUpSecond.js"></script>
+    <script src="~/Scripts/Audit/AuditFollowUpThird.js"></script>
+}
+
+
+
+

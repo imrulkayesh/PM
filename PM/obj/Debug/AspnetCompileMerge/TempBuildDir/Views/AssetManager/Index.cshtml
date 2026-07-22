@@ -1,0 +1,253 @@
+﻿@model IEnumerable<PM.ModelsV.CarVM>
+
+@{
+    ViewBag.Title = "Asset List";
+    Layout = "~/Views/Shared/_LayoutLG.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Index", "AssetManager", new { Operation = "Search" }))
+        {
+            <div class="input-group margin">
+                <span class="input-group-addon">Search</span>
+                @Html.Editor("Asset", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Tag / Name", autofocus = true, maxlength = "50" } })
+                <div class="input-group-btn">
+                    <button type="submit" class="viewAsset btn btn-primary">Submit</button>
+                </div>
+                <!-- /btn-group -->
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewFridge", "AssetManager")" class="btn btn-primary"> New Fridge</a>
+            <a href="@Url.Action("NewCar", "AssetManager")" class="btn btn-primary"> New Car</a>
+            <a href="@Url.Action("Index","AssetManager")" class="btn btn-primary"><span class="fa fa-refresh"></span> Refresh</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="table-responsive">
+    <table class="table table-hover" id="scrollNbuttonDT">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_TAG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_CODE_NAME)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_MODEL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_PO_ENGINE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_GRN_CHASIS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_CAPACITY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_PRICE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_REG_DATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_HEIGHT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_WEIGHT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_MFG_YEAR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_IMAGE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_NOTE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_USED)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ACT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_AREA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_BODY)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_BRAND)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_FUEL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_COLOR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASET_GROUP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DEPARTMENT_V)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BUSINESS_V)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.COMPANY_V)
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Action
+                                <span class="fa fa-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Edit" data-url="@Url.Action("EditCar","AssetManager", new { id= item.ASET_ID})" />
+                                </li>
+                                <li>
+                                    <input type="submit" class="FileDn form-control btn btn-flat btn-primary" value="View Accesories" data-url="@Url.Action("ShowAccessoreis","AssetUserManager", new { id= item.ASET_ID})" />
+                                </li>
+                                <li>
+                                    @*<a href="@Url.Action("NewTarmination", "Termination", new { Asset = item.ASET_ID })">New App</a>*@
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_TAG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_CODE_NAME)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_MODEL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_PO_ENGINE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_GRN_CHASIS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_CAPACITY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_PRICE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_REG_DATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_HEIGHT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_WEIGHT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_MFG_YEAR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_IMAGE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_NOTE)
+                    </td>
+                    <td>
+                        @if (item.ASET_USED ==true)
+                        {
+                            <span class="label label-danger">In Used</span>
+                        }
+                        else
+                        {
+                            <span class="label label-success">Free</span>
+                        }
+                    </td>
+                    <td>
+                        @if (item.ACT == false)
+                        {
+                            <span class="label label-danger">Closed</span>
+                        }
+                        else
+                        {
+                            <span class="label label-success">Active</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_AREA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_BODY)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_BRAND)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_FUEL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASET_COLOR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.ASET_GROUP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DEPARTMENT_V)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BUSINESS_V)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.COMPANY_V)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="pvModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Action</h5>
+            </div>
+            <div class="modal-body" id="modalContainer">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+@section scripts{
+    <script src="~/Scripts/AssetManager/EditCar.js"></script>
+    <script src="~/Scripts/Common/ConfirmBox.js"></script>
+}

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="btn-group">
+    <button type="button" class="btn btn-default">PRAN Asset</button>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="@Url.Action("AssetOld","PRANReportOld", new { deptId="49055",RptName="Vending Machine"})" id="btnSend" class="btn btn-primary">Vending Machine</a></li>
+        <li><a href="@Url.Action("AssetOld","PRANReportOld", new { deptId="48510",RptName="Refrigerator-Retailers"})" id="btnSend" class="btn btn-primary">Refrigerator-Retailers</a></li>
+        <li><a href="@Url.Action("AssetOld","PRANReportOld", new { deptId="48501",RptName="Refrigerator-Dairy"})" id="btnSend" class="btn btn-primary">Refrigerator-Dairy</a></li>
+        <li><a href="@Url.Action("AssetOld","PRANReportOld", new { deptId="48602",RptName="Refrigerator- Jhatpot"})" id="btnSend" class="btn btn-primary">Refrigerator- Jhatpot</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("AssetOld","PRANReportOld", new { deptId="48503",RptName="Ice - box Retailer"})" id="btnSend" class="btn btn-primary">Ice - box Retailer</a></li>
+    </ul>
+</div>
+
+@section scripts{
+    <script>
+        //$(document).ready(function () {
+        //    $("#btnSend").click(function () {
+        //        $.ajax({
+        //            url: '/PRANReportOld/AssetOld',
+        //            type: 'POST',
+        //            //data: { bar: $("#bar").val() },
+        //            success: function (result) {
+        //                alert('File downloaded');
+        //            }
+        //        });
+        //    });
+        //});
+    </script>
+}

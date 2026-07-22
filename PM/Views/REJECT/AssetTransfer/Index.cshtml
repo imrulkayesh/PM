@@ -1,0 +1,244 @@
+﻿@model IEnumerable<PM.Models.P_ASSET_TRNS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="input-group margin">
+            <span class="input-group-addon">Search</span>
+            @Html.Editor("ASET_NAME", new { htmlAttributes = new { @class = "form-control", required = "required", placeholder = "Asset Name", autofocus = true, maxlength = "50" } })
+            <div class="input-group-btn">
+                <button type="button" class="viewAsset btn btn-primary">Submit</button>
+            </div>
+            <!-- /btn-group -->
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group margin">
+            <a href="@Url.Action("NewTransfer", "AssetTransfer", new { NewTransferTypes= "NewAsset" })" class="btn btn-primary"> New Transfer</a>
+            <a href="@Url.Action("NewTransfer", "AssetTransfer", new { NewTransferTypes= "xxx" })" class="btn btn-primary"> Old Transfer</a>
+            <a href="@Url.Action("Index","AssetTransfer")" class="btn btn-primary"><span class="fa fa-stack-overflow"></span> OK</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div id="ViewEditPartialView"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <h4>Transfer List</h4>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                From Depo
+                            </th>
+                            <th>
+                                To Depo
+                            </th>
+                            <th>
+                                Asset
+                            </th>
+                            <th>
+                                From Depart
+                            </th>
+                            <th>
+                                From User
+                            </th>
+                            <th>
+                                To Depart
+                            </th>
+                            <th>
+                                To User
+                            </th>
+                            <th>
+                                Issue Date
+                            </th>
+                            <th>
+                                Request By
+                            </th>
+                            <th>
+                                Note
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            Action
+                                            <span class="fa fa-caret-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            @if (item.TRNS_ACTV == false)
+                                            {
+                                                <li><input type="submit" class="adddocs btn btn-sm btn-flat btn-primary" value="Add Documents" data-asgrid=@item.TRNS_TEXT data-assigned-id=@item.TRNS_TEXT data-toggle="modal" data-target="#modal-view" /></li>
+                                                <li><input type="submit" class="subApp btn btn-sm btn-flat btn-danger" value="Submit for Approval" data-assigned-id=@item.TRNS_TEXT /></li>
+                                            }
+                                            <li><input type="submit" class="viewdocs btn btn-sm btn-flat btn-primary" value="View Documents" data-assigned-id=@item.TRNS_TEXT data-toggle="modal" data-target="#modal-view" /></li>
+                                            <li><input type="submit" class="viewacce btn btn-sm btn-flat btn-primary" value="View Accesories" data-assigned-id=@item.TRNS_ASET data-toggle="modal" data-target="#modal-view" /></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    @if (item.TRNS_ACTV == false)
+                                    {
+                                        <p>Not Submitted</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Submitted</p>
+                                    }
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_AREA.AREA_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_AREA1.AREA_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_ASSET.ASET_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_DEPT.DEPT_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_OWNR.OWNR_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_DEPT1.DEPT_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.P_OWNR1.OWNR_TEXT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TRNS_DATE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TRNS_CUSER)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TRNS_NOTE)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                From Depo
+                            </th>
+                            <th>
+                                To Depo
+                            </th>
+                            <th>
+                                Asset
+                            </th>
+                            <th>
+                                From Depart
+                            </th>
+                            <th>
+                                From User
+                            </th>
+                            <th>
+                                To Depart
+                            </th>
+                            <th>
+                                To User
+                            </th>
+                            <th>
+                                Issue Date
+                            </th>
+                            <th>
+                                Request By
+                            </th>
+                            <th>
+                                Note
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+
+<div class="modal fade" id="modal-view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Support(s)</h5>
+            </div>
+            <div class="modal-body">
+                <div id="ViewEditPartialViewModal">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+@section scripts{
+    <script>
+        $(function () {
+
+            $('.adddocs').click(function () {
+                var id = $(this).data('assigned-id');
+                var id2 = $(this).data('asgrid');
+                var route = '@Url.Action("AddDocuments", "AssetTransfer")?id=' + id + '&AsgrId=' + id2;
+                $('#ViewEditPartialViewModal').load(route);
+            });
+
+            $('.viewdocs').click(function () {
+                var id = $(this).data('assigned-id');
+                var route = '@Url.Action("ViewDocuments", "AssetTransfer")?id=' + id;
+                $('#ViewEditPartialViewModal').load(route);
+            });
+            $('.viewacce').click(function () {
+                var id = $(this).data('assigned-id');
+                var route = '@Url.Action("AcceList", "KSAAssets")?id=' + id;
+                $('#ViewEditPartialViewModal').load(route);
+            });
+            $('.subApp').click(function () {
+                var id = $(this).data('assigned-id');
+                var url = '@Url.Action("SubmitForApp", "AssetTransfer")?id=' + id;
+                $.getJSON(url, { TRNS_TEXT: id }, function (response) {
+                    alert(response);
+                    location.reload();
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿@model PM.Models.ParentMenuVM
+
+@{
+    ViewBag.Title = "NewParentMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("SaveParentMenu", "Menu"))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal col-md-6">
+        <h4>New Parent Menu</h4>
+        <a href="@Url.Action("ParentMenu", "Menu")">Back to List</a>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.MENUP_ID,"Id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MENUP_ID, new { htmlAttributes = new { @class = "form-control", required = "Required", placeholder = "Enter Id" , onchange= "copyIdtoText();" } })
+                @Html.ValidationMessageFor(model => model.MENUP_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MENUP_TEXT, "Code",htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MENUP_TEXT, new { htmlAttributes = new { @class = "form-control", required = "Required", placeholder = "Enter Code", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.MENUP_TEXT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MENUP_NAME,"Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MENUP_NAME, new { htmlAttributes = new { @class = "form-control", required = "Required", placeholder = "Enter Name" } })
+                @Html.ValidationMessageFor(model => model.MENUP_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MENUP_ICON, "Icon",htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MENUP_ICON, new { htmlAttributes = new { @class = "form-control", required = "Required", placeholder = "font awsome icon" } })
+                @Html.ValidationMessageFor(model => model.MENUP_ICON, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MENUP_ACTV,"Status", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.MENUP_ACTV,new { htmlAttributes = new { @class = "form-control", required = "Required" } })
+                    @Html.ValidationMessageFor(model => model.MENUP_ACTV, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function copyIdtoText() {
+        document.getElementById('MENUP_TEXT').value = document.getElementById('MENUP_ID').value;
+    }
+</script>
