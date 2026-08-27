@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
+using System.Web.Mvc;
+
 
 namespace PM.ModelsV
 {
@@ -208,5 +210,28 @@ namespace PM.ModelsV
         public string LICENSE_NAME { get; set; }
         public string AUTHORITY_NAME { get; set; }
         public string LICENSE_STATUS_NAME { get; set; }
+    }
+    public class LicenseRenewVM
+    {
+        public string LICENSE_ID { get; set; }
+        public string COMPANY_ID { get; set; }
+        public string LIC_LOCATION_ID { get; set; }
+        public string LICENSE_NAME_ID { get; set; }
+        public string LICENSE_NUMBER { get; set; }
+
+        // Was DateTime? — now string, since it's never used in controller logic
+        // (controller only reads license.ISSUE_DATE from the DB, not model.ISSUE_DATE)
+        public string ISSUE_DATE { get; set; }
+
+        public string OLD_EXPIRE_DATE { get; set; }
+
+        // Was DateTime? — this is the one that actually needs parsing below
+        public string NEW_EXPIRE_DATE { get; set; }
+
+        public decimal? LICENSE_FEE { get; set; }
+        public decimal? ENTERTAINMENT_FEE { get; set; }
+        public string LICENSE_STATUS_ID { get; set; }
+        public string REMARK { get; set; }
+        public HttpPostedFileBase FileX { get; set; }
     }
 }

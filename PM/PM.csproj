@@ -301,6 +301,7 @@
     <Compile Include="Model\LIC_LICENSE_DOCUMENT.cs" />
     <Compile Include="Model\LIC_LICENSE_IMG.cs" />
     <Compile Include="Model\LIC_LICENSE_NAME.cs" />
+    <Compile Include="Model\LIC_LICENSE_RENEWAL_HISTORY.cs" />
     <Compile Include="Model\LIC_LICENSE_TYPE.cs" />
     <Compile Include="Model\LIC_LOCATION.cs" />
     <Compile Include="Model\LIC_STATUS.cs" />
@@ -668,6 +669,7 @@
     <Content Include="Views\Summary\ViewLicenseWisetDetails.cshtml" />
     <Content Include="Views\Audit\AuditorWiseReportDetailList.cshtml" />
     <Content Include="Views\Audit\EditAuditor.cshtml" />
+    <Content Include="Views\License\_RenewLicense.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

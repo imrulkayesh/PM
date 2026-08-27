@@ -1,6 +1,6 @@
 ﻿//for local use
 function FindItem() {
-    alert(123);
+    //alert(123);
     var url = '/JsonReaderPM/getItem';
     var ITEM_ID = $('#ITEM_ID');
     var id = $('#LICENSE_NAME_ID').val();

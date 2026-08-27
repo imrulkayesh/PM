@@ -1,17 +1,17 @@
-﻿using PM.BLL;
+﻿using Newtonsoft.Json;
+using PM.BLL;
 using PM.Model;
 using PM.ModelsV;
 using PM.MyAuth;
 using System;
-using System.Data.Entity;
-using System.Linq;
-using System.Web.Mvc;
-
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.IO;
+using System.Linq;
 using System.Net;
+using System.Web.Mvc;
 
 
 namespace PM.Controllers
@@ -298,7 +298,7 @@ namespace PM.Controllers
                             WHERE L.ACT = 1";
                 var LicenseList = db.Database.SqlQuery<LicenseMasterNM>(sql: sql_1);
                 ViewBag.Message = "License List";
-                var R = LicenseList.Take(500).ToList();
+                var R = LicenseList.Take(3500).ToList();
                 return View(R);
             }
             else
@@ -447,8 +447,6 @@ namespace PM.Controllers
             LICV.ISSUE_DATE = LIC.ISSUE_DATE;
             LICV.EXPIRE_DATE = LIC.EXPIRE_DATE;
 
-            //LICV.ISSUE_DATE = LIC.ISSUE_DATE?.ToString("dd/MM/yyyy");
-            //LICV.EXPIRE_DATE = LIC.EXPIRE_DATE?.ToString("dd/MM/yyyy");
 
             LICV.LICENSE_HOLDER_EMAIL = LIC.LICENSE_HOLDER_EMAIL;
             LICV.LICENSE_HOLDER_MOBILE = LIC.LICENSE_HOLDER_MOBILE;
@@ -507,10 +505,10 @@ namespace PM.Controllers
                 {
                     LIC.ISSUE_DATE = LI.ISSUE_DATE;
                 }
-                if (LI.EXPIRE_DATE != null)
-                {
-                    LIC.EXPIRE_DATE = LI.EXPIRE_DATE;
-                }
+                //if (LI.EXPIRE_DATE != null)
+                //{
+                //    LIC.EXPIRE_DATE = LI.EXPIRE_DATE;
+                //}
 
                 LIC.LICENSE_HOLDER_EMAIL = LI.LICENSE_HOLDER_EMAIL;
                 LIC.LICENSE_HOLDER_MOBILE = LI.LICENSE_HOLDER_MOBILE;
@@ -532,28 +530,6 @@ namespace PM.Controllers
                     LI.FileX.SaveAs(path);
                 }
 
-                //if (LI.FileX != null && LI.FileX.ContentLength > 0)
-                //{
-                //    var existingImages = db.LIC_LICENSE_IMG.Where(LIMG => LIMG.LICENSE_ID == LI.LICENSE_ID).ToList();
-
-                //    if (existingImages.Any())
-                //    {
-                //        var I = existingImages.First();
-                //        I.IMG_NAME = LI.FileX.FileName;
-                //        db.Entry(I).State = EntityState.Modified; 
-                //    }
-                //    else
-                //    {
-                //        LIC_LICENSE_IMG I = new LIC_LICENSE_IMG
-                //        {
-                //            LICENSE_ID = LI.LICENSE_ID, 
-                //            IMG_NAME = LI.FileX.FileName
-                //        };
-                //        db.LIC_LICENSE_IMG.Add(I); 
-                //    }
-                //    db.SaveChanges();
-                //}
-
                 LIC.UDT = DateTime.Now;
                 LIC.UDU = U;
                 db.Entry(LIC).State = EntityState.Modified;
@@ -565,37 +541,227 @@ namespace PM.Controllers
             return RedirectToAction("LicenseMaster", new { LicenseId = LI.LICENSE_ID });
         }
 
+        [HttpGet]
+        [KAuth(2006)]
+        public ActionResult RenewLicense(string id)
+        {
+            var license = db.LIC_LICENSE
+                .FirstOrDefault(x => x.LICENSE_ID == id);
+
+            if (license == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new LicenseRenewVM
+            {
+                LICENSE_ID = license.LICENSE_ID,
+
+                COMPANY_ID = license.COMPANY_ID,
+                LIC_LOCATION_ID = license.LIC_LOCATION_ID,
+
+                LICENSE_NAME_ID = license.LICENSE_NAME_ID,
+                LICENSE_NUMBER = license.LICENSE_NUMBER,
+
+                //ISSUE_DATE = license.ISSUE_DATE,
+
+                //OLD_EXPIRE_DATE = license.EXPIRE_DATE,
+
+                // DateTime? -> string, formatted explicitly (culture-independent)
+                ISSUE_DATE = license.ISSUE_DATE.HasValue
+                ? license.ISSUE_DATE.Value.ToString("dd/MM/yyyy")
+                : "",
+
+                OLD_EXPIRE_DATE = license.EXPIRE_DATE.HasValue
+                ? license.EXPIRE_DATE.Value.ToString("dd/MM/yyyy")
+                : "",
+
+                LICENSE_FEE = license.LICENSE_FEE,
+                ENTERTAINMENT_FEE = license.ENTERTAINMENT_FEE,
+
+                LICENSE_STATUS_ID = license.LICENSE_STATUS_ID,
+
+                REMARK = ""
+            };
+
+            ViewBag.COMPANY_ID =
+                new SelectList(
+                    RP.LICCompanyList(),
+                    "COMPANY_ID",
+                    "COMPANY_NAME",
+                    model.COMPANY_ID
+                );
+
+            ViewBag.LIC_LOCATION_ID =
+                new SelectList(
+                    RP.LocationList(),
+                    "LIC_LOCATION_ID",
+                    "LOCATION_NAME",
+                    model.LIC_LOCATION_ID
+                );
+
+            ViewBag.LICENSE_NAME_ID =
+                new SelectList(
+                    RP.LicenseTypeList(),
+                    "LICENSE_NAME_ID",
+                    "LICENSE_NAME",
+                    model.LICENSE_NAME_ID
+                );
+
+            ViewBag.LICENSE_STATUS_ID =
+                new SelectList(
+                    RP.LicenseStatusList(),
+                    "LICENSE_STATUS_ID",
+                    "LICENSE_STATUS_NAME",
+                    model.LICENSE_STATUS_ID
+                );
+
+            return PartialView("_RenewLicense", model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [KAuth(2006)]
+        public ActionResult RenewLicense(LicenseRenewVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+               .Where(x => x.Value.Errors.Count > 0)
+               .Select(x => new {
+                   Field = x.Key,
+                   Errors = x.Value.Errors.Select(e => e.ErrorMessage).ToList()
+               });
+
+                System.Diagnostics.Debug.WriteLine(
+                    Newtonsoft.Json.JsonConvert.SerializeObject(errors));
+
+                // TEMP: surface it in the swal message so you can see it on the server
+                TempData["msg"] =
+                    "swal('Debug', '" +
+                    Newtonsoft.Json.JsonConvert.SerializeObject(errors).Replace("'", "\\'") +
+                    "', 'warning');";
+
+                return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+            }
+
+            // ----------------------------------------
+            // PARSE NEW_EXPIRE_DATE (string -> DateTime), culture-safe
+            // ----------------------------------------
+            DateTime? newExpireDate = ParseDate(model.NEW_EXPIRE_DATE);
+
+            if (!newExpireDate.HasValue)
+            {
+                TempData["msg"] =
+                    "swal('Opps..','New expire date is required','warning');";
+
+                return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+            }
+
+            string userId = Session["UserId"].ToString();
+
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    LIC_LICENSE license = db.LIC_LICENSE.Find(model.LICENSE_ID);
+
+                    if (license == null)
+                    {
+                        TempData["msg"] = "swal('Opps..','License not found','warning');";
+                        return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+                    }
+
+                    if (license.EXPIRE_DATE.HasValue &&
+                        newExpireDate.Value <= license.EXPIRE_DATE.Value)
+                    {
+                        TempData["msg"] =
+                            "swal('Opps..','New expire date must be greater than current expire date','warning');";
+
+                        return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+                    }
+
+                    if (model.FileX != null && model.FileX.ContentLength > 0)
+                    {
+                        if (model.FileX.ContentLength > 10500000)
+                        {
+                            TempData["msg"] =
+                                "swal('Opps..','File is too large. Maximum file size is 10 MB','warning');";
+
+                            return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+                        }
+                    }
+
+                    LIC_LICENSE_RENEWAL_HISTORY history = new LIC_LICENSE_RENEWAL_HISTORY();
+                    history.LIC_RENEWAL_ID = Sequence.GetSeq(40).ToString();
+                    history.LICENSE_ID = license.LICENSE_ID;
+                    history.COMPANY_ID = license.COMPANY_ID;
+                    history.LIC_LOCATION_ID = license.LIC_LOCATION_ID;
+                    history.LICENSE_NUMBER = license.LICENSE_NUMBER;
+                    history.LICENSE_NAME_ID = license.LICENSE_NAME_ID;
+                    history.OLD_ISSUE_DATE = license.ISSUE_DATE;        // DateTime? from DB — untouched
+                    history.OLD_EXPIRE_DATE = license.EXPIRE_DATE;      // DateTime? from DB — untouched
+                    history.NEW_ISSUE_DATE = license.ISSUE_DATE;        // DateTime? from DB — untouched
+                    history.NEW_EXPIRE_DATE = newExpireDate.Value;      // parsed DateTime — matches entity type exactly
+                    history.RENEWAL_DATE = DateTime.Now;
+                    history.LICENSE_FEE = model.LICENSE_FEE ?? license.LICENSE_FEE;
+                    history.ENTERTAINMENT_FEE = model.ENTERTAINMENT_FEE ?? license.ENTERTAINMENT_FEE;
+                    history.LICENSE_STATUS_ID = model.LICENSE_STATUS_ID ?? license.LICENSE_STATUS_ID;
+                    history.REMARK = model.REMARK;
+                    history.CDU = userId;
+                    history.CDT = DateTime.Now;
+                    history.ACT = 1;
+
+                    db.LIC_LICENSE_RENEWAL_HISTORY.Add(history);
+
+                    if (model.FileX != null && model.FileX.ContentLength > 0)
+                    {
+                        LIC_LICENSE_IMG I = new LIC_LICENSE_IMG();
+                        I.LICENSE_IMG_ID = Guid.NewGuid().ToString();
+                        I.IMG_NAME = model.FileX.FileName;
+                        I.ACT = true;
+                        I.CDT = DateTime.Now;
+                        I.IMG_PATH = Sequence.GetImgPath(107);
+                        I.LICENSE_ID = model.LICENSE_ID;
+                        db.LIC_LICENSE_IMG.Add(I);
+
+                        var path = System.IO.Path.Combine(Server.MapPath(I.IMG_PATH), I.LICENSE_IMG_ID);
+                        model.FileX.SaveAs(path);
+                    }
+
+                    license.EXPIRE_DATE = newExpireDate.Value;   // parsed DateTime — matches entity type exactly
+
+                    if (model.LICENSE_FEE.HasValue)
+                        license.LICENSE_FEE = (int)model.LICENSE_FEE.Value;
+
+                    if (model.ENTERTAINMENT_FEE.HasValue)
+                        license.ENTERTAINMENT_FEE = (int)model.ENTERTAINMENT_FEE.Value;
+
+                    if (!string.IsNullOrEmpty(model.LICENSE_STATUS_ID))
+                        license.LICENSE_STATUS_ID = model.LICENSE_STATUS_ID;
+
+                    license.REMARK = model.REMARK;
+                    license.UDT = DateTime.Now;
+                    license.UDU = userId;
+
+                    db.Entry(license).State = EntityState.Modified;
+                    db.SaveChanges();
+                    transaction.Commit();
+
+                    TempData["msg"] = "swal('Success..','License renewed successfully','success');";
+                    return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    TempData["msg"] = "swal('Error..','License renewal failed','error');";
+                    return RedirectToAction("LicenseMaster", new { LicenseId = model.LICENSE_ID });
+                }
+            }
+        }
+
         public ActionResult DownloadAttachFile(string id)
         {
-            //var dbDATA = db.LIC_LICENSE_IMG
-            //                .Where(a => a.LICENSE_ID == id)
-            //                .OrderByDescending(a => a.CDT) 
-            //                .ToList();
-
-            //if (!dbDATA.Any())
-            //{
-            //    TempData["msg"] = "swal('Opps..','File not found','warning');";
-            //    return Redirect(Request.UrlReferrer.ToString());
-            //}
-
-
-            //var latestImage = dbDATA.FirstOrDefault();
-            //var Upload_Path = latestImage.IMG_PATH;
-            //var GetFileGUIDname = latestImage.LICENSE_IMG_ID;
-            //var GetFileOrgName = latestImage.IMG_NAME;
-            //var CombinePath = System.IO.Path.Combine(Server.MapPath(Upload_Path), GetFileGUIDname);
-
-            //try
-            //{
-            //    byte[] fileBytes = System.IO.File.ReadAllBytes(CombinePath);
-            //    return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, GetFileOrgName);
-            //}
-            //catch
-            //{
-            //    TempData["msg"] = "swal('Ohh..','Error in File','error');";
-            //    return Redirect(Request.UrlReferrer.ToString());
-            //}
-
             var dbDATA = db.LIC_LICENSE_IMG
                 .Where(a => a.LICENSE_ID == id)
                 .OrderByDescending(a => a.CDT)
@@ -631,6 +797,28 @@ namespace PM.Controllers
             }
 
 
+        }
+
+        // ----------------------------------------
+        // Helper: culture-safe manual date parser
+        // Tries dd/MM/yyyy (app convention) and yyyy-MM-dd (HTML5 <input type="date">)
+        // ----------------------------------------
+        private DateTime? ParseDate(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            DateTime result;
+            string[] formats = { "dd/MM/yyyy", "yyyy-MM-dd" };
+
+            if (DateTime.TryParseExact(value, formats,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out result))
+            {
+                return result;
+            }
+
+            return null;
         }
     }
 

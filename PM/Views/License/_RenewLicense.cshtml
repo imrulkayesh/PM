@@ -1,0 +1,569 @@
+﻿@model PM.ModelsV.LicenseRenewVM
+
+@using (Html.BeginForm(
+    "RenewLicense",
+    "License",
+    FormMethod.Post,
+    new
+    {
+        enctype = "multipart/form-data",
+        @class = "form-horizontal"
+    }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.LICENSE_ID)
+
+    <!-- =========================================================
+         CURRENT LICENSE INFORMATION
+    ========================================================== -->
+
+    <div class="box box-primary">
+
+        <div class="box-header with-border">
+            <h3 class="box-title">
+                <i class="fa fa-id-card"></i>
+                Current License Information
+            </h3>
+        </div>
+
+        <div class="box-body">
+
+            <!-- Company / Location -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            Company Name
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.DropDownListFor(
+                                model => model.COMPANY_ID,
+                                null,
+                                new
+                                {
+                                    @class = "form-control select2",
+                                    style = "width:100%;",
+                                    disabled = "disabled"
+                                })
+
+                            @Html.HiddenFor(model => model.COMPANY_ID)
+
+                            @Html.ValidationMessageFor(
+                                model => model.COMPANY_ID,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            Location
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.DropDownListFor(
+                                model => model.LIC_LOCATION_ID,
+                                null,
+                                new
+                                {
+                                    @class = "form-control select2",
+                                    style = "width:100%;",
+                                    disabled = "disabled"
+                                })
+
+                            @Html.HiddenFor(
+                                model => model.LIC_LOCATION_ID)
+
+                            @Html.ValidationMessageFor(
+                                model => model.LIC_LOCATION_ID,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- License Type / Number -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            License Type
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.DropDownListFor(
+                                model => model.LICENSE_NAME_ID,
+                                null,
+                                new
+                                {
+                                    @class = "form-control select2",
+                                    style = "width:100%;",
+                                    disabled = "disabled"
+                                })
+
+                            @Html.HiddenFor(
+                                model => model.LICENSE_NAME_ID)
+
+                            @Html.ValidationMessageFor(
+                                model => model.LICENSE_NAME_ID,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            License Number
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.TextBoxFor(
+                                model => model.LICENSE_NUMBER,
+                                new
+                                {
+                                    @class = "form-control",
+                                    @readonly = "readonly"
+                                })
+
+                            @Html.ValidationMessageFor(
+                                model => model.LICENSE_NUMBER,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Issue Date / Current Expiry -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            Issue Date
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.TextBoxFor(
+                                model => model.ISSUE_DATE,
+                                "{0:dd/MM/yyyy}",
+                                new
+                                {
+                                    @class = "form-control",
+                                    @readonly = "readonly"
+                                })
+
+                            @Html.ValidationMessageFor(
+                                model => model.ISSUE_DATE,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            Current Expiry
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+
+                                @*@Html.TextBox(
+                                    "OLD_EXPIRE_DATE",
+                                    Model.OLD_EXPIRE_DATE.HasValue
+                                        ? Model.OLD_EXPIRE_DATE.Value.ToString("dd/MM/yyyy")
+                                        : "",
+                                    new
+                                    {
+                                        @class = "form-control",
+                                        @readonly = "readonly",
+                                        style = "background:#f5f5f5;"
+                                    })*@
+                                                            @Html.TextBox(
+                                "OLD_EXPIRE_DATE",
+                                Model.OLD_EXPIRE_DATE,
+                                new
+                                {
+                                    @class = "form-control",
+                                    @readonly = "readonly",
+                                    style = "background:#f5f5f5;"
+                                })
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         RENEWAL INFORMATION
+    ========================================================== -->
+
+    <div class="box box-success">
+
+        <div class="box-header with-border">
+            <h3 class="box-title">
+                <i class="fa fa-refresh"></i>
+                License Renewal Information
+            </h3>
+        </div>
+
+        <div class="box-body">
+
+            <!-- Renewal Date / New Expiry -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">
+                            Renewal Date
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+
+                                <input type="text"
+                                       class="form-control"
+                                       value="@DateTime.Now.ToString("dd/MM/yyyy")"
+                                       readonly />
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label class="col-sm-4 control-label">
+                            New Expiry Date
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.TextBoxFor(
+                                model => model.NEW_EXPIRE_DATE,
+                                "{0:yyyy-MM-dd}",
+                                new
+                                {
+                                    @class = "form-control",
+                                    type = "date"
+                                }
+                            )
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Status / License Fee -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-4 control-label">
+                            License Status
+                            <span class="text-danger">*</span>
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            @Html.DropDownListFor(
+                                model => model.LICENSE_STATUS_ID,
+                                null,
+                                "-- Select Status --",
+                                new
+                                {
+                                    @class = "form-control select2",
+                                    style = "width:100%;",
+                                    required = "required"
+                                })
+
+                            @Html.ValidationMessageFor(
+                                model => model.LICENSE_STATUS_ID,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-4 control-label">
+                            License Fee
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon">
+                                    <i class="fa fa-money"></i>
+                                </span>
+
+                                @Html.EditorFor(
+                                    model => model.LICENSE_FEE,
+                                    new
+                                    {
+                                        htmlAttributes = new
+                                        {
+                                            @class = "form-control",
+                                            placeholder = "0.00",
+                                            type = "number",
+                                            step = "0.01",
+                                            min = "0"
+                                        }
+                                    })
+
+                            </div>
+
+                            @Html.ValidationMessageFor(
+                                model => model.LICENSE_FEE,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Entertainment Fee / Total -->
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-4 control-label">
+                            Entertainment Fee
+                        </label>
+
+                        <div class="col-sm-8">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon">
+                                    <i class="fa fa-money"></i>
+                                </span>
+
+                                @Html.EditorFor(
+                                    model => model.ENTERTAINMENT_FEE,
+                                    new
+                                    {
+                                        htmlAttributes = new
+                                        {
+                                            @class = "form-control",
+                                            id = "ENTERTAINMENT_FEE",
+                                            placeholder = "0.00",
+                                            type = "number",
+                                            step = "0.01",
+                                            min = "0"
+                                        }
+                                    })
+
+                            </div>
+
+                            @Html.ValidationMessageFor(
+                                model => model.ENTERTAINMENT_FEE,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Description -->
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">
+                            Description / Remark
+                        </label>
+
+                        <div class="col-sm-10">
+
+                            @Html.TextAreaFor(
+                                model => model.REMARK,
+                                new
+                                {
+                                    @class = "form-control",
+                                    rows = "3",
+                                    placeholder = "Enter renewal description or remark..."
+                                })
+
+                            @Html.ValidationMessageFor(
+                                model => model.REMARK,
+                                "",
+                                new { @class = "text-danger" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Attachment -->
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">
+                            Renewal Document
+                        </label>
+
+                        <div class="col-sm-10">
+
+                            <input type="file"
+                                   name="FileX"
+                                   id="FileX"
+                                   class="form-control"
+                                   accept=".jpg,.jpeg,.png,.pdf" />
+
+                            <small class="text-muted">
+                                Allowed: JPG, JPEG, PNG, PDF. Maximum 10 MB.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <div class="box-footer">
+
+            <div class="row">
+
+                <div class="col-md-12 text-right">
+
+                    <a href="@Url.Action("LicenseMaster", "License",
+                            new { LicenseId = Model.LICENSE_ID })"
+                       class="btn btn-default">
+                        <i class="fa fa-times"></i>
+                        Cancel
+                    </a>
+
+                    <button type="submit"
+                            id="btnRenew"
+                            class="btn btn-success">
+                        <i class="fa fa-refresh"></i>
+                        Renew License
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/License/NewLicense.js"></script>
+
+}

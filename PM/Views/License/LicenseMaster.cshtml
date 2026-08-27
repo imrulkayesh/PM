@@ -100,6 +100,9 @@
                                 <li>
                                     <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="Update" data-url="@Url.Action("StatusUpdate","License", new { id= item.LICENSE_ID})" />
                                 </li>
+                                <li>
+                                    <input type="submit" class="FileUp form-control btn btn-flat btn-primary" value="License Renew" data-url="@Url.Action("RenewLicense","License", new { id= item.LICENSE_ID})" />
+                                </li>
                             </ul>
                         </div>
                     </td>

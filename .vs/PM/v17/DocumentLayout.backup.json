@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Imran\\GIT\\PM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\controllers\\licensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\controllers\\licensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|g:\\imran\\git\\pm\\pm\\model\\lic_license_renewal_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\model\\lic_license_renewal_history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\views\\license\\_statusupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\views\\license\\_statusupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\views\\license\\_renewlicense.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\views\\license\\_renewlicense.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\modelsv\\licensevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\modelsv\\licensevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\scripts\\license\\newlicense.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\scripts\\license\\newlicense.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 240,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NewLicense.js",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Scripts\\License\\NewLicense.js",
+              "RelativeDocumentMoniker": "PM\\Scripts\\License\\NewLicense.js",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Scripts\\License\\NewLicense.js",
+              "RelativeToolTip": "PM\\Scripts\\License\\NewLicense.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-08-24T06:43:32.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_RenewLicense.cshtml",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Views\\License\\_RenewLicense.cshtml",
+              "RelativeDocumentMoniker": "PM\\Views\\License\\_RenewLicense.cshtml",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Views\\License\\_RenewLicense.cshtml",
+              "RelativeToolTip": "PM\\Views\\License\\_RenewLicense.cshtml",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAiwLAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-24T04:07:34.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_StatusUpdate.cshtml",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Views\\License\\_StatusUpdate.cshtml",
+              "RelativeDocumentMoniker": "PM\\Views\\License\\_StatusUpdate.cshtml",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Views\\License\\_StatusUpdate.cshtml",
+              "RelativeToolTip": "PM\\Views\\License\\_StatusUpdate.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-23T11:50:51.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LicenseVM.cs",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\ModelsV\\LicenseVM.cs",
+              "RelativeDocumentMoniker": "PM\\ModelsV\\LicenseVM.cs",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\ModelsV\\LicenseVM.cs",
+              "RelativeToolTip": "PM\\ModelsV\\LicenseVM.cs",
+              "ViewState": "AgIAANsAAAAAAAAAAAA5wNcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T04:08:36.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LIC_LICENSE_RENEWAL_HISTORY.cs",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Model\\LIC_LICENSE_RENEWAL_HISTORY.cs",
+              "RelativeDocumentMoniker": "PM\\Model\\LIC_LICENSE_RENEWAL_HISTORY.cs",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Model\\LIC_LICENSE_RENEWAL_HISTORY.cs",
+              "RelativeToolTip": "PM\\Model\\LIC_LICENSE_RENEWAL_HISTORY.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T10:13:43.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LicenseController.cs",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\LicenseController.cs",
+              "RelativeDocumentMoniker": "PM\\Controllers\\LicenseController.cs",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\LicenseController.cs",
+              "RelativeToolTip": "PM\\Controllers\\LicenseController.cs",
+              "ViewState": "AgIAAC8CAAAAAAAAAAAWwEcCAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T04:14:16.394Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
