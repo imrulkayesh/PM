@@ -261,6 +261,7 @@
     <Compile Include="Model\AUDIT_MANAGEMENT_SOURCE.cs" />
     <Compile Include="Model\AUDIT_REPORT.cs" />
     <Compile Include="Model\AUDIT_REPORT_ACTION.cs" />
+    <Compile Include="Model\AUDIT_REPORT_ASSIST_BY.cs" />
     <Compile Include="Model\AUDIT_REPORT_DETAIL.cs" />
     <Compile Include="Model\AUDIT_REPORT_FOLLOWUP.cs" />
     <Compile Include="Model\AUDIT_REPORT_IMG.cs" />

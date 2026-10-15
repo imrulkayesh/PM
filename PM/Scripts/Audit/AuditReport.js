@@ -20,30 +20,47 @@
 
 //Assist By Multiple
 
-//$("#addAssistBy").click(function (e) {
-//    alert(999);
-
-//    e.preventDefault();
-//    debugger;
-
-//    if (Assist_BY_ID == "") {
-//        swal('Ohh..', 'Please select Assist By', 'warning');
-//        return;
-//    };
-
-//    var assistById = $.trim($("#Assist_BY_ID :selected").val()),
-//        assistByName = $("#Assist_BY_ID :selected").text(),
-
-//        AuditAssistByDetailBody = $("#AuditAssistByDetail tbody");
-
-//    if (assistById == "") {
-//        swal('Ohh..', 'Select a valid item', 'warning');
-//        return;
-//    };
-
-//    var ReportAssistByItem = '<tr><td>' + assistById + '</td><td>' + assistByName + '</td><td>' + actionRemark + '</td><td><a data-itemId="0" href="#" class="deleteItem btn btn-danger btn-sm"><i class="fa fa-trash" /></a></td></tr>';
-//    AuditAssistByDetailBody.append(ReportAssistByItem);
-//    clearItem();
+//$(document).ready(function () {
+//    $('#ASSIST_BY_LIST').select2({
+//        width: '100%',
+//        placeholder: 'Select Auditor(s)',
+//        allowClear: true
+//    });
 //});
+
+//$(document).ready(function () {
+//    $('#ASSIST_BY_LIST').select2({
+//        width: '100%',
+//        placeholder: 'Select Auditor(s)',
+//        allowClear: true,
+//        minimumResultsForSearch: 0   // forces search box to always show, even with few options
+//    });
+//});
+
+// WITH THIS:
+$(document).ready(function () {
+    $('#ASSIST_BY_LIST').select2({
+        width: '100%',
+        placeholder: 'Select Auditor(s)',
+        allowClear: true,
+        ajax: {
+            url: '/Audit/SearchAuditors',
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return { term: params.term };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return { id: item.AUDITOR_STAFF_ID, text: item.AUDITOR_NAME };
+                    })
+                };
+            },
+            cache: true
+        },
+        minimumInputLength: 1
+    });
+});
 
 

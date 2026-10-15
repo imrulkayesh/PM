@@ -1203,12 +1203,14 @@ namespace PM.Controllers
             ViewBag.RPT_ACTION_ID = new SelectList(RP.AuditActionList(), "REPORT_ACTION_ID", "ACTION_NAME");
             ViewBag.AUDIT_SAVING_TYPE_ID = new SelectList(RP.RptSavingTypeList(), "AUDIT_SAVING_TYPE_ID", "AUDIT_SAVING_TYPE_NAME");
             ViewBag.AUDIT_SAVING_NAME_ID = new SelectList(RP.RptSavingNameList(), "AUDIT_SAVING_NAME_ID", "AUDIT_SAVING_NAME");
-            ViewBag.Assist_BY_ID = new SelectList(RP.AuditorList(), "AUDITOR_ID", "AUDITOR_NAME");
+            //ViewBag.Assist_BY_ID = new SelectList(RP.AuditorList(), "AUDITOR_ID", "AUDITOR_NAME");
+            ViewBag.AuditorList = new SelectList(RP.AuditorListNew(),"AUDITOR_STAFF_ID","AUDITOR_NAME");
 
             ViewBag.DIRECT_SAVING_TYPE_ID = new SelectList(RP.DirectSavingTypeList(), "AUDIT_SAVING_NAME_ID", "AUDIT_SAVING_NAME");
             ViewBag.INDIRECT_SAVING_TYPE_ID = new SelectList(RP.InDirectSavingTypeList(), "AUDIT_SAVING_NAME_ID", "AUDIT_SAVING_NAME");
             ViewBag.MANAGEMENT_ACTION_ID = new SelectList(RP.ManagementActionList(), "MANAGEMENT_ACTION_ID", "MANAGEMENT_ACTION_NAME");
             ViewBag.RISK_TYPE_ID = new SelectList(RP.RiskTypeList(), "RISK_TYPE_ID", "RISK_TYPE_NAME");
+
 
 
 
@@ -1341,8 +1343,29 @@ namespace PM.Controllers
                     db.SaveChanges();
                    
                         Sequence.GetSeqNew(31).ToString();
-                        //Sequence.GetSeqNew(32).ToString();
-                    
+                    //Sequence.GetSeqNew(32).ToString();
+
+                    // ---------------------------------------------------
+                    // Insert multi-select Assist By auditors
+                    // ---------------------------------------------------
+                    if (UT.ASSIST_BY_LIST != null && UT.ASSIST_BY_LIST.Any())
+                    {
+                        foreach (var staffId in UT.ASSIST_BY_LIST.Distinct())
+                        {
+                            var assistBy = new AUDIT_REPORT_ASSIST_BY
+                            {
+                                AUDIT_RPT_ID = AR.AUDIT_RPT_ID,
+                                AUDITOR_STAFF_ID = staffId,
+                                ACT = 1,
+                                CDT = DateTime.Now,
+                                CDU = U
+                            };
+                            db.AUDIT_REPORT_ASSIST_BY.Add(assistBy);
+                        }
+                        db.SaveChanges();
+                    }
+                    // ---------------------------------------------------
+
 
 
                     return Json(new { success = true, reportpid = "Audit Report Number: " + AR.AUDIT_RPT_ID }, JsonRequestBehavior.AllowGet);
@@ -1381,6 +1404,19 @@ namespace PM.Controllers
 
 
             return Json(new { success = false, reportpid = "Invalid input data. Audit Report not saved." }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult SearchAuditors(string term)
+        {
+            var results = db.AUDIT_AUDITOR
+                .Where(a => a.ACT == true && a.AUDITOR_NAME.Contains(term))
+                .OrderBy(a => a.AUDITOR_NAME)
+                .Select(a => new { a.AUDITOR_STAFF_ID, a.AUDITOR_NAME })
+                .Take(40)
+                .ToList();
+
+            return Json(results, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult ViewAuditReportDetails(string id, string Post)
@@ -2004,7 +2040,7 @@ namespace PM.Controllers
                                 WHERE r.ACT = 1 AND r.APPROVE_SENT_STATUS='N' AND at.REPORT_CREATE_STATUS=1 AND at.TASK_STATUS=5 AND at.REPORT_STATUS_ID in (2,4) ORDER BY TO_NUMBER(r.AUDIT_RPT_ID) ASC";
                 var TaskData = db.Database.SqlQuery<AuditReportListVM>(sql: sql_1);
                 ViewBag.Message = "Without Audit Report List";
-                var R = TaskData.Take(500).ToList();
+                var R = TaskData.Take(5000).ToList();
                 return View(R);
             }
             else
@@ -2031,7 +2067,7 @@ namespace PM.Controllers
                                 WHERE r.ACT = 1 AND r.APPROVE_SENT_STATUS='N' AND at.REPORT_CREATE_STATUS=1 AND at.TASK_STATUS=5 AND at.REPORT_STATUS_ID in (2,4) AND r.CDU= '" + U + @"' ORDER BY TO_NUMBER(r.AUDIT_RPT_ID) ASC";
                 var TaskData = db.Database.SqlQuery<AuditReportListVM>(sql: sql_1);
                 ViewBag.Message = "Without Audit Report List";
-                var R = TaskData.Take(500).ToList();
+                var R = TaskData.Take(5000).ToList();
                 return View(R);
             }
         }

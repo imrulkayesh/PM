@@ -57,11 +57,45 @@
                         @Html.ValidationMessageFor(model => model.RPT_SENT_DATE, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                @*<div class="col-md-6">
+           <div class="form-group input-group">
+                <span class="input-group-addon">Assist By</span>
+                @Html.EditorFor(model => model.ASSIST_BY, new { htmlAttributes = new { @class = "form-control", placeholder = "Staff ID Only (Example: 123456, 654789", autofocus = true } })
+                @Html.ValidationMessageFor(model => model.ASSIST_BY, "", new { @class = "text-danger" })
+           </div>
+            </div>*@
+                    @*<div class="col-md-6">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">Assist By</span>
+                    @Html.ListBoxFor(
+                        model => model.ASSIST_BY_LIST,
+                        (SelectList)ViewBag.AuditorList,
+                        new
+                        {
+                            @class = "form-control select2",
+                            style = "width:100%;",
+                            multiple = "multiple",
+                            id = "ASSIST_BY_LIST",
+                            name = "ASSIST_BY_LIST"
+                        })
+                    @Html.ValidationMessageFor(model => model.ASSIST_BY_LIST, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
                 <div class="col-md-6">
                     <div class="form-group input-group">
                         <span class="input-group-addon">Assist By</span>
-                        @Html.EditorFor(model => model.ASSIST_BY, new { htmlAttributes = new { @class = "form-control", placeholder = "Staff ID Only (Example: 123456, 654789", autofocus = true } })
-                        @Html.ValidationMessageFor(model => model.ASSIST_BY, "", new { @class = "text-danger" })
+                        @Html.ListBoxFor(
+                            model => model.ASSIST_BY_LIST,
+                            ViewBag.AuditorList as SelectList ?? new SelectList(Enumerable.Empty<SelectListItem>()),
+                            new
+                            {
+                                @class = "form-control select2",
+                                style = "width:100%;",
+                                multiple = "multiple",
+                                id = "ASSIST_BY_LIST",
+                                name = "ASSIST_BY_LIST"
+                            })
+                        @Html.ValidationMessageFor(model => model.ASSIST_BY_LIST, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>

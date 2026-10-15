@@ -147,6 +147,8 @@ namespace PM.Model
         public virtual DbSet<AUDIT_FOLLOWUP_TYPE> AUDIT_FOLLOWUP_TYPE { get; set; }
         public virtual DbSet<AUDIT_LOG> AUDIT_LOG { get; set; }
         public virtual DbSet<LIC_LICENSE_RENEWAL_HISTORY> LIC_LICENSE_RENEWAL_HISTORY { get; set; }
+        public virtual DbSet<AUDIT_REPORT_ASSIST_BY> AUDIT_REPORT_ASSIST_BY { get; set; }
+        
 
 
 

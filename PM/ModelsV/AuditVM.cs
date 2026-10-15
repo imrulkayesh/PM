@@ -234,6 +234,8 @@ namespace PM.ModelsV
         public string INDIRECT_AUDIT_SAVING_NAME { get; set; }
         public string RISK_TYPE_ID { get; set; }
 
+        
+        public List<string> ASSIST_BY_LIST { get; set; }
 
         //public string Assist_BY_ID { get; set; }
 
