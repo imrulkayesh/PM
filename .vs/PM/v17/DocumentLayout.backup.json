@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "G:\\Imran\\GIT\\PM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\controllers\\auditcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\controllers\\auditcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\model\\pmentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\model\\pmentities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\model\\audit_report_assist_by.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\model\\audit_report_assist_by.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|g:\\imran\\git\\pm\\pm\\controllers\\licensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\controllers\\licensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\scripts\\audit\\auditreport.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\scripts\\audit\\auditreport.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\scripts\\inspection\\createnewreport.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\scripts\\inspection\\createnewreport.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|g:\\imran\\git\\pm\\pm\\modelsv\\auditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\modelsv\\auditvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|G:\\Imran\\GIT\\PM\\pm\\views\\audit\\createnewreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\views\\audit\\createnewreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|g:\\imran\\git\\pm\\pm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1534AD1F-C175-4AFE-88A3-2F83CF5B44C6}|PM\\PM.csproj|solutionrelative:pm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,41 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PM\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PM\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-07T05:54:52.503Z",
+              "DocumentIndex": 0,
+              "Title": "LicenseController.cs",
+              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\LicenseController.cs",
+              "RelativeDocumentMoniker": "PM\\Controllers\\LicenseController.cs",
+              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\LicenseController.cs",
+              "RelativeToolTip": "PM\\Controllers\\LicenseController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAcwEsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T11:38:16.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PMEntities.cs",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Model\\PMEntities.cs",
-              "RelativeDocumentMoniker": "PM\\Model\\PMEntities.cs",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Model\\PMEntities.cs",
-              "RelativeToolTip": "PM\\Model\\PMEntities.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAwwJUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T04:18:46.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "AuditReport.js",
               "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Scripts\\Audit\\AuditReport.js",
               "RelativeDocumentMoniker": "PM\\Scripts\\Audit\\AuditReport.js",
@@ -85,71 +44,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-09-07T04:06:11.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuditVM.cs",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\ModelsV\\AuditVM.cs",
-              "RelativeDocumentMoniker": "PM\\ModelsV\\AuditVM.cs",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\ModelsV\\AuditVM.cs",
-              "RelativeToolTip": "PM\\ModelsV\\AuditVM.cs",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAAAO0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T04:04:11.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AUDIT_REPORT_ASSIST_BY.cs",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Model\\AUDIT_REPORT_ASSIST_BY.cs",
-              "RelativeDocumentMoniker": "PM\\Model\\AUDIT_REPORT_ASSIST_BY.cs",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Model\\AUDIT_REPORT_ASSIST_BY.cs",
-              "RelativeToolTip": "PM\\Model\\AUDIT_REPORT_ASSIST_BY.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T04:02:19.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateNewReport.js",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Scripts\\Inspection\\CreateNewReport.js",
-              "RelativeDocumentMoniker": "PM\\Scripts\\Inspection\\CreateNewReport.js",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Scripts\\Inspection\\CreateNewReport.js",
-              "RelativeToolTip": "PM\\Scripts\\Inspection\\CreateNewReport.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-09-07T03:59:13.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateNewReport.cshtml",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Views\\Audit\\CreateNewReport.cshtml",
-              "RelativeDocumentMoniker": "PM\\Views\\Audit\\CreateNewReport.cshtml",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Views\\Audit\\CreateNewReport.cshtml",
-              "RelativeToolTip": "PM\\Views\\Audit\\CreateNewReport.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAGEAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-02T04:28:00.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuditController.cs",
-              "DocumentMoniker": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\AuditController.cs",
-              "RelativeDocumentMoniker": "PM\\Controllers\\AuditController.cs",
-              "ToolTip": "G:\\Imran\\GIT\\PM\\PM\\Controllers\\AuditController.cs",
-              "RelativeToolTip": "PM\\Controllers\\AuditController.cs",
-              "ViewState": "AgIAAJUFAAAAAAAAAAAgwLMFAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-02T04:26:33.447Z",
               "EditorCaption": ""
             }
           ]
